@@ -1,0 +1,49 @@
+.sidebar-sf.open
+  .sidebar-collapse
+    .sidebar-sf--header
+      h1.fa.fa-youtube-play  CEDOC Multimídia
+      .user-menu
+        a#sidebar-minify(href='#')
+          i.fa.fa-ellipsis-v
+    .sidebar-sf--menu 
+      ul#stacked-menu.nav.nav-pills.nav-stacked.left-menu
+        li
+          a(href='#', data-target='#item1', data-toggle='collapse', data-parent='#stacked-menu', class='more')
+            i.fa.fa-calendar
+            span.text
+              | Calendário
+          ul#item1.nav.nav-stacked.collapse.left-submenu
+            li
+              #datepicker(data-date='12/03/2012')
+              input#my_hidden_input(type='hidden')
+        li
+          a(href='#', data-target='#item2', data-toggle='collapse', data-parent='#stacked-menu', class='more')
+            i.fa.fa-paw(aria-hidden='true')
+            span.text
+              | DROPDOWN
+          ul#item2.nav.nav-pills.nav-stacked.collapse
+            li
+              a(href='#') 
+                i.fa.fa-picture-o(aria-hidden='true')
+                span.text 
+                  |View One
+            li
+              a(href='#') 
+                i.fa.fa-camera(aria-hidden='true')
+                span.text 
+                  |View Two
+            li
+              a(href='#') 
+                i.fa.fa-coffee(aria-hidden='true')
+                span.text 
+                  |View Three
+        li
+          a(href='#') 
+            i.fa.fa-envelope-o(aria-hidden='true')
+            span.text
+              | Process Three
+        li
+          a(href='#')
+            i.fa.fa-eye(aria-hidden='true')
+            span.text
+              | Process Four

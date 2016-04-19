@@ -1,0 +1,143 @@
+.navbar(role='navigation')
+  .container-fluid
+    ul.nav.navbar-nav.navbar-actions.navbar-left
+      li.visible-md.visible-lg
+        a#main-menu-toggle(href='#')
+          i.fa.fa-bars
+      li.visible-xs.visible-sm
+        a#sidebar-menu(href='#')
+          i.fa.fa-bars
+    form.navbar-form.navbar-left
+      i.fa.fa-search
+      input.form-control(type='text', placeholder='Procurar...')
+    ul.nav.navbar-nav.navbar-right
+      li.dropdown.visible-md.visible-lg
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          img(src='img/flags/BRA.png', style='height:18px; margin-top:-2px;padding:0 7px')
+        ul.teste.dropdown-menu
+          li
+            a(href='#')
+              img(src='img/flags/BRA.png', style='height:18px; margin-top:-2px;')
+              |  Brasil
+          li
+            a(href='#')
+              img(src='img/flags/USA.png', style='height:18px; margin-top:-2px;')
+              |  US
+          li
+            a(href='#')
+              img(src='img/flags/Spain.png', style='height:18px; margin-top:-2px;')
+              |  Spanish
+          li
+            a(href='#')
+              img(src='img/flags/Germany.png', style='height:18px; margin-top:-2px;')
+              |  German
+          li
+            a(href='#')
+              img(src='img/flags/Poland.png', style='height:18px; margin-top:-2px;')
+              |  Polish
+      li.dropdown.visible-md.visible-lg
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-comments-o
+          span.badge 4
+        ul.dropdown-menu
+          li.dropdown-menu-header
+            strong Mensagens
+            .progress.thin
+              .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
+                span.sr-only 40% Completo (sucesso)
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+              span.label.label-info NOVO
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+              span.label.label-info NOVO
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+          li.avatar
+            a(href='#')
+              img.avatar(src='img/avatar.jpg')
+              div Nova mensagem
+              small 1 min atrás
+          li.dropdown-menu-footer.text-center
+            a(href='#') Ver todas as mensagens
+      li
+        a(href='#')
+          i.fa.fa-cog
+      li.dropdown.visible-md.visible-lg
+        a.dropdown-toggle(href='#', data-toggle='dropdown')
+          i.fa.fa-wrench
+          span.badge !
+        ul.dropdown-menu
+          li.dropdown-menu-header.text-center
+            strong Conta
+          li
+            a(href='#')
+              i.fa.fa-bell-o
+              |  Updates 
+              span.label.label-info 42
+          li
+            a(href='#')
+              i.fa.fa-envelope-o
+              |  Mensagens
+              span.label.label-success 42
+          li
+            a(href='#')
+              i.fa.fa-tasks
+              |  Tarefas
+              span.label.label-danger 42
+          li
+            a(href='#')
+              i.fa.fa-comments
+              |  Comentários 
+              span.label.label-warning 42
+          li.dropdown-menu-header.text-center
+            strong Settings
+          li
+            a(href='#')
+              i.fa.fa-user
+              |  Profile
+          li
+            a(href='#')
+              i.fa.fa-wrench
+              |  Configurações
+          li
+            a(href='#')
+              i.fa.fa-usd
+              |  Pagamentos
+              span.label.label-default 42
+          li
+            a(href='#')
+              i.fa.fa-file
+              |  Projetos
+              span.label.label-primary 42
+          li.divider
+          li
+            a(href='#')
+              i.fa.fa-shield
+              |  Bloquear Perfil
+          li
+            a(href='#')
+              i.fa.fa-lock
+              |  Logout
+      li
+        a(href='#')
+          i.fa.fa-power-off
