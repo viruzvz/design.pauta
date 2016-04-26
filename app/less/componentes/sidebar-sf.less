@@ -1,31 +1,7 @@
-.item {
-  /*height: 40px; */
-  background-color: DeepSkyBlue;
-  margin: 5px;
-  color: white;
-  font-weight: 600;
-
-}
-
-.item {
-  width: 20%;
-}
-
-#flax-content {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-}
-
-
-
 ///////////////// SIDEBAR MENU COLLPSE
 
 #stacked-menu {
   padding-top: 10px;
-  .table-condensed {
-    margin:auto;
-  }
   a[aria-expanded="true"] {
     background-color: #233f5f;
   }
@@ -88,6 +64,52 @@
     }
   }
 }
+///////////////// SIDEBAR RESUMED
+.sidebar-sf.resumed {
+  width: 60px;
+  left: 0 !important;
+  overflow: visible;
+  .text {
+    display: none;
+  }
+  .more {
+    &:before {
+      display: none;
+    }
+  }
+  #stacked-menu {
+    > li {
+      position: relative;
+      margin-bottom: 5px;
+      .more[aria-expanded="true"] {
+          width: 224px;
+          text-align: left;
+          i {
+              margin: 0 20px 0 0;
+          }
+          .text {
+            display: inline;
+          }
+      }
+      > a {
+        padding: 10px;
+        text-align: center;
+          i {
+            margin: 0;
+            width: auto;
+          }
+       }
+       ul {
+        position: absolute;
+        left: 49px;
+        top: 40px;
+        background: #3d6694;
+       }
+     }
+  }
+}
+
+
 
 ///////////////// SIDEBAR
 .sidebar-sf.open {
