@@ -26,7 +26,8 @@
   > li {
     background: #30557f;
     color: white;
-    border: 1px solid #4a4a4a;
+    border: 1px solid #213954;
+    margin-bottom: 5px;
     margin-right: 10px;
     margin-left: 10px;
     > a {
@@ -79,10 +80,11 @@
   }
   #stacked-menu {
     > li {
+      border:none;
       position: relative;
       margin-bottom: 5px;
       .more[aria-expanded="true"] {
-          width: 224px;
+          width: 291px;
           text-align: left;
           i {
               margin: 0 20px 0 0;
@@ -104,6 +106,24 @@
         left: 49px;
         top: 40px;
         background: #3d6694;
+        border-bottom: 1px solid #213954;
+        border-left: 1px solid #213954;
+        border-right: 1px solid #213954;
+        li {
+          a {
+            width: 220px;
+            padding: 10px 10px;
+          }
+          i {
+            margin: 0 5px 0 0;
+            width: 20px;
+          }
+        }
+       }
+       ul[aria-expanded="true"]{
+          .text {
+            display: inline;
+          }
        }
      }
   }

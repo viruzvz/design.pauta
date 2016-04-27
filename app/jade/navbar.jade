@@ -1,17 +1,14 @@
 .navbar(role='navigation')
   .container-fluid
     ul.nav.navbar-nav.navbar-actions.navbar-left
-      li.visible-md.visible-lg
+      li
         a#main-menu-toggle(href='#')
-          i.fa.fa-bars
-      li.visible-xs.visible-sm
-        a#sidebar-menu(href='#')
           i.fa.fa-bars
     form.navbar-form.navbar-left
       i.fa.fa-search
       input.form-control(type='text', placeholder='Procurar...')
     ul.nav.navbar-nav.navbar-right
-      li.dropdown.visible-md.visible-lg
+      li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           img(src='img/flags/BRA.png', style='height:18px; margin-top:-2px;padding:0 7px')
         ul.teste.dropdown-menu
@@ -35,7 +32,7 @@
             a(href='#')
               img(src='img/flags/Poland.png', style='height:18px; margin-top:-2px;')
               |  Polish
-      li.dropdown.visible-md.visible-lg
+      li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-comments-o
           span.badge 4
@@ -82,7 +79,7 @@
       li
         a(href='#')
           i.fa.fa-cog
-      li.dropdown.visible-md.visible-lg
+      li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-wrench
           span.badge !

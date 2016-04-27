@@ -1,27 +1,27 @@
-.sidebar-sf.open.resumed
+.sidebar-sf.open
   .sidebar-collapse
     .sidebar-sf--header
       h1.fa.fa-youtube-play.text  CEDOC Multimídia
       .user-menu
-        a#sidebar-minify(href='#')
+        a#resumed-menu-toggle(href='#')
           i.fa.fa-ellipsis-v
     .sidebar-sf--menu 
-      ul#stacked-menu.nav.nav-pills.nav-stacked.left-menu
+      ul#stacked-menu.nav
         li
-          a(href='#', data-target='#item1', data-toggle='collapse', data-parent='#stacked-menu', class='more')
+          a(role='button', data-target='#item1', data-toggle='collapse', data-parent='#stacked-menu', class='more')
             i.fa.fa-calendar
             span.text
               | Calendário
-          ul#item1.nav.nav-stacked.collapse.left-submenu
+          ul#item1.nav.collapse
             li
               #datepicker(data-date='12/03/2012')
               input#my_hidden_input(type='hidden')
         li
-          a(href='#', data-target='#item2', data-toggle='collapse', data-parent='#stacked-menu', class='more')
+          a(role='button', data-target='#item2', data-toggle='collapse', data-parent='#stacked-menu', class='more')
             i.fa.fa-paw(aria-hidden='true')
             span.text
               | DROPDOWN
-          ul#item2.nav.nav-pills.nav-stacked.collapse
+          ul#item2.nav.collapse
             li
               a(href='#') 
                 i.fa.fa-picture-o(aria-hidden='true')
