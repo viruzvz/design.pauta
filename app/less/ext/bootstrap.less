@@ -1,10 +1,34 @@
-.dropdown-menu--bar {
-  margin-top: 3px;
-  border: 1px solid #d4d4d4;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.125);
-  padding: 0;
+// Infelizmente, o dropdown do bootstrap 3 possui seletores muitos específicos.
+// Para não precisa repetir aquela seqüência gigantesca de seletores aqui dentro,
+// prefiri explodir a especificidade.
+// Não é muito bonito, mas foi o bootstrap quem começou!
 
-  &:before {
-    content: 'aaa'
+body:not(#😎) {
+
+  .dropdown-menu--md {
+    min-width: 250px;
   }
+
+  .dropdown-menu--bar {
+    margin-top: 3px;
+    border: 1px solid #d4d4d4;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.125);
+    padding: 0;
+
+    > li {
+      border-bottom: 1px solid #d4d4d4;
+    }
+  }
+
 }
+
+.badge--missing {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: #ff5454;
+  font-size: 9px;
+  padding: 4px 6px;
+  border-radius: 2px;
+}
+
