@@ -1,74 +1,88 @@
 
-// TODO: override implícito e global da base
-// TODO: important reativo
-.small, small {
-    color: #c8c8c8!important;
-}
+// NOTA: override implícito e global da base
+// NOTA: important reativo
+// .small, small {
+    // color: #c8c8c8!important;
+// }
 
-// TODO: override implícito e global da base
+// NOTA: override implícito e global da base
+// NOTA: override reativo do text-shadow
 .label {
   // font-size: 10px;
   padding: 4px 6px;
-  border: 0;
-  text-shadow: none;
+  // border: 0;
+  // text-shadow: none; // NOTA: sempre que algo for desfeito, alguma coisa está errada
 }
 
-// TODO: disperdício do potencial da base (variáveis less)
-.label-info {
-  background-color: #67c2ef;
-}
+// NOTA: disperdício do potencial da base (variáveis less)
+// NOTA: movido para variables.less
+// .label-info {
+  // background-color: #67c2ef;
+// }
 
-// TODO: seletor baseado no parent
-.navbar .navbar-nav li .dropdown-menu li.dropdown-menu-header .progress,
-.navbar .navbar-nav li .dropdown-menu li.dropdown-menu-footer .progress {
-  border: 1px solid #d4d4d4;
-  background: white;
-}
-.navbar-sf {
-  transition:all 0.2s ease;
-  margin: 0;
-  height: 60px;
-  padding: 0 0 0 235px;
-  border: 0;
-  border-bottom: 1px solid #afafaf;
-  border-radius: 0;
-  color: #414141;
-  // line-height: 60px;
-  background: linear-gradient(#f8f8f8,#eee);
+// NOTA: seletor baseado no parent
+// NOTA: seletor muito específico
+// NOTA: falta clara de intenção
+// .navbar .navbar-nav li .dropdown-menu li.dropdown-menu-header .progress,
+// .navbar .navbar-nav li .dropdown-menu li.dropdown-menu-footer .progress {
+  // border: 1px solid #d4d4d4;
+  // background: white;
+// }
+.navbar--sf {
   position: fixed;
   width: 100%;
-  z-index: 11;
-  box-shadow: 0 3px 1px -1px rgba(0,0,0,0.05);
-  text-shadow: 0 1px 1px rgba(255,255,255,0.9);
-  .navbar-actions {
-    font-size: 20px;
-    a {
-      color: #c8c8c8;
-      border-right: 1px solid #d5d5d5;
-    }
-  }
-  .navbar-form {
-    margin: 0;
-    border-right: 1px solid #d5d5d5;
-    i {
-      color: #c8c8c8;
-      font-size: 16px;
-      margin-top: 5px;
-    }
-    input[type=text] {
-      border: 0;
-      border-radius: 0;
-      margin-top: -5px;
-      margin-left: -20px;
-      padding-left: 30px;
-      background: transparent;
-      width: 300px;
-      color: #c8c8c8;
-      box-shadow: none;
-    }
-  }
 
-  // TODO: perde-se a chance que qualifcar o dropdown para o reuso
+  margin: 0;
+  padding-left: 235px;
+
+  background: linear-gradient(#f8f8f8,#eee);
+  // TODO: devolver text-shadow ao lugar certo
+  text-shadow: 0 1px 1px rgba(255,255,255,0.9);
+  box-shadow: 0 3px 1px -1px rgba(0,0,0,0.05);
+
+  border-width: 0;
+  border-bottom: 1px solid #afafaf;
+
+  transition:all 0.2s ease;
+
+  // height: 60px;
+  // padding: 0 0 0 235px; // NOTA: override inexplicável
+  // border: 0;
+  // border-radius: 0;
+  // color: #414141;
+  // line-height: 60px;
+  // z-index: 11; // NOTA: qual a escala?
+
+  // .navbar-actions {
+  //   font-size: 20px;
+  //   a {
+  //     color: #c8c8c8;
+  //     border-right: 1px solid #d5d5d5;
+  //   }
+  // }
+
+  // .navbar-form {
+  //   margin: 0;
+  //   border-right: 1px solid #d5d5d5;
+  //   i {
+  //     color: #c8c8c8;
+  //     font-size: 16px;
+  //     margin-top: 5px;
+  //   }
+  //   input[type=text] {
+  //     border: 0;
+  //     border-radius: 0;
+  //     margin-top: -5px;
+  //     margin-left: -20px;
+  //     padding-left: 30px;
+  //     background: transparent;
+  //     width: 300px;
+  //     color: #c8c8c8;
+  //     box-shadow: none;
+  //   }
+  // }
+
+  // NOTA: perde-se a chance que qualifcar o dropdown para o reuso
   // .navbar-nav li .dropdown-menu {
     // margin-top: 3px;
     // border-radius: 0;
@@ -77,19 +91,19 @@
     // padding: 0;
   // }
 
-  // TODO: seletor genérico
-  // TODO: seletor de tag
-  // TODO: falta de intenção clara
-  // TODO: largura definida nos filhos ao invés do parent (todo li é block aqui)
-  .navbar-nav li .dropdown-menu li {
+  // NOTA: seletor genérico
+  // NOTA: seletor de tag
+  // NOTA: falta de intenção clara
+  // NOTA: largura definida nos filhos ao invés do parent (todo li é block aqui)
+  // .navbar-nav li .dropdown-menu li {
     // position: relative;
-    min-width: 250px;
-    border-bottom: 1px solid #d4d4d4;
+    // min-width: 250px;
+    // border-bottom: 1px solid #d4d4d4;
     // line-height: 40px;
     // padding: 0 15px;
-  }
+  // }
 
-  // TODO: se o padrão é pointer, alguém fez alguma coisa errada nível acima
+  // NOTA: se o padrão é pointer, alguém fez alguma coisa errada nível acima
   // .dropdown-menu a {
     // cursor: pointer;
   // }
@@ -109,10 +123,10 @@
     // background-color: white!important;
   // }
 
-  // TODO: uso equivocado das unidades proporcionais
-  // TODO: não reaproveitamento das classes da base
-  // TODO: seletor específico demais
-  // TODO: override não explicável das margens
+  // NOTA: uso equivocado das unidades proporcionais
+  // NOTA: não reaproveitamento das classes da base
+  // NOTA: seletor específico demais
+  // NOTA: override não explicável das margens
   // .navbar-nav li .dropdown-menu li a img.avatar {
     // height: 40px;
     // border-radius: 50em;
@@ -121,8 +135,8 @@
     // float: left;
   // }
 
-  // TODO: não alavanca as propriedades nativas do browser
-  // TODO: números mágicos
+  // NOTA: não alavanca as propriedades nativas do browser
+  // NOTA: números mágicos
   // .navbar-nav li .dropdown-menu li.avatar a {
     // line-height: 59px;
     // height: 59px;
@@ -143,50 +157,42 @@
     // font-size: 14px;
   // }
 
-  // TODO: números mágicos
+  // NOTA: números mágicos
   // .navbar-nav li .dropdown-menu li a .label {
     // position: absolute;
     // right: 10px;
     // top: 11px;
   // }
 
-  // TODO: posicionamento com números mágicos
-  // TODO: override inexplicável
+  // NOTA: posicionamento com números mágicos
+  // NOTA: override inexplicável
   // .navbar-nav li .dropdown-menu li a i {
     // margin: 0 10px 0 -5px;
     // border: 0;
   // }
 
-  // TODO: afeta ancoras abaixo
-  // TODO: seletor de tag
-  // TODO: falta de intenção clara
-
+  // NOTA: afeta ancoras abaixo
+  // NOTA: seletor de tag
+  // NOTA: falta de intenção clara
   .navbar-nav li a {
-    padding: 0 10px;
-    line-height: 59px;
-    position: relative;
-    border-left: 1px solid #d5d5d5!important;
-    height: 59px;
+    // padding: 0 10px;
+    // line-height: 59px;
+    // position: relative;
+    // border-left: 1px solid #d5d5d5!important;
+    // height: 59px;
       &:hover {
         background-color: #f1f1f1;
       }
       i {
-        margin: 22px 0 0 0;
-        width: 32px;
-        text-align: center;
-        color: #c8c8c8;
-        font-size: 18px;
-        border: none!important;
+        // margin: 22px 0 0 0;
+        // width: 32px;
+        // text-align: center;
+        // color: #c8c8c8;
+        // font-size: 18px;
+        // border: none!important;
       }
-      .badge {
-        background: #ff5454;
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        font-size: 8px;
-        line-height: 8px;
-        padding: 4px 6px;
-        border-radius: 2px;
-      }
+
   }
 }
+
+
