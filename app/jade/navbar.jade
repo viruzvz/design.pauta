@@ -1,12 +1,14 @@
 .navbar.navbar-sf(role='navigation')
   .container-fluid
+
     ul.nav.navbar-nav.navbar-actions.navbar-left
-      li
-        a#main-menu-toggle(href='#')
-          i.fa.fa-bars
+      li: a#main-menu-toggle(href='#')
+        i.fa.fa-bars
+
     form.navbar-form.navbar-left
       i.fa.fa-search
       input.form-control(type='text', placeholder='Procurar...')
+
     ul.nav.navbar-nav.navbar-right
       li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
@@ -32,53 +34,13 @@
             a(href='#')
               img(src='img/flags/Poland.png', style='height:18px; margin-top:-2px;')
               |  Polish
+
       li.dropdown
         a.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-comments-o
           span.badge 4
-        ul.dropdown-menu
-          li.dropdown-menu-header
-            strong Mensagens
-            .progress.thin
-              .progress-bar.progress-bar-success(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width: 40%')
-                span.sr-only 40% Completo (sucesso)
-          li.Box
-            .Flag
-              .Flag-figure
-                img(src='img/avatar.jpg' height=40)
-              .Flag-body
-                div
-                  strong Nova mensagem
-                  span.label.label-info.pull-right NOVO
-                small: em 1 min atrás
-          li.avatar
-            a(href='#')
-              img.avatar(src='img/avatar.jpg')
-              div Nova mensagem
-              small 1 min atrás
-              span.label.label-info NOVO
-          li.avatar
-            a(href='#')
-              img.avatar(src='img/avatar.jpg')
-              div Nova mensagem
-              small 1 min atrás
-          li.avatar
-            a(href='#')
-              img.avatar(src='img/avatar.jpg')
-              div Nova mensagem
-              small 1 min atrás
-          li.avatar
-            a(href='#')
-              img.avatar(src='img/avatar.jpg')
-              div Nova mensagem
-              small 1 min atrás
-          li.avatar
-            a(href='#')
-              img.avatar(src='img/avatar.jpg')
-              div Nova mensagem
-              small 1 min atrás
-          li.dropdown-menu-footer.text-center
-            a(href='#') Ver todas as mensagens
+        include partials/mensagens
+
       li
         a(href='#')
           i.fa.fa-cog
@@ -141,3 +103,4 @@
       li
         a(href='#')
           i.fa.fa-power-off
+
