@@ -1,16 +1,23 @@
-/////// NAV
+
+// TODO: override implícito e global da base
+// TODO: important reativo
 .small, small {
     color: #c8c8c8!important;
 }
+
+// TODO: override implícito e global da base
 .label {
-  font-size: 10px;
+  // font-size: 10px;
   padding: 4px 6px;
   border: 0;
   text-shadow: none;
-  .label-info {
-    background-color: #67c2ef;
-  }
 }
+
+// TODO: disperdício do potencial da base (variáveis less)
+.label-info {
+  background-color: #67c2ef;
+}
+
 // TODO: seletor baseado no parent
 .navbar .navbar-nav li .dropdown-menu li.dropdown-menu-header .progress,
 .navbar .navbar-nav li .dropdown-menu li.dropdown-menu-footer .progress {
@@ -60,71 +67,100 @@
       box-shadow: none;
     }
   }
-  .navbar-nav li .dropdown-menu {
-    margin-top: 3px;
-    border-radius: 0;
-    border: 1px solid #d4d4d4;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.125);
-    padding: 0;
-  }
+
+  // TODO: perde-se a chance que qualifcar o dropdown para o reuso
+  // .navbar-nav li .dropdown-menu {
+    // margin-top: 3px;
+    // border-radius: 0;
+    // border: 1px solid #d4d4d4;
+    // box-shadow: 0 2px 4px rgba(0,0,0,0.125);
+    // padding: 0;
+  // }
+
+  // TODO: seletor genérico
+  // TODO: seletor de tag
+  // TODO: falta de intenção clara
+  // TODO: largura definida nos filhos ao invés do parent (todo li é block aqui)
   .navbar-nav li .dropdown-menu li {
-    position: relative;
+    // position: relative;
     min-width: 250px;
     border-bottom: 1px solid #d4d4d4;
     // line-height: 40px;
     // padding: 0 15px;
   }
-  .dropdown-menu a {
-    cursor: pointer;
-  }
-  .navbar-nav li .dropdown-menu li a div {
-    font-size: 14px;
-    line-height: 26px;
-    font-weight: bold;
-  }
-  .navbar-nav li .dropdown-menu li a {
-    border-radius: 0;
-    line-height: 40px;
-    height: 40px;
-    margin: 0 -15px;
-    padding: 0 15px;
-    border-left: 0!important;
-    background-color: white!important;
-  }
-  .navbar-nav li .dropdown-menu li a img.avatar {
-    height: 40px;
-    border-radius: 50em;
-    border: 1px solid #d4d4d4;
-    margin: 0 10px 0 -5px;
-    float: left;
-  }
-  .navbar-nav li .dropdown-menu li.avatar a {
-    line-height: 59px;
-    height: 59px;
-    padding: 9px 15px;
-  }
-  .navbar-nav li .dropdown-menu li a small {
-    display: block;
-    line-height: 12px;
-    font-size: 10px;
-    margin-top: -3px;
-    font-style: italic;
-  }
-  .navbar-nav li .dropdown-menu li a:hover {
-    background-color: #eee!important;
-  }
-  .navbar-nav li .dropdown-menu li i {
-    font-size: 14px;
-  }
-  .navbar-nav li .dropdown-menu li a .label {
-    position: absolute;
-    right: 10px;
-    top: 11px;
-  }
-  .navbar-nav li .dropdown-menu li a i {
-    margin: 0 10px 0 -5px;
-    border: 0;
-  }
+
+  // TODO: se o padrão é pointer, alguém fez alguma coisa errada nível acima
+  // .dropdown-menu a {
+    // cursor: pointer;
+  // }
+
+  // .navbar-nav li .dropdown-menu li a div {
+    // font-size: 14px;
+    // line-height: 26px;
+    // font-weight: bold;
+  // }
+  // .navbar-nav li .dropdown-menu li a {
+    // border-radius: 0;
+    // line-height: 40px;
+    // height: 40px;
+    // margin: 0 -15px;
+    // padding: 0 15px;
+    // border-left: 0!important;
+    // background-color: white!important;
+  // }
+
+  // TODO: uso equivocado das unidades proporcionais
+  // TODO: não reaproveitamento das classes da base
+  // TODO: seletor específico demais
+  // TODO: override não explicável das margens
+  // .navbar-nav li .dropdown-menu li a img.avatar {
+    // height: 40px;
+    // border-radius: 50em;
+    // border: 1px solid #d4d4d4;
+    // margin: 0 10px 0 -5px;
+    // float: left;
+  // }
+
+  // TODO: não alavanca as propriedades nativas do browser
+  // TODO: números mágicos
+  // .navbar-nav li .dropdown-menu li.avatar a {
+    // line-height: 59px;
+    // height: 59px;
+    // padding: 9px 15px;
+  // }
+
+  // .navbar-nav li .dropdown-menu li a small {
+    // display: block;
+    // line-height: 12px;
+    // font-size: 10px;
+    // margin-top: -3px;
+    // font-style: italic;
+  // }
+  // .navbar-nav li .dropdown-menu li a:hover {
+    // background-color: #eee!important;
+  // }
+  // .navbar-nav li .dropdown-menu li i {
+    // font-size: 14px;
+  // }
+
+  // TODO: números mágicos
+  // .navbar-nav li .dropdown-menu li a .label {
+    // position: absolute;
+    // right: 10px;
+    // top: 11px;
+  // }
+
+  // TODO: posicionamento com números mágicos
+  // TODO: override inexplicável
+  // .navbar-nav li .dropdown-menu li a i {
+    // margin: 0 10px 0 -5px;
+    // border: 0;
+  // }
+
+  // TODO: afeta ancoras abaixo
+  // TODO: seletor de tag
+  // TODO: falta de intenção clara
+
   .navbar-nav li a {
     padding: 0 10px;
     line-height: 59px;
