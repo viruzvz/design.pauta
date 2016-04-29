@@ -7,9 +7,9 @@ mixin mensagem(flag, tempo)
         if flag
           span.label.label-info.pull-right NOVO
         strong Nova mensagem
-        .small: em #{tempo}
+        .small.text-muted: em #{tempo}
 
-ul.dropdown-menu.dropdown-menu--bar
+ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
   li.Box.Box--lg
     .Segment.Segments.Segments--md
       div: strong Mensagens
@@ -19,8 +19,8 @@ ul.dropdown-menu.dropdown-menu--bar
         )
           span.sr-only 40% Completo (sucesso)
 
-  +mensagem(true, "em 2 horás")
   +mensagem(true, "há 1 minuto atrás")
+  +mensagem(true, "há 2 horás atrás")
   +mensagem()
   +mensagem()
   +mensagem()
