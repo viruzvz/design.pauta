@@ -7,7 +7,7 @@ module.exports = {
     files: ['Gruntfile.js']
   },
   less: {
-    files: ['<%= config.app %>/less/{,*/}*.less'],
+    files: ['<%= config.app %>/less/**/*.less'],
     tasks: [
       'less',
       'autoprefixer'
