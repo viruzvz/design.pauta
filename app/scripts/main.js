@@ -16,7 +16,7 @@
 
   // BOTÕES SIDEBAR
   $('#main-menu-toggle').on('click', function () {
-    $('.content-sf , .navbar').toggleClass('active')
+    $('.content-sf, .navbar').toggleClass('active')
     $('.sidebar-sf').toggleClass('open')
   })
 
@@ -25,4 +25,5 @@
     $('#main-menu-toggle').toggleClass('hide')
     $('.sidebar-sf').toggleClass('resumed')
   })
+
 })()
