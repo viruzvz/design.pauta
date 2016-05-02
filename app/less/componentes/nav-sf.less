@@ -7,12 +7,12 @@
 
 // NOTA: override implícito e global da base
 // NOTA: override reativo do text-shadow
-.label {
+// .label {
   // font-size: 10px;
-  padding: 4px 6px;
+  // padding: 4px 6px;
   // border: 0;
   // text-shadow: none; // NOTA: sempre que algo for desfeito, alguma coisa está errada
-}
+// }
 
 // NOTA: disperdício do potencial da base (variáveis less)
 // NOTA: movido para variables.less
@@ -28,24 +28,30 @@
   // border: 1px solid #d4d4d4;
   // background: white;
 // }
+
 .navbar--sf {
-  position: fixed;
-  width: 100%;
-
-  margin: 0;
-  padding-left: 235px;
-
-  background: linear-gradient(#f8f8f8,#eee);
-  // TODO: devolver text-shadow ao lugar certo
-  text-shadow: 0 1px 1px rgba(255,255,255,0.9);
-  box-shadow: 0 3px 1px -1px rgba(0,0,0,0.05);
-
-  border-width: 0;
+  background: linear-gradient(#f8f8f8, #eee);
+  box-shadow: 0 3px 1px -1px rgba(0, 0, 0, 0.05);
   border-bottom: 1px solid #afafaf;
+  transition: all 0.2s ease;
 
-  transition:all 0.2s ease;
+  &.is-floated {
+    padding-left: 235px;
+  }
 
+
+  // margin: 0; // transferir para classe utilitária
+  //NOTA: navbar-fixed-top
+  // position: fixed;
+  // width: 100%;
+  // border: 0;
+
+  // NOTA: dont repeat yourself. a altura está amarrada em diversos lugares!
+  // NOTA: single source of truth: se for solicitado que a alturar seja 50px,
+  // > vários trechos de código precisam ser alterados. E não será uma tarefa
+  // > fácil: tem padding, border-width e line-height calculados sobre esse valor de 60px.
   // height: 60px;
+
   // padding: 0 0 0 235px; // NOTA: override inexplicável
   // border: 0;
   // border-radius: 0;
@@ -61,25 +67,33 @@
   //   }
   // }
 
-  // .navbar-form {
-  //   margin: 0;
-  //   border-right: 1px solid #d5d5d5;
-  //   i {
-  //     color: #c8c8c8;
-  //     font-size: 16px;
-  //     margin-top: 5px;
-  //   }
-  //   input[type=text] {
-  //     border: 0;
-  //     border-radius: 0;
-  //     margin-top: -5px;
-  //     margin-left: -20px;
-  //     padding-left: 30px;
-  //     background: transparent;
-  //     width: 300px;
-  //     color: #c8c8c8;
-  //     box-shadow: none;
-  //   }
+  // .navbar-form--lg {
+    // .navbar-vertical-align
+    // margin: 0;
+    // line-height: 1em;
+    // padding: 20px;
+    // border-right: 1px solid #d5d5d5; // TODO: tirar daqui
+    // i { // NOTA: perde-se a chance de criar uma classe reutilizável
+      // color: #c8c8c8;
+      // font-size: 16px; // NOTA: reagindo a algum font-size indevido
+      // margin-top: 5px; // NOTA: mágico
+    // }
+    // NOTA: muitos números mágicos
+    // NOTA: baixo aproveitamento da base (bootstrap)
+    // NOTA: casamento de estilos essencialmente cosméticos
+    // input[type=text] {
+      // padding: 0;
+      // display: inline-block;
+      // border: 0;
+      // border-radius: 0;
+      // margin-top: -5px;
+      // margin-left: -20px;
+      // padding-left: 30px;
+      // background: transparent;
+      // width: 300px;
+      // color: #c8c8c8;
+      // box-shadow: none;
+      // }
   // }
 
   // NOTA: perde-se a chance que qualifcar o dropdown para o reuso
@@ -99,17 +113,19 @@
     // position: relative;
     // min-width: 250px;
     // border-bottom: 1px solid #d4d4d4;
+    // NOTA: line-height e padding ao mesmo tempo para centralizar não é uma boa prática
     // line-height: 40px;
     // padding: 0 15px;
   // }
 
-  // NOTA: se o padrão é pointer, alguém fez alguma coisa errada nível acima
+  // NOTA: se o padrão é pointer, alguém fez um override indesejável nível acima
   // .dropdown-menu a {
     // cursor: pointer;
   // }
 
   // .navbar-nav li .dropdown-menu li a div {
     // font-size: 14px;
+    // NOTA: neste caso, há opções melhores que o line-height centralizar
     // line-height: 26px;
     // font-weight: bold;
   // }
@@ -138,6 +154,8 @@
   // NOTA: não alavanca as propriedades nativas do browser
   // NOTA: números mágicos
   // .navbar-nav li .dropdown-menu li.avatar a {
+    // NOTA: line-height, height e padding ao mesmo tempo para centralizar não é uma boa prática
+    // NOTA: line-height não deve ser utilizado para centralizar se o texto pode ter mais de uma linha
     // line-height: 59px;
     // height: 59px;
     // padding: 9px 15px;
@@ -174,25 +192,22 @@
   // NOTA: afeta ancoras abaixo
   // NOTA: seletor de tag
   // NOTA: falta de intenção clara
-  .navbar-nav li a {
+  // .navbar-nav li a {
     // padding: 0 10px;
     // line-height: 59px;
     // position: relative;
-    // border-left: 1px solid #d5d5d5!important;
     // height: 59px;
-      &:hover {
-        background-color: #f1f1f1;
-      }
-      i {
+      // &:hover {
+        // background-color: #f1f1f1;
+      // }
+      // i {
         // margin: 22px 0 0 0;
         // width: 32px;
         // text-align: center;
-        // color: #c8c8c8;
         // font-size: 18px;
         // border: none!important;
-      }
+      // }
 
-  }
+  // }
 }
-
 
