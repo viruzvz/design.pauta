@@ -1,11 +1,15 @@
 'use strict'
 
 module.exports = function (grunt) {
-  require('time-grunt')(grunt)
-  require('load-grunt-tasks')(grunt, {scope: 'devDependencies'})
-
-  var configs = require('load-grunt-configs')(grunt)
-  grunt.initConfig(configs)
+  require('load-grunt-config')(grunt, {
+    data: {
+      config: {
+        app: 'app',
+        dist: 'dist',
+        fonts: ['senado.css', 'bootstrap']
+      }
+    }
+  })
 
   grunt.registerTask('dev', '--allow-remote para permitir acesso externo', function (target) {
     if (grunt.option('allow-remote')) {
@@ -19,14 +23,4 @@ module.exports = function (grunt) {
 
     grunt.task.run(['_dev'])
   })
-
-  grunt.registerTask('build', [
-    'clean',
-    'concurrent',
-    'autoprefixer',
-    'cssmin',
-    'copy'
-  ])
-
-  grunt.registerTask('default', ['build'])
 }

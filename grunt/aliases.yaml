@@ -1,0 +1,16 @@
+default:
+  - 'build'
+
+_dev:
+  - 'clean'
+  - 'concurrent'
+  - 'autoprefixer'
+  - 'connect:dev'
+  - 'watch'
+
+build:
+  - 'clean'
+  - 'concurrent'
+  - 'autoprefixer'
+  - 'cssmin'
+  - 'copy'
