@@ -1,7 +1,7 @@
 module.exports = {
   server: [
-    'less'
-    , 'copy:fontify'
-    , 'jade'
+    'less',
+    'copy:fontify',
+    'jade'
   ]
 }

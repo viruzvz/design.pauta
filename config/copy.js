@@ -26,7 +26,7 @@ module.exports = {
         '**/*',
         '!**/fonts/*',
         '!**/*.jade',
-        '!**/*.less',
+        '!**/*.less'
       ],
       dest: '<%= config.dist %>',
       filter: 'isFile'
