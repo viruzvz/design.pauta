@@ -1,106 +1,65 @@
-.navbar.navbar--sf(role='navigation')
-  .container-fluid
+.navbar.navbar--sf.navbar-fixed-top.is-floated(role='navigation')
+  .container-fluid.u-posRelative
 
-    ul.nav.navbar-nav.navbar-actions.navbar-left
-      li: a#main-menu-toggle(href='#')
+    ul.nav.navbar-nav.navbar-left.navbar-nav--lg
+      li: a#main-menu-toggle.navbar-action.zeta.navbar-action--main(href='#')
         i.fa.fa-bars
 
-    form.navbar-form.navbar-left
-      i.fa.fa-search
-      input.form-control(type='text', placeholder='Procurar...')
+    form.navbar-form.navbar-left.navbar-form--lg.zeta
+      i.fa.fa-search.text-muted
+      input.form-control.u-transparentInput(type='text' placeholder='Procurar...')
 
-    ul.nav.navbar-nav.navbar-right
-      li.dropdown
-        a.dropdown-toggle(href='#', data-toggle='dropdown')
-          img(src='img/flags/BRA.png', style='height:18px; margin-top:-2px;padding:0 7px')
-        ul.teste.dropdown-menu
-          li
-            a(href='#')
-              img(src='img/flags/BRA.png', style='height:18px; margin-top:-2px;')
-              |  Brasil
-          li
-            a(href='#')
-              img(src='img/flags/USA.png', style='height:18px; margin-top:-2px;')
-              |  US
-          li
-            a(href='#')
-              img(src='img/flags/Spain.png', style='height:18px; margin-top:-2px;')
-              |  Spanish
-          li
-            a(href='#')
-              img(src='img/flags/Germany.png', style='height:18px; margin-top:-2px;')
-              |  German
-          li
-            a(href='#')
-              img(src='img/flags/Poland.png', style='height:18px; margin-top:-2px;')
-              |  Polish
+    ul.nav.navbar-nav.navbar-right.navbar-nav--lg
 
       li.dropdown
-        a.dropdown-toggle(href='#', data-toggle='dropdown')
+        a.navbar-action.dropdown-toggle(href='#', data-toggle='dropdown')
+          img(src='img/flags/BRA.png' height=18)
+        ul.dropdown-menu
+          mixin bandeira(imagem, pais)
+            li: a(href='#')
+              img(src='img/flags/#{imagem}.png' height=18)
+              | #{pais}
+          +bandeira('BRA', 'Brasil')
+          +bandeira('USA', 'English')
+          +bandeira('Spain', 'Spanish')
+
+      li.dropdown
+        a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-comments-o
-          span.badge.badge--missing 4
+          span.badge.badge--unread.micro 4
         include partials/mensagens
 
-      li
-        a(href='#')
-          i.fa.fa-cog
+      li: a.zeta.navbar-action(href='#'): i.fa.fa-cog
+
       li.dropdown
-        a.dropdown-toggle(href='#', data-toggle='dropdown')
+        a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
           i.fa.fa-wrench
-          span.badge.badge--missing !
+          span.badge.badge--unread.micro !
+
         ul.dropdown-menu
+
+          mixin item(texto, icon, style, badge)
+            li: a(href='#')
+              i.fa(class="fa-#{icon}")
+              | #{texto}
+              if badge
+                span.label(class="label-#{style}") #{badge}
+
           li.dropdown-menu-header.text-center
             strong Conta
-          li
-            a(href='#')
-              i.fa.fa-bell-o
-              |  Updates
-              span.label.label-info 42
-          li
-            a(href='#')
-              i.fa.fa-envelope-o
-              |  Mensagens
-              span.label.label-success 42
-          li
-            a(href='#')
-              i.fa.fa-tasks
-              |  Tarefas
-              span.label.label-danger 42
-          li
-            a(href='#')
-              i.fa.fa-comments
-              |  Comentários
-              span.label.label-warning 42
+          +item('Updates', 'bell-o', 'info', 12)
+          +item('Mensagens', 'envelope-o', 'success', 35)
+          +item('Tarefas', 'tasks', 'danger', 2)
+          +item('Comentários', 'comments', 'warning', 10)
+
           li.dropdown-menu-header.text-center
             strong Settings
-          li
-            a(href='#')
-              i.fa.fa-user
-              |  Profile
-          li
-            a(href='#')
-              i.fa.fa-wrench
-              |  Configurações
-          li
-            a(href='#')
-              i.fa.fa-usd
-              |  Pagamentos
-              span.label.label-default 42
-          li
-            a(href='#')
-              i.fa.fa-file
-              |  Projetos
-              span.label.label-primary 42
+          +item('Perfil', 'user')
+          +item('Configurações', 'wrench')
+          +item('Projetos', 'file', 'primary', 2)
           li.divider
-          li
-            a(href='#')
-              i.fa.fa-shield
-              |  Bloquear Perfil
-          li
-            a(href='#')
-              i.fa.fa-lock
-              |  Logout
-      li
-        a(href='#')
-          i.fa.fa-power-off
+          +item('Bloquear Perfil', 'shield')
+          +item('Logout', 'lock')
+
+      li: a.zeta.navbar-action(href='#'): i.fa.fa-power-off
 
