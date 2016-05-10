@@ -1,0 +1,47 @@
+.AdvancedLayout-bar.Sidebar.is-open
+
+  .Sidebar-header.zeta.Box.Box--x
+    .fa.fa-youtube-play  CEDOC Multimídia
+    .pull-right
+      i.fa.fa-ellipsis-v
+
+  .Sidebar-menu
+
+    ul.Menu.Menu--out
+
+      li
+        a.Menu-item(role='button', href='#js-alpha', data-toggle='collapse')
+          span.Menu-icon: i.fa.fa-calendar(aria-hidden='true')
+          span.Menu-text  Calendário
+
+        ul#js-alpha.nav.collapse.Menu-block
+          li
+            #datepicker(data-date='12/03/2012')
+            input(type='hidden')
+
+      li
+        a.Menu-item(role='button', data-target='#js-beta' data-toggle='collapse')
+          span.Menu-icon: i.fa.fa-paw(aria-hidden='true')
+          span.Menu-text  DROPDOWN
+
+        ul#js-beta.Menu.collapse
+
+          li: a.Menu-item(href='#')
+            i.fa.fa-picture-o(aria-hidden='true')
+            span  View One
+
+          li: a.Menu-item(href='#')
+            i.fa.fa-camera(aria-hidden='true')
+            span  View Two
+
+          li: a.Menu-item(href='#')
+            i.fa.fa-coffee(aria-hidden='true')
+            span  View Three
+
+      li: a.Menu-item(href='#')
+        i.fa.fa-envelope-o(aria-hidden='true')
+        span  Process Three
+
+      li: a.Menu-item(href='#')
+        i.fa.fa-eye(aria-hidden='true')
+        span  Process Four

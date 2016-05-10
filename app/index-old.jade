@@ -13,7 +13,9 @@ html(lang='pt')
   body
 
     block content
-      include jade/content
+      .AdvanceLayout.moe
+        include jade/sidebar-sf
+        include jade/navbar
 
     script(src='jquery/dist/jquery.min.js')
     script(src='bootstrap/dist/js/bootstrap.min.js')

@@ -4,10 +4,13 @@
 
   // DATEPICKER
   $('document').ready(function () {
-    $('#datepicker').datepicker()
-    $('#datepicker').on('changeDate', function () {
-      $('#my_hidden_input').val(
-        $('#datepicker').datepicker('getFormattedDate')
+    var $datePicker = $('#datepicker')
+    var $myHiddenInput = $('#my_hidden_input')
+
+    $datePicker.datepicker()
+    $datePicker.on('changeDate', function () {
+      $myHiddenInput.val(
+        $datePicker.datepicker('getFormattedDate')
       )
     })
   })
@@ -25,5 +28,4 @@
     $('#main-menu-toggle').toggleClass('hide')
     $('.sidebar-sf').toggleClass('resumed')
   })
-
 })()
