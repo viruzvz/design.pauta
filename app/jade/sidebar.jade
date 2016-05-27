@@ -1,5 +1,11 @@
 .AdvancedLayout-bar.Sidebar.is-open
 
+  mixin Item(text, icon)
+    a.Menu-item(role='button')&attributes(attributes)
+      if icon
+        .Menu-icon: i.fa(aria-hidden='true' class="fa-#{icon}")
+      .Menu-text  #{text}
+
   .Sidebar-header.zeta.Box.Box--x
     .fa.fa-youtube-play  CEDOC Multimídia
     .pull-right
@@ -10,38 +16,18 @@
     ul.Menu.Menu--out
 
       li
-        a.Menu-item(role='button', href='#js-alpha', data-toggle='collapse')
-          span.Menu-icon: i.fa.fa-calendar(aria-hidden='true')
-          span.Menu-text  Calendário
-
+        +Item('Calendário', 'calendar')(href='#js-alpha', data-toggle='collapse')
         ul#js-alpha.nav.collapse.Menu-block
           li
             #datepicker(data-date='12/03/2012')
             input(type='hidden')
 
       li
-        a.Menu-item(role='button', data-target='#js-beta' data-toggle='collapse')
-          span.Menu-icon: i.fa.fa-paw(aria-hidden='true')
-          span.Menu-text  DROPDOWN
-
+        +Item('Opções', 'paw')(href='#js-beta', data-toggle='collapse')
         ul#js-beta.Menu.collapse
+          li: +Item('View One', 'picture-o')
+          li: +Item('View Two', 'camera')
+          li: +Item('View Three', 'coffee')
 
-          li: a.Menu-item(href='#')
-            i.fa.fa-picture-o(aria-hidden='true')
-            span  View One
-
-          li: a.Menu-item(href='#')
-            i.fa.fa-camera(aria-hidden='true')
-            span  View Two
-
-          li: a.Menu-item(href='#')
-            i.fa.fa-coffee(aria-hidden='true')
-            span  View Three
-
-      li: a.Menu-item(href='#')
-        i.fa.fa-envelope-o(aria-hidden='true')
-        span  Process Three
-
-      li: a.Menu-item(href='#')
-        i.fa.fa-eye(aria-hidden='true')
-        span  Process Four
+      li: +Item('Process Three', 'envelope-o')
+      li: +Item('Process Four', 'eye')
