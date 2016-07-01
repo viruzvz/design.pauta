@@ -6,10 +6,14 @@
         .Menu-icon: i.fa(aria-hidden='true' class="fa-#{icon}")
       .Menu-text  #{text}
 
-  .Sidebar-header.zeta.Box.Box--x
-    .fa.fa-youtube-play  CEDOC Multimídia
-    .pull-right
-      i.fa.fa-ellipsis-v
+  .Sidebar-header.Box.Box--x
+    .Flag
+      .Flag-figure.Sidebar-iconSize--Large
+        .fa.fa-pencil-square-o
+      .Flag-body
+        | Central de Pautas e Produção jornalistica
+      .Flag-figure.Sidebar-iconSize--Medium
+        i.fa.fa-ellipsis-v
 
   .Sidebar-menu
 
@@ -19,8 +23,7 @@
         +Item('Calendário', 'calendar')(href='#js-alpha', data-toggle='collapse')
         ul#js-alpha.nav.collapse.Menu-block
           li
-            #datepicker(data-date='12/03/2012')
-            input(type='hidden')
+            
 
       li
         +Item('Opções', 'paw')(href='#js-beta', data-toggle='collapse')

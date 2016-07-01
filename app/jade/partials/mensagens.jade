@@ -6,7 +6,7 @@ mixin mensagem(flag, tempo)
       .Flag-body
         if flag
           span.label.label-info.pull-right NOVO
-        strong Nova mensagem
+        a(href="#"): strong Nova mensagem
         .small.text-muted: em #{tempo}
 
 ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
