@@ -1,52 +1,37 @@
-.Sidebar {
-  position: fixed;
-  height: 100%;
-  z-index: 1040; // TODO: criar escala
+.Sidebar-menu {
+  height: 0;
+  display: block!important;
   overflow: hidden;
-  color: #fff;
-  background: @sf-protype--color1;
-  border-right: 1px solid @sf-protype--bordercolor1;
-}
-  .Sidebar-header {
-    border-bottom: 1px solid #30557f;
-  }
-  .Sidebar-iconSize--Large {
-    font-size: 38px;
-    padding-top: 6px;
-  }
-  .Sidebar-iconSize--Medium {
-    font-size: 18px;
-  }
-  .Sidebar-menu {
-    width: 100%;
-  }
-.Menu {
-  .clearfix();
-  .list-unstyled();
-  margin: 0;
 
-  > li {
-    position: relative;
-    background: #30557f;
-    margin: 5px;
+  &.in {
+    height: auto;
+  }
+  .SubMenu-label {
+    display: none;
   }
 }
-  .Menu-item {
-    .lookout();
-    .flat();
-    .clearfix();
 
+.Sidebar--compact {
+
+  .SubMenu-link .SubMenu-label {
+    display: none;
+  }
+
+  .Sidebar-menu .SubMenu-label {
     display: block;
-    padding: @padding-large-vertical @padding-large-horizontal;
+  }
 
-    &:hover, &[aria-expanded="true"] {
-      background: #233f5f;
+  .Sidebar-menu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+
+    border: none;
+    min-width: 200px;
+    z-index: 1020;
+
+    &.collapsing {
+      transition: none;
     }
   }
-  .Menu-icon {
-    text-align: center;
-  }
-
-
-
-
+}

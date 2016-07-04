@@ -3,6 +3,7 @@
 
 @import "utils/variables";
 @import "utils/cosmetic";
+@import "utils/text";
 
 @import "layout/content";
 
@@ -21,3 +22,37 @@
 
 @import "font-awesome/font-awesome";
 
+@c1: #f0b67f;
+@c2: #fe5f55;
+@c3: #d6d1b1;
+@c4: #c7efcf;
+@c5: #eef5db;
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+}
+
+  aside {
+    background: @c1;
+  }
+
+  main {
+    background: @c4;
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+article {
+  flex: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
