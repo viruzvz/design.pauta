@@ -16,16 +16,16 @@ html(lang='pt')
         mixin item-drop(title)
           li.dropdown.u-posStatic_.u-textNoWrap
             - var id = rand()
-            .SubMenu-link.MenuTitulo(
+            .Sidebar-menuLink.MenuTitulo(
               href='#'
               data-toggle='collapse'
               data-target='##{id}'
               aria-expanded='false')
                 button.btn.btn-info.btn-square(role='button')
                   span.glyphicon.glyphicon-list.milli
-                span.Box.SubMenu-label  #{title}
+                span.Box.Sidebar-menuLabel  #{title}
             .Sidebar-menu.collapse(id=id)
-              .SubMenu-label
+              .Sidebar-menuLabel
                 .MenuTitulo.Box #{title}
               ul.list-unstyled.Box(class='+cut')
                 li: a(href='#') Action
@@ -37,12 +37,12 @@ html(lang='pt')
         +item-drop('Anexos')
     main
       header
-        .Arrange.Arrange--middle.navbar--sf
-          .Arrange-sizeFit
+        .ArrangeFlex.ArrangeFlex--middle.navbar--sf
+          .ArrangeFlex-sizeFit
              button.btn.btn-square.delta
               i.fa.fa-bars
-          .Arrange-sizeFill
-          .Arrange-sizeFit.dropdown
+          .ArrangeFlex-sizeFill
+          .ArrangeFlex-sizeFit.dropdown
             button#headerNotifications.btn.btn-square.delta.dropdown-toggle(
               data-toggle='dropdown',
               aria-haspopup='true',
