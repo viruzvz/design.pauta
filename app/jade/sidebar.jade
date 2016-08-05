@@ -1,35 +1,36 @@
-.AdvancedLayout-bar.Sidebar.is-open
+ul.list-unstyled.Sidebar.Sidebar--compactt.u-posRelative
+  li.Box.u-spacer--xl.Sidebar--Header
+    .Flag.Sidebar--Controlflag
+      .Flag-figure.Sidebar--Flagfigure.Sidebar--FlagfigureCompact(class="+white--color")
+        .Icon.Icon--newspaper.Icon--Header 
+      .Flag-body.Sidebar--Flagbody
+        a.Sidebar-Defaultlink(href="#") Central de Pautas e Produção Jornalistica
+  mixin item-link(icon, title)
+    li.Box.u-posStatic_.u-textNoWrap
+      a(href="#")
+        .Sidebar-menuLink.MenuTitulo
+          button.btn.Sidebar--btn.btn-square(role='button' title='Alooo2')
+            span.glyphicon.milli(class="#{icon}")
+          span.Box.Sidebar-menuLabel  #{title}
+  +item-link('glyphicon-home', 'Página Inicial')
+  mixin item-drop(icon, title)
+    li.Box.dropdown.u-posStatic_.u-textNoWrap
+      - var id = rand()
+      .Sidebar-menuLink.MenuTitulo.more(href='#' data-toggle='collapse' data-target='##{id}' aria-expanded='false')
+        button.btn.Sidebar--btn.btn-square(role='button' title='Alooo')
+          span.glyphicon.milli(class="#{icon}") 
+        span.Box.Sidebar-menuLabel  #{title}
+      .Sidebar-menu.collapse(id=id)
+        .Sidebar-menuLabel
+          .MenuTitulo.Box #{title}
+        ul.list-unstyled.Box(class='+bgdropdown')
+          li: a(href='#' class="+colordropdown") Action
+          li: a(href='#' class="+colordropdown") Another action
+          li: a(href='#' class="+colordropdown") Something else here
+          li: a(href='#' class="+colordropdown") Separated link
+  +item-drop('glyphicon-pencil', 'Pautas')
+  +item-link('glyphicon-cog', 'Produção')
+  +item-link('glyphicon-font', 'Fontes')
+  +item-drop('glyphicon-user', 'Gerência')
+    nav.navbar.u-spacer--xl
 
-  mixin Item(text, icon)
-    a.Menu-item(role='button')&attributes(attributes)
-      if icon
-        .Menu-icon: i.fa(aria-hidden='true' class="fa-#{icon}")
-      .Menu-text  #{text}
-
-  .Sidebar-header.Box.Box--x
-    .Flag
-      .Flag-figure.Sidebar-iconSize--Large
-        .fa.fa-pencil-square-o
-      .Flag-body
-        | Central de Pautas e Produção jornalistica
-      .Flag-figure.Sidebar-iconSize--Medium
-        i.fa.fa-ellipsis-v
-
-  .Sidebar-menu
-
-    ul.Menu.Menu--out
-
-      li
-        +Item('Calendário', 'calendar')(href='#js-alpha', data-toggle='collapse')
-        ul#js-alpha.nav.collapse.Menu-block
-          li
-
-      li
-        +Item('Opções', 'paw')(href='#js-beta', data-toggle='collapse')
-        ul#js-beta.Menu.collapse
-          li: +Item('View One', 'picture-o')
-          li: +Item('View Two', 'camera')
-          li: +Item('View Three', 'coffee')
-
-      li: +Item('Process Three', 'envelope-o')
-      li: +Item('Process Four', 'eye')

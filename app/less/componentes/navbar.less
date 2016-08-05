@@ -78,9 +78,6 @@
     .datepicker-inline {
         width: auto !important;
     }
-    .navbar-right .dropdown-menu {
-        left: 0 !important;
-    }
     .dropdown-menu > li > a {
         white-space: normal;
     }
@@ -100,42 +97,7 @@
         // min-width: 400px;
     }
 
-    .nav-tabs-justified > li > a {
-        border-bottom: 1px solid #ddd;
-        border-radius: 4px 4px 0 0;
-    }
-    .nav-tabs-justified > .active > a,
-    .nav-tabs-justified > .active > a:hover,
-    .nav-tabs-justified > .active > a:focus {
-        border-bottom-color: #fff;
-    }
-
-    .nav-justified > li {
-        display: table-cell;
-        width: 1%;
-    }
-    .nav-justified > li > a {
-        margin-bottom: 0;
-    }
-
-    .nav-tabs.nav-justified > li > a {
-        border-bottom: 1px solid #ddd;
-        border-radius: 4px 4px 0 0;
-    }
-    .nav-tabs.nav-justified > .active > a,
-    .nav-tabs.nav-justified > .active > a:hover,
-    .nav-tabs.nav-justified > .active > a:focus {
-        border-bottom-color: #fff;
-    }
-
-    .nav-tabs.nav-justified > li {
-        display: table-cell;
-        width: 1%;
-    }
-    .nav-tabs.nav-justified > li > a {
-        margin-bottom: 0;
-    }
-
+ 
     .navbar-right .dropdown-menu {
         right: 0;
         left: auto;
@@ -207,7 +169,6 @@
 
     .navbar-left {
         float: left !important;
-        margin-left: -15px;
     }
     .navbar-right {
         float: right !important;
@@ -268,5 +229,7 @@
     } 
     .navbar-nav .open .dropdown-menu {
       position: absolute;
+      top:inherit;
+      background-color: #f7f7f7;
     }
 }
