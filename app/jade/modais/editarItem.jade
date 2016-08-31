@@ -1,0 +1,23 @@
+// Modal editarItem (Carregado em; Item de Pauta Geral, )
+#editarItem.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editarItemLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#editarItemLabel.modal-title 
+          span.fa.fa-pen
+          |  Editar Item de Pauta Geral
+
+      .modal-body
+        form(name='data-replicarItemForm')
+          .form-group
+            label(for='data-editarItem') Data
+            input#data-editarItem.datepicker.form-control(type='text', name='data-editarItem')
+          .form-group
+            label(for='descricaoTinyMce') Descrição
+            textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+
+      .modal-footer
+        button.btn.btn-primary(type='button') Replicar
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

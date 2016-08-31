@@ -1,0 +1,19 @@
+// Modal Itens de produção relacionados (Carregado em; Item de Pauta Geral, )
+#itensProducaoRelacionados.modal.fade(tabindex='-1', role='dialog', aria-labelledby='itensProducaoRelacionadosLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#itensProducaoRelacionadosLabel.modal-title 
+          span.fa.fa-cubes
+          |  Itens de produção relacionados
+
+      .modal-body
+        form(name='novoArquivo-padrao')
+          .form-group
+            input#itensProducaoRelacionadosInput.form-control(type='text', name='itensProducaoRelacionadosInput')
+
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

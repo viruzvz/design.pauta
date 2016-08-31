@@ -1,0 +1,133 @@
+// Modal Novo arquivo (Carregado em; Item de Pauta Geral, )
+#novoArquivo.modal.fade(tabindex='-1', role='dialog', aria-labelledby='novoArquivoLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#novoArquivokLabel.modal-title 
+          span.fa.fa-plus
+          |  Novo arquivo
+      .modal-body
+        
+        // Nav tabs
+        ul.nav.nav-tabs.hidden-xs(role='tablist')
+          li.active(role='presentation')
+            a(href='#padrao2', aria-controls='padrao2', role='tab', data-toggle='tab') Padrão
+          li(role='presentation')
+            a(href='#categorizacao2', aria-controls='categorizacao2', role='tab', data-toggle='tab') Categorização
+          li(role='presentation')
+            a(href='#datas2', aria-controls='datas2', role='tab', data-toggle='tab') Datas
+          li(role='presentation')
+            a(href='#propriedades2', aria-controls='propriedades2', role='tab', data-toggle='tab') Propriedades    
+          li(role='presentation')
+            a(href='#configuracoes2', aria-controls='configuracoes2', role='tab', data-toggle='tab') Configurações
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect1') Selecione um tipo
+            select.mySelect.mySelectResponsive.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#padrao2', 'Padrao')
+              +option('#categorizacao2', 'Categorização')
+              +option('#datas2', 'Datas')
+              +option('#propriedades2', 'Propiedades')
+              +option('#configuracoes2', 'Configurações')
+        // Tab panes
+        .tab-content.Box.Box--lg.Box--y
+          #padrao2.tab-pane.active(role='tabpanel') 
+            form(name='novoArquivo-padrao2')
+              .form-group
+                label(for='titulo2') Título
+                input#titulo2.form-control(type='text', name='titulo')
+              .form-group
+                label(for='descricao2') Descrição
+                textarea#descricao2.form-control(rows='3', name='descricao')
+              .form-group
+                label(for='url2') URL
+                input#url2.form-control(type='text', name='url', placeholder='http://')
+
+          #categorizacao2.tab-pane(role='tabpanel') 
+            form(name='novoArquivo-categorizacao2')
+              .form-group
+                label(for='tags2') Tags
+                textarea#tags2.form-control(rows='3', name='tags', placeholder='Digite uma tag por linha.')
+                p.help-block Tags são geralmente usadas para organização personalizadas de conteúdo.
+              .form-group
+                label(for='intensRelacionados2') Itens Relacionados
+                input#intensRelacionados2(type='file')
+              .form-group
+                .row
+                  .col-md-8
+                    label(for='local2') Local
+                    input#local2.form-control(type='text', name='local')
+                  .col-md-4
+                    label(for='idioma2') Idioma
+                    select#idioma2.form-control(name='idioma')
+                      option Selecionar
+                      option Brazil
+                  .col-md-12
+                    p.help-block A localização geográfica associada com o item, caso aplicável.
+
+          #datas2.tab-pane(role='tabpanel') 
+            form(name='adicionarLink-data')
+              .form-group
+                .row
+                  .col-md-4
+                    label(for='dataPublicacao2') Data de Publicação
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#dataPublicacao2.form-control(type='text', placeholder='dd/mm/aaaa')
+                      .input-group-addon
+                        span.fa.fa-calendar
+                p.help-block A data quando o item será publicado. Se nenhuma data for selecionada o item será publicado imediatamente.
+
+              .form-group
+                .row
+                  .col-md-4
+                    label(for='dataExpiracao2') Data de Expiração
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#dataExpiracao2.form-control(type='text', placeholder='dd/mm/aaaa')
+                      .input-group-addon
+                        span.fa.fa-calendar
+                p.help-block A data quando o item expira. Isso irá automaticamente tornar o item invisível para os outros na data informada. Se nenhuma data for escolhida, o item nunca irá expirar.
+
+          #propriedades2.tab-pane(role='tabpanel') 
+            form(name='novoArquivo-propriedades2')
+              .form-group
+                label(for='autores2') Autores
+                textarea#autores2.form-control(rows='2', name='autores')
+                p.help-block Pessoas responsáveis por criar o conteúdo desse item. Por favor, informe uma lista de nomes, um por linha. O autor principal deve aparecer primeiro.
+              .form-group
+                label(for='colaboradores2') Colaboradores
+                textarea#colaboradores2.form-control(rows='2', name='colaboradores')
+                p.help-block Os nomes das pessoas que colaboraram para esse item. Cada colaborador deve estar em uma linha separada.
+              .form-group
+                label(for='direitos2') Direitos
+                textarea#direitos2.form-control(rows='2', name='direitos')
+                p.help-block Declaração dos direitos de cópia ou outras informações sobre os direitos desse item.
+
+          #configuracoes2.tab-pane(role='tabpanel') 
+            form(name='novoArquivo-configuracoes2')
+              .form-group
+                .checkbox
+                  label(for='permitirComentarios2') 
+                    input#permitirComentarios2(type='checkbox', name='permitirComentarios')
+                    | Permitir comentários
+                p.help-block Caso selecionado, os usuários podem adicionar comentários neste item.
+              .form-group
+                .checkbox
+                  label(for='excluirNavegacao2') 
+                    input#excluirNavegacao2(type='checkbox', name='excluirNavegacao')
+                    | Excluir da navegação
+                p.help-block Caso selecionado, esse item não irá aparecer na árvore de navegação
+      .Box.Box--lg.Box--x
+        form(name='modal-form-footer')
+          .form-group
+            label(for='comentario2') Comentário da versão
+            textarea#comentario2.form-control(name='comentario', rows='1')
+            p.help-block Informe um comentário descrevendo as alterações que você fez. 
+
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

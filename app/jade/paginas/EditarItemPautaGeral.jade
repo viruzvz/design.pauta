@@ -1,0 +1,36 @@
+.row
+  .col-md-9.col-sm-9
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        h2
+          i.fa.fa-pencil
+          strong Editar Item de Pauta Geral
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+
+
+        form(name='editarItemdePautaGeralForm')
+          .form-group
+            label(for='data-editarItem') Data
+            input#data-editarItem.datepicker.form-control(type='text', name='data-editarItem')
+          .form-group
+            label(for='descricaoTinyMce') Descrição
+            textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+
+
+
+
+  .col-md-3.col-sm-3
+    include ../partials/menu-item
+
+
+            
+include ../modais/adicionarLink
+include ../modais/historico
+include ../modais/novoArquivo
+include ../modais/itensProducaoRelacionados
+include ../modais/excluirItem
+include ../modais/replicarItem
+include ../modais/reordenacaoItens
+include ../modais/editarItem

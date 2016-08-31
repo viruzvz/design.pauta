@@ -10,8 +10,11 @@
 @import "componentes/navbar";
 @import "componentes/sidebar";
 @import "componentes/advance-layout";
+@import "componentes/btn-turn";
+@import "componentes/jquery-sortable"; 
 
 @import "tweaks/styles";
+@import "tweaks/icomoon";
 
 @import "ext/bootstrap/badge";
 @import "ext/bootstrap/progress";
@@ -38,18 +41,35 @@ html, body {
 body {
   display: flex;
   flex-direction: row;
+  background-color: @c1;
 }
-
+.login {
+  margin: 100px auto;
+  display: block;
+    a {
+      color: #999;
+      &:hover {
+        color: orange;
+      }
+    }
+}
   aside {
     background: @c1;
+    transition: all 0.9s ease;
+    opacity: 5;
   }
-
+  aside.in {
+    visibility: hidden;
+    margin-left: -240px;
+    opacity: 0;
+    
+  }
   main {
     background: @c4;
     flex: auto;
     display: flex;
     flex-direction: column;
-    min-width: 0;
+    min-width: 320px;
   }
 
 article {
@@ -72,3 +92,21 @@ article {
   .ArrangeFlex-sizeFill {
     flex: auto;
   }
+
+
+.mobile-tab-headings{
+ 
+  display: none;
+  @media only screen and (max-width:768px) {
+ 
+    width: 100%;
+    display: block;
+  }
+  + .nav-tabs {
+ 
+    @media only screen and (max-width:768px) {
+ 
+      display: none;
+    }
+  }
+}

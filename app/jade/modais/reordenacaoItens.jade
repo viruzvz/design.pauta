@@ -1,0 +1,41 @@
+// Modal Reordenação de Itens (Carregado em; Item de Pauta Geral, )
+#reordenacaoItens.modal.fade(tabindex='-1', role='dialog', aria-labelledby='reordenacaoItensLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#reordenacaoItensLabel.modal-title 
+          span.fa.fa-sort
+          |  Reordenação de Itens
+      .modal-body
+
+        .table-responsive
+          table.table.table-striped.table-bordered.sorted_table
+            caption
+              p Formulário para reordenar os itens dos veículos dentro de um item geral.
+              p Lista de itens
+            thead
+              tr
+                th Veículo
+                th Assunto
+                th Repórter
+                th Status
+            tbody
+              mixin tr (veiculo, assunto, reporter, status)
+                tr
+                  td 
+                    a(href='#') #{veiculo}
+                  td
+                    a(href='#') #{assunto}
+                  td 
+                    a(href='#') #{reporter}
+                  td
+                    a(href='#') #{status}
+              +tr('TV', 'CLIPE FINAL/VT BALANÇO QUATRO DIAS', 'Paulo Acrisio', 'Em Produção')
+              +tr('TV', 'VT SESSÃO PARTE 1', 'Maria Capelo', 'Em Produção')
+              +tr('Agência', 'SESSÃO EXTRAORDINÁRIA para votar a Denúncia 1/2016, que trata do julgamento de Dilma Rousseff por crime de responsabilidade', 'Paulo Acrisio', 'Em Produção')
+
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

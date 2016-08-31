@@ -1,9 +1,8 @@
 .ArrangeFlex.ArrangeFlex--middle.navbar--sf.u-spacer--xl
   .ArrangeFlex-sizeFit
-    ul.nav.navbar-nav.navbar-left.navbar-nav--lg
+    ul.nav.navbar-nav.navbar-left.navbar-nav--md
       li: a#main-menu-toggle.navbar-action.zeta.navbar-action--main(href='#')
         i(class='+senado').fa.fa-bars
-
   .ArrangeFlex-sizeFill
     mixin search
       form
@@ -12,27 +11,22 @@
             .input-group-addon.input-group-addon--search
               span.glyphicon.glyphicon-search
             input.form-control.form-control--search(type='email' placeholder='Busca')
-
-    ul.nav.navbar-nav.navbar-left.navbar-nav--lg.hidden-xs
+    ul.nav.navbar-nav.navbar-left.navbar-nav--md.hidden-xs
       li
-        .navbar-form.navbar-left.navbar-form--lg
+        .navbar-form.navbar-left.navbar-form--md
             +search
   .ArrangeFlex-sizeFit.dropdown
     .col-md-12
-      ul.nav.navbar-nav.navbar-nav--lg.navbar-right
-        li.hidden-xs: a Nome do usuário
+      ul.nav.navbar-nav.navbar-nav--md.navbar-right
         li.dropdown
           a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
             span.seta-dropdown-menu.hidden-xs
             i.fa.fa-th
             span.badge.badge--unread.micro !
-
-          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
-
+          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
             li.Box.Box--lg.epsilon(class="+white +senado")
               i.glyphicon.glyphicon-list
               strong  Tarefas
-
             mixin item( date, texto, user, href, label, status)
               div
                 p
@@ -46,13 +40,12 @@
                   else
                     | #{texto}
                 p: small #{user}
-
             mixin botoes(href, icon, texto)
               li(class="+white")
-                a.epsilon(href='#{href}' class="+senado")
+                a.normalis(href='#{href}' class="+senado")
                   .Box.Box--y
-                    strong: i(class='#{icon}').fa
-                    |  #{texto}
+                    i(class='#{icon}').fa 
+                    strong  #{texto}
             li.Box.Box--lg.CutHere.scroll
               +item('01/12/2016', 'Relação de senadores está no item "COP 21 2015" na área de grandes Temas.', 'Renina Sangermano Valejo','google.com','', '')
               +item('26/11/2016', 'Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.', 'Sabrina Mancio','','', '')
@@ -63,18 +56,17 @@
           a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
             span.seta-dropdown-menu.hidden-xs
             i.fa.fa-calendar
-          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
+          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
             li(class="+white")
               .Box.Box--lg
-                #datepicker(data-date='12/03/2012')
+                .datepicker(data-date='12/03/2012')
                 input(type='hidden')
-
         li.dropdown
           a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
             span.seta-dropdown-menu.hidden-xs
             i.fa.fa-bell
             span.badge.badge--unread.micro 2
-          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
+          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
             li.Box.Box--lg.epsilon(class="+white +senado")
               i.fa.fa-bell
               strong  Avisos gerais
@@ -88,6 +80,23 @@
           a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
             span.seta-dropdown-menu
             i.fa.fa-search
-          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--md
-            li.Box.Box--lg
+          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
+            li.Box.Box--lg.epsilon(class="+white +senado")
+              i.fa.fa-search
+              strong  Buscar
+              
+            li.Box.Box--lg.CutHere
               +search
+        li.dropdown
+          a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
+            span.seta-dropdown-menu
+            i.fa.fa-user
+          ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
+            li.Box.Box--lg.epsilon(class="+white +senado")
+              i.fa.fa-user
+              strong  Usuário
+            li.Box.Box--lg.CutHere
+              p Carlos Eduardo Gomes Neri
+              +botoes('/endereço', 'fa-cog', 'Configurações do Sistema')
+              +botoes('/endereço', 'fa-pencil', 'Editar Perfil')
+              +botoes('/endereço', 'fa-sign-out', 'Sair')

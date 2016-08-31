@@ -8,7 +8,9 @@
     height: ~'calc(80vh - 245px)';
     overflow-x: hidden;
 }
-
+.dropdown-menu--lg {
+    min-width: 320px;
+}
 ///////////////////////// Setas dropdown menu
 
     li.dropdown.open>a>span.seta-dropdown-menu {
@@ -44,9 +46,15 @@
         border-width: 10px;
         margin-left: -10px;
     }
-
+//////////////////////////////// Datepicker 
+    .datepicker table {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .datepicker-inline {
+        width: auto !important;
+    }
 //////////////////////////////// form search ajustes no navbar 
-
     .form-group--search {
         margin-bottom: 0;
     }
@@ -71,13 +79,6 @@
         height: ~'calc(100vh - 245px)';
         overflow-x: hidden;
     }
-    .datepicker table {
-        margin: 0 auto;
-        width: 100%;
-    }
-    .datepicker-inline {
-        width: auto !important;
-    }
     .dropdown-menu > li > a {
         white-space: normal;
     }
@@ -96,8 +97,6 @@
         border-radius: 4px;
         // min-width: 400px;
     }
-
- 
     .navbar-right .dropdown-menu {
         right: 0;
         left: auto;
@@ -106,52 +105,9 @@
         right: auto;
         left: 0;
     }
-    .container {
-        min-width: 400px;
-    }
-
-    .navbar-collapse {
-        width: auto;
-        border-top: 0;
-        box-shadow: none;
-    }
-    .navbar-collapse.collapse {
-        display: block !important;
-        height: auto !important;
-        padding-bottom: 0;
-        overflow: visible !important;
-    }
-    .navbar-collapse.in {
-        overflow-y: visible;
-    }
-    .navbar-fixed-top .navbar-collapse,
-    .navbar-static-top .navbar-collapse,
-    .navbar-fixed-bottom .navbar-collapse {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .container > .navbar-header,
-    .container-fluid > .navbar-header,
-    .container > .navbar-collapse,
-    .container-fluid > .navbar-collapse {
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    .navbar-static-top {
-        border-radius: 0;
-    }
-
-    .navbar-fixed-top,
-    .navbar-fixed-bottom {
-        border-radius: 0;
-    }
-
     .navbar-toggle {
         display: none;
     }
-
     .navbar-nav {
         float: left;
         margin: 0;
@@ -159,77 +115,13 @@
     .navbar-nav > li {
         float: left;
     }
-    .navbar-nav > li > a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
     .navbar-nav.navbar-right:last-child {
         margin-right: -15px;
     }
 
-    .navbar-left {
-        float: left !important;
-    }
-    .navbar-right {
-        float: right !important;
-    }
-
-    .navbar-form .form-group {
-        display: inline-block;
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .form-control {
-        display: inline-block;
-        width: auto;
-        vertical-align: middle;
-    }
-    .navbar-form .control-label {
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .radio,
-    .navbar-form .checkbox {
-        display: inline-block;
-        padding-left: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        vertical-align: middle;
-    }
-    .navbar-form .radio input[type="radio"],
-    .navbar-form .checkbox input[type="checkbox"] {
-        float: none;
-        margin-left: 0;
-    }
-    .navbar-form .has-feedback .form-control-feedback {
-        top: 0;
-    }
-
-    .navbar-form {
-        width: auto;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-right: 0;
-        margin-left: 0;
-        border: 0;
-        -webkit-box-shadow: none;
-                box-shadow: none;
-    }
-    .navbar-form.navbar-right:last-child {
-        margin-right: -15px;
-    }
-
-    .navbar-text {
-        float: left;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-    .navbar-text.navbar-right:last-child {
-        margin-right: 0;
-    } 
     .navbar-nav .open .dropdown-menu {
       position: absolute;
-      top:inherit;
+      top:50px;
       background-color: #f7f7f7;
     }
 }

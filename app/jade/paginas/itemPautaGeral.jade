@@ -1,0 +1,65 @@
+.row
+  .col-md-9.col-sm-9
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        h2
+          i.fa.fa-pencil
+          strong Item de pauta geral
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        h3: strong ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
+        dl.dl-horizontal
+          mixin data-list (titulo, descricao)
+            dt #{titulo}:
+            dd #{descricao}
+          +data-list('Por', 'Adriano Rodrigues de Faria')
+          +data-list('Útima modificação', '21/12/2015, 12h52')
+          +data-list('Data', '22/12/2015')
+          +data-list('Horário', '08:10')
+          +data-list('Local', 'Rádio Senado')
+          +data-list('Editoria', 'Entrevista')
+        dl
+          +data-list('Descrição', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo      consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+        dl
+          +data-list('Pessoas acompanhando o item', 'Wilton Rodrigues, Glebson Moura, Fabiano Nunes.')
+        mixin table (caption)
+          .table-responsive
+            table.table.table-striped.table-hover.milli
+              caption.Segments
+                h4.Apex.Apex--cut #{caption}
+                  .pull-right
+                    button.btn.btn-xs.btn-success(type='button')
+                      i.fa.fa-plus
+                      |  Criar item
+              thead
+                tr
+                  th Assunto
+                  th Repórter
+                  th Status
+              tbody
+                mixin linhas(Assunto, Reporter, Status)
+                  tr
+                    td #{Assunto}
+                    td #{Reporter}
+                    td #{Status}
+                +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
+        +table('Agência Senado')
+        +table('Comunicação Interna')
+        +table('Rádio Sendo')
+        +table('TV Senado')
+
+
+  .col-md-3.col-sm-3
+    include ../partials/menu-item
+
+
+            
+include ../modais/adicionarLink
+include ../modais/historico
+include ../modais/novoArquivo
+include ../modais/itensProducaoRelacionados
+include ../modais/excluirItem
+include ../modais/replicarItem
+include ../modais/reordenacaoItens
+include ../modais/editarItem

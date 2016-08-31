@@ -1,36 +1,46 @@
-ul.list-unstyled.Sidebar.Sidebar--compactt.u-posRelative
+ul.list-unstyled.Sidebar.u-posRelative
   li.Box.u-spacer--xl.Sidebar--Header
     .Flag.Sidebar--Controlflag
-      .Flag-figure.Sidebar--Flagfigure.Sidebar--FlagfigureCompact(class="+white--color")
-        .Icon.Icon--newspaper.Icon--Header 
-      .Flag-body.Sidebar--Flagbody
-        a.Sidebar-Defaultlink(href="#") Central de Pautas e Produção Jornalistica
-  mixin item-link(icon, title)
+      .Flag-figure.Sidebar--Flagfigure.Sidebar--FlagfigureCompact
+        a.Sidebar--compact-btn.hidden-xs(href='#')
+          img(src='img/icon-pautas.svg' alt='Logo sistema'  width="29px" height="29px")
+        img.visible-xs(src='img/icon-pautas.svg' alt='Logo sistema'  width="29px" height="29px")
+      .Flag-body.Sidebar--Flagbody(class="+white--color")
+        | Central de Pautas e Produção Jornalistica
+      .Flag-figure.pull-right.Sidebar--compact-icon.hidden-xs
+        a.gamma.Sidebar--compact-btn(href="#" class="+white--color")
+          span.fa.fa-ellipsis-v
+  mixin item-link(href, icon, title)
     li.Box.u-posStatic_.u-textNoWrap
-      a(href="#")
+      a(href="#{href}")
         .Sidebar-menuLink.MenuTitulo
           button.btn.Sidebar--btn.btn-square(role='button' title='Alooo2')
-            span.glyphicon.milli(class="#{icon}")
+            span.fa.milli(class="#{icon}")
           span.Box.Sidebar-menuLabel  #{title}
-  +item-link('glyphicon-home', 'Página Inicial')
-  mixin item-drop(icon, title)
+  +item-link('paginaInicial.html', 'fa-home', 'Página Inicial')
+  mixin item-drop(icon, title, name)
     li.Box.dropdown.u-posStatic_.u-textNoWrap
       - var id = rand()
       .Sidebar-menuLink.MenuTitulo.more(href='#' data-toggle='collapse' data-target='##{id}' aria-expanded='false')
         button.btn.Sidebar--btn.btn-square(role='button' title='Alooo')
-          span.glyphicon.milli(class="#{icon}") 
+          span.fa.milli(class="#{icon}") 
         span.Box.Sidebar-menuLabel  #{title}
       .Sidebar-menu.collapse(id=id)
         .Sidebar-menuLabel
           .MenuTitulo.Box #{title}
         ul.list-unstyled.Box(class='+bgdropdown')
-          li: a(href='#' class="+colordropdown") Action
-          li: a(href='#' class="+colordropdown") Another action
-          li: a(href='#' class="+colordropdown") Something else here
-          li: a(href='#' class="+colordropdown") Separated link
-  +item-drop('glyphicon-pencil', 'Pautas')
-  +item-link('glyphicon-cog', 'Produção')
-  +item-link('glyphicon-font', 'Fontes')
-  +item-drop('glyphicon-user', 'Gerência')
+          mixin item-drop-li(href, name)
+            li: a(href='#{href}' class="+colordropdown") #{name}
+          +item-drop-li('#','Agência')
+          +item-drop-li('#','COMAP')
+          +item-drop-li('#','Comunicação Interna')
+          +item-drop-li('#','Divisão Externa')
+          +item-drop-li('#','Fotografia')
+          +item-drop-li('#','Rádio')
+          +item-drop-li('#','TV')
+  +item-drop('fa-pencil', 'Pautas')
+  +item-link('#', 'fa-cog', 'Produção')
+  +item-link('#', 'fa-font', 'Fontes')
+  +item-link('#', 'fa-user', 'Gerência')
     nav.navbar.u-spacer--xl
 

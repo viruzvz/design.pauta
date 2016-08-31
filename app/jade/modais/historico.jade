@@ -1,0 +1,65 @@
+// Modal Histórico (Carregado em; Item de Pauta Geral, )
+#historico.modal.fade(tabindex='-1', role='dialog', aria-labelledby='historicoLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#historicoLabel.modal-title 
+          span.fa.fa-history
+          |  Histórico
+      .modal-body
+
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            caption
+              button.btn.btn-info.btn-xs.pull-right(type='button')
+                | Reverter para esta revisão
+            thead
+              tr
+                th Status
+                th Nome
+                th Data
+                th Ações
+            tbody
+              tr
+                td Editado
+                td
+                  a(href='#') Carlos Eduardo Gomes Neri
+                td 29/08/2016 17:16
+                td
+                  a(href='#', data-toggle="tooltip" data-placement="top" title="Visualizar")
+                    i.fa.fa-eye &nbsp;
+
+                  a(href='#', data-toggle="tooltip" data-placement="top" title="Comparar com a atual")
+                    i.fa.fa-compress  &nbsp;
+            tfooter
+              tr
+                td Revertido para a revisão 0
+                td
+                td
+                td
+          table.table.table-striped.table-hover.milli
+            thead
+              tr
+                th Status
+                th Nome
+                th Data
+                th Ações
+            tbody
+              tr
+                td Criar
+                td
+                  a(href='#') Carlos Eduardo Gomes Neri
+                td 29/08/2016 17:22
+                td
+                  a(href='#', data-toggle="tooltip" data-placement="top" title="Visualizar")
+                    i.fa.fa-eye &nbsp;
+
+                  a(href='#', data-toggle="tooltip" data-placement="top" title="Comparar com a atual")
+                    i.fa.fa-compress  &nbsp;
+
+
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

@@ -1,0 +1,21 @@
+// Modal excluirItem (Carregado em; Item de Pauta Geral, )
+#excluirItem.modal.fade(tabindex='-1', role='dialog', aria-labelledby='excluirItemLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#excluirItemLabel.modal-title 
+          span.fa.fa-trash
+          |  Excluir
+
+      .modal-body
+        .alert.alert-danger
+          | Você realmente quer apagar esta pasta e todo o seu conteúdo? (Isto irá remover um total de 2 itens.)
+          ul
+            li teste-do-desenvolvimento
+            li teste-de-design
+
+      .modal-footer
+        button.btn.btn-danger(type='button') Excluir
+        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar
