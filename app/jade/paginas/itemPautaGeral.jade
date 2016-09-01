@@ -23,13 +23,13 @@
           +data-list('Descrição', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo      consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
         dl
           +data-list('Pessoas acompanhando o item', 'Wilton Rodrigues, Glebson Moura, Fabiano Nunes.')
-        mixin table (caption)
+        mixin table (caption, href)
           .table-responsive
             table.table.table-striped.table-hover.milli
               caption.Segments
                 h4.Apex.Apex--cut #{caption}
                   .pull-right
-                    button.btn.btn-xs.btn-success(type='button')
+                    a.btn.btn-xs.btn-success(href='#{href}')
                       i.fa.fa-plus
                       |  Criar item
               thead
@@ -44,7 +44,7 @@
                     td #{Reporter}
                     td #{Status}
                 +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
-        +table('Agência Senado')
+        +table('Agência Senado', 'paginaInicial--criarItemPautaGeralAgencia.html')
         +table('Comunicação Interna')
         +table('Rádio Sendo')
         +table('TV Senado')

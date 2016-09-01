@@ -12,12 +12,53 @@
       .modal-body
         form(name='data-replicarItemForm')
           .form-group
-            label(for='data-editarItem') Data
-            input#data-editarItem.datepicker.form-control(type='text', name='data-editarItem')
+            .row
+              .col-md-4.col-xs-8
+                label(for='dataPublicacao') 
+                  | Data da pauta 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                  .input-group-addon
+                    span.fa.fa-calendar
+          .form-group
+            label(for='horário')
+              | Horário 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            .row
+              .col-md-2.col-xs-4.dot-timer
+                select#horario.form-control(name='hh', required)
+                  option(value='') 00
+                  option(value='08') 08
+              .col-md-2.col-xs-4
+                select.form-control(name='mm', required)
+                  option(value='') 00
+                  option(value='01') 01
+          .form-group
+            label(for='local') Local
+            input#local.form-control(name='local')          
+          .form-group
+            label(for='editoria')
+              | Editoria 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            select#editoria.form-control(name='editoria', required)
+              option(value='') Selecionar
+              option(value='Artigo') Artigo
+          .form-group
+            label(for='assunto')
+              | Assunto 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#assunto.form-control(type='text', required)
           .form-group
             label(for='descricaoTinyMce') Descrição
             textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
-
+          .form-group
+            label(for='projetodelei') Projeto de lei
+            input#projetodelei.form-control(name='projetodelei')    
+          .form-group
+            label(for='itensproducaorelacionados') Itens de produção relacionados
+            input#itensproducaorelacionados.form-control(name='itensproducaorelacionados')    
       .modal-footer
         button.btn.btn-primary(type='button') Replicar
         button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

@@ -93,20 +93,34 @@ article {
     flex: auto;
   }
 
-
+////////////// Muda no responsivo de tab para select
 .mobile-tab-headings{
- 
   display: none;
   @media only screen and (max-width:768px) {
- 
     width: 100%;
     display: block;
   }
   + .nav-tabs {
- 
     @media only screen and (max-width:768px) {
- 
       display: none;
     }
   }
+}
+/////////////// adiciona : após o selec para itens de horário.
+.dot-timer {
+  &:after {
+    position: absolute;
+    content: ':';
+    font-weight: bold;
+    right: 0;
+    top: 7px;
+  }
+}
+
+
+.v-center {
+  min-height:200px;
+  display: flex;
+  justify-content:center;
+  flex-flow: column wrap;
 }

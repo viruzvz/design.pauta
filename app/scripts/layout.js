@@ -45,7 +45,7 @@ $('.mySelect').on('change', function (e) {
     var id = $(this).val();
     $('a[href="' + id + '"]').tab('show');
 });
-///////////////////////////////// SORTABLE
+///////////////////////////////// SORTABLE FOR TABLE
   $( 'document' ).ready(function() {
     // Sortable rows
     $('.sorted_table').sortable({
@@ -85,6 +85,7 @@ $('.mySelect').on('change', function (e) {
     });
   });
 
+//////////////////////////////////// PICK LIST
 
 
 })(jQuery)

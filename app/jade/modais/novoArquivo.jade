@@ -74,7 +74,7 @@
             form(name='adicionarLink-data')
               .form-group
                 .row
-                  .col-md-4
+                  .col-md-4.col-xs-8
                     label(for='dataPublicacao2') Data de Publicação
                     .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                       input#dataPublicacao2.form-control(type='text', placeholder='dd/mm/aaaa')
@@ -84,7 +84,7 @@
 
               .form-group
                 .row
-                  .col-md-4
+                  .col-md-4.col-xs-8
                     label(for='dataExpiracao2') Data de Expiração
                     .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                       input#dataExpiracao2.form-control(type='text', placeholder='dd/mm/aaaa')
@@ -130,4 +130,4 @@
 
       .modal-footer
         button.btn.btn-primary(type='button') Salvar
-        button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar
+        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar

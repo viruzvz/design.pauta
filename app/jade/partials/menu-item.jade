@@ -36,7 +36,10 @@
         strong  Controle
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
-        +links('#', '#editarItem', 'fa-chevron-right', 'Editar item')
+        li.Box.Box--normal
+          a(href='paginaInicial--editarItemPautaGeral.html')
+            i.fa.fa-chevron-right
+            |  Editar item
         +links('#', '#excluirItem', 'fa-chevron-right', 'Excluir item')
         +links('#', '#replicarItem', 'fa-chevron-right', 'Replicar item')
         +links('#', '#reordenacaoItens', 'fa-chevron-right', 'Reordenar Itens dos veículos')
