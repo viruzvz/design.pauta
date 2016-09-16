@@ -1,0 +1,68 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-pencil
+          .Arrange-sizeFill
+            h2: strong Editar Perfil
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='editarPerfil')
+          .form-group
+            label(for='nome') Nome completo
+            p.help-block Informe seu nome completo, por exemplo, João da Silva.
+            input#nome.form-control(name='nome') 
+
+          .form-group
+            label(for='email') 
+              | E-mail
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#email.form-control(type='email', name='email', required, placeholder='meuemail@meudominio.com.br') 
+
+          .form-group
+            label(for='paginaPessoal') Página pessoal
+            p.help-block A URL para a sua página pessoal externa, caso você possua uma.
+            input#paginaPessoal.form-control(name='paginaPessoal')           
+
+          .form-group
+            label(for='biografia') Biografia
+            p.help-block A URL para a sua página pessoal externa, caso você possua uma.
+            textarea#biografia.form-control(rows='4')
+
+          .form-group
+            label(for='nome') Local
+            p.help-block Informe seu nome completo, por exemplo, João da Silva.
+            input#nome.form-control(name='nome') 
+
+          .form-group
+            label(for='retrato') Retrato
+              .retrato-crop   
+                img.img-responsive(src='../../img/avatar.jpg')
+            p.Para adicionar ou alterar o retrato, clique no botão <strong>Procurar</strong> e selecione a sua foto. O tamanho recomendado é de 75 pixels de largura por 75 pixels de altura.
+            .row
+              .col-md-6
+                input#retrato.form-control(type='file' name='retrato') 
+
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox')
+                |  Excluir Retrato
+
+          .form-group
+            label(for='nickname') Nome de Guerra
+            input#nickname.form-control(name='nickname') 
+
+          .form-group
+            label(for='nickname') Nome de Guerra
+            input#nickname.form-control(name='nickname') 
+
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Editar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
+

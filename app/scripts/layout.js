@@ -45,48 +45,45 @@ $('.mySelect').on('change', function (e) {
     var id = $(this).val();
     $('a[href="' + id + '"]').tab('show');
 });
-///////////////////////////////// SORTABLE FOR TABLE
-  $( 'document' ).ready(function() {
-    // Sortable rows
-    $('.sorted_table').sortable({
-      containerSelector: 'table',
-      itemPath: '> tbody',
-      itemSelector: 'tr',
-      placeholder: '<tr class="placeholder"/>'
-    });
+//////////////////////////////////// Status Disponível / Derrubar
 
-    // Sortable column heads
-    var oldIndex;
-    $('.sorted_head tr').sortable({
-      containerSelector: 'tr',
-      itemSelector: 'th',
-      placeholder: '<th class="placeholder"/>',
-      vertical: false,
-      onDragStart: function ($item, container, _super) {
-        oldIndex = $item.index();
-        $item.appendTo($item.parent());
-        _super($item, container);
-      },
-      onDrop: function  ($item, container, _super) {
-        var field,
-            newIndex = $item.index();
-        if(newIndex != oldIndex) {
-          $item.closest('table').find('tbody tr').each(function (i, row) {
-            row = $(row);
-            if(newIndex < oldIndex) {
-              row.children().eq(newIndex).before(row.children()[oldIndex]);
-            } else if (newIndex > oldIndex) {
-              row.children().eq(newIndex).after(row.children()[oldIndex]);
+$(document).ready(function(){
+    $(".status").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="off"){
+                $(".interruptor").not(".off").hide();
+                $(".off").show();
+                $('ul').find('.type-status').addClass('has-error');
+                $('ul').find('.type-status').removeClass('has-success');
             }
-          });
-        }
-        _super($item, container);
-      }
-    });
-  });
+            else if($(this).attr("value")=="on"){
+                $(".interruptor").not(".on").hide();
+                $(".on").show();
+                $('ul').find('.type-status').addClass('has-success');
+                $('ul').find('.type-status').removeClass('has-error');
+            }
+            else{
+                $(".interruptor").hide();
+            }
+        });
+    }).change();
+});
 
-//////////////////////////////////// PICK LIST
+//////////////////////////////////// TOGGLE CHECKBOX 
+$('.toggle-btn-on').click(function () {
+    //check if checkbox is checked
+    if ($(this).is(':checked')) {
+        
+        $('.disable-btn').removeAttr('disabled'); //enable input
+        
+    } else {
+        $('.disable-btn').attr('disabled', true); //disable input
+    }
+});
 
+$(".marcarTodos").change(function () {
+    $("input:checkbox").prop('checked', $(this).prop("checked"));
+});
 
 })(jQuery)
 

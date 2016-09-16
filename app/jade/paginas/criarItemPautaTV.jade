@@ -1,0 +1,199 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item de Pauta da TV
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect') Selecione um tipo
+            select.mySelect.select-nav.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#geral', 'Geral')
+              +option('#pauta', 'Pauta')
+              +option('#equipe', 'Equipe')
+              +option('#operacoes', 'Matéria')
+              +option('#transporte', 'Transporte')
+        // Nav tabs
+        ul#myTab.nav.nav-tabs.hidden-xs(role='tablist')
+          li.active(role='presentation')
+            a(href='#geral', aria-controls='geral', role='tab', data-toggle='tab') Geral          
+          li(role='presentation')
+            a(href='#pauta', aria-controls='pauta', role='tab', data-toggle='tab') Pauta
+          li(role='presentation')
+            a(href='#equipe', aria-controls='equipe', role='tab', data-toggle='tab') Equipe
+          li(role='presentation')
+            a(href='#operacoes', aria-controls='operacoes', role='tab', data-toggle='tab') Operações
+          li(role='presentation')
+            a(href='#transporte', aria-controls='transporte', role='tab', data-toggle='tab') Transporte   
+
+        form(name='criarItemPautaRadio')
+          // Tab panes
+          .tab-content.Box.Box--lg.Box--y
+
+            #geral.tab-pane.active(role='tabpanel') 
+              .form-group
+                .row
+                  .col-md-3.col-xs-8
+                    label(for='dataProducao') 
+                      | Data de producao 
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#dataProducao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                      .input-group-addon
+                        span.fa.fa-calendar
+              .form-group
+                label(for='horarioaipAgencia')
+                  | Horário 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .row
+                  .col-md-2.col-xs-4.dot-timer
+                    select#horarioaipAgencia.form-control(name='hh', required)
+                      option(value='') 00
+                      option(value='08') 08
+                  .col-md-2.col-xs-4
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+              .form-group
+                label(for='localaipAgencia') Local
+                input#localaipAgencia.form-control(name='local')  
+              .form-group
+                label(for='sala') Sala
+                p.help-block Esse local aparece na coluna esquerda do relatório de jornalismo
+                input#sala.form-control(name='sala') 
+              .form-group
+                label(for='retranca') 
+                  | Retranca 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                textarea#retranca.form-control(rows='2', required)
+              .form-group
+                label(for='encaminhamento') 
+                  | Encaminhamento 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                textarea#encaminhamento.form-control(rows='2', required)  
+              .form-group
+                label(for='descricaoTinyMce') Descrição - Item Geral
+                textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='descricaoTinyMce', cols='100', rows='10')
+              .form-group
+                label(for='resultadoTinyMce') Resultado
+                textarea#resultadoTinyMce.descricaoTinyMce.tinyMce.form-control(name='resultadoTinyMce', cols='100', rows='10')
+              .form-group
+                label(for='utilizacaoProgramas') Utilização em programas
+              .form-group
+                label(for='ordenacao') 
+                  | Ordenação 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999') 
+
+            #pauta.tab-pane(role='tabpanel') 
+              .form-group
+                label(for='localizacaoFitaScript') Localização da fita do script
+                textarea#localizacaoFitaScript.form-control(rows='2', required)
+              .form-group
+                label(for='imagens') Imagens
+                textarea#imagens.form-control(rows='2', required)
+              .form-group
+                label(for='sonoras') Sonoras
+                textarea#sonoras.form-control(rows='2', required)  
+              .form-group
+                label(for='marcacoesTinyMce') Marcações
+                textarea#marcacoesTinyMce.descricaoTinyMce.tinyMce.form-control(name='marcaoesTinyMce', cols='100', rows='10')
+              .form-group
+                label(for='informacoesTinyMce') Informações
+                textarea#informacoesTinyMce.descricaoTinyMce.tinyMce.form-control(name='informacoesTinyMce', cols='100', rows='10')
+
+            #equipe.tab-pane(role='tabpanel') 
+              .form-group
+                label(for='editor') Editores(es)
+              .form-group
+                label(for='reporter') Repórter(es)
+              .form-group
+                label(for='produtor') Produtor(es)
+            #operacoes.tab-pane(role='tabpanel') 
+              .form-group
+                label(for='cinegrafista') Cinegrafista(s)
+              .form-group
+                label(for='cinegrafista-rendicao') Cinegrafista(s) - Rendição
+              .form-group
+                label(for='cinegrafista-substituto') Cinegrafista - Substituto
+                input#cinegrafista-substituto.form-control(name='cinegrafista-substituto') 
+              .form-group
+                label(for='auxiliar') Auxiliar(es)
+              .form-group
+                label(for='auxiliar-rendicao') Auxiliar(es) - Rendição
+              .form-group
+                label(for='auxiliar-substituto') Auxiliar - Substituto
+                input#auxiliar-substituto.form-control(name='auxiliar-substituto')  
+              .form-group
+                label(for='iluminador') Iluminador(es)
+              .form-group
+                label(for='iluminador-rendicao') Iluminador(es) - Rendição
+              .form-group
+                label(for='iluminador-substituto') Iluminador - Substituto
+                input#iluminador-substituto.form-control(name='iluminador-substituto')  
+              .form-group
+                label(for='operador') Operador(es) de áudio
+              .form-group
+                label(for='operador-rendicao') Operador(es) de áudio - Rendição
+              .form-group
+                label(for='operador-substituto') Operador de áudio - Substituto
+                input#operador-substituto.form-control(name='operador-substituto') 
+              .form-group
+                label(for='equipamentos') Equipamentos(es)
+              .form-group
+                label(for='equipamentos-rendicao') Equipamentos(es) - Rendição
+              .form-group
+                label(for='observacoes-sobre-equipamentos') Observações sobre os equipamentos
+                textarea#observacoes-sobre-equipamentos.form-control(rows='2', required)
+              .form-group
+                label(for='ocorrencias') Ocorrências
+                textarea#ocorrencias.form-control(rows='2', required)
+
+            #transporte.tab-pane(role='tabpanel')
+              .form-group
+                label(for='carro') Carro
+              .form-group
+                label(for='horario-carro')
+                  | Horário do carro
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .row
+                  .col-md-2.col-xs-4.dot-timer
+                    select#horario-carro.form-control(name='hh', required)
+                      option(value='') 00
+                      option(value='08') 08
+                  .col-md-2.col-xs-4
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+
+
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

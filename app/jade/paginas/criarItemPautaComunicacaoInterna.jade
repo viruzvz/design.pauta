@@ -1,0 +1,101 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item de Pauta Comunicação Interna
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='criarItemPautaComunicacaoInternaForm')
+          .form-group
+            .row
+              .col-md-3.col-xs-8
+                label(for='dataProducao') 
+                  | Data de producao 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataProducao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                  .input-group-addon
+                    span.fa.fa-calendar
+          .form-group
+            label(for='horarioaipAgencia')
+              | Horário 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            .row
+              .col-md-2.col-xs-4.dot-timer
+                select#horarioaipAgencia.form-control(name='hh', required)
+                  option(value='') 00
+                  option(value='08') 08
+              .col-md-2.col-xs-4
+                select.form-control(name='mm', required)
+                  option(value='') 00
+                  option(value='01') 01
+          .form-group
+            label(for='localaipAgencia') Local
+            input#localaipAgencia.form-control(name='local')          
+          .form-group
+            label(for='assuntoaipAgencia') Assunto 
+            textarea#assuntoaipAgencia.form-control(rows='2')
+          .form-group
+            label(for='descricaoTinyMce') Descrição - Veículo
+            textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='descricaoTinyMce', cols='100', rows='10')
+          .form-group
+            label(for='ordenacao') 
+              | Ordenação
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999')    
+          .form-group
+            label(for='turno') 
+              | Turno
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            select#turno.form-control(name='turno', required)
+              option(value='') Selecionar
+              option(value='Manhã') Manhã  
+          .form-group
+            label(for='editoria') 
+              | Editoria
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            select#editoria.form-control(name='editoria', required)
+              option(value='') Selecionar
+              option(value='Institucional') Institucional 
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox')
+                |  Check me out
+          .form-group
+            label(for='reporters') Repórter(es) 
+          .form-group
+            label(for='fotografos') Fotógrafo(s) 
+          .form-group
+            label(for='reporters') Observações da Pauta/Reportagem 
+            textarea#reporters.form-control(row='2', name='reporters')
+          .form-group
+            label(for='fotografos') Observações de Fotografia
+            textarea#fotografos.form-control(row='2', name='fotografos')
+          .form-group
+            label(for='urlNoticia') URL da notícia
+            input#urlNoticia.form-control(name='urlNoticia')  
+          .form-group
+            label(for='tituloNoticia') Título da notícia
+            input#tituloNoticia.form-control(name='tituloNoticia') 
+          .form-group
+            label(for='descricaoTinyMceNoticia') Descrição da notícia
+            textarea#descricaoTinyMceNoticia.descricaoTinyMce.tinyMce.form-control(name='descricaoTinyMceNoticia', cols='100', rows='10')
+          .form-group
+            label(for='views7') Views 7
+            p.help-block Views da matéria sete dias após a publicação
+            input#views7.form-control(name='views7') 
+          .form-group
+            label(for='noticiasGeradas') Notícias geradas
+            textarea#noticiasGeradas.form-control(row='2', name='noticiasGeradas')
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar

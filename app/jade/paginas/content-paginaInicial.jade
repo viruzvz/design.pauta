@@ -1,11 +1,13 @@
 .panel.panel-box.panel-default.panel-sf
   .panel-heading
-    h2
-      i.fa.fa-home
-      strong Página Inicial
-    .panel-actions
-      a.btn-minimize(href='#collapse-box' data-toggle="collapse")
-
+    .Arrange
+      .Arrange-sizeFit
+        i.fa.fa-home
+      .Arrange-sizeFill
+        h2: strong Página Inicial
+      .Arrange-sizeFit
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
   .panel-body#collapse-box.in 
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
@@ -18,6 +20,10 @@
       #pautadia.tab-pane.active(role='tabpanel')
         .table-responsive
           table.table.table-striped.table-hover.milli
+            caption
+              button.btn.btn-xs.btn-default.pull-right(type='button', ) 
+                i.fa.fa-print
+                |  Imprimir
             thead
               tr
                 th Hora
@@ -26,7 +32,7 @@
                 th Veículos
             tbody
               mixin btn(icon, btn, badge)
-                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto" style='min-width: 50px; margin-right:5px;')
+                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto" style='min-width: 50px; margin-right:5px; margin-bottom:5px;')
                   i.fa(class='#{icon}') &nbsp;
                   span.badge.micro #{badge}
               mixin linhas(hora, editoria, href, assunto)
@@ -34,7 +40,7 @@
                   td #{hora}
                   td #{editoria}
                   td 
-                    a(href='#{href}') #{assunto}
+                    a(href='#{href}') #{assunto} 
                   td
                     block
 

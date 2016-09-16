@@ -1,0 +1,37 @@
+// Modal adicionarAviso (Carregado em; navbar Avisos Gerais, )
+#editarAviso.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editarAvisoLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#editarAvisoLabel.modal-title 
+          span.fa.fa-pencil
+          |  Editar aviso
+
+      .modal-body
+        form
+          .form-group
+            label(for='texto') 
+              | Texto 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            textarea#texto.form-control(rows='2', required)
+              | CRE Liberada
+          .form-group
+            label(for='ordenacao') 
+              | Ordenação 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#ordenacao.form-control(name='ordenacao', required, placeholder='-1') 
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox', checked)
+                |  Destaque
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox')
+                |  Habilitado
+      .modal-footer
+        button.btn.btn-primary(type='button') Editar
+        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar

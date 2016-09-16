@@ -1,0 +1,161 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item de Pauta da Rádio
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect') Selecione um tipo
+            select.mySelect.select-nav.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#pauta', 'Pauta')
+              +option('#equipe', 'Equipe')
+              +option('#materia', 'Matéria')
+              +option('#tecnica', 'Técnica')
+        // Nav tabs
+        ul#myTab.nav.nav-tabs.hidden-xs(role='tablist')
+          li.active(role='presentation')
+            a(href='#pauta', aria-controls='pauta', role='tab', data-toggle='tab') Pauta
+          li(role='presentation')
+            a(href='#equipe', aria-controls='equipe', role='tab', data-toggle='tab') Equipe
+          li(role='presentation')
+            a(href='#materia', aria-controls='materia', role='tab', data-toggle='tab') Matéria
+          li(role='presentation')
+            a(href='#tecnica', aria-controls='tecnica', role='tab', data-toggle='tab') Técnica   
+
+        form(name='criarItemPautaRadio')
+          // Tab panes
+          .tab-content.Box.Box--lg.Box--y
+            #pauta.tab-pane.active(role='tabpanel') 
+              .form-group
+                .row
+                  .col-md-3.col-xs-8
+                    label(for='dataProducao') 
+                      | Data de producao 
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#dataProducao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                      .input-group-addon
+                        span.fa.fa-calendar
+              .form-group
+                label(for='horarioaipAgencia')
+                  | Horário 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .row
+                  .col-md-2.col-xs-4.dot-timer
+                    select#horarioaipAgencia.form-control(name='hh', required)
+                      option(value='') 00
+                      option(value='08') 08
+                  .col-md-2.col-xs-4
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+              .form-group
+                label(for='localaipAgencia') Local
+                input#localaipAgencia.form-control(name='local')   
+              .form-group
+                .row
+                  .col-md-3.col-xs-12
+                    label(for='produto') 
+                      | Produto
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                    select#produto.form-control(name='produto', required)
+                      option(value='') Selecionar
+                      option(value='Matéria') Matéria 
+              .form-group
+                label(for='assuntoaipAgencia') Assunto 
+                textarea#assuntoaipAgencia.form-control(rows='2')
+              .form-group
+                label(for='descricaoTinyMce') Descrição - Veículo
+                textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+              .form-group
+                .row
+                  .col-md-3.col-xs-12
+                    label(for='edioria') 
+                      | Editoria Rádio
+                    select#edioria.form-control(name='edioria')
+                      option(value='') Selecionar
+                      option(value='Vazio') Vazio
+              .form-group
+                label(for='ordenacao') 
+                  | Ordenação
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999') 
+            #equipe.tab-pane(role='tabpanel') 
+              .form-group
+                label(for='reporters') Repórter(es) 
+              .form-group
+                label(for='produtores') Produtores               
+              .form-group
+                label(for='tecnico') Técnico 
+            #materia.tab-pane(role='tabpanel') 
+              .form-group
+                label(for='descricaoTinyMce2') Script - Locução
+                textarea#descricaoTinyMce2.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+              .form-group
+                label(for='descricaoTinyMce3') Script - Matéria
+                textarea#descricaoTinyMce3.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+              .form-group
+                label(for='utilizacao-programas') Utilização em programas 
+            #tecnica.tab-pane(role='tabpanel')
+              .form-group
+                label(for='codigo') Código
+                input#codigo.form-control(name='codigo')   
+              .form-group
+                label(for='tempo')
+                  | Tempo
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .row
+                  .col-md-2.col-xs-4.dot-timer
+                    select#tempo.form-control(name='hh', required)
+                      option(value='') 00
+                      option(value='08') 08
+                  .col-md-2.col-xs-4.dot-timer
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+                  .col-md-2.col-xs-4
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+              .form-group
+                label(for='reporter') Repórter
+                input#reporter.form-control(name='reporter') 
+              .form-group
+                label(for='entrevistado') Entrevistado
+                input#entrevistado.form-control(name='entrevistado') 
+              .form-group
+                label(for='operador') Operador
+                input#operador.form-control(name='operador') 
+
+
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

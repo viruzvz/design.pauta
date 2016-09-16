@@ -1,0 +1,104 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item de Pauta
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='criarItemPauta')
+          .row
+            .col-md-6
+              .form-group
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  Criar item da Agência associado
+              .form-group
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  Criar item da Comunicação Interna associado
+              .form-group
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  Criar item da Rádio associado
+              .form-group
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    |  Criar item da TV associado
+              .form-group
+                .row
+                  .col-md-4.col-xs-8
+                    label(for='dataProducao') 
+                      | Data de producao 
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#dataProducao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                      .input-group-addon
+                        span.fa.fa-calendar
+              .form-group
+                label(for='horarioaipAgencia')
+                  | Horário 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .row
+                  .col-md-4.col-xs-4.dot-timer
+                    select#horarioaipAgencia.form-control(name='hh', required)
+                      option(value='') 00
+                      option(value='08') 08
+                  .col-md-4.col-xs-4
+                    select.form-control(name='mm', required)
+                      option(value='') 00
+                      option(value='01') 01
+              .form-group
+                label(for='localaipAgencia') Local
+                input#localaipAgencia.form-control(name='local')  
+              .form-group
+                label(for='editoria')
+                  | Editoria 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                select#editoria.form-control(name='editoria', required)
+                  option(value='') Selecionar
+                  option(value='Artigo') Artigo       
+
+            .col-md-6
+              filedset.fieldset-pautas
+                legend Itens existentes com data de 15/09/2016
+                ul
+                  li: a(href='#') AGENDA - PRESIDÊNCIA
+                  li: a(href='#') CI: audiência interativa avalia as políticas públicas destinadas à implantação de energias alternativas e renováveis, com foco na inserção da geração distribuída. Foram convidados, os representantes dos distribuidores de energia Elétrica, das pequenas centrais hidroelétricas, da ANEEL e do MME.
+                  li: a(href='#') ORIENTAÇÕES PARA COBERTURA DO DIA 15/09/2016 - QUINTA-FEIRA
+                  li: a(href='#') PLENÁRIO - PRONUNCIAMENTOS
+                  li: a(href='#') PREVISÃO - COMISSÕES
+                  li: a(href='#') PROCURADORIA DA MULHER/Pauta Feminina - Toga Justa: O exercício profissional do Direito como fator de empoderamento feminino. Entre as convidadas, a ministra do TST, Delaíde Arantes, e a juíza do TJDFT, Thereza Karina Figueiredo.
+              .form-group
+                label(for='assuntoaipAgencia') 
+                  | Assunto 
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                textarea#assuntoaipAgencia.form-control(rows='2', required)
+                  
+            .col-md-12
+
+              .form-group
+                label(for='descricaoTinyMce') Descrição - Veículo
+                textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='descricaoTinyMce', cols='100', rows='10')
+
+              .form-group
+                label(for='projetoLei') Projeto de Lei
+                input#projetoLei.form-control(name='projetoLei')   
+
+              .form-group
+                label(for='itensProducaoRelacionado') Itens de Produção Relacionado
+                input#itensProducaoRelacionado.form-control(name='itensProducaoRelacionado') 
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial.html', data-dismiss='modal') Cancelar

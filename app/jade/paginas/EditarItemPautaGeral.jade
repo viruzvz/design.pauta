@@ -2,13 +2,15 @@
   .col-md-12
     .panel.panel-box.panel-default.panel-sf
       .panel-heading
-        h2
-          i.fa.fa-pencil
-          strong Editar Item de Pauta Geral
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-pencil
+          .Arrange-sizeFill
+            h2: strong Editar Item de Pauta Geral
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
       .panel-body#collapse-box.in 
-
         form(name='editarItemPautaGeralForm')
           .form-group
             .row

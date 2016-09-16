@@ -1,0 +1,63 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item Produção
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='criarItemPautaComunicacaoInternaForm')
+          .form-group
+            label(for='tipo')
+              | Tipo 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            select#tipo.form-control(name='tipo', required)
+              option(value='') Selecionar
+              option(value='Artigo') CONSULTA (SF) - CON
+          .form-group
+            label(for='numero') 
+              | Número 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#numero.form-control(name='numero', required)  
+          .form-group
+            label(for='ano') 
+              | Ano 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            input#ano.form-control(name='ano', required)  
+          .form-group
+            label(for='variacao') Variação
+            p.help-block Ex: 'A' em PEC 113A de 2015
+            input#variacao.form-control(name='variacao') 
+          .form-group
+            label(for='assuntoaipAgencia') 
+              | Assunto 
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            textarea#assuntoaipAgencia.form-control(rows='2', required)
+          .form-group
+            label(for='explicacao') Explicação (SECOM)
+            button.btn.btn-xs.btn-default(type='button')
+              | Preencher com Explicação da Ementa Oficial
+            textarea#explicacao.form-control(rows='2')
+
+
+          .form-group
+            label(for='textoApoioTinyMce') Texto de apoio
+            textarea#textoApoioTinyMce.descricaoTinyMce.tinyMce.form-control(name='textoApoioTinyMce', cols='100', rows='10')
+
+          .form-group
+            label(for='observacaoTinyMce') Observação da produção
+            textarea#observacaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='observacaoTinyMce', cols='100', rows='10')
+
+          .form-group
+            label(for='orientacaoCentralTinyMce') Orientação da Central de Pautas
+            textarea#orientacaoCentralTinyMce.descricaoTinyMce.tinyMce.form-control(name='orientacaoCentralTinyMce', cols='100', rows='10')
+
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial.html', data-dismiss='modal') Cancelar

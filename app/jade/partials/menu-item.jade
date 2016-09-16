@@ -7,9 +7,14 @@
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
         li.Box.Box--normal
-          select.form-control(name='', value='')
-            option Disponível
-            option Derrubar
+          .Arrange.type-status
+            .Arrange-sizeFit.delta
+              i.interruptor.on.text-success.fa.fa-check-circle &nbsp;
+              i.interruptor.off.text-danger.fa.fa-minus-circle &nbsp;
+            .Arrange-sizeFill
+              select.status.form-control(name='', value='')
+                option(value='on') Disponível
+                option(value='off') Derrubar
         mixin links (href, modal, icon, name)
           li.Box.Box--normal
             a(href="#{href}" data-toggle='modal', data-target='#{modal}')

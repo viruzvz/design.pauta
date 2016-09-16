@@ -1,0 +1,100 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-cog
+          .Arrange-sizeFill
+            h2: strong Gerenciar Avisos Gerais
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='gerenciarAvisosGerais')
+          .form-group
+            label(for='listaAvisos') Lista de avisos
+            a.btn.btn-success.btn-xs.pull-right(href='#') 
+              i.fa.fa-plus-circle
+              |  Adicionar
+            textarea#listaAvisos.form-control(rows='3')
+            
+          .table-responsive
+            table.table.table-striped.table-bordered
+              caption
+                p Formulário para reordenar, criar, ou editar os itens de aviso. Arraste para alterar a ordenção
+                ul.list-inline.list-unstyled
+                  li
+                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                      i.fa.fa-check-circle
+                      |  Habilitar
+                  li 
+                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                      i.fa.fa-minus-circle
+                      |  Desabilitar
+
+                  li
+                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled)
+                      i.fa.fa-eye 
+                      |  Destacar
+                  li
+                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                      i.fa.fa-eye-slash
+                      |  Tirar Destaque
+                  li
+                    a.btn.btn-danger.btn-sm.disable-btn(href='#', disabled) 
+                      i.fa.fa-trash
+                      |  Excluir
+
+              thead
+                tr
+                  th.text-center
+                    input.marcarTodos.toggle-btn-on(type='checkbox', name='marcarTodos')
+                  th Texto
+                  th Criado
+                  th.text-center Habilitado
+                  th Destaque
+                  th.text-center Ações
+              tbody
+                mixin tr (texto, criado, habilitado, destaque)
+                  tr
+                    td.text-center
+                      input.toggle-btn-on(type='checkbox', name='acao')
+                    td 
+                      a(href='#' data-toggle="modal" data-target="#editarAviso") #{texto}
+                    td
+                      | #{criado}
+                    td.text-center 
+                      i.fa(class='#{habilitado}')
+                    td
+                      a(href='#') #{destaque}
+                    td.text-center
+                      ul.list-inline.list-unstyled
+                        li
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Habilitar") 
+                            i.fa.fa-check-circle
+                        li
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Desabilitar") 
+                            i.fa.fa-minus-circle
+                        li
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Destacar") 
+                            i.fa.fa-eye
+                        li
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Tirar Destaque") 
+                            i.fa.fa-eye-slash
+                        li
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Excluir") 
+                            i.fa.fa-trash
+
+                +tr('CRE Liberada', 'Renina Sangermano Valejo 12/09/2016 20:40', 'fa-check-circle alert-success', '')
+                +tr('CRE Liberada', 'Renina Sangermano Valejo 12/09/2016 20:40', 'fa-check-circle alert-success', '')
+                +tr('CRE Liberada', 'Renina Sangermano Valejo 12/09/2016 20:40', 'fa-minus-circle alert-danger', '')
+
+
+
+
+
+          .form-group.pull-right
+            a.btn.btn-default(href='paginaInicial.html', data-dismiss='modal') Voltar
+
+include ../modais/editarAviso

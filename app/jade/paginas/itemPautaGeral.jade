@@ -2,11 +2,14 @@
   .col-md-9.col-sm-9
     .panel.panel-box.panel-default.panel-sf
       .panel-heading
-        h2
-          i.fa.fa-pencil
-          strong Item de pauta geral
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-pencil
+          .Arrange-sizeFill
+            h2: strong Item de pauta geral
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
       .panel-body#collapse-box.in 
         h3: strong ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
         dl.dl-horizontal
@@ -20,7 +23,7 @@
           +data-list('Local', 'Rádio Senado')
           +data-list('Editoria', 'Entrevista')
         dl
-          +data-list('Descrição', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo      consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
+          +data-list('Descrição', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
         dl
           +data-list('Pessoas acompanhando o item', 'Wilton Rodrigues, Glebson Moura, Fabiano Nunes.')
         mixin table (caption, href)
@@ -30,7 +33,7 @@
                 h4.Apex.Apex--cut #{caption}
                   .pull-right
                     a.btn.btn-xs.btn-success(href='#{href}')
-                      i.fa.fa-plus
+                      i.fa.fa-plus-circle
                       |  Criar item
               thead
                 tr
@@ -45,9 +48,9 @@
                     td #{Status}
                 +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
         +table('Agência Senado', 'paginaInicial--criarItemPautaGeralAgencia.html')
-        +table('Comunicação Interna')
-        +table('Rádio Sendo')
-        +table('TV Senado')
+        +table('Comunicação Interna', 'paginaInicial--criarItemPautaComunicacaoInterna.html')
+        +table('Rádio Sendo', 'paginaInicial--criarItemPautaRadio.html')
+        +table('TV Senado', 'paginaInicial--criarItemPautaTV.html')
 
 
   .col-md-3.col-sm-3
