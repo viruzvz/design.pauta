@@ -69,7 +69,7 @@ $(document).ready(function(){
     }).change();
 });
 
-//////////////////////////////////// TOGGLE CHECKBOX 
+//////////////////////////////////// TOGGLE CHECKBOX, input checked habilita botão.
 $('.toggle-btn-on').click(function () {
     //check if checkbox is checked
     if ($(this).is(':checked')) {

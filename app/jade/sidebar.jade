@@ -29,15 +29,22 @@ ul.list-unstyled.Sidebar.u-posRelative
         .Sidebar-menuLabel
           .MenuTitulo.Box #{title}
         ul.list-unstyled.Box(class='+bgdropdown')
-          mixin item-drop-li(href, name)
-            li: a(href='#{href}' class="+colordropdown") #{name}
-          +item-drop-li('#','Agência')
-          +item-drop-li('#','COMAP')
-          +item-drop-li('#','Comunicação Interna')
-          +item-drop-li('#','Divisão Externa')
-          +item-drop-li('#','Fotografia')
-          +item-drop-li('#','Rádio')
-          +item-drop-li('#','TV')
+          mixin item-drop-li(href, icon, name)
+            li
+              .row
+                a.sidebar-link(href='#{href}') 
+                  .col-xs-2
+                    &nbsp; 
+                    i.fa(class='#{icon}')
+                  .col-xs-10
+                    | #{name}
+          +item-drop-li('agencia.html', 'fa-users', 'Agência')
+          +item-drop-li('#', 'fa-lightbulb-o', 'COMAP')
+          +item-drop-li('#', 'fa-commenting-o', 'Comunicação Interna')
+          +item-drop-li('#', 'fa-rss', 'Divulgação Externa')
+          +item-drop-li('#', 'fa-camera', 'Fotografia')
+          +item-drop-li('#', 'fa-microphone', 'Rádio')
+          +item-drop-li('#', 'fa-television', 'TV')
   +item-drop('fa-pencil', 'Pautas')
   +item-link('#', 'fa-cog', 'Produção')
   +item-link('#', 'fa-font', 'Fontes')

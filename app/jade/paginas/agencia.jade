@@ -1,0 +1,71 @@
+.panel.panel-box.panel-default.panel-sf
+  .panel-heading
+    .Arrange
+      .Arrange-sizeFit
+        i.fa.fa-users
+      .Arrange-sizeFill
+        h2: strong Agência
+      .Arrange-sizeFit
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+  .panel-body#collapse-box.in 
+    // Nav tabs
+    ul.nav.nav-tabs(role='tablist')
+      li.active(role='presentation')
+        a(href='#pautadia', aria-controls='pautadia', role='tab', data-toggle='tab') Pautas do dia
+      li(role='presentation')
+        a(href='#pautafutura', aria-controls='pautafutura', role='tab', data-toggle='tab') Pautas futuras
+    // Tab panes
+    .tab-content
+      #pautadia.tab-pane.active(role='tabpanel')
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            caption
+              button.btn.btn-xs.btn-default.pull-right(type='button', ) 
+                i.fa.fa-print
+                |  Imprimir
+            thead
+              tr
+                th Hora
+                th Editoria
+                th Assunto
+                th Veículos
+            tbody
+              mixin btn(icon, btn, badge)
+                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto" style='min-width: 50px; margin-right:5px; margin-bottom:5px;')
+                  i.fa(class='#{icon}') &nbsp;
+                  span.badge.micro #{badge}
+              mixin linhas(hora, editoria, href, assunto)
+                tr
+                  td #{hora}
+                  td #{editoria}
+                  td 
+                    a(href='#{href}') #{assunto} 
+                  td
+                    block
+
+              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
+                +btn('fa-pencil', 'btn-danger', '1')
+                +btn('fa-comment-o', 'btn-danger', '2')
+                +btn('fa-bullhorn', 'btn-danger', '3')
+                +btn('fa-bullseye', 'btn-danger', '4')
+                +btn('fa-pencil', 'btn-danger', '5')
+                +btn('fa-bullhorn', 'btn-danger', '6')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
+                +btn('fa-comment-o', 'btn-warning', '2')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
+                +btn('fa-bullhorn', 'btn-warning','1')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
+                +btn('fa-bullseye', 'btn-warning', '2')
+              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
+                +btn('fa-pencil', 'btn-danger', '1')
+                +btn('fa-comment-o', 'btn-danger', '1')
+                +btn('fa-bullhorn', 'btn-danger', '1')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
+                +btn('fa-comment-o', 'btn-warning', '2')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
+                +btn('fa-bullhorn', 'btn-warning','1')
+              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
+                +btn('fa-bullseye', 'btn-warning', '2')
+
+      #pautafutura.tab-pane(role='tabpanel') ...

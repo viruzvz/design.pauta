@@ -40,10 +40,10 @@ html, body {
 body {
   display: flex;
   flex-direction: row;
-  background-color: @c1;
+  
 }
 .login {
-  margin: 100px auto;
+  background-color: @c1;
   display: block;
     a {
       color: #999;
@@ -54,14 +54,11 @@ body {
 }
   aside {
     background: @c1;
-    transition: all 0.9s ease;
-    opacity: 5;
+    transition: all 0.2s ease;
   }
   aside.in {
     visibility: hidden;
     margin-left: -240px;
-    opacity: 0;
-    
   }
   main {
     background: @c4;
