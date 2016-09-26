@@ -1,3 +1,5 @@
+include ../partials/navbar-nav--secundaria
+
 .panel.panel-box.panel-default.panel-sf
   .panel-heading
     .Arrange
@@ -18,54 +20,77 @@
     // Tab panes
     .tab-content
       #pautadia.tab-pane.active(role='tabpanel')
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              date
+                i.fa.fa-calendar
+                input.datepicker(type='text', value='26/09/2016')
+
+          .col-md-8.text-right
+            mixin btn-impress(icon, name)
+              button.btn.btn-xs.btn-default(type='button') 
+                i.fa(class='#{icon}')
+                |  #{name} 
+            .Box.Box--lg.Box--y
+              +btn-impress('fa-print', 'Imprimir tudo')
+              +btn-impress('fa-print', 'Imprimir manhã')
+              +btn-impress('fa-print', 'Imprimir tarde')
+
         .table-responsive
-          table.table.table-striped.table-hover.milli
-            caption
-              button.btn.btn-xs.btn-default.pull-right(type='button', ) 
-                i.fa.fa-print
-                |  Imprimir
+          mixin thead-weather(alert, iclass, turno, text) 
+            thead
+              tr(class='#{alert}')
+                th(colspan='5')
+                  i.label.fa.pull-left(class='#{iclass}')  #{turno}
+                  .text-center #{text}
+          mixin thead(head1, head2, head3, head4, head5)
             thead
               tr
-                th Hora
-                th Editoria
-                th Assunto
-                th Veículos
+                th #{head1}
+                th #{head2}
+                th #{head3}
+                th #{head4}
+                th #{head5}
+          mixin tbody(cond1, cond2, cond3, cond33, cond333, cond4, cond5, cond6)
             tbody
-              mixin btn(icon, btn, badge)
-                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto" style='min-width: 50px; margin-right:5px; margin-bottom:5px;')
-                  i.fa(class='#{icon}') &nbsp;
-                  span.badge.micro #{badge}
-              mixin linhas(hora, editoria, href, assunto)
-                tr
-                  td #{hora}
-                  td #{editoria}
-                  td 
-                    a(href='#{href}') #{assunto} 
-                  td
-                    block
+              tr
+                td
+                  i.fa.fa-clock-o
+                  |  #{cond1}
+                td #{cond2}
+                td
+                  .Box.Box--y
+                    i.fa(class='#{cond3}', data-toggle='tooltip', title='#{cond33}')
+                      |  #{cond333}
+                td #{cond4}
+                td.eta 
+                  i.fa(class='#{cond5}' data-toggle='tooltip' title='#{cond6}')
 
-              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-pencil', 'btn-danger', '1')
-                +btn('fa-comment-o', 'btn-danger', '2')
-                +btn('fa-bullhorn', 'btn-danger', '3')
-                +btn('fa-bullseye', 'btn-danger', '4')
-                +btn('fa-pencil', 'btn-danger', '5')
-                +btn('fa-bullhorn', 'btn-danger', '6')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
-                +btn('fa-comment-o', 'btn-warning', '2')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
-                +btn('fa-bullhorn', 'btn-warning','1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-bullseye', 'btn-warning', '2')
-              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-pencil', 'btn-danger', '1')
-                +btn('fa-comment-o', 'btn-danger', '1')
-                +btn('fa-bullhorn', 'btn-danger', '1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
-                +btn('fa-comment-o', 'btn-warning', '2')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
-                +btn('fa-bullhorn', 'btn-warning','1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-bullseye', 'btn-warning', '2')
+          // Manhã
+          table.table.table-striped.table-hover.milli
+
+            +thead-weather('alert-info', 'label-info fa-sun-o', 'Manhã', 'Presidência')
+            +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
+            +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Jane Maria de Araújo Neves', '', 'fa-plus-circle text-success', 'Em Produção')
+
+          table.table.table-striped.table-hover.milli
+            +thead-weather('alert-info', 'label-info fa-sun-o', 'Manhã', 'Demais Pautas')
+            +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
+            +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Iara Guimarães Altafin', '', 'fa-hand-paper-o text-warning', 'Privado')
+
+          // Manhã
+          table.table.table-striped.table-hover.milli
+
+            +thead-weather('alert-warning', 'label-warning fa-sun-o', 'Tarde', 'Presidência')
+            +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
+            +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Carlos Eduardo Gomes Neri', '', 'fa-archive text-muted', 'Gaveta')
+
+          table.table.table-striped.table-hover.milli
+            +thead-weather('alert-warning', 'label-warning fa-sun-o', 'Tarde', 'Demais Pautas')
+            +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
+            +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Carlos Eduardo Gomes Neri', '', 'fa-minus-circle text-danger', 'Derrubar')
+
+
 
       #pautafutura.tab-pane(role='tabpanel') ...

@@ -9,9 +9,9 @@
     overflow-x: hidden;
 }
 .dropdown-menu--lg {
+    width: 320px;
     min-width: 320px;
-}
-
+} 
 ///////////////////////// Setas dropdown menu
 
     li.dropdown.open>a>span.seta-dropdown-menu {
@@ -76,6 +76,10 @@
 //////////////////////////////// Desabilitando parte responsiva da navbar e ajustes para dropdown full-width em resolução até 768px
 
 @media (max-width: 768px) {
+    .dropdown-menu--lg {
+        width: inherit;
+        min-width: inherit;
+    } 
     .scroll {
         height: ~'calc(100vh - 245px)';
         overflow-x: hidden;
@@ -127,4 +131,22 @@
       top:50px;
       background-color: #f7f7f7;
     }
+}
+///////////////////////////////////////////////// Ajuste Navbar dentro do painel, ao acessar as paginas Agencia
+.navbar-nav--secundaria {
+    .panel-sf .panel-heading {
+        line-height: inherit !important;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-nav--secundaria {
+        .navbar-nav > li > a  {
+            padding-top: 10px;
+            padding-bottom: 10px;   
+        }
+        .seta-dropdown-menu {
+            top: 34px;
+        }
+    }
+
 }
