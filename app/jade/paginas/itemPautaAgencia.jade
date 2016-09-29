@@ -1,0 +1,151 @@
+.row
+  .col-md-9.col-sm-9
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-users
+          .Arrange-sizeFill
+            h2: strong Item de pauta da Agência
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        h3.hide: strong ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
+        mixin data-list (titulo, descricao)
+          dt #{titulo}:
+          dd #{descricao}
+        dl
+          +data-list('Assunto', 'Lorem ipsum dolor sit amet, consectetur')
+        dl.dl-horizontal
+          mixin data-list (titulo, descricao)
+            dt #{titulo}:
+            dd #{descricao}
+          +data-list('Data', '22/12/2015')
+          +data-list('Horário', '08:10')
+          +data-list('Local', 'Rádio Senado')
+          +data-list('Editoria', 'Entrevista')
+
+        #accordion.panel-group(role='tablist', aria-multiselectable='true')
+          mixin panel-heading (id, icon, title, href, aria)
+            .panel-heading(id='#{id}')
+              .Arrange
+                .Arrange-sizeFit
+                  i.fa(class='#{icon}')
+                .Arrange-sizeFill
+                  h2: strong #{title}
+                .Arrange-sizeFit
+                  .panel-actions
+                    a.btn-minimize(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='true', aria-controls='#{aria}')
+          mixin loren
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+          .panel.panel-default
+            +panel-heading('headingOne', 'fa-sitemap', 'Equipe', '#collapseOne', 'collapseOne')
+            #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+              .panel-body
+                dl.dl-horizontal
+                  +data-list('Reporter', 'Sergio Salexandre Vieira')
+                  +data-list('Fotográfo', 'Ullyses Kodak Sony')
+
+          .panel.panel-default
+            +panel-heading('headingTwo', 'fa-eye', 'Obervações da pauta/reportagem', '#collapseTwo', 'collapseTow')
+            #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+              .panel-body
+                +loren
+
+          .panel.panel-default
+            +panel-heading('headingThree', 'fa-camera', 'Obervações de fotografia', '#collapseThree', 'collapseThree')  
+            #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+              .panel-body
+                +loren  
+
+          .panel.panel-default
+            +panel-heading('headingFour', 'fa-pencil', 'Descrição do item geral', '#collapseFour', 'collapseFour')  
+            #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
+              .panel-body
+                +loren
+
+          .panel.panel-default
+            +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive', 'collapseFive')  
+            #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
+              .panel-body
+                .row
+                  .col-sm-12
+                    button.btn.btn-info.btn-xs.pull-right(type='button', data-toggle='modal', data-target='#saibaMais')
+                      i.fa.fa-chevron-right 
+                      | Leia mais
+                  .col-sm-12
+                    +loren
+
+          .panel.panel-default
+            +panel-heading('headingSix', 'fa-user', 'Pessoas acompanhando o item', '#collapseSix', 'collapseSix')  
+            #collapseSix.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSix')
+              .panel-body
+               +loren
+
+        mixin table (caption, href)
+          .table-responsive
+            table.table.table-striped.table-hover.milli
+              caption.Segments
+                h4.Apex.Apex--cut #{caption}
+                  .pull-right
+                    ul.list-inline.list-unstyled
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Áudio
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Infográfico                      
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Matéria
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Senado Agora
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Matéria
+
+              thead
+                tr
+                  th Data
+                  th Retranca
+                  th Título
+                  th Repórter
+                  th Status
+              tbody
+                mixin tr(t1,t2,t3,t4,t5)
+                  tr
+                    td #{t1}
+                    td #{t2}
+                    td #{t3}
+                    td #{t4}
+                    td #{t5}
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
+        +table('Notícias Produzidas', 'paginaInicial--criarItemPautaGeralAgencia.html')
+
+
+
+
+
+
+
+
+
+  .col-md-3.col-sm-3
+    include ../partials/menu-item
+
+
+include ../modais/saibaMais
+
+include ../modais/adicionarLink
+include ../modais/historico
+include ../modais/novoArquivo
+include ../modais/itensProducaoRelacionados
+include ../modais/excluirItem
+include ../modais/replicarItem
+include ../modais/reordenacaoItens
+include ../modais/editarItem

@@ -1,5 +1,3 @@
-include ../partials/navbar-nav--secundaria
-
 .panel.panel-box.panel-default.panel-sf
   .panel-heading
     .Arrange
@@ -11,6 +9,7 @@ include ../partials/navbar-nav--secundaria
         .panel-actions
           a.btn-minimize(href='#collapse-box' data-toggle="collapse")
   .panel-body#collapse-box.in 
+    include ../partials/navbar-nav--secundaria
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
       li.active(role='presentation')
@@ -23,19 +22,23 @@ include ../partials/navbar-nav--secundaria
         .row
           .col-md-4
             .Box.Box--lg.Box--y
-              date
-                i.fa.fa-calendar
-                input.datepicker(type='text', value='26/09/2016')
+              form.form-group               
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
 
           .col-md-8.text-right
-            mixin btn-impress(icon, name)
-              button.btn.btn-xs.btn-default(type='button') 
+            mixin btn-impress(title, icon, name)
+              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
                 i.fa(class='#{icon}')
                 |  #{name} 
             .Box.Box--lg.Box--y
-              +btn-impress('fa-print', 'Imprimir tudo')
-              +btn-impress('fa-print', 'Imprimir manhã')
-              +btn-impress('fa-print', 'Imprimir tarde')
+              form.form-group
+                .btn-block
+                  +btn-impress('Imprimir tudo', 'fa-print', 'Tudo')
+                  +btn-impress('Imprimir manhã', 'fa-print', 'Manhã')
+                  +btn-impress('Imprimir tarde', 'fa-print', 'Tarde')
 
         .table-responsive
           mixin thead-weather(alert, iclass, turno, text) 
@@ -58,7 +61,8 @@ include ../partials/navbar-nav--secundaria
                 td
                   i.fa.fa-clock-o
                   |  #{cond1}
-                td #{cond2}
+                td 
+                  a(href='agencia--itemPautaAgencia.html') #{cond2}
                 td
                   .Box.Box--y
                     i.fa(class='#{cond3}', data-toggle='tooltip', title='#{cond33}')
@@ -93,4 +97,27 @@ include ../partials/navbar-nav--secundaria
 
 
 
-      #pautafutura.tab-pane(role='tabpanel') ...
+      #pautafutura.tab-pane(role='tabpanel') 
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              form.form-group               
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
+
+          .col-md-8.text-right
+            mixin btn-impress(title, icon, name)
+              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
+                i.fa(class='#{icon}')
+                |  #{name} 
+            .Box.Box--lg.Box--y
+              form.form-group
+                .btn-block
+                  +btn-impress('Imprimir', 'fa-print', 'Imprimir')
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            +thead-weather('alert-info', 'label-info fa-sun-o', 'Manhã', 'Presidência')
+            +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
+            +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Jane Maria de Araújo Neves', '', 'fa-plus-circle text-success', 'Em Produção')

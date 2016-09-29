@@ -1,0 +1,30 @@
+// Modal
+#saibaMais.modal.fade(tabindex='-1', role='dialog', aria-labelledby='saibaMaisLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#saibaMaisLabel.modal-title Descrição do Item Geral
+      .modal-body
+        p: strong COMISSÃO DE ASSUNTOS ECONÔMICOS - CAE
+        p: strong COMISSÃO DE CIÊNCIA, TECNOLOGIA, INOVAÇÃO, COMUNICAÇÃO E INFORMÁTICA - CCT
+        p Seminário "E agora, Werner?"
+        p Seminário de economia brasileira em homenagem ao professor Werner Baer.
+        p: strong Convidados
+        ul
+          li Paulo Roberto Haddad, consultor econômico;
+          li Cláudio de Moura Castro, presidente do Conselho Consultivo da Faculdade Pitágoras;
+          li Maurício Bittencourt, secretário-executivo da Associação Nacional dos Centros de Pós-Graduação em Economia - Anpec;
+          li Dorothea Werneck, consultora econômica;
+          li Roberto Macedo, consultor econômico;
+          li Edmar Lisboa Bacha, professor da Pontifícia Universidade Católica do Rio de Janeiro - PUC/Rio;
+          li Clóvis Cavalcanti, professor da Universidade Federal de Pernambuco - UFPE;
+          li Luis Paulo Rosenberg, sócio Fundador da Rosenberg Partners;
+          li Antônio Arantes Lício, consultor econômico;
+          li José Márcio Camargo, professor da Pontifícia Universidade Católica do Rio de Janeiro - PUC/Rio;
+          li Paulo Rabello de Castro, presidente do Instituto Brasileiro de Geografia e Estatística - IBGE; e
+          li Eduardo Amaral Haddad, professor da Universidade de São Paulo - USP.
+
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') Fechar

@@ -18,12 +18,26 @@
     // Tab panes
     .tab-content
       #pautadia.tab-pane.active(role='tabpanel')
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              form.form-group               
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
+
+          .col-md-8.text-right
+            mixin btn-impress(title, icon, name)
+              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
+                i.fa(class='#{icon}')
+                |  #{name} 
+            .Box.Box--lg.Box--y
+              form.form-group
+                .btn-block
+                  +btn-impress('Imprimir', 'fa-print', 'Imprimir')
         .table-responsive
           table.table.table-striped.table-hover.milli
-            caption
-              button.btn.btn-xs.btn-default.pull-right(type='button', ) 
-                i.fa.fa-print
-                |  Imprimir
             thead
               tr
                 th Hora
