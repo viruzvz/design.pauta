@@ -22,10 +22,36 @@
           +data-list('Horário', '08:10')
           +data-list('Local', 'Rádio Senado')
           +data-list('Editoria', 'Entrevista')
-        dl
-          +data-list('Descrição', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.')
-        dl
-          +data-list('Pessoas acompanhando o item', 'Wilton Rodrigues, Glebson Moura, Fabiano Nunes.')
+
+        #accordion.panel-group(role='tablist', aria-multiselectable='true')
+          mixin panel-heading (id, icon, title, href, aria)
+            .panel-heading(id='#{id}')
+              .Arrange
+                .Arrange-sizeFit
+                  i.fa(class='#{icon}')
+                .Arrange-sizeFill
+                  h2: strong #{title}
+                .Arrange-sizeFit
+                  .panel-actions
+                    a.btn-minimize(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='true', aria-controls='#{aria}')
+          mixin loren
+            | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+          .panel.panel-default
+            +panel-heading('headingOne', 'fa-pencil', 'Descrição', '#collapseOne', 'collapseOne')
+            #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
+              .panel-body
+                +loren
+
+          .panel.panel-default
+            +panel-heading('headingTwo', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseTwo', 'collapseTow')
+            #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+              .panel-body
+                dl.dl-horizontal
+                  +data-list('Reporter', 'Sergio Salexandre Vieira')
+                  +data-list('Fotográfo', 'Ullyses Kodak Sony')
+
+
         mixin table (caption, href)
           .table-responsive
             table.table.table-striped.table-hover.milli
@@ -45,7 +71,7 @@
                   tr
                     td #{Assunto}
                     td #{Reporter}
-                    td #{Status}
+                    td.text-success #{Status}
                 +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
         +table('Agência Senado', 'paginaInicial--criarItemPautaGeralAgencia.html')
         +table('Comunicação Interna', 'paginaInicial--criarItemPautaComunicacaoInterna.html')

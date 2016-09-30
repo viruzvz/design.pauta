@@ -1,0 +1,45 @@
+.row
+  .col-md-9.col-sm-9
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-lightbulb-o
+          .Arrange-sizeFill
+            h2: strong Item Comap
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        // Nav tabs
+        ul.nav.nav-tabs(role='tablist')
+          li.active(role='presentation')
+            a(href='#andamento', aria-controls='andamento', role='tab', data-toggle='tab') Andamento
+          li(role='presentation')
+            a(href='#briefing', aria-controls='briefing', role='tab', data-toggle='tab') Briefing
+          li(role='presentation')
+            a(href='#resultados', aria-controls='resultados', role='tab', data-toggle='tab') Resultados
+        // Tab panes
+        .tab-content
+          #andamento.tab-pane.active(role='tabpanel')
+            include ../partials/timeLine
+          #briefing.tab-pane(role='tabpanel') ...
+          #resultados.tab-pane(role='tabpanel') ...
+
+
+
+
+  .col-md-3.col-sm-3
+    include ../partials/menu-item
+
+
+include ../modais/saibaMais
+
+include ../modais/adicionarLink
+include ../modais/historico
+include ../modais/novoArquivo
+include ../modais/itensProducaoRelacionados
+include ../modais/excluirItem
+include ../modais/replicarItem
+include ../modais/reordenacaoItens
+include ../modais/editarItem

@@ -41,7 +41,7 @@
             | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 
           .panel.panel-default
-            +panel-heading('headingOne', 'fa-sitemap', 'Equipe', '#collapseOne', 'collapseOne')
+            +panel-heading('headingOne', 'fa-pencil', 'Equipe', '#collapseOne', 'collapseOne')
             #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
               .panel-body
                 dl.dl-horizontal
@@ -49,13 +49,13 @@
                   +data-list('Fotográfo', 'Ullyses Kodak Sony')
 
           .panel.panel-default
-            +panel-heading('headingTwo', 'fa-eye', 'Obervações da pauta/reportagem', '#collapseTwo', 'collapseTow')
+            +panel-heading('headingTwo', 'fa-pencil', 'Obervações da pauta/reportagem', '#collapseTwo', 'collapseTow')
             #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
               .panel-body
                 +loren
 
           .panel.panel-default
-            +panel-heading('headingThree', 'fa-camera', 'Obervações de fotografia', '#collapseThree', 'collapseThree')  
+            +panel-heading('headingThree', 'fa-pencil', 'Obervações de fotografia', '#collapseThree', 'collapseThree')  
             #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
               .panel-body
                 +loren  
@@ -79,7 +79,7 @@
                     +loren
 
           .panel.panel-default
-            +panel-heading('headingSix', 'fa-user', 'Pessoas acompanhando o item', '#collapseSix', 'collapseSix')  
+            +panel-heading('headingSix', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseSix', 'collapseSix')  
             #collapseSix.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSix')
               .panel-body
                +loren
@@ -115,17 +115,20 @@
                   th Repórter
                   th Status
               tbody
-                mixin tr(t1,t2,t3,t4,t5)
+                mixin tr(t1,t2,t3,t4,tclass,t5)
                   tr
-                    td #{t1}
+                    td
+                      .fa.fa-clock-o
+                      |  #{t1}
                     td #{t2}
                     td #{t3}
                     td #{t4}
-                    td #{t5}
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'Em Revisão')
-        +table('Notícias Produzidas', 'paginaInicial--criarItemPautaGeralAgencia.html')
+                    td(class='#{tclass}') #{t5}
+
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-warning', 'Revisão')
+        +table('Notícias Produzidas', '#')
 
 
 
