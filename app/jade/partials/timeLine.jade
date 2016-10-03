@@ -1,151 +1,63 @@
 .graph
-  h1 Timeline
+  .legenda.text-right
+    .timeslot-icon
+      i.fa.fa-clock-o
+    | andamento
+    .timeslot-icon
+      i.fa.fa-map-marker
+    | checkpoint
   .timeline
- 
-    .timeslot
-      .task
-        span
-          span.type Andamento
-          span.details
-            | Editado ["Categoria do trabalho"]  
+    mixin timeslot(nome, detalhes, button, icon, title, date, time)
+      .timeslot
+        .task
           span
-            | Roberta
-            span.remaining
-              | 17:53
-        .arrow
-      .icon
-        i.fa.fa-clock-o
-      .time
-        | 27/09/2016
-
-    .clearfix
-
-    .timeslot.alt
-      .task
-        span
-          span.type Checkpoint
-          span.details
-            |  criação da identidade visual
+            span.type 
+              .Flag
+                .Flag-figure.Flag-Figure--maxwidth-xs
+                  img.img-responsive.img-circle(src='../../img/avatar.jpg')
+                .Flag-body
+                  a(href='editarPerfil.html')
+                    small #{nome} 
+            span.details
+              | #{detalhes} 
+              br
+              if button
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal',)  #{button}
+              else
+          .arrow 
+        .timeslot-icon
+          i.fa(class='#{icon}' data-toggle='tooltip', title='#{title}')
+        .time
+          .date-a #{date} 
+          .time-b #{time} 
+    
+    mixin timeslotAlt(nome, detalhes, button, icon, title, date, time)
+      .timeslot.alt
+        .task
           span
-            | Roberta
-            span.remaining
-              | 15:46
-        .arrow
-      .icon
-        i.fa.fa-map-marker
-      .time
-        | 26/09/2016
+            span.type
+              .Flag
+                .Flag-figure.Flag-Figure--maxwidth-xs
+                  img.img-responsive.img-circle(src='../../img/avatar.jpg')
+                .Flag-body
+                  a(href='editarPerfil.html')
+                    small #{nome} 
+            span.details
+              | #{detalhes} 
+              br
+              if button
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal',)  #{button}
+              else
+          .arrow      
+        .timeslot-icon
+          i.fa(class='#{icon}' data-toggle='tooltip', title='#{title}')
+        .time
+          .date-a #{date} 
+          .time-b #{time}
 
-    .timeslot
-      .task
-        span
-          span.type mail
-          span.details
-            | Lukasz Holeczek
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-envelope
-      .time
-        | 3:43 PM
-
-    .timeslot.alt
-      .task
-        span
-          span.type deadline
-          span.details
-            | Fixed PayPal problems
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-calendar
-      .time
-        | 3:43 PM
-
-    .timeslot
-      .task
-        span
-          span.type appointment
-          span.details
-            | Lukasz Holeczek at creativeLabs HQ
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-map-marker
-      .time
-        | 3:43 PM
-        
-    .clearfix
-
-    .timeslot.alt
-      .task
-        span
-          span.type skype call
-          span.details
-            | Lukasz Holeczek
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-phone
-      .time
-        | 3:43 PM
-
-    .timeslot
-      .task
-        span
-          span.type mail
-          span.details
-            | Lukasz Holeczek
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-envelope
-      .time
-        | 3:43 PM
-
-    .timeslot.alt
-      .task
-        span
-          span.type project deadline
-          span.details
-            | Fixed PayPal problems
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-calendar
-      .time
-        | 3:43 PM
-
-    .timeslot
-      .task
-        span
-          span.type mail
-          span.details
-            | Lukasz Holeczek
-          span
-            | remaining time
-            span.remaining
-              | 3h 38m 15s
-        .arrow
-      .icon
-        i.fa.fa-envelope
-      .time
-        | 3:43 PM
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Roberta Almeira Silva Soares','criação da identidade visual','Editar','fa-map-marker','checkpoint', '26/09/2016','15:46')
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Márcio felipe Campos','Rita Polli retornou os contatos do Semark/Atendimento feitos em 14/9/16 com a Procuradoria da Mulher, cobrando os direcionamentos temáticos e de foco da edição dos "16 Dias..." deste ano. Rita destacou que senadora Vanessa gostou do mote "Todos por todas; todas por todas", e que essa ideia deve ser desenvolvida na campanha. Márcio destacou que isso era, sim, um conceito, mas generalista, sem focar em algum aspecto mais específico, como redes sociais, irmandades/associativismo, vida familiar/pessoal/religiosa ou em outros. Ressaltou que esse mote vai na mesma toada da campanha atual desenvolvida pelo GDF, o que pode ser bom e que por ele há de se destacar o papel do homem, além de obviamente o da mulher, no processo de combate à discriminação e violência contra a mulher e da promoção da igualdade de gênero. Rita pediu à Comap reunião de definição de foco e peças para esta sexta-feira, 16. Foram sugeridos os horários das 11h ou das 14h30, ela ficou de confirmar.','Editar','fa-clock-o','andamento', '26/09/2016','15:46')
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Roberta Almeira Silva Soares','Reunião de definição de foco e peças para esta sexta-feira, 16. Foram sugeridos os horários das 11h ou das 14h30, Procuradoria da Mulher ficou de confirmar. ','Editar','fa-map-marker', 'checkpoint', '26/09/2016','15:46')

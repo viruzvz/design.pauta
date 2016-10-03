@@ -11,8 +11,20 @@
             .panel-actions
               a.btn-minimize(href='#collapse-box' data-toggle="collapse")
       .panel-body#collapse-box.in 
+        include ../partials/navbar-nav--secundaria
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect') Selecione
+            select.mySelect.select-nav.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#andamento', 'Andamento')
+              +option('#briefing', 'Briefing')
+              +option('#resultados', 'Resultados')
+
         // Nav tabs
-        ul.nav.nav-tabs(role='tablist')
+        ul.nav.nav-tabs.hidden-xs(role='tablist')
           li.active(role='presentation')
             a(href='#andamento', aria-controls='andamento', role='tab', data-toggle='tab') Andamento
           li(role='presentation')
@@ -22,6 +34,7 @@
         // Tab panes
         .tab-content
           #andamento.tab-pane.active(role='tabpanel')
+            h3 16 dias de ativismo
             include ../partials/timeLine
           #briefing.tab-pane(role='tabpanel') ...
           #resultados.tab-pane(role='tabpanel') ...
