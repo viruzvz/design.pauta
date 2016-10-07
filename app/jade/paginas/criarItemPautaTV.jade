@@ -67,11 +67,11 @@
                       option(value='01') 01
               .form-group
                 label(for='localaipAgencia') Local
-                input#localaipAgencia.form-control(name='local')  
+                input#localaipAgencia.form-control(type='text', name='local')  
               .form-group
                 label(for='sala') Sala
                 p.help-block Esse local aparece na coluna esquerda do relatório de jornalismo
-                input#sala.form-control(name='sala') 
+                input#sala.form-control(type='text', name='sala') 
               .form-group
                 label(for='retranca') 
                   | Retranca 
@@ -94,7 +94,7 @@
                 label(for='ordenacao') 
                   | Ordenação 
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999') 
+                input#ordenacao.form-control(type='text', name='ordenacao', required, placeholder='99.999') 
 
             #pauta.tab-pane(role='tabpanel') 
               .form-group
@@ -127,28 +127,28 @@
                 label(for='cinegrafista-rendicao') Cinegrafista(s) - Rendição
               .form-group
                 label(for='cinegrafista-substituto') Cinegrafista - Substituto
-                input#cinegrafista-substituto.form-control(name='cinegrafista-substituto') 
+                input#cinegrafista-substituto.form-control(type='text', name='cinegrafista-substituto') 
               .form-group
                 label(for='auxiliar') Auxiliar(es)
               .form-group
                 label(for='auxiliar-rendicao') Auxiliar(es) - Rendição
               .form-group
                 label(for='auxiliar-substituto') Auxiliar - Substituto
-                input#auxiliar-substituto.form-control(name='auxiliar-substituto')  
+                input#auxiliar-substituto.form-control(type='text', name='auxiliar-substituto')  
               .form-group
                 label(for='iluminador') Iluminador(es)
               .form-group
                 label(for='iluminador-rendicao') Iluminador(es) - Rendição
               .form-group
                 label(for='iluminador-substituto') Iluminador - Substituto
-                input#iluminador-substituto.form-control(name='iluminador-substituto')  
+                input#iluminador-substituto.form-control(type='text', name='iluminador-substituto')  
               .form-group
                 label(for='operador') Operador(es) de áudio
               .form-group
                 label(for='operador-rendicao') Operador(es) de áudio - Rendição
               .form-group
                 label(for='operador-substituto') Operador de áudio - Substituto
-                input#operador-substituto.form-control(name='operador-substituto') 
+                input#operador-substituto.form-control(type='text', name='operador-substituto') 
               .form-group
                 label(for='equipamentos') Equipamentos(es)
               .form-group

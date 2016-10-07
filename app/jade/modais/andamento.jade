@@ -1,0 +1,25 @@
+// Modal andamentoModal (Carregado em; Item COMAP, )
+#andamentoModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='andamentoModalLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#andamentoModalLabel.modal-title 
+          span.fa.fa-plus
+          |  Criar item COMAP Andamento
+      .modal-body
+        form(name='andamentoModalForm')
+          .form-group
+            label(for='descricao') 
+              | Descrição
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            textarea#descricao.form-control(rows='3', name='descricao', required)
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox', checked)
+                |  Habilitado
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar

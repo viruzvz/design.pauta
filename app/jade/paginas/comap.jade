@@ -93,7 +93,29 @@
               +tr('danger', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
               +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
               +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-
+            tfoot
+              tr
+                td.text-center(colspan='9')
+                  nav(aria-label='...')
+                    ul.pagination.Panel-pagination.pagination-sm
+                      li.disabled
+                        a(href='#', aria-label='Previous')
+                          span(aria-hidden='true') «
+                      li.active
+                        a(href='#')
+                          | 1 
+                          span.sr-only (current)
+                      li
+                        a(href='#') 2
+                      li
+                        a(href='#') 3
+                      li
+                        a(href='#') 4
+                      li
+                        a(href='#') 5
+                      li
+                        a(href='#', aria-label='Next')
+                          span(aria-hidden='true') »
 
 
       #encerrados.tab-pane(role='tabpanel') 

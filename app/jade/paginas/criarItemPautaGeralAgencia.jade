@@ -38,7 +38,7 @@
                   option(value='01') 01
           .form-group
             label(for='localaipAgencia') Local
-            input#localaipAgencia.form-control(name='local')          
+            input#localaipAgencia.form-control(type='text', name='local')          
           .form-group
             label(for='assuntoaipAgencia') Assunto 
             textarea#assuntoaipAgencia.form-control(rows='2')
@@ -49,10 +49,10 @@
             label(for='ordenacaoaipAgencia') 
               | Projeto de lei 
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#ordenacaoaipAgencia.form-control(name='ordenacaoaipAgencia', required)    
+            input#ordenacaoaipAgencia.form-control(type='text', name='ordenacaoaipAgencia', required)    
           .form-group
             label(for='itensproducaorelacionados') Itens de produção relacionados
-            input#itensproducaorelacionados.form-control(name='itensproducaorelacionados') 
+            input#itensproducaorelacionados.form-control(type='text', name='itensproducaorelacionados') 
           .form-group
             label(for='reporters') Repórter(es) 
           .form-group

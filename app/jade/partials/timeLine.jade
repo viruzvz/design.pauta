@@ -7,7 +7,7 @@
       i.fa.fa-map-marker
     | checkpoint
   .timeline
-    mixin timeslot(nome, detalhes, button, icon, title, date, time)
+    mixin timeslot(nome, detalhes, modal, button, icon, title, date, time)
       .timeslot
         .task
           span
@@ -22,7 +22,7 @@
               | #{detalhes} 
               br
               if button
-                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal',)  #{button}
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target='#{modal}')  #{button}
               else
           .arrow 
         .timeslot-icon
@@ -31,7 +31,7 @@
           .date-a #{date} 
           .time-b #{time} 
     
-    mixin timeslotAlt(nome, detalhes, button, icon, title, date, time)
+    mixin timeslotAlt(nome, detalhes, modal, button, icon, title, date, time)
       .timeslot.alt
         .task
           span
@@ -46,7 +46,7 @@
               | #{detalhes} 
               br
               if button
-                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal',)  #{button}
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target='#{modal}')  #{button}
               else
           .arrow      
         .timeslot-icon
@@ -55,9 +55,9 @@
           .date-a #{date} 
           .time-b #{time}
 
-    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
-    +timeslotAlt('Roberta Almeira Silva Soares','criação da identidade visual','Editar','fa-map-marker','checkpoint', '26/09/2016','15:46')
-    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
-    +timeslotAlt('Márcio felipe Campos','Rita Polli retornou os contatos do Semark/Atendimento feitos em 14/9/16 com a Procuradoria da Mulher, cobrando os direcionamentos temáticos e de foco da edição dos "16 Dias..." deste ano. Rita destacou que senadora Vanessa gostou do mote "Todos por todas; todas por todas", e que essa ideia deve ser desenvolvida na campanha. Márcio destacou que isso era, sim, um conceito, mas generalista, sem focar em algum aspecto mais específico, como redes sociais, irmandades/associativismo, vida familiar/pessoal/religiosa ou em outros. Ressaltou que esse mote vai na mesma toada da campanha atual desenvolvida pelo GDF, o que pode ser bom e que por ele há de se destacar o papel do homem, além de obviamente o da mulher, no processo de combate à discriminação e violência contra a mulher e da promoção da igualdade de gênero. Rita pediu à Comap reunião de definição de foco e peças para esta sexta-feira, 16. Foram sugeridos os horários das 11h ou das 14h30, ela ficou de confirmar.','Editar','fa-clock-o','andamento', '26/09/2016','15:46')
-    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','','fa-clock-o', 'andamento', '27/09/2016','17:53')
-    +timeslotAlt('Roberta Almeira Silva Soares','Reunião de definição de foco e peças para esta sexta-feira, 16. Foram sugeridos os horários das 11h ou das 14h30, Procuradoria da Mulher ficou de confirmar. ','Editar','fa-map-marker', 'checkpoint', '26/09/2016','15:46')
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','', '','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Roberta Almeira Silva Soares','criação da identidade visual','#editarCheckpoint', 'Editar','fa-map-marker','checkpoint', '26/09/2016','15:46')
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','', '','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Márcio felipe Campos','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', '#editarAndamentoModal', 'Editar','fa-clock-o','andamento', '26/09/2016','15:46')
+    +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','', '','fa-clock-o', 'andamento', '27/09/2016','17:53')
+    +timeslotAlt('Roberta Almeira Silva Soares','Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.','#editarCheckpoint', 'Editar','fa-map-marker', 'checkpoint', '26/09/2016','15:46')

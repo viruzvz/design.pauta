@@ -68,7 +68,45 @@ $(document).ready(function(){
         });
     }).change();
 });
+//////////////////////////////////// Status Agencia
 
+$(document).ready(function(){
+    $(".status2").change(function(){
+        $(this).find("option:selected").each(function(){
+            if($(this).attr("value")=="producao"){
+                $(".interruptor2").not(".producao").hide();
+                $(".producao").show();
+                $('ul').find('.type-status2').addClass('has-warning');
+                $('ul').find('.type-status2').removeClass('has-error has-success');
+            }
+            else if($(this).attr("value")=="engavetar"){
+                $(".interruptor2").not(".engavetar").hide();
+                $(".engavetar").show();
+                $('ul').find('.type-status2').removeClass('has-error has-success has-warning');
+            }
+            else if($(this).attr("value")=="publicar"){
+                $(".interruptor2").not(".publicar").hide();
+                $(".publicar").show();
+                $('ul').find('.type-status2').addClass('has-success');
+                $('ul').find('.type-status2').removeClass('has-error has-warning');
+            }
+            else if($(this).attr("value")=="fotografo"){
+                $(".interruptor2").not(".fotografo").hide();
+                $(".fotografo").show();
+                $('ul').find('.type-status2').removeClass('has-error has-success has-warning');
+            }
+            else if($(this).attr("value")=="privado"){
+                $(".interruptor2").not(".privado").hide();
+                $(".privado").show();
+                $('ul').find('.type-status2').addClass('has-error');
+                $('ul').find('.type-status2').removeClass('has-success has-success has-warning');
+            }
+            else{
+                $(".interruptor2").hide();
+            }
+        });
+    }).change();
+});
 //////////////////////////////////// TOGGLE CHECKBOX, input checked habilita botão.
 $('.toggle-btn-on').click(function () {
     //check if checkbox is checked

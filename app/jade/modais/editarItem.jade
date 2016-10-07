@@ -37,7 +37,7 @@
                   option(value='01') 01
           .form-group
             label(for='local') Local
-            input#local.form-control(name='local')          
+            input#local.form-control(type='text', name='local')          
           .form-group
             label(for='editoria')
               | Editoria 
@@ -55,10 +55,10 @@
             textarea#descricaoTinyMce.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
           .form-group
             label(for='projetodelei') Projeto de lei
-            input#projetodelei.form-control(name='projetodelei')    
+            input#projetodelei.form-control(type='text', name='projetodelei')    
           .form-group
             label(for='itensproducaorelacionados') Itens de produção relacionados
-            input#itensproducaorelacionados.form-control(name='itensproducaorelacionados')    
+            input#itensproducaorelacionados.form-control(type='text', name='itensproducaorelacionados')    
       .modal-footer
         button.btn.btn-primary(type='button') Replicar
         button.btn.btn-warning(type='button', data-dismiss='modal') Cancelar

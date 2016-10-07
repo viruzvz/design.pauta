@@ -1,0 +1,36 @@
+// Modal checkpoint (Carregado em; Item COMAP, )
+#checkpoint.modal.fade(tabindex='-1', role='dialog', aria-labelledby='checkpointLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#checkpointLabel.modal-title 
+          span.fa.fa-plus
+          |  Criar item COMAP Checkpoint
+      .modal-body
+        form(name='checkpoint')
+          .form-group
+            label(for='descricao') 
+              | Descrição
+              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            textarea#descricao.form-control(rows='3', name='descricao', required)
+          .form-group
+            .checkbox
+              label
+                input(type='checkbox', checked)
+                |  Habilitado
+          .form-group
+            .row
+              .col-md-3.col-xs-8
+                label(for='data') 
+                  | Data
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#data.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                  .input-group-addon
+                    span.fa.fa-calendar
+      .modal-footer
+        button.btn.btn-primary(type='button') Salvar
+        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar

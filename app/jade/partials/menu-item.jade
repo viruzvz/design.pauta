@@ -1,4 +1,4 @@
-.Painel.Painel--lg.Painel--border.u-spacer--sm
+.Painel.Painel--lg.Painel--border.u-spacer--sm#menu-item--status
   ul.Segments
     li.Apex.Apex--cut.zeta(class='+white +senado')
       .Box.Box--sm
@@ -6,7 +6,7 @@
         strong  Status
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
-        li.Box.Box--normal
+        li.Box.Box--normal(role='item Geral')
           .Arrange.type-status
             .Arrange-sizeFit.delta
               i.interruptor.on.text-success.fa.fa-check-circle &nbsp;
@@ -15,14 +15,41 @@
               select.status.form-control(name='', value='')
                 option.text-success(value='on') Disponível
                 option.text-danger(value='off') Derrubar
-        mixin links (href, modal, icon, name)
+
+        li.Box.Box--normal(role='Comap')
+          select.form-control(name='', value='')
+            option Criação
+            option Cancelar
+            option Colocar em stand by
+            option Concluir
+            option Enviar para aprovação
+            option Enviar para marketing
+            option Enviar para produção
+            option Resetar
+
+        li.Box.Box--normal(role='Agencia')
+          .Arrange.type-status2
+            .Arrange-sizeFit.delta
+              i.interruptor2.producao.text-warning.fa.fa-cog &nbsp;
+              i.interruptor2.engavetar.text-muted.fa.fa-archive &nbsp;
+              i.interruptor2.publicar.text-success.fa.fa-thumbs-o-up &nbsp;
+              i.interruptor2.fotografo.fa.fa-camera &nbsp;
+              i.interruptor2.privado.text-danger.fa.fa-exclamation-triangle &nbsp;
+            .Arrange-sizeFill
+              select.status2.form-control(name='', value='')
+                option(value='producao') Em Produção
+                option(value='engavetar') Engavetar
+                option(value='publicar') Publicar
+                option(value='fotografo') Solicitar Fotógrafo
+                option(value='privado') Privado
+        mixin links (href, toggle, modal, icon, name)
           li.Box.Box--normal
-            a(href="#{href}" data-toggle='modal', data-target='#{modal}')
+            a(href="#{href}" data-toggle='#{toggle}', data-target='#{modal}')
               i.fa(class='#{icon}') 
               |  #{name}
-        +links('#', '#historico', 'fa-chevron-right', 'Histórico')
+        +links('#', 'modal', '#historico', 'fa-chevron-right', 'Histórico')
 
-.Painel.Painel--lg.Painel--border.u-spacer--sm
+.Painel.Painel--lg.Painel--border.u-spacer--sm#menu-item--apoio
   ul.Segments
     li.Apex.Apex--cut.zeta(class='+white +senado')
       .Box.Box--sm
@@ -30,10 +57,12 @@
         strong  Apoio
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
-        +links('#', '#adicionarLink', 'fa-chevron-right', 'Adicionar link')
-        +links('#', '#novoArquivo', 'fa-chevron-right', 'Novo arquivo')
-        +links('#', '#itensProducaoRelacionados', 'fa-chevron-right', 'Itens de produção relacionados')
-.Painel.Painel--lg.Painel--border.u-spacer--sm
+        +links('#', 'modal', '#adicionarLink', 'fa-chevron-right', 'Adicionar link')
+        +links('#', 'modal', '#novoArquivo', 'fa-chevron-right', 'Novo arquivo')
+        +links('#', 'modal', '#itensProducaoRelacionados', 'fa-chevron-right', 'Itens de produção relacionados')
+        +links('#', 'modal', '#checkpoint', 'fa-chevron-right', 'Criar Checkpoint')
+        +links('#', 'modal', '#andamentoModal', 'fa-chevron-right', 'Criar Andamento')
+.Painel.Painel--lg.Painel--border.u-spacer--sm#menu-item--controle
   ul.Segments
     li.Apex.Apex--cut.zeta(class='+white +senado')
       .Box.Box--sm
@@ -41,13 +70,12 @@
         strong  Controle
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
-        li.Box.Box--normal
-          a(href='paginaInicial--editarItemPautaGeral.html')
-            i.fa.fa-chevron-right
-            |  Editar item
-        +links('#', '#excluirItem', 'fa-chevron-right', 'Excluir item')
-        +links('#', '#replicarItem', 'fa-chevron-right', 'Replicar item')
-        +links('#', '#reordenacaoItens', 'fa-chevron-right', 'Reordenar Itens dos veículos')
+        +links('paginaInicial--editarItemPautaGeral.html', '', '', 'fa-chevron-right', 'Editar item')
+        +links('#', 'modal', '#excluirItem', 'fa-chevron-right', 'Excluir item')
+        +links('#', 'modal', '#replicarItem', 'fa-chevron-right', 'Replicar item')
+        +links('#', 'modal', '#reordenacaoItens', 'fa-chevron-right', 'Reordenar Itens dos veículos')
+        +links('#', 'modal', '#visualizarItemGeral', 'fa-chevron-right', 'Visualizar item geral')
+        +links('editarItemComap.html', '', '', 'fa-chevron-right', 'Editar item')
         mixin btn-turn(name, id, label)
           li.Box.Box--normal.row
             .col-md-9.col-xs-9

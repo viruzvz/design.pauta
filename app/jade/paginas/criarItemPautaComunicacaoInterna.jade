@@ -38,7 +38,7 @@
                   option(value='01') 01
           .form-group
             label(for='localaipAgencia') Local
-            input#localaipAgencia.form-control(name='local')          
+            input#localaipAgencia.form-control(type='text', name='local')          
           .form-group
             label(for='assuntoaipAgencia') Assunto 
             textarea#assuntoaipAgencia.form-control(rows='2')
@@ -49,7 +49,7 @@
             label(for='ordenacao') 
               | Ordenação
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999')    
+            input#ordenacao.form-control(type='text', name='ordenacao', required, placeholder='99.999')    
           .form-group
             label(for='turno') 
               | Turno
@@ -81,17 +81,17 @@
             textarea#fotografos.form-control(row='2', name='fotografos')
           .form-group
             label(for='urlNoticia') URL da notícia
-            input#urlNoticia.form-control(name='urlNoticia')  
+            input#urlNoticia.form-control(name='urlNoticia', type='text')  
           .form-group
             label(for='tituloNoticia') Título da notícia
-            input#tituloNoticia.form-control(name='tituloNoticia') 
+            input#tituloNoticia.form-control(name='tituloNoticia', type='text') 
           .form-group
             label(for='descricaoTinyMceNoticia') Descrição da notícia
             textarea#descricaoTinyMceNoticia.descricaoTinyMce.tinyMce.form-control(name='descricaoTinyMceNoticia', cols='100', rows='10')
           .form-group
             label(for='views7') Views 7
             p.help-block Views da matéria sete dias após a publicação
-            input#views7.form-control(name='views7') 
+            input#views7.form-control(name='views7', type='text') 
           .form-group
             label(for='noticiasGeradas') Notícias geradas
             textarea#noticiasGeradas.form-control(row='2', name='noticiasGeradas')

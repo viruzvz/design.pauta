@@ -33,12 +33,99 @@
             a(href='#resultados', aria-controls='resultados', role='tab', data-toggle='tab') Resultados
         // Tab panes
         .tab-content
+          h3 16 dias de ativismo
           #andamento.tab-pane.active(role='tabpanel')
-            h3 16 dias de ativismo
             include ../partials/timeLine
-          #briefing.tab-pane(role='tabpanel') ...
-          #resultados.tab-pane(role='tabpanel') ...
+          #briefing.tab-pane(role='tabpanel') 
+            mixin data-list (titulo, descricao)
+              dt #{titulo}:
+              dd #{descricao}
+            dl
+              +data-list('Cliente', 'Procuradoria da Mulher')
+            dl.dl-horizontal
+              mixin data-list (titulo, descricao)
+                dt #{titulo}:
+                dd #{descricao}
+              +data-list('Categoria do trabalho', 'Utilidade Pública')
+              +data-list('Prioridade', 'Não')
+              +data-list('Endereço na rede', '............................')
+              +data-list('Previsão de saída', '10/10/2016')
+              +data-list('Resumo', '16 dias de ativismo ')
+              +data-list('Público-alvo', 'todo e qualquer cidadão')
+            dl
+              +data-list('Data de entrada na COMAP', '09/09/2016')
+              +data-list('Conceito e linha criativa sugerida', 'livre')
+              +data-list('Demandas de produção', 'fotografia, seleção de imagens.')
+              +data-list('Objetivos de comunicação', 'conscientizar o cidadão quanto a discriminação que a mulher sofre diariamente. ')
 
+            #accordion.panel-group(role='tablist', aria-multiselectable='true')
+              mixin panel-heading (id, icon, title, href, aria)
+                .panel-heading(id='#{id}')
+                  .Arrange
+                    .Arrange-sizeFit
+                      i.fa(class='#{icon}')
+                    .Arrange-sizeFill
+                      h2: strong #{title}
+                    .Arrange-sizeFit
+                      .panel-actions
+                        a.btn-minimize(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='true', aria-controls='#{aria}')
+              mixin loren
+                | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+              .panel.panel-default
+                +panel-heading('headingFour', 'fa-pencil', 'Descritivo', '#collapseFour', 'collapseFour')  
+                #collapseFour.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingFour')
+                  .panel-body
+                    +loren
+
+              .panel.panel-default
+                +panel-heading('headingOne', 'fa-pencil', 'Contato', '#collapseOne', 'collapseOne')
+                #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
+                  .panel-body
+                    dl.dl-horizontal
+                      +data-list('Nome', 'Sergio Salexandre Vieira')
+                      +data-list('Telefones', '1714')
+                      +data-list('E-mails', 'my@domain.com, my2@domain.com')
+
+              .panel.panel-default
+                +panel-heading('headingTwo', 'fa-pencil', 'Equipe', '#collapseTwo', 'collapseTwo')
+                #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
+                  .panel-body
+                    dl.dl-horizontal
+                      +data-list('Marketing', 'Márcio, Mariana ')
+                      +data-list('Criação', 'Mayra, Dalton, Gustavo')
+                      +data-list('Atendimento', 'Roberta')
+                      +data-list('Produção', '')
+
+              .panel.panel-default
+                +panel-heading('headingFive', 'fa-pencil', 'Produtos Demandados', '#collapseFive', 'collapseFive')
+                #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
+                  .panel-body
+                    ul
+                      li: strong Outros (mídias sociais (capa e foto de perfil, twitter e facebook))
+                      li: strong Banner (870cm x 480cm)
+                      li: strong Outros (template )
+                      li: strong Outros (ilustrações intranet 842px x 505px)
+                      li: strong Faixa de mesa (tamanho interlegis 84cm altura X 4,8m largura)
+
+              .panel.panel-default
+                +panel-heading('headingThree', 'fa-pencil', 'Produtos Demandados', '#collapseThree', 'collapseThree')
+                #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
+                  .panel-body
+                    +loren
+
+          #resultados.tab-pane(role='tabpanel')
+            #accordion.panel-group(role='tablist', aria-multiselectable='true')
+              dl.dl-horizontal
+                +data-list('Previsão de saída', '10/10/2016')
+                +data-list('Data de saída', '10/10/2016')
+              dl
+                +data-list('Recomendações e lições aprendidas', 'Anim pariatur cliche reprehenderit,')
+              .panel.panel-default
+                +panel-heading('headingSix', 'fa-pencil', 'Produtos Desenvolvidos', '#collapseSix', 'collapseSix')  
+                #collapseSix.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingSix')
+                  .panel-body
+                    +loren
 
 
 
@@ -46,13 +133,10 @@
     include ../partials/menu-item
 
 
-include ../modais/saibaMais
-
-include ../modais/adicionarLink
+include ../modais/editarAndamento
+include ../modais/editarCheckpoint
+include ../modais/andamento
+include ../modais/checkpoint
 include ../modais/historico
-include ../modais/novoArquivo
-include ../modais/itensProducaoRelacionados
 include ../modais/excluirItem
-include ../modais/replicarItem
-include ../modais/reordenacaoItens
 include ../modais/editarItem

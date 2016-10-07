@@ -63,7 +63,7 @@
                       option(value='01') 01
               .form-group
                 label(for='localaipAgencia') Local
-                input#localaipAgencia.form-control(name='local')   
+                input#localaipAgencia.form-control(type='text', name='local')   
               .form-group
                 .row
                   .col-md-3.col-xs-12
@@ -91,7 +91,7 @@
                 label(for='ordenacao') 
                   | Ordenação
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#ordenacao.form-control(name='ordenacao', required, placeholder='99.999') 
+                input#ordenacao.form-control(type='text', name='ordenacao', required, placeholder='99.999') 
             #equipe.tab-pane(role='tabpanel') 
               .form-group
                 label(for='reporters') Repórter(es) 
@@ -111,7 +111,7 @@
             #tecnica.tab-pane(role='tabpanel')
               .form-group
                 label(for='codigo') Código
-                input#codigo.form-control(name='codigo')   
+                input#codigo.form-control(type='text', name='codigo')   
               .form-group
                 label(for='tempo')
                   | Tempo
@@ -131,13 +131,13 @@
                       option(value='01') 01
               .form-group
                 label(for='reporter') Repórter
-                input#reporter.form-control(name='reporter') 
+                input#reporter.form-control(type='text', name='reporter') 
               .form-group
                 label(for='entrevistado') Entrevistado
-                input#entrevistado.form-control(name='entrevistado') 
+                input#entrevistado.form-control(type='text', name='entrevistado') 
               .form-group
                 label(for='operador') Operador
-                input#operador.form-control(name='operador') 
+                input#operador.form-control(type='text', name='operador') 
 
 
           .form-group.pull-right

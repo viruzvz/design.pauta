@@ -1,0 +1,136 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-pencil
+          .Arrange-sizeFill
+            h2: strong Editar Item Comap
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect') Selecione um tipo
+            select.mySelect.select-nav.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#conteudo', 'Conteúdo')
+              +option('#briefing', 'Briefing')
+              +option('#resultados', 'Resultados')
+
+        // Nav tabs
+        ul#myTab.nav.nav-tabs.hidden-xs(role='tablist')
+          li.active(role='presentation')
+            a(href='#conteudo', aria-controls='conteudo', role='tab', data-toggle='tab') Conteúdo
+          li(role='presentation')
+            a(href='#briefing', aria-controls='briefing', role='tab', data-toggle='tab') Briefing
+          li(role='presentation')
+            a(href='#resultados', aria-controls='resultados', role='tab', data-toggle='tab') Resultados
+
+        // Tab panes
+        .tab-content.Box.Box--lg.Box--y
+          #conteudo.tab-pane.active(role='tabpanel') 
+            form(name='adicionarLink-padrao')
+              .form-group
+                label(for='trabalho') 
+                  | Trabalho
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                input#trabalho.form-control(name='trabalho', required) 
+              .form-group
+                label(for='cliente') 
+                  | Cliente
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                select#cliente.form-control(name='cliente', required)
+                  option(value='') Selecionar
+                  option(value='Advocacia') Advocacia 
+              .form-group
+                label(for='contato') 
+                  | Contato
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                input#contato.form-control(name='contato', required) 
+              .form-group
+                label(for='telefones') 
+                  | Telefones
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .Arrange
+                  .Arrange-sizeFit
+                    button.btn.btn-success(type='button', name='adicionar')
+                      i.fa.fa-plus
+                  .Arrange-sizeFill
+                    input#telefones.form-control(type='text', name='telefones', required)
+                    select#tipo-fone.form-control(name='tipo-fone', required)
+                      option(value='') Selecionar
+                      option(value='Ramal') Ramal 
+                  .Arrange-sizeFit
+                    button.btn.btn-danger(type='button', name='remover')
+                      i.fa.fa-times
+              .form-group
+                label(for='e-mails') 
+                  | E-mails
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                .Arrange
+                  .Arrange-sizeFit
+                    button.btn.btn-success(type='button', name='adicionar')
+                      i.fa.fa-plus
+                  .Arrange-sizeFill
+                    input#e-mails.form-control(type='email', name='e-mails', required)
+                    select#tipo-email.form-control(name='tipo-email', required)
+                      option(value='') Selecionar
+                      option(value='Pessoal') Pessoal 
+                  .Arrange-sizeFit
+                    button.btn.btn-danger(type='button', name='remover')
+                      i.fa.fa-times
+              .form-group
+                label(for='andamento') 
+                  | Andamento
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                select#andamento.form-control(name='andamento', required)
+                  option(value='') Selecionar
+                  option(value='Andrea') Andrea 
+              .form-group
+                label(for='criacao') Criação 
+              .form-group
+                label(for='marketing') Marketing 
+              .form-group
+                label(for='producao') Produção
+              .form-group
+                label(for='cat-trabalho') 
+                  | Categoria do trabalho
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                select#cat-trabalho.form-control(name='cat-trabalho', required)
+                  option(value='') Selecionar
+                  option(value='Utilidade Publica') Utilidade Pública 
+              .form-group
+                .checkbox
+                  label
+                    input(type='checkbox')
+                    | Prioridade
+              .form-group
+                label(for='end-rede') Local
+                input#end-rede.form-control(type='text', name='end-rede') 
+              .form-group
+                .row
+                  .col-md-3.col-xs-8
+                    label(for='data-ent-comap') Data de entrada na COMAP
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#data-ent-comap.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                      .input-group-addon
+                        span.fa.fa-calendar
+              .form-group
+                .row
+                  .col-md-3.col-xs-8
+                    label(for='prev-saida') Previsão de saída
+                    .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                      input#prev-saida.form-control(type='text', placeholder='dd/mm/aaaa')
+                      .input-group-addon
+                        span.fa.fa-calendar
+
+              .form-group.pull-right
+                button.btn.btn-primary(type='submit') Editar
+                &nbsp;
+                a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
+

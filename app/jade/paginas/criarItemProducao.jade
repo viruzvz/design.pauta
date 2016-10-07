@@ -23,16 +23,16 @@
             label(for='numero') 
               | Número 
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#numero.form-control(name='numero', required)  
+            input#numero.form-control(type='text', name='numero', required)  
           .form-group
             label(for='ano') 
               | Ano 
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#ano.form-control(name='ano', required)  
+            input#ano.form-control(type='text', name='ano', required)  
           .form-group
             label(for='variacao') Variação
             p.help-block Ex: 'A' em PEC 113A de 2015
-            input#variacao.form-control(name='variacao') 
+            input#variacao.form-control(type='text', name='variacao') 
           .form-group
             label(for='assuntoaipAgencia') 
               | Assunto 
