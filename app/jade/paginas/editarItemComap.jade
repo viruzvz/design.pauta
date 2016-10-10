@@ -44,9 +44,11 @@
                 label(for='cliente') 
                   | Cliente
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                select#cliente.form-control(name='cliente', required)
-                  option(value='') Selecionar
-                  option(value='Advocacia') Advocacia 
+                .row
+                  .col-md-4
+                    select#cliente.form-control(name='cliente', required)
+                      option(value='') Selecionar
+                      option(value='Advocacia') Advocacia 
               .form-group
                 label(for='contato') 
                   | Contato
@@ -56,41 +58,43 @@
                 label(for='telefones') 
                   | Telefones
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                .Arrange
-                  .Arrange-sizeFit
-                    button.btn.btn-success(type='button', name='adicionar')
-                      i.fa.fa-plus
-                  .Arrange-sizeFill
+                .row
+                  .col-md-6.col-sm-6
                     input#telefones.form-control(type='text', name='telefones', required)
+                  .col-md-4.col-sm-4
                     select#tipo-fone.form-control(name='tipo-fone', required)
                       option(value='') Selecionar
                       option(value='Ramal') Ramal 
-                  .Arrange-sizeFit
-                    button.btn.btn-danger(type='button', name='remover')
+                  .col-md-2.col-sm-2
+                    button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                      i.fa.fa-plus
+                    button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                       i.fa.fa-times
               .form-group
                 label(for='e-mails') 
                   | E-mails
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                .Arrange
-                  .Arrange-sizeFit
-                    button.btn.btn-success(type='button', name='adicionar')
-                      i.fa.fa-plus
-                  .Arrange-sizeFill
-                    input#e-mails.form-control(type='email', name='e-mails', required)
+                .row
+                  .col-md-6.col-sm-6
+                    input#email.form-control(type='email', name='email', required)
+                  .col-md-4.col-sm-4
                     select#tipo-email.form-control(name='tipo-email', required)
                       option(value='') Selecionar
-                      option(value='Pessoal') Pessoal 
-                  .Arrange-sizeFit
-                    button.btn.btn-danger(type='button', name='remover')
+                      option(value='Ramal') Comercial
+                  .col-md-2.col-sm-2
+                    button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                      i.fa.fa-plus
+                    button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                       i.fa.fa-times
               .form-group
-                label(for='andamento') 
-                  | Andamento
+                label(for='atendimento') 
+                  | Atendimento
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                select#andamento.form-control(name='andamento', required)
-                  option(value='') Selecionar
-                  option(value='Andrea') Andrea 
+                .row
+                  .col-md-4
+                    select#atendimento.form-control(name='atendimento', required)
+                      option(value='') Selecionar
+                      option(value='Andrea') Andrea 
               .form-group
                 label(for='criacao') Criação 
               .form-group
@@ -101,16 +105,18 @@
                 label(for='cat-trabalho') 
                   | Categoria do trabalho
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                select#cat-trabalho.form-control(name='cat-trabalho', required)
-                  option(value='') Selecionar
-                  option(value='Utilidade Publica') Utilidade Pública 
+                .row
+                  .col-md-4
+                    select#cat-trabalho.form-control(name='cat-trabalho', required)
+                      option(value='') Selecionar
+                      option(value='Utilidade Publica') Utilidade Pública 
               .form-group
                 .checkbox
                   label
                     input(type='checkbox')
                     | Prioridade
               .form-group
-                label(for='end-rede') Local
+                label(for='end-rede') Endereço na rede
                 input#end-rede.form-control(type='text', name='end-rede') 
               .form-group
                 .row
@@ -128,9 +134,137 @@
                       input#prev-saida.form-control(type='text', placeholder='dd/mm/aaaa')
                       .input-group-addon
                         span.fa.fa-calendar
+          #briefing.tab-pane(role='tabpanel') 
+            .form-group
+              label(for='descritivo') Descritivo
+              p.help-block Histórico, problemas de comunicação
+              textarea#descritivo.form-control(row='2', name='descritivo')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='resumo') Resumo
+              p.help-block Para fins de relatório
+              textarea#resumo.form-control(row='2', name='resumo')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='obj-comunicacao') Objetivos de comunicação
+              p.help-block Para fins de relatório
+              textarea#obj-comunicacao.form-control(row='2', name='obj-comunicacao')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='pub-alvo') Público-alvo
+              textarea#pub-alvo.form-control(row='2', name='pub-alvo')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='pub-alvo') Público-alvo
+              textarea#pub-alvo.form-control(row='2', name='pub-alvo')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='conceito') Conceito e linha criativa sugerida
+              textarea#conceito.form-control(row='2', name='conceito')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='conteudo') Conteúdo
+              textarea#conteudo.form-control(row='2', name='conteudo')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='Ref-TinyMce') Descrição
+              textarea#Ref-TinyMce.Ref-TinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
+            .form-group
+              label(for='inst-especificas') Instruções Específicas
+              p.help-block Obrigatoriedade e restrições
+              textarea#inst-especificas.form-control(row='2', name='inst-especificas')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            .form-group
+              label(for='dem-producao') Demandas de produção
+              textarea#dem-producao.form-control(row='2', name='dem-producao')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 
-              .form-group.pull-right
-                button.btn.btn-primary(type='submit') Editar
-                &nbsp;
-                a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
+
+            .form-group
+              label 
+                | Produtos Demandados
+              p.help-block Escolha o tipo de produto na caixa de seleção e escreva a quantidade na caixa de texto
+              .row.Box.Box--y
+                .col-md-6.col-sm-6
+                  select.form-control(name='prod-demandados')
+                    option(value='') Selecionar
+                    option(value='Capa CD/DVD') Capa CD/DVD
+                .col-md-2.col-sm-2
+                  input.form-control(type='text')
+                .col-md-4.col-sm-4
+                  button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                    i.fa.fa-plus
+                  button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                    i.fa.fa-times
+              .row.Box.Box--y
+                .col-md-6.col-sm-6
+                  select.form-control(name='prod-demandados')
+                    option(value='') Selecionar
+                    option(value='Cartaz') Cartaz
+                .col-md-2.col-sm-2
+                  input.form-control(type='text')
+                .col-md-4.col-sm-4
+                  button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                    i.fa.fa-plus
+                  button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                    i.fa.fa-times
+
+              .row.Box.Box--y
+                .col-md-6.col-sm-6
+                  select.form-control(name='prod-demandados')
+                    option(value='') Selecionar
+                    option(value='Faixa de mesa') Faixa de mesa
+                .col-md-2.col-sm-2
+                  input.form-control(type='text')
+                .col-md-4.col-sm-4
+                  button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                    i.fa.fa-plus
+                  button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                    i.fa.fa-times
+
+              .row.Box.Box--y
+                .col-md-6.col-sm-6
+                  select.form-control(name='prod-demandados')
+                    option(value='') Selecionar
+                    option(value='Banner (vinil adesivo) - formato 120 x 140cm') Banner (vinil adesivo) - formato 120 x 140cm
+                .col-md-2.col-sm-2
+                  input.form-control(type='text')
+                .col-md-4.col-sm-4
+                  button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                    i.fa.fa-plus
+                  button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                    i.fa.fa-times
+
+              .row.Box.Box--y
+                .col-md-6.col-sm-6
+                  select.form-control(name='prod-demandados')
+                    option(value='') Selecionar
+                    option(value='Banner intranet') Banner intranet
+                .col-md-2.col-sm-2
+                  input.form-control(type='text')
+                .col-md-4.col-sm-4
+                  button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                    i.fa.fa-plus
+                  button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                    i.fa.fa-times
+
+
+          #resultados.tab-pane(role='tabpanel') 
+            .form-group
+              .row
+                .col-md-3.col-xs-8
+                  label(for='data') Data
+                  .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                    input#data.form-control(type='text', placeholder='dd/mm/aaaa')
+                    .input-group-addon
+                      span.fa.fa-calendar
+            .form-group
+              label(for='dem-producao') Demandas de produção
+              textarea#dem-producao.form-control(row='2', name='dem-producao')
+                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Editar
+            &nbsp;
+            a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
 
