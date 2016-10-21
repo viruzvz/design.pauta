@@ -1,0 +1,145 @@
+.panel.panel-box.panel-default.panel-sf
+  .panel-heading
+    .Arrange
+      .Arrange-sizeFit
+        i.fa.fa-commenting-o
+      .Arrange-sizeFill
+        h2: strong Comunicação Interna
+      .Arrange-sizeFit
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+  .panel-body#collapse-box.in 
+    include ../partials/navbar-nav--secundaria
+    // Nav tabs
+    ul.nav.nav-tabs(role='tablist')
+      li.active(role='presentation')
+        a(href='#pautas', aria-controls='pautas', role='tab', data-toggle='tab') Pautas
+      li(role='presentation')
+        a(href='#colaboradores', aria-controls='colaboradores', role='tab', data-toggle='tab') Colaboradores
+    // Tab panes
+    .tab-content
+      #pautas.tab-pane.active(role='tabpanel')
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              form.form-group               
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
+
+          .col-md-8.text-right
+            .form-group
+              mixin btn-impress(title, classe, icon, name)
+                button.btn.btn-xs(type='button', title='#{title}', data-toggle='tooltip', class='#{classe}') 
+                  i.fa(class='#{icon}')
+                  |  #{name} 
+              .Box.Box--lg.Box--y
+                .btn-block
+                  +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
+
+        .table-responsive
+          mixin thead(head1, head2, head3, head4, head5, head6)
+            thead
+              tr
+                th #{head1}
+                th #{head2}
+                th #{head3}
+                th #{head4}
+                th #{head5}
+                th #{head6}
+          mixin tr(cond1, cond2, cond3, cond4, cond5, cond6)
+            tr(class='#{alert}')
+              td
+                a.btn.btn-xs.btn-default(data-toggle='modal' data-target="#editarDataPauta" title='Editar') 
+                  i.fa.fa-pencil 
+                  span  #{cond1}
+              td #{cond2}
+              td #{cond3}
+              td 
+                a(href='#') #{cond4}
+              td #{cond5}
+              td #{cond6}
+                
+          table.table.table-striped.table-hover.milli
+                  +thead('Data', 'Turno', 'Editoria', 'Assunto', 'Equipe', 'Views 7')
+                  tbody
+                    mixin group-tr(data)
+                      tr
+                        td.text-center(colspan='6')
+                          span.badge #{data}
+                      +tr('17/10', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                      +tr('17/11', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                      +tr('17/12', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                    +group-tr('17/10')
+                    +group-tr('18/10')
+                  mixin tfoot
+                    tfoot
+                      tr
+                        td.text-center(colspan='9')
+                          nav(aria-label='...')
+                            ul.pagination.Panel-pagination.pagination-sm
+                              li.disabled
+                                a(href='#', aria-label='Previous')
+                                  span(aria-hidden='true') «
+                              li.active
+                                a(href='#')
+                                  | 1 
+                                  span.sr-only (current)
+                              li
+                                a(href='#') 2
+                              li
+                                a(href='#') 3
+                              li
+                                a(href='#') 4
+                              li
+                                a(href='#') 5
+                              li
+                                a(href='#', aria-label='Next')
+                                  span(aria-hidden='true') »
+                  +tfoot
+
+      #colaboradores.tab-pane(role='tabpanel') 
+        .row
+          .col-md-12
+            .Box.Box--lg.Box--y
+              form.form-inline
+                .row
+                  .col-sm-4.col-xs-4
+                    .form-group
+                      label.control-label.milli(for='quantidade') Quant. de linhas:
+                      select.form-control
+                        option 1
+                        option 2
+                        option 3
+                        option 4
+                        option 555
+                  .col-sm-8.col-xs-12
+                    .form-group
+                      .input-group
+                        input.form-control(type='text', placeholder='Buscar')
+                        span.input-group-btn
+                          button.btn.btn-default(type='button')
+                            i.glyphicon.glyphicon-search
+
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            +thead('Nome', 'Tipo', 'Senador/Instituição', 'Função', 'Telefones', 'Views 7')
+            tbody
+              tr
+                td
+                  a(href='visualizarPerfil.html', data-toggle='tooltip', title='Visualizar Perfil') Nelson Luis Oliveira
+                td
+                  | Colaboradores da Comunicação Interna
+                td
+                  | Revista em Discussão
+                td
+                  | Editr
+                td
+                  | (61) 99999 9999
+                td
+                  a.btn.btn-xs.btn-default(href='#', data-toggle='modal', data-target='#editarFonte', title='Editar')
+                    i.fa.fa-pencil
+            +tfoot
+
+include ../modais/editarDataPauta

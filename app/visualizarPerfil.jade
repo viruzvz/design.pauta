@@ -13,11 +13,7 @@ html(lang='pt')
           ol.breadcrumb.breadcrumb-sf.u-spacer--xl
             li
               a(href='paginaInicial.html') Página inicial
-            li
-              a(href='comap.html') Comap
-            li
-              a(href='comap--itemComap.html') 16 dias de ativismo
-            li.active Editar Item
+            li.active Visualizar Perfil
           .alert.alert-info.hide
             button.close(type='button', data-dismiss='alert', aria-label='Close')
               span(aria-hidden='true') ×
@@ -26,7 +22,7 @@ html(lang='pt')
             a(href='#'): strong Carlos Eduardo Gomes Neri
             | — última modificação 25/08/2016 18:48
       article.col-md-12
-        include jade/paginas/editarItemComap
+        include jade/paginas/visualizarPerfil
 
   include jade/footer
 

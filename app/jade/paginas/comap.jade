@@ -20,33 +20,31 @@
     .tab-content
       #emAndamento.tab-pane.active(role='tabpanel')
         .row
-          .col-md-4
+          .col-md-8
             .Box.Box--lg.Box--y
-              form
-                .row
-                  .col-sm-2.col-xs-2
-                    .form-group
-                      label.control-label.milli(for='quantidade') Linhas:
-                  .col-sm-4.col-xs-4
-                    .form-group
-                      select.form-control.input-xs
-                        option 1
-                        option 2
-                        option 3
-                        option 4
-                        option 555
-                  .col-sm-6.col-xs-12
-                    .form-group
-                      .input-group
-                        input.form-control.input-xs(type='text', placeholder='Buscar')
-                        span.input-group-btn
-                          button.btn.btn-info.btn-xs(type='button')
-                            i.glyphicon.glyphicon-search
+              .row
+                .col-md-12
+                  .Box.Box--lg.Box--y
+                    form.form-inline
+                      .row
+                        .col-sm-4.col-xs-4
+                          .form-group
+                            label.control-label.milli(for='quantidade') Quant. de linhas:
+                            select.form-control
+                              option 1
+                              option 2
+                              option 3
+                              option 4
+                              option 555
+                        .col-sm-8.col-xs-12
+                          .form-group
+                            .input-group
+                              input.form-control(type='text', placeholder='Buscar')
+                              span.input-group-btn
+                                button.btn.btn-default(type='button')
+                                  i.glyphicon.glyphicon-search
 
-
-
-
-          .col-md-8.text-right
+          .col-md-4.text-right
             .form-group
               mixin btn-impress(title, classe, icon, name)
                 button.btn.btn-xs(type='button', title='#{title}', data-toggle='tooltip', class='#{classe}') 

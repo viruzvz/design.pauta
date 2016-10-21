@@ -1,0 +1,26 @@
+// Modal editarDataPauta (Carregado em; Comunicação Interna )
+#editarDataPauta.modal.fade(tabindex='-1', role='dialog', aria-labelledby='editarDataPautaLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#editarDataPautaLabel.modal-title 
+          span.fa.fa-pencil
+          |  Editar data da pauta
+      .modal-body
+        form(name='editarDataPauta')
+          .form-group
+            .row
+              .col-md-6
+                label(for='data') 
+                  | Data de produção
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#data.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                  .input-group-addon
+                    span.fa.fa-calendar
+      .modal-footer
+        button.btn.btn-primary(type='button') Editar
+        button.btn.btn-default(type='button', data-dismiss='modal') Cancelar

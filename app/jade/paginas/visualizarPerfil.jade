@@ -1,0 +1,60 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-eye
+          .Arrange-sizeFill
+            h2: strong Visualizar Perfil
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        form(name='editarPerfil')
+          .form-group
+            label(for='nome') Nome completo
+            input#nome.form-control(type='text', name='nome', placeholder='Carlos Eduardo Gomes Neri', disabled) 
+          .form-group
+            label(for='email') 
+              | E-mail
+            input#email.form-control(type='email', name='email', disabled, placeholder='cegn@senado.gov.br') 
+
+          .form-group
+            label(for='paginaPessoal') Página pessoal
+            input#paginaPessoal.form-control(type='text', name='paginaPessoal', disabled, placeholder='http://www.carlosvz.com')           
+
+          .form-group
+            label(for='biografia') Biografia
+            textarea#biografia.form-control(rows='4', disabled)
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+          .form-group
+            label(for='local') Local
+            input#local.form-control(type='text', name='local', placeholder='SECON NTI', disabled) 
+
+          .form-group
+            label Retrato
+              .retrato-crop   
+                img.img-responsive(src='../../img/avatar-cegn.png')
+            .row.hide
+              .col-md-6
+                input#retrato.form-control(type='file' name='retrato') 
+
+          .form-group.hide
+            .checkbox
+              label
+                input(type='checkbox')
+                |  Excluir Retrato
+
+          .form-group
+            label(for='nickname') Nome de guerra
+            input#nickname.form-control(type='text', name='nickname', disabled, placeholder='cegn') 
+
+          .form-group
+            label(for='emailparticular') E-mail particular
+            input#emailparticular.form-control(type='text', name='emailparticular', disabled, placeholder='viruzvz@gmail.com') 
+
+          .form-group.pull-right
+            a.btn.btn-default(href='#', data-dismiss='modal') Cancelar
+

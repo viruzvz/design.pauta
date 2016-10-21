@@ -1,0 +1,25 @@
+doctype html
+html(lang='pt')
+  style(role='Apenas para navegacao do prototipo, corresponde ao menu-item').
+  - var rand = function () { return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5) }
+  include jade/head
+
+  body#sfcss
+    aside
+      include jade/sidebar
+    main
+      header
+        include jade/navbar
+        .col-md-12
+          ol.breadcrumb.breadcrumb-sf.u-spacer--xl
+            li
+              a(href='paginaInicial.html') Página inicial
+            li.active Comunicação Interna
+      article.col-md-12
+        include jade/paginas/com-interna
+
+  include jade/footer
+
+
+
+

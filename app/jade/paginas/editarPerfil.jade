@@ -15,7 +15,7 @@
           .form-group
             label(for='nome') Nome completo
             p.help-block Informe seu nome completo, por exemplo, João da Silva.
-            input#nome.form-control(name='nome') 
+            input#nome.form-control(type='text', name='nome') 
 
           .form-group
             label(for='email') 
@@ -26,17 +26,17 @@
           .form-group
             label(for='paginaPessoal') Página pessoal
             p.help-block A URL para a sua página pessoal externa, caso você possua uma.
-            input#paginaPessoal.form-control(name='paginaPessoal')           
+            input#paginaPessoal.form-control(type='text', name='paginaPessoal')           
 
           .form-group
             label(for='biografia') Biografia
-            p.help-block A URL para a sua página pessoal externa, caso você possua uma.
+            p.help-block Uma breve descrição sobre quem você é e o que você faz. Será mostrada em sua página de autor, que é linkada nos itens que você criar.
             textarea#biografia.form-control(rows='4')
 
           .form-group
             label(for='local') Local
-            p.help-block Informe seu nome completo, por exemplo, João da Silva.
-            input#local.form-control(name='local') 
+            p.help-block Sua localização, como cidade e país, ou no caso de uma empresa, onde o seu escritório está localizado.
+            input#local.form-control(type='text', name='local') 
 
           .form-group
             label(for='retrato') Retrato
@@ -54,12 +54,12 @@
                 |  Excluir Retrato
 
           .form-group
-            label(for='nickname') Nome de Guerra
-            input#nickname.form-control(name='nickname') 
+            label(for='nickname') Nome de guerra
+            input#nickname.form-control(type='text', name='nickname') 
 
           .form-group
             label(for='emailparticular') E-mail particular
-            input#emailparticular.form-control(name='emailparticular') 
+            input#emailparticular.form-control(type='text', name='emailparticular') 
 
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Editar
