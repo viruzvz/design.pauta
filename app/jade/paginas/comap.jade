@@ -53,7 +53,11 @@
               .Box.Box--lg.Box--y
                 .btn-block
                   +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
-                  +btn-impress('', 'btn-success', 'fa-plus', 'Criar Trabalho')
+                  &nbsp;
+                  a.btn.btn-xs.btn-success(href='criarItemComap.html', title='Criar Trabalho')
+                    i.fa.fa-plus
+                    |  Criar Trabalho
+
 
         .table-responsive
           mixin thead(head1, head2, head3, head4, head5, head6, head7, head8, head9)

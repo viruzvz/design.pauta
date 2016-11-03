@@ -1,15 +1,5 @@
 doctype html
 html(lang='pt')
-  style(role='Apenas para navegacao do prototipo, corresponde ao menu-item').
-    #menu-item--status li li:nth-child(2), #menu-item--status li li:nth-child(3) {
-      display:none;
-    }
-    #menu-item--apoio li li:nth-child(4), #menu-item--apoio li li:nth-child(5){
-      display:none;
-    }
-    #menu-item--controle li:nth-child(5), #menu-item--controle li:nth-child(6), #menu-item--controle li:nth-child(7), #menu-item--controle li:nth-child(8){
-      display:none;
-    }
   - var rand = function () { return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5) }
   include jade/head
 
@@ -23,8 +13,10 @@ html(lang='pt')
           ol.breadcrumb.breadcrumb-sf.u-spacer--xl
             li
               a(href='paginaInicial.html') Página inicial
-            li.active Pautas do dia - ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
-          .alert.alert-info
+            li 
+              a(href='comap.html') Comap
+            li.active Criar Item Comap
+          .alert.alert-info.hide
             button.close(type='button', data-dismiss='alert', aria-label='Close')
               span(aria-hidden='true') ×
             i.fa.fa-lock
@@ -32,7 +24,7 @@ html(lang='pt')
             a(href='#'): strong Carlos Eduardo Gomes Neri
             | — última modificação 25/08/2016 18:48
       article.col-md-12
-        include jade/paginas/itemPautaGeral
+        include jade/paginas/criarItemComap
 
   include jade/footer
 

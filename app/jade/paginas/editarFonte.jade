@@ -12,35 +12,39 @@
               a.btn-minimize(href='#collapse-box' data-toggle="collapse")
       .panel-body#collapse-box.in 
 
-        form(name='adicionarLink-padrao')
+        form(name='editarFontForm')
           .form-group
-            label(for='trabalho') 
-              | Trabalho
+            label(for='nome') 
+              | Nome 
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#trabalho.form-control(name='trabalho', required) 
+            input#nome.form-control(type='text', name='nome', required) 
           .form-group
-            label(for='cliente') 
-              | Cliente
+            label(for='login') Login Senado (ou Código do Senador) 
+            p.help-block Informe o login no Senado (ou código do Senador), se houver, para buscar informações adicionais
+            input#login.form-control(type='text', name='login') 
+          .form-group
+            label(for='area') 
+              | Área 
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
             .row
               .col-md-4
-                select#cliente.form-control(name='cliente', required)
+                select#area.form-control(name='area', required)
                   option(value='') Selecionar
-                  option(value='Advocacia') Advocacia 
+                  option(value='Comissões') Comissões 
           .form-group
-            label(for='contato') 
-              | Contato
-              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#contato.form-control(name='contato', required) 
+            label(for='senador') Senador/Instituição
+            input#senador.form-control(type='text', name='senador') 
           .form-group
-            label(for='telefones') 
-              | Telefones
-              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            label(for='funcao') Função
+            input#funcao.form-control(type='text', name='funcao') 
+
+          .form-group
+            label(for='telefones') Telefones
             .row
               .col-md-6.col-sm-6
-                input#telefones.form-control(type='text', name='telefones', required)
+                input#telefones.form-control(type='text', name='telefones')
               .col-md-4.col-sm-4
-                select#tipo-fone.form-control(name='tipo-fone', required)
+                select#tipo-fone.form-control(name='tipo-fone')
                   option(value='') Selecionar
                   option(value='Ramal') Ramal 
               .col-md-2.col-sm-2
@@ -49,70 +53,39 @@
                 button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                   i.fa.fa-times
           .form-group
-            label(for='e-mails') 
-              | E-mails
-              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            label(for='email') E-mails
             .row
               .col-md-6.col-sm-6
-                input#email.form-control(type='email', name='email', required)
+                input#email.form-control(type='email', name='email')
               .col-md-4.col-sm-4
-                select#tipo-email.form-control(name='tipo-email', required)
+                select#tipo-email.form-control(name='tipo-email')
                   option(value='') Selecionar
-                  option(value='Ramal') Comercial
+                  option(value='Comercial') Comercial
               .col-md-2.col-sm-2
                 button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
                   i.fa.fa-plus
                 button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                   i.fa.fa-times
           .form-group
-            label(for='atendimento') 
-              | Atendimento
-              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+            label(for='redes-sociais') Rede Sociais
             .row
-              .col-md-4
-                select#atendimento.form-control(name='atendimento', required)
+              .col-md-6.col-sm-6
+                input#redes-sociais.form-control(type='text', name='redes-sociais')
+              .col-md-4.col-sm-4
+                select#redes.form-control(name='redes')
                   option(value='') Selecionar
-                  option(value='Andrea') Andrea 
+                  option(value='Facebook') Facebook
+              .col-md-2.col-sm-2
+                button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
+                  i.fa.fa-plus
+                button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
+                  i.fa.fa-times
           .form-group
-            label(for='criacao') Criação 
+            label(for='observacoes') Observações
+            textarea#observacoes.descricaoTinyMce.form-control(name='observacoes', cols='100', rows='10')
           .form-group
-            label(for='marketing') Marketing 
-          .form-group
-            label(for='producao') Produção
-          .form-group
-            label(for='cat-trabalho') 
-              | Categoria do trabalho
-              span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            .row
-              .col-md-4
-                select#cat-trabalho.form-control(name='cat-trabalho', required)
-                  option(value='') Selecionar
-                  option(value='Utilidade Publica') Utilidade Pública 
-          .form-group
-            .checkbox
-              label
-                input(type='checkbox')
-                | Prioridade
-          .form-group
-            label(for='end-rede') Endereço na rede
-            input#end-rede.form-control(type='text', name='end-rede') 
-          .form-group
-            .row
-              .col-md-3.col-xs-8
-                label(for='data-ent-comap') Data de entrada na COMAP
-                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
-                  input#data-ent-comap.form-control(type='text', placeholder='dd/mm/aaaa', required)
-                  .input-group-addon
-                    span.fa.fa-calendar
-          .form-group
-            .row
-              .col-md-3.col-xs-8
-                label(for='prev-saida') Previsão de saída
-                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
-                  input#prev-saida.form-control(type='text', placeholder='dd/mm/aaaa')
-                  .input-group-addon
-                    span.fa.fa-calendar
-         
+            label(for='biografia') Biografia
+            textarea#biografia.descricaoTinyMce.form-control(name='biografia', cols='100', rows='10')
                       
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Editar
