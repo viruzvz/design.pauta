@@ -34,12 +34,12 @@
         // Tab panes
         .tab-content.Box.Box--lg.Box--y
           #conteudo.tab-pane.active(role='tabpanel') 
-            form(name='adicionarLink-padrao')
+            form(name='criarItemComapForm')
               .form-group
                 label(for='trabalho') 
                   | Trabalho
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#trabalho.form-control(name='trabalho', required) 
+                input#trabalho.form-control(type='text', name='trabalho', required) 
               .form-group
                 label(for='cliente') 
                   | Cliente
@@ -53,7 +53,7 @@
                 label(for='contato') 
                   | Contato
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#contato.form-control(name='contato', required) 
+                input#contato.form-control(type='text', name='contato', required) 
               .form-group
                 label(for='telefones') 
                   | Telefones

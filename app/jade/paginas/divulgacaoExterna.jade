@@ -1,0 +1,115 @@
+.panel.panel-box.panel-default.panel-sf
+  .panel-heading
+    .Arrange
+      .Arrange-sizeFit
+        i.fa.fa-rss
+      .Arrange-sizeFill
+        h2: strong Divulgação Externa
+      .Arrange-sizeFit
+        .panel-actions
+          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+  .panel-body#collapse-box.in 
+    include ../partials/navbar-nav--secundaria
+
+    // Responsive Select, on only in xs
+    .visible-xs
+      .form-group
+        label(for='mySelect') Selecione um tipo
+        select.mySelect.select-nav.form-control
+          mixin option(value, name)
+            option(value='#{value}') #{name}
+          +option('#naoIniciado', 'Não Iniciado')
+          +option('#emAndamento', 'Em Andamento')
+          +option('#concluido', 'Concluído')
+          +option('#cancelado', 'Cancelado')
+    // Nav tabs
+    ul.nav.nav-tabs(role='tablist')
+      li.active
+        a(href='#naoIniciado', aria-controls='naoIniciado', role='tab', data-toggle='tab') Não Iniciado
+      li
+        a(href='#emAndamento', aria-controls='emAndamento', role='tab', data-toggle='tab') Em Andamento
+      li
+        a(href='#concluido', aria-controls='concluido', role='tab', data-toggle='tab') Concluído     
+      li
+        a(href='#cancelado', aria-controls='cancelado', role='tab', data-toggle='tab') Cancelado
+
+    // Tab panes
+    .tab-content
+      .row
+        .col-md-12.text-right
+          .form-group
+            .Box.Box--lg.Box--y
+              .btn-block
+                a.btn.btn-xs.btn-success(href='criarItemDivulgacaoExterna.html', title='Criar Item', data-toggle='tooltip') 
+                  .fa.fa-plus 
+                  |  Criar Item
+      #naoIniciado.tab-pane.active(role='tabpanel')
+        .table-responsive
+          mixin tfoot
+            tfoot
+              tr
+                td.text-center(colspan='9')
+                  nav(aria-label='...')
+                    ul.pagination.Panel-pagination.pagination-sm
+                      li.disabled
+                        a(href='#', aria-label='Previous')
+                          span(aria-hidden='true') «
+                      li.active
+                        a(href='#')
+                          | 1 
+                          span.sr-only (current)
+                      li
+                        a(href='#') 2
+                      li
+                        a(href='#') 3
+                      li
+                        a(href='#') 4
+                      li
+                        a(href='#') 5
+                      li
+                        a(href='#', aria-label='Next')
+                          span(aria-hidden='true') »
+          mixin thead(head1, head2, head3, head4, head5, head6, head7)
+            thead
+              tr
+                th #{head1}
+                th #{head2}
+                th #{head3}
+                th #{head4}
+                th #{head5}
+                th #{head6}
+                th #{head7}
+          mixin tr(href, cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8)
+            tr
+              td 
+                a(href='#{href}') #{cond1}
+              td #{cond2}
+              td #{cond3}
+              td #{cond4}
+              td #{cond5}
+              td #{cond6}
+              td 
+                strong  #{cond7}
+                br
+                | #{cond8}
+                
+          table.table.table-striped.table-hover.milli
+            +thead('Assunto', 'Área interessada', 'Início da divulgação', 'Início do evento', 'Categoria', 'Editoria',  'Equipe')
+            tbody
+              +tr('#', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Comissão de Valorização da Primeira Infância e Cultura da Paz', '04/11/2016', '22/11/2016', 'Divulgação', 'Eventos', 'Coordenador da Ação:', 'Mayra')
+              +tr('#', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Comissão de Valorização da Primeira Infância e Cultura da Paz', '04/11/2016', '22/11/2016', 'Divulgação', 'Eventos', 'Coordenador da Ação:', 'Mayra')
+            +tfoot
+
+      #emAndamento.tab-pane(role='tabpanel') 
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            +thead('Assunto', 'Área interessada', 'Início da divulgação', 'Início do evento', 'Categoria', 'Editoria',  'Equipe')
+            tbody
+              +tr('#', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Comissão de Valorização da Primeira Infância e Cultura da Paz', '04/11/2016', '22/11/2016', 'Divulgação', 'Eventos', 'Coordenador da Ação:', 'Mayra')
+            +tfoot
+
+
+
+
+
+include ../modais/editarDataPauta

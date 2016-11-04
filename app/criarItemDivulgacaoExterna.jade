@@ -1,0 +1,33 @@
+doctype html
+html(lang='pt')
+  - var rand = function () { return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5) }
+  include jade/head
+
+  body#sfcss
+    aside
+      include jade/sidebar
+    main
+      header
+        include jade/navbar
+        .col-md-12
+          ol.breadcrumb.breadcrumb-sf.u-spacer--xl
+            li
+              a(href='paginaInicial.html') Página inicial
+            li 
+              a(href='divulgacaoExterna.html') Divulgação Externa
+            li.active Criar Item Divulgação Externa
+          .alert.alert-info.hide
+            button.close(type='button', data-dismiss='alert', aria-label='Close')
+              span(aria-hidden='true') ×
+            i.fa.fa-lock
+            |  por 
+            a(href='#'): strong Carlos Eduardo Gomes Neri
+            | — última modificação 25/08/2016 18:48
+      article.col-md-12
+        include jade/paginas/criarItemDivulgacaoExterna
+
+  include jade/footer
+
+
+
+

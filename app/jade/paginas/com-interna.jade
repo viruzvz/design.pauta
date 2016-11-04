@@ -12,18 +12,13 @@
     include ../partials/navbar-nav--secundaria
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
-      li.active
-        a(href='#naoIniciado', aria-controls='naoIniciado', role='tab', data-toggle='tab') Não Iniciado
-      li
-        a(href='#emAndamento', aria-controls='emAndamento', role='tab', data-toggle='tab') Em Andamento
-      li
-        a(href='#concluido', aria-controls='concluido', role='tab', data-toggle='tab') Concluído     
-      li
-        a(href='#cancelado', aria-controls='cancelado', role='tab', data-toggle='tab') Cancelado
-
+      li.active(role='presentation')
+        a(href='#pautas', aria-controls='pautas', role='tab', data-toggle='tab') Pautas
+      li(role='presentation')
+        a(href='#colaboradores', aria-controls='colaboradores', role='tab', data-toggle='tab') Colaboradores
     // Tab panes
     .tab-content
-      #naoIniciado.tab-pane.active(role='tabpanel')
+      #pautas.tab-pane.active(role='tabpanel')
         .row
           .col-md-4
             .Box.Box--lg.Box--y
@@ -104,7 +99,7 @@
                                   span(aria-hidden='true') »
                   +tfoot
 
-      #emAndamento.tab-pane(role='tabpanel') 
+      #colaboradores.tab-pane(role='tabpanel') 
         .row
           .col-md-12
             .Box.Box--lg.Box--y

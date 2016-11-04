@@ -1,0 +1,168 @@
+.row
+  .col-md-12
+    .panel.panel-box.panel-default.panel-sf
+      .panel-heading
+        .Arrange
+          .Arrange-sizeFit
+            i.fa.fa-plus
+          .Arrange-sizeFill
+            h2: strong Criar Item Divulgação Externa
+          .Arrange-sizeFit
+            .panel-actions
+              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .panel-body#collapse-box.in 
+        // Responsive Select, on only in xs
+        .visible-xs
+          .form-group
+            label(for='mySelect') Selecione um tipo
+            select.mySelect.select-nav.form-control
+              mixin option(value, name)
+                option(value='#{value}') #{name}
+              +option('#conteudo', 'Conteúdo')
+              +option('#release', 'Release')
+              +option('#roteiroBreafing', 'Roteiro/Breafing')
+              +option('#checklist', 'Check-list')
+              +option('#email', 'E-mail')
+
+        // Nav tabs
+        ul#myTab.nav.nav-tabs.hidden-xs(role='tablist')
+          li.active(role='presentation')
+            a(href='#conteudo', aria-controls='conteudo', role='tab', data-toggle='tab') Conteúdo
+          li(role='presentation')
+            a(href='#release', aria-controls='release', role='tab', data-toggle='tab') Release
+          li(role='presentation')
+            a(href='#roteiroBreafing', aria-controls='roteiroBreafing', role='tab', data-toggle='tab') Roteiro/Breafing
+          li(role='presentation')
+            a(href='#checklist', aria-controls='checklist', role='tab', data-toggle='tab') Check-list
+          li(role='presentation')
+            a(href='#email', aria-controls='email', role='tab', data-toggle='tab') E-mail
+
+        // Tab panes
+        .tab-content.Box.Box--lg.Box--y
+          #conteudo.tab-pane.active(role='tabpanel') 
+            form(name='criarItemDivulgacaoExternaForm')
+              .form-group
+                label(for='assunto') 
+                  | Assunto
+                  span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                input#assunto.form-control(type='text', name='assunto', required) 
+              .row
+                .col-md-6
+                  .form-group
+                    label(for='categoriaTrabalho') 
+                      | Categoria de trabalho 
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                    select#categoriaTrabalho.form-control(name='categoriaTrabalho', required)
+                      option(value='') Selecionar
+                      option(value='Divulgacao') Divulgação 
+                .col-md-6
+                  .form-group
+                    label(for='editoria') 
+                      | Editoria 
+                      span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
+                    select#editoria.form-control(name='editoria', required)
+                      option(value='') Selecionar
+                      option(value='Comunicacao') Comunicação 
+              .form-group
+                label(for='descricao') Descrição
+                textarea#descricao.form-control(row='2', name='descricao')
+              .form-group
+                label(for='objetivos') Objetivos
+                textarea#objetivos.form-control(row='2', name='objetivos')
+              .form-group
+                label(for='areaInteressada') Área interessada
+                input#areaInteressada.form-control(type='text', name='areaInteressada') 
+              .form-group
+                label(for='contatoAreaInteressada') Área interessada
+                input#contatoAreaInteressada.form-control(type='text', name='contatoAreaInteressada') 
+              .form-group
+                label(for='coordenadorAcao') Atendimento
+                .row
+                  .col-md-4
+                    select#coordenadorAcao.form-control(name='coordenadorAcao', required)
+                      option(value='') Selecionar
+                      option(value='vazio') vazio 
+              .form-group
+                label(for='equipe') Equipe 
+              .form-group
+                .row
+                  .col-md-3.col-xs-12
+                    .form-group
+                      label(for='dataInicioDivulgacao') Data de início da divulgação
+                      .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                        input#dataInicioDivulgacao.form-control(type='text', placeholder='dd/mm/aaaa', required)
+                        .input-group-addon
+                          span.fa.fa-calendar
+                  .col-md-3.col-xs-12
+                    .form-group
+                      label(for='dataFinalDivulgacao') Data de final da divulgação
+                      .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                        input#dataFinalDivulgacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                        .input-group-addon
+                          span.fa.fa-calendar
+                .row
+                  .col-md-3.col-xs-12
+                    .form-group
+                      label(for='dataInicioEvento') Data de início do evento
+                      .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                        input#dataInicioEvento.form-control(type='text', placeholder='dd/mm/aaaa')
+                        .input-group-addon
+                          span.fa.fa-calendar
+
+                  .col-md-3.col-xs-12
+                    .form-group
+                      label(for='dataFinalEvento') Data de final do evento
+                      .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                        input#dataFinalEvento.form-control(type='text', placeholder='dd/mm/aaaa')
+                        .input-group-addon
+                          span.fa.fa-calendar
+              .form-group
+                label(for='imagens') Imagens
+                textarea#imagens.form-control(row='4', name='imagens')
+              .form-group
+                label(for='observacoesGerais') Observações gerais
+                textarea#observacoesGerais.form-control(row='2', name='observacoesGerais')
+              .form-group
+                label(for='end-rede') Endereço da rede
+                input#end-rede.form-control(type='text', name='end-rede') 
+              .form-group
+                label(for='mailingsUtilizados') Mailings utilizados
+              .form-group
+                label(for='resultado') Resultado
+                textarea#resultado.form-control(row='4', name='resultado')
+
+          #release.tab-pane(role='tabpanel') 
+            .form-group
+              label(for='release') Release
+              textarea#release.descricaoTinyMce.tinyMce.form-control(name='release', cols='100', rows='10')
+
+          #roteiroBreafing.tab-pane(role='tabpanel') 
+            .form-group
+              label(for='roteiroBreafingImput') Roteiro/Breafing
+              textarea#roteiroBreafingImput.descricaoTinyMce.tinyMce.form-control(name='roteiroBreafingImput', cols='100', rows='10')
+          #checklist.tab-pane(role='tabpanel') 
+            .form-group
+              label(for='checkListImput') Check-list
+              textarea#checkListImput.descricaoTinyMce.tinyMce.form-control(name='checkListImput', cols='100', rows='10')
+          #email.tab-pane(role='tabpanel') 
+            label Selecionar Modelo de E-mail
+            .row
+              .col-md-4.col-sm-4
+                .form-group
+                  select#tipo-email.form-control(name='tipo-email', required)
+                    option(value='') Selecionar
+                    option(value='Modelo asdfg') Modelo asdfg
+              .col-md-2.col-sm-2
+                .form-group
+                  button.btn.btn-default(type='button', name='adicionar', data-toggle='tooltip', title='Trocar texto e-mail')
+                    i.fa.fa-pencil
+                    |  Trocar texto e-mail
+            .form-group
+              label(for='emailImput') E-mail
+              textarea#emailImput.descricaoTinyMce.tinyMce.form-control(name='emailImput', cols='100', rows='10')
+
+          .form-group.pull-right
+            button.btn.btn-primary(type='submit') Criar
+            &nbsp;
+            a.btn.btn-default(href='divulgacaoExterna.html', data-dismiss='modal') Cancelar
+
