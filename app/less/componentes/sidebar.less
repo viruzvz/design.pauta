@@ -5,26 +5,8 @@
     color: #fff;
   }
 }
-//////////////////////////////// Menu collapsed + And Menu collapse -  
-.more {
-  &:before {
-    content: '\f067';
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1.7;
-  }
-}
-.more[aria-expanded="true"] {
-  &:before {
-    content: '\f068';
-  }
-}
 //////////////////////////////// SIDEBAR
-.MenuTitulo {
+.Sidebar--text {
   background-color:#233f5f;
   color: #fff;
   cursor: pointer;
@@ -35,54 +17,44 @@
 .Sidebar {
   width: 240px;
 }
-.Sidebar--Header {
+.Sidebar--header {
   box-shadow: 0 3px 1px -1px rgba(3, 6, 9, 0.05);
   border-bottom: 1px solid #1a2e46;
-  padding: 10px 15px;
 }
 .Sidebar-menu {
   height: 0;
   display: block!important;
   overflow: hidden;
-
   &.in {
     height: auto;
     background-color: #1a2e46;
   }
-  .Sidebar-menuLabel {
+  .Sidebar-menu--Label {
     display: none;
   }
 }
-.Sidebar-Defaultlink {
-  color: #fff;
-  &:hover {
-    color: #E3EAEE;
-  }
-}
-.Sidebar-menuLink, {
+.Sidebar-menu--Link, {
   .focused;
 }
-.Sidebar--btn {
+.Sidebar-btn {
   background-color: transparent;
   .focused;
 }
 //////////////////////////////// SIDEBAR COMPACT
-.Sidebar--compact {
-  .Sidebar--compact-icon {
+.Sidebar-compact {
+  .Sidebar-compact--icon {
     display: none;
   }
-  .more {
-    &:before {
-      display: none;
-    }
+  .Sidebar--hidden {
+    display: none;
   }
-  .MenuTitulo[aria-expanded="true"]  {
+  .Sidebar--text[aria-expanded="true"]  {
     background-color: transparent;
   }
   .Icon--Header {
       font-size: 29px;
   }
-  .Sidebar--Header {
+  .Sidebar--header {
     padding: 15.5px 15px;
   }
   .Sidebar--Controlflag {
@@ -94,13 +66,12 @@
     }
   }
   width: auto;
-  .Sidebar-menuLink .Sidebar-menuLabel {
+  .Sidebar-menu--Link .Sidebar-menu--Label {
     display: none;
   }
-  .Sidebar-menu .Sidebar-menuLabel {
+  .Sidebar-menu .Sidebar-menu--Label {
     display: block;
   }
-
   .Sidebar-menu {
     position: absolute;
     left: 100%;
@@ -116,7 +87,6 @@
   }
 }
 ///////////////////// classes de ajuda
-
 .sidebar-link {
   color: #fff;
   &:hover {

@@ -1,13 +1,15 @@
-.panel.panel-box.panel-default.panel-sf
-  .panel-heading
-    .Arrange
-      .Arrange-sizeFit
-        i.fa.fa-rss
-      .Arrange-sizeFill
-        h2: strong Divulgação Externa
-      .Arrange-sizeFit
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
+        i.fa.fa-rss 
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Divulgação Externa
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--borderLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
   .panel-body#collapse-box.in 
     include ../partials/navbar-nav--secundaria
 
@@ -23,7 +25,7 @@
           +option('#concluido', 'Concluído')
           +option('#cancelado', 'Cancelado')
     // Nav tabs
-    ul.nav.nav-tabs(role='tablist')
+    ul.nav.nav-tabs.hidden-xs(role='tablist')
       li.active
         a(href='#naoIniciado', aria-controls='naoIniciado', role='tab', data-toggle='tab') Não Iniciado
       li
@@ -32,13 +34,12 @@
         a(href='#concluido', aria-controls='concluido', role='tab', data-toggle='tab') Concluído     
       li
         a(href='#cancelado', aria-controls='cancelado', role='tab', data-toggle='tab') Cancelado
-
     // Tab panes
     .tab-content
       .row
         .col-md-12.text-right
           .form-group
-            .Box.Box--lg.Box--y
+            .Box--lg.Box--y
               .btn-block
                 a.btn.btn-xs.btn-success(href='criarItemDivulgacaoExterna.html', title='Criar Item', data-toggle='tooltip') 
                   .fa.fa-plus 

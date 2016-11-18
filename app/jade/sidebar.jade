@@ -1,33 +1,36 @@
 ul.list-unstyled.Sidebar.u-posRelative
-  li.Box.u-spacer--xl.Sidebar--Header
+  li.Sidebar--header.Box.Box--lg.u-spacer--xl
     .Flag.Sidebar--Controlflag
       .Flag-figure.Sidebar--Flagfigure.Sidebar--FlagfigureCompact
-        a.Sidebar--compact-btn.hidden-xs(href='#')
+        a.Sidebar-compact--btn.hidden-xs(href='#')
           img(src='img/icon-pautas2.svg' alt='Logo sistema'  width="29px" height="29px")
         img.visible-xs(src='img/icon-pautas.svg' alt='Logo sistema'  width="29px" height="29px")
       .Flag-body.Sidebar--Flagbody(class="+white--color")
         | Central de Pautas e Produção Jornalistica
-      .Flag-figure.pull-right.Sidebar--compact-icon.hidden-xs
-        a.gamma.Sidebar--compact-btn(href="#" class="+white--color")
+      .Flag-figure.pull-right.Sidebar-compact--icon.hidden-xs
+        a.gamma.Sidebar-compact--btn(href="#" class="+white--color")
           span.fa.fa-ellipsis-v
   mixin item-link(href, icon, title)
     li.Box.u-posStatic_.u-textNoWrap
       a(href="#{href}")
-        .Sidebar-menuLink.MenuTitulo
-          button.btn.Sidebar--btn.btn-square(role='button' title='Alooo2')
+        .Sidebar-menu--Link.Sidebar--text
+          button.btn.Sidebar-btn.btn-square(role='button' title='Alooo2')
             span.fa.milli(class="#{icon}")
-          span.Box.Sidebar-menuLabel  #{title}
+          span.Box.Sidebar-menu--Label  #{title}
   +item-link('paginaInicial.html', 'fa-home', 'Página Inicial')
   mixin item-drop(icon, title, name)
     li.Box.dropdown.u-posStatic_.u-textNoWrap
       - var id = rand()
-      .Sidebar-menuLink.MenuTitulo.more(href='#' data-toggle='collapse' data-target='##{id}' aria-expanded='false')
-        button.btn.Sidebar--btn.btn-square(role='button' title='Alooo')
+      .Sidebar-menu--Link.Sidebar--text.toggle(href='#' data-toggle='collapse' data-target='##{id}' aria-expanded='false')
+        .pull-right.Box.Box--sm.Sidebar--hidden
+          i.fa.fa-plus
+          i.fa.fa-minus
+        button.btn.Sidebar-btn.btn-square(role='button' title='Alooo')
           span.fa.milli(class="#{icon}") 
-        span.Box.Sidebar-menuLabel  #{title}
+        span.Box.Sidebar-menu--Label  #{title}
       .Sidebar-menu.collapse(id=id)
-        .Sidebar-menuLabel
-          .MenuTitulo.Box #{title}
+        .Sidebar-menu--Label
+          .Sidebar--text.Box #{title}
         ul.list-unstyled.Box(class='+bgdropdown')
           mixin item-drop-li(href, icon, name)
             li

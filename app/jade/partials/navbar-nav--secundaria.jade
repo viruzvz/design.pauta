@@ -1,31 +1,35 @@
 .navbar-nav--secundaria
-  .panel.Painel--borderTopLR 
-    .panel-heading
+  .panel.panel-default
+    .s-bar.s-bar--gradient
       .Arrange
         .Arrange-sizeFit
-          i.fa.fa-sliders(data-toggle='tooltip', title='Barra de Informações')
+          .Box.Box--lg
+            i.fa.fa-sliders(data-toggle='tooltip', title='Barra de Informações')          
         .Arrange-sizeFill
-          ul.nav.navbar-nav.navbar-nav--md.navbar-right.pull-right
+          ul.nav.navbar-nav.pull-right
             li#btn-navbar--link.dropdown.text-center
               a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
-                span.seta-dropdown-menu.hidden-xs
+                span.seta-dropdown-menu.hidden-xs 
                 i.fa.fa-link
-              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
+              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
                 li.Box.Box--lg.eta(class="+white +senado")
                   i.fa.fa-link
                   strong  Links
-                li.Box.Box--md.CutHere.scroll
+                li.Box.Box--lg.scroll
                   ul.list-unstyled.CutHere
-                    li: a(href='#') Lista de links aqui 01
-                    li: a(href='#') Lista de links aqui 02 
-                    li: a(href='#') Lista de links aqui 03 
-                    li: a(href='#') Lista de links aqui 04 
-                    li: a(href='#') Lista de links aqui 05 
+                    mixin li
+                      li: a(href='#') 
+                        i.fa.fa-chevron-right
+                        |  Lorem ipsum dolor sit amet, consectetur
+                    +li
+                    +li
+                    +li
+                    +li
             li#btn-navbar--calendar.dropdown.text-center
               a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
                 span.seta-dropdown-menu.hidden-xs
                 i.fa.fa-calendar
-              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
+              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
                 li(class="+white")
                   .Box.Box--lg
                     .datepicker(data-date='12/03/2012')
@@ -35,7 +39,7 @@
                 span.seta-dropdown-menu.hidden-xs
                 i.fa.fa-bell
                 span.badge.badge--unread.micro 6
-              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg
+              ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
                 li.Box.Box--lg.eta(class="+white +senado")
                   i.fa.fa-bell
                   strong  Avisos

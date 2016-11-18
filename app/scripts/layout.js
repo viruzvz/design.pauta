@@ -5,8 +5,8 @@
   $('#main-menu-toggle').on('click', function () {
     $('aside').toggleClass('in');
   })
-  $('.Sidebar--compact-btn').on('click', function () {
-    $('.Sidebar').toggleClass('Sidebar--compact');
+  $('.Sidebar-compact--btn').on('click', function () {
+    $('.Sidebar').toggleClass('Sidebar-compact');
     $('#main-menu-toggle').toggleClass('hide');
   })
   /////////////////// BOOTSTRAP TOOLTIP
