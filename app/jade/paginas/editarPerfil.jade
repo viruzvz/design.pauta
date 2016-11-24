@@ -1,43 +1,40 @@
 .row
   .col-md-12
-    .panel.panel-box.panel-default.panel-sf
-      .panel-heading
-        .Arrange
-          .Arrange-sizeFit
+    .panel.panel-default
+      .s-bar.s-bar--background
+        .ArrangeFlex
+          .ArrangeFlex-sizeFit.Box.Box--lg
             i.fa.fa-pencil
-          .Arrange-sizeFill
-            h2: strong Editar Perfil
-          .Arrange-sizeFit
-            .panel-actions
-              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+          .ArrangeFlex-sizeFill.Box--y.Box--lg
+            h2.milli.s-bar--text
+              strong Editar Perfil
+          .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
       .panel-body#collapse-box.in 
         form(name='editarPerfilForm')
           .form-group
             label(for='nome') Nome completo
             p.help-block Informe seu nome completo, por exemplo, João da Silva.
             input#nome.form-control(type='text', name='nome') 
-
           .form-group
             label(for='email') 
               | E-mail
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
             input#email.form-control(type='email', name='email', required, placeholder='meuemail@meudominio.com.br') 
-
           .form-group
             label(for='paginaPessoal') Página pessoal
             p.help-block A URL para a sua página pessoal externa, caso você possua uma.
             input#paginaPessoal.form-control(type='text', name='paginaPessoal')           
-
           .form-group
             label(for='biografia') Biografia
             p.help-block Uma breve descrição sobre quem você é e o que você faz. Será mostrada em sua página de autor, que é linkada nos itens que você criar.
             textarea#biografia.form-control(rows='4')
-
           .form-group
             label(for='local') Local
             p.help-block Sua localização, como cidade e país, ou no caso de uma empresa, onde o seu escritório está localizado.
             input#local.form-control(type='text', name='local') 
-
           .form-group
             label(for='retrato') Retrato
               .retrato-crop   
@@ -46,23 +43,19 @@
             .row
               .col-md-6
                 input#retrato.form-control(type='file' name='retrato') 
-
           .form-group
             .checkbox
               label
                 input(type='checkbox')
                 |  Excluir Retrato
-
           .form-group
             label(for='nickname') Nome de guerra
             input#nickname.form-control(type='text', name='nickname') 
-
           .form-group
             label(for='emailparticular') E-mail particular
             input#emailparticular.form-control(type='text', name='emailparticular') 
-
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Editar
-            &nbsp;
+            | &nbsp;
             a.btn.btn-default(href='paginaInicial--itemPautaGeral.html', data-dismiss='modal') Cancelar
 

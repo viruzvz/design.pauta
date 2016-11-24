@@ -1,17 +1,17 @@
 //////////////////////////////// SIDEBAR Functions
 .focused {
   &:focus, &:active, &:hover {
-    background-color: #1a2e46;
-    color: #fff;
+    background-color: @c3;
+    color: @c5;
   }
 }
 //////////////////////////////// SIDEBAR
 .Sidebar--text {
-  background-color:#233f5f;
-  color: #fff;
+  color: @c5;
   cursor: pointer;
+  background-color:@c1;
   &[aria-expanded="true"] {
-    background-color: #1a2e46;
+    background-color: @c3;
   }
 }
 .Sidebar {
@@ -19,7 +19,7 @@
 }
 .Sidebar--header {
   box-shadow: 0 3px 1px -1px rgba(3, 6, 9, 0.05);
-  border-bottom: 1px solid #1a2e46;
+  border-bottom: 1px solid @c3;
 }
 .Sidebar-menu {
   height: 0;
@@ -27,7 +27,7 @@
   overflow: hidden;
   &.in {
     height: auto;
-    background-color: #1a2e46;
+    background-color: @c3;
   }
   .Sidebar-menu--Label {
     display: none;
@@ -88,7 +88,7 @@
 }
 ///////////////////// classes de ajuda
 .sidebar-link {
-  color: #fff;
+  color: @c5;
   &:hover {
     color: #ccc;
   }

@@ -1,15 +1,17 @@
 .row
   .col-md-12
-    .panel.panel-box.panel-default.panel-sf
-      .panel-heading
-        .Arrange
-          .Arrange-sizeFit
+    .panel.panel-default
+      .s-bar.s-bar--background
+        .ArrangeFlex
+          .ArrangeFlex-sizeFit.Box.Box--lg
             i.fa.fa-cog
-          .Arrange-sizeFill
-            h2: strong Gerenciar Avisos Gerais
-          .Arrange-sizeFit
-            .panel-actions
-              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+          .ArrangeFlex-sizeFill.Box--y.Box--lg
+            h2.milli.s-bar--text
+              strong Gerenciar Avisos Gerais
+          .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
       .panel-body#collapse-box.in 
         form(name='gerenciarAvisosGeraisForm')
           .form-group
@@ -25,20 +27,20 @@
                 p Formulário para reordenar, criar, ou editar os itens de aviso. Arraste para alterar a ordenção
                 ul.list-inline.list-unstyled
                   li
-                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
                       i.fa.fa-check-circle
                       |  Habilitar
                   li 
-                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
                       i.fa.fa-minus-circle
                       |  Desabilitar
 
                   li
-                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled)
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled)
                       i.fa.fa-eye 
                       |  Destacar
                   li
-                    a.btn.btn-info.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
                       i.fa.fa-eye-slash
                       |  Tirar Destaque
                   li

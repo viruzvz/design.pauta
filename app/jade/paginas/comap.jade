@@ -1,13 +1,15 @@
-.panel.panel-box.panel-default.panel-sf
-  .panel-heading
-    .Arrange
-      .Arrange-sizeFit
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
         i.fa.fa-lightbulb-o
-      .Arrange-sizeFill
-        h2: strong Comap
-      .Arrange-sizeFit
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Comap
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
   .panel-body#collapse-box.in 
     include ../partials/navbar-nav--secundaria
     // Nav tabs
@@ -42,8 +44,7 @@
                               input.form-control(type='text', placeholder='Buscar')
                               span.input-group-btn
                                 button.btn.btn-default(type='button')
-                                  i.glyphicon.glyphicon-search
-
+                                  i.fa.fa-search
           .col-md-4.text-right
             .form-group
               mixin btn-impress(title, classe, icon, name)
@@ -53,12 +54,10 @@
               .Box.Box--lg.Box--y
                 .btn-block
                   +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
-                  &nbsp;
-                  a.btn.btn-xs.btn-success(href='criarItemComap.html', title='Criar Trabalho')
+                  | &nbsp;
+                  a.btn.btn-xs.btn-success(href='criarItemComap.html', title='Criar Item')
                     i.fa.fa-plus
-                    |  Criar Trabalho
-
-
+                    |  Criar Item
         .table-responsive
           mixin thead(head1, head2, head3, head4, head5, head6, head7, head8, head9)
             thead
@@ -74,7 +73,7 @@
                 th #{head9}
           mixin tr(alert, cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8, cond9)
             tr(class='#{alert}')
-              td: a(href='comap--itemComap.html') #{cond1}
+              td: a(href='itemComap.html') #{cond1}
               td #{cond2}
               td #{cond3}
               td #{cond4}
@@ -82,10 +81,7 @@
               td #{cond6}
               td #{cond7}
               td #{cond8}
-              td #{cond9}
-
-                
-
+              td #{cond9}         
           // Manhã
           table.table.table-striped.table-hover.milli
             +thead('Trabalho', 'Cliente', 'Atendimento', 'Marketing', 'Criação', 'Produção', 'Status', 'Entrada', 'Checkpoint')
@@ -118,6 +114,5 @@
                       li
                         a(href='#', aria-label='Next')
                           span(aria-hidden='true') »
-
 
       #encerrados.tab-pane(role='tabpanel') 

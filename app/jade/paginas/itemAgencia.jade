@@ -4,10 +4,10 @@
       .s-bar.s-bar--background
         .ArrangeFlex
           .ArrangeFlex-sizeFit.Box.Box--lg
-            i.fa.fa-commenting-o
+            i.fa.fa-users
           .ArrangeFlex-sizeFill.Box--y.Box--lg
             h2.milli.s-bar--text
-              strong Item de Pauta Comunicação Interna
+              strong Item de pauta da agência
           .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
@@ -60,18 +60,19 @@
                 +loren
 
           .panel.panel-default
-            +panel-heading('headingThree', 'fa-pencil', 'Obervações de fotografia', '#collapseThree','false', 'collapseThree')  
+            +panel-heading('headingThree', 'fa-pencil', 'Obervações de fotografia', '#collapseThree', 'false','collapseThree')  
             #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
               .panel-body
-             
+                +loren  
+
           .panel.panel-default
-            +panel-heading('headingFour', 'fa-pencil', 'Descrição do item geral', '#collapseFour','false', 'collapseFour')  
+            +panel-heading('headingFour', 'fa-pencil', 'Descrição do item geral', '#collapseFour', 'false','collapseFour')  
             #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
               .panel-body
                 +loren
 
           .panel.panel-default
-            +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive','false', 'collapseFive')  
+            +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive', 'false','collapseFive')  
             #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
               .panel-body
                 .row
@@ -83,34 +84,10 @@
                     +loren
 
           .panel.panel-default
-            +panel-heading('headingSix', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseSix','false', 'collapseSix')  
+            +panel-heading('headingSix', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseSix', 'false','collapseSix')  
             #collapseSix.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSix')
               .panel-body
-
-
-          .panel.panel-default
-            +panel-heading('headingSeven', 'fa-pencil', 'Título da Notícia', '#collapseSeven','false', 'collapseSeven')  
-            #collapseSeven.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSeven')
-              .panel-body
                +loren
-
-          .panel.panel-default
-            +panel-heading('headingEight', 'fa-pencil', 'Sutiã da Notícia', '#collapseEight','false', 'collapseEight')  
-            #collapseEight.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingEight')
-              .panel-body
-      
-
-          .panel.panel-default
-            +panel-heading('headingNine', 'fa-pencil', 'Texto da Notícia', '#collapseNine','false', 'collapseNine')  
-            #collapseNine.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingNine')
-              .panel-body
-  
-
-          .panel.panel-default
-            +panel-heading('headingTen', 'fa-pencil', 'Views 7 dias após a publicação', '#collapseTen','false', 'collapseTen')  
-            #collapseTen.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTen')
-              .panel-body
-
 
         mixin table (caption, href)
           .table-responsive
@@ -121,23 +98,41 @@
                     ul.list-inline.list-unstyled
                       li: a.btn.btn-xs.btn-success(href='#{href}') 
                         i.fa.fa-plus
+                        |  Áudio
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Infográfico                      
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Matéria
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
+                        |  Senado Agora
+                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                        i.fa.fa-plus
                         |  Matéria
 
               thead
                 tr
+                  th Data
+                  th Retranca
                   th Título
-                  th Responsável
+                  th Repórter
                   th Status
               tbody
-                mixin tr(t3,t4,tclass,t5)
+                mixin tr(t1,t2,t3,t4,tclass,t5)
                   tr
+                    td
+                      .fa.fa-clock-o
+                      |  #{t1}
+                    td #{t2}
                     td #{t3}
                     td #{t4}
                     td(class='#{tclass}') #{t5}
 
-                +tr('Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
-                +tr('Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')
-                +tr('Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-warning', 'Revisão')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')
+                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-warning', 'Revisão')
         +table('Notícias Produzidas', '#')
 
 

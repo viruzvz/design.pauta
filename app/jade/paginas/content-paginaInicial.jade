@@ -1,13 +1,15 @@
-.panel.panel-box.panel-default.panel-sf
-  .panel-heading
-    .Arrange
-      .Arrange-sizeFit
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
         i.fa.fa-home
-      .Arrange-sizeFill
-        h2: strong Página Inicial
-      .Arrange-sizeFit
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Página Inicial
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
   .panel-body#collapse-box.in 
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
@@ -46,9 +48,11 @@
                 th Veículos
             tbody
               mixin btn(icon, btn, badge)
-                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto" style='min-width: 50px; margin-right:5px; margin-bottom:5px;')
-                  i.fa(class='#{icon}') &nbsp;
-                  span.badge.micro #{badge}
+
+                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto")
+                 
+                  strong #{badge}
+                | &nbsp;
               mixin linhas(hora, editoria, href, assunto)
                 tr
                   td #{hora}

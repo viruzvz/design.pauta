@@ -1,15 +1,17 @@
 .row
   .col-md-9.col-sm-9
-    .panel.panel-box.panel-default.panel-sf
-      .panel-heading
-        .Arrange
-          .Arrange-sizeFit
+    .panel.panel-default
+      .s-bar.s-bar--background
+        .ArrangeFlex
+          .ArrangeFlex-sizeFit.Box.Box--lg
             i.fa.fa-lightbulb-o
-          .Arrange-sizeFill
-            h2: strong Item Comap
-          .Arrange-sizeFit
-            .panel-actions
-              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+          .ArrangeFlex-sizeFill.Box--y.Box--lg
+            h2.milli.s-bar--text
+              strong Item Comap
+          .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
       .panel-body#collapse-box.in 
         include ../partials/navbar-nav--secundaria
         // Responsive Select, on only in xs
@@ -59,27 +61,30 @@
               +data-list('Objetivos de comunicação', 'conscientizar o cidadão quanto a discriminação que a mulher sofre diariamente. ')
 
             #accordion.panel-group(role='tablist', aria-multiselectable='true')
-              mixin panel-heading (id, icon, title, href, aria)
-                .panel-heading(id='#{id}')
-                  .Arrange
-                    .Arrange-sizeFit
+              mixin panel-heading (id, icon, title, href, expanded, aria)
+                .s-bar.s-bar--background(id='#{id}')
+                  .ArrangeFlex
+                    .ArrangeFlex-sizeFit.Box.Box--lg
                       i.fa(class='#{icon}')
-                    .Arrange-sizeFill
-                      h2: strong #{title}
-                    .Arrange-sizeFit
+                    .ArrangeFlex-sizeFill.Box--y.Box--lg
+                      h2.milli.s-bar--text
+                        strong #{title}
+                    .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
                       .panel-actions
-                        a.btn-minimize(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='true', aria-controls='#{aria}')
+                        a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='#{expanded}', aria-controls='#{aria}')
+                          i.fa.fa-chevron-up
+                          i.fa.fa-chevron-down
               mixin loren
                 | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 
               .panel.panel-default
-                +panel-heading('headingFour', 'fa-pencil', 'Descritivo', '#collapseFour', 'collapseFour')  
+                +panel-heading('headingFour', 'fa-pencil', 'Descritivo', '#collapseFour','true', 'collapseFour')  
                 #collapseFour.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingFour')
                   .panel-body
                     +loren
 
               .panel.panel-default
-                +panel-heading('headingOne', 'fa-pencil', 'Contato', '#collapseOne', 'collapseOne')
+                +panel-heading('headingOne', 'fa-pencil', 'Contato', '#collapseOne','false', 'collapseOne')
                 #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
                   .panel-body
                     dl.dl-horizontal
@@ -88,7 +93,7 @@
                       +data-list('E-mails', 'my@domain.com, my2@domain.com')
 
               .panel.panel-default
-                +panel-heading('headingTwo', 'fa-pencil', 'Equipe', '#collapseTwo', 'collapseTwo')
+                +panel-heading('headingTwo', 'fa-pencil', 'Equipe', '#collapseTwo','false', 'collapseTwo')
                 #collapseTwo.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTwo')
                   .panel-body
                     dl.dl-horizontal
@@ -98,7 +103,7 @@
                       +data-list('Produção', '')
 
               .panel.panel-default
-                +panel-heading('headingFive', 'fa-pencil', 'Produtos Demandados', '#collapseFive', 'collapseFive')
+                +panel-heading('headingFive', 'fa-pencil', 'Produtos Demandados', '#collapseFive','false', 'collapseFive')
                 #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
                   .panel-body
                     ul
@@ -109,7 +114,7 @@
                       li: strong Faixa de mesa (tamanho interlegis 84cm altura X 4,8m largura)
 
               .panel.panel-default
-                +panel-heading('headingThree', 'fa-pencil', 'Produtos Demandados', '#collapseThree', 'collapseThree')
+                +panel-heading('headingThree', 'fa-pencil', 'Produtos Demandados', '#collapseThree','false', 'collapseThree')
                 #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
                   .panel-body
                     +loren
@@ -122,7 +127,7 @@
               dl
                 +data-list('Recomendações e lições aprendidas', 'Anim pariatur cliche reprehenderit,')
               .panel.panel-default
-                +panel-heading('headingSix', 'fa-pencil', 'Produtos Desenvolvidos', '#collapseSix', 'collapseSix')  
+                +panel-heading('headingSix', 'fa-pencil', 'Produtos Desenvolvidos', '#collapseSix', 'false', 'collapseSix')  
                 #collapseSix.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingSix')
                   .panel-body
                     +loren

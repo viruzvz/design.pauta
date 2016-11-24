@@ -1,13 +1,15 @@
-.panel.panel-box.panel-default.panel-sf
-  .panel-heading
-    .Arrange
-      .Arrange-sizeFit
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
         i.fa.fa-users
-      .Arrange-sizeFill
-        h2: strong Agência
-      .Arrange-sizeFit
-        .panel-actions
-          a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Agência
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
   .panel-body#collapse-box.in 
     include ../partials/navbar-nav--secundaria
     // Nav tabs
@@ -62,7 +64,7 @@
                   i.fa.fa-clock-o
                   |  #{cond1}
                 td 
-                  a(href='agencia--itemPautaAgencia.html') #{cond2}
+                  a(href='itemAgencia.html') #{cond2}
                 td
                   .Box.Box--y
                     i.fa(class='#{cond3}', data-toggle='tooltip', title='#{cond33}')

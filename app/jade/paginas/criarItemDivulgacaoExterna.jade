@@ -1,15 +1,17 @@
 .row
   .col-md-12
-    .panel.panel-box.panel-default.panel-sf
-      .panel-heading
-        .Arrange
-          .Arrange-sizeFit
-            i.fa.fa-plus
-          .Arrange-sizeFill
-            h2: strong Criar Item Divulgação Externa
-          .Arrange-sizeFit
-            .panel-actions
-              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+    .panel.panel-default
+      .s-bar.s-bar--background
+        .ArrangeFlex
+          .ArrangeFlex-sizeFit.Box.Box--lg
+            i.fa.fa-rss 
+          .ArrangeFlex-sizeFill.Box--y.Box--lg
+            h2.milli.s-bar--text
+              strong Criar item divulgação externa
+          .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
       .panel-body#collapse-box.in 
         // Responsive Select, on only in xs
         .visible-xs
@@ -19,23 +21,17 @@
               mixin option(value, name)
                 option(value='#{value}') #{name}
               +option('#conteudo', 'Conteúdo')
-              +option('#release', 'Release')
-              +option('#roteiroBreafing', 'Roteiro/Breafing')
-              +option('#checklist', 'Check-list')
               +option('#email', 'E-mail')
-
+              +option('#telefonema', 'Check-list')
+              
         // Nav tabs
         ul#myTab.nav.nav-tabs.hidden-xs(role='tablist')
           li.active(role='presentation')
             a(href='#conteudo', aria-controls='conteudo', role='tab', data-toggle='tab') Conteúdo
           li(role='presentation')
-            a(href='#release', aria-controls='release', role='tab', data-toggle='tab') Release
-          li(role='presentation')
-            a(href='#roteiroBreafing', aria-controls='roteiroBreafing', role='tab', data-toggle='tab') Roteiro/Breafing
-          li(role='presentation')
-            a(href='#checklist', aria-controls='checklist', role='tab', data-toggle='tab') Check-list
-          li(role='presentation')
             a(href='#email', aria-controls='email', role='tab', data-toggle='tab') E-mail
+          li(role='presentation')
+            a(href='#telefonema', aria-controls='telefonema', role='tab', data-toggle='tab') Telefonema
 
         // Tab panes
         .tab-content.Box.Box--lg.Box--y
@@ -131,38 +127,21 @@
                 label(for='resultado') Resultado
                 textarea#resultado.form-control(row='4', name='resultado')
 
-          #release.tab-pane(role='tabpanel') 
-            .form-group
-              label(for='release') Release
-              textarea#release.descricaoTinyMce.tinyMce.form-control(name='release', cols='100', rows='10')
-
-          #roteiroBreafing.tab-pane(role='tabpanel') 
-            .form-group
-              label(for='roteiroBreafingImput') Roteiro/Breafing
-              textarea#roteiroBreafingImput.descricaoTinyMce.tinyMce.form-control(name='roteiroBreafingImput', cols='100', rows='10')
-          #checklist.tab-pane(role='tabpanel') 
-            .form-group
-              label(for='checkListImput') Check-list
-              textarea#checkListImput.descricaoTinyMce.tinyMce.form-control(name='checkListImput', cols='100', rows='10')
           #email.tab-pane(role='tabpanel') 
-            label Selecionar Modelo de E-mail
-            .row
-              .col-md-4.col-sm-4
-                .form-group
-                  select#tipo-email.form-control(name='tipo-email', required)
-                    option(value='') Selecionar
-                    option(value='Modelo asdfg') Modelo asdfg
-              .col-md-2.col-sm-2
-                .form-group
-                  button.btn.btn-default(type='button', name='adicionar', data-toggle='tooltip', title='Trocar texto e-mail')
-                    i.fa.fa-pencil
-                    |  Trocar texto e-mail
             .form-group
-              label(for='emailImput') E-mail
-              textarea#emailImput.descricaoTinyMce.tinyMce.form-control(name='emailImput', cols='100', rows='10')
+              label(for='encaminhamento') Encaminhamento
+              textarea#encaminhamento.descricaoTinyMce.tinyMce.form-control(name='encaminhamento', cols='100', rows='10')
+            .form-group
+              label(for='encaminhamento') E-mail
+              textarea#encaminhamento.descricaoTinyMce.tinyMce.form-control(name='encaminhamento', cols='100', rows='10')
+
+          #telefonema.tab-pane(role='tabpanel') 
+            .form-group
+              label(for='telefonemaImput') Check-list
+              textarea#telefonemaImput.descricaoTinyMce.tinyMce.form-control(name='telefonemaImput', cols='100', rows='10')
 
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Criar
-            &nbsp;
+            | &nbsp;
             a.btn.btn-default(href='divulgacaoExterna.html', data-dismiss='modal') Cancelar
 

@@ -11,14 +11,14 @@ body
         strong Atenção!
         |  Falha no acesso. Tanto o nome de usuário como a senha são sensíveis a letras maiúsculas e minúsculas, verifique se a tecla Caps Lock não está ativa.
         button(type='button' data-toggle='modal', data-target='#ajuda' class='btn btn-xs +help--content fa fa-question-circle')  Saiba mais
-      form#loginform.form-horizontal(role='form' action='paginaInicial.html')
+      form#loginform.form-horizontal.milli(role='form' action='paginaInicial.html')
         .input-group
           span.input-group-addon
-            i.glyphicon.glyphicon-user
+            i.fa.fa-user
           input#login-username.form-control(type='text', name='username', value='', placeholder='usuário', required)
         .input-group
           span.input-group-addon
-            i.glyphicon.glyphicon-lock
+            i.fa.fa-lock
           input#login-password.form-control(type='password', name='password', placeholder='senha', required)
         .input-group.u-spacer--sm
           .checkbox

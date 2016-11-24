@@ -1,15 +1,17 @@
 .row
   .col-md-12
-    .panel.panel-box.panel-default.panel-sf
-      .panel-heading
-        .Arrange
-          .Arrange-sizeFit
+    .panel.panel-default
+      .s-bar.s-bar--background
+        .ArrangeFlex
+          .ArrangeFlex-sizeFit.Box.Box--lg
             i.fa.fa-eye
-          .Arrange-sizeFill
-            h2: strong Visualizar Perfil
-          .Arrange-sizeFit
-            .panel-actions
-              a.btn-minimize(href='#collapse-box' data-toggle="collapse")
+          .ArrangeFlex-sizeFill.Box--y.Box--lg
+            h2.milli.s-bar--text
+              strong Visualizar Perfil
+          .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
       .panel-body#collapse-box.in 
         form(name='visualizarPerfilForm')
           .form-group
