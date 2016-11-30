@@ -5,23 +5,23 @@ html(lang='pt')
       display:none;
     }
   - var rand = function () { return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5) }
-  include jade/head
+  include pug/head
 
   body#sfcss
     aside
-      include jade/sidebar
+      include pug/sidebar
     main
       header
-        include jade/navbar
+        include pug/navbar
         .col-md-12
           ol.breadcrumb.s-breadcrumb.s-bar.milli.u-spacer--xl.Box.Box--lg
             li
               a(href='paginaInicial.html') Página inicial
             li.active Comap
       article.col-md-12
-        include jade/paginas/comap
+        include pug/paginas/comap
 
-  include jade/footer
+  include pug/footer
 
 
 
