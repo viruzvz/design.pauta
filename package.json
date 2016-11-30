@@ -1,24 +1,10 @@
 {
   "name": "design.cedoc",
-  "version": "0.0.1",
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-autoprefixer": "^3.0.3",
-    "grunt-concurrent": "^2.1.0",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-cssmin": "^1.0.1",
-    "grunt-contrib-jade": "^1.0.0",
-    "grunt-contrib-less": "^1.1.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "load-grunt-config": "^0.19.2",
-    "senado.css": "https://github.com/agenciasenado/senado.css.git#2.5.5",
-    "serve-static": "^1.10.0"
-  },
+  "version": "0.0.2-alpha.1",
   "dependencies": {
     "bootstrap": "^3.3.5",
     "font-awesome": "^4.7.0",
-    "jquery": "^2.1.4"
+    "jquery": "^2.1.4",
+    "senado.css": "https://github.com/agenciasenado/senado.css.git#2.5.5"
   }
 }
