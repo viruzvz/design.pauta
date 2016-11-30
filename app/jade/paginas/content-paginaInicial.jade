@@ -38,52 +38,57 @@
               form.form-group
                 .btn-block
                   +btn-impress('Imprimir', 'fa-print', 'Imprimir')
-        .table-responsive
-          table.table.table-striped.table-hover.milli
-            thead
+        
+        table.table.table-striped.table-hover.milli
+          thead
+            tr
+              th Hora
+              th Editoria
+              th Assunto
+              th Agência
+              th Com.Interna
+              th Rádio
+              th TV
+          tbody
+            mixin btn(icon, btn)
+              .btn-group.dropup
+                button.btn.btn-xs(type='button' class='#{btn}')
+                  i.fa(class='#{icon}')
+                button.btn.btn-xs.dropdown-toggle(class='#{btn}' type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                  span.caret
+                  span.sr-only Toggle Dropdown
+                ul.dropdown-menu
+                  li
+                    a(href='#') Action
+                  li
+                    a(href='#') Another action
+                  li
+                    a(href='#') Something else here
+                  li.divider(role='separator')
+                  li
+                    a(href='#') Separated link
+
+
+            mixin tr(hora, editoria, assunto)
               tr
-                th Hora
-                th Editoria
-                th Assunto
-                th Veículos
-            tbody
-              mixin btn(icon, btn, badge)
-
-                a.btn.btn-xs(href="#" class='#{btn}' data-toggle="tooltip" data-placement="top" title="Valor do objeto")
-                 
-                  strong #{badge}
-                | &nbsp;
-              mixin linhas(hora, editoria, href, assunto)
-                tr
-                  td #{hora}
-                  td #{editoria}
-                  td 
-                    a(href='#{href}') #{assunto} 
-                  td
-                    block
-
-              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-pencil', 'btn-danger', '1')
-                +btn('fa-comment-o', 'btn-danger', '2')
-                +btn('fa-bullhorn', 'btn-danger', '3')
-                +btn('fa-bullseye', 'btn-danger', '4')
-                +btn('fa-pencil', 'btn-danger', '5')
-                +btn('fa-bullhorn', 'btn-danger', '6')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
-                +btn('fa-comment-o', 'btn-warning', '2')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
-                +btn('fa-bullhorn', 'btn-warning','1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-bullseye', 'btn-warning', '2')
-              +linhas('01h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-pencil', 'btn-danger', '1')
-                +btn('fa-comment-o', 'btn-danger', '1')
-                +btn('fa-bullhorn', 'btn-danger', '1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'AGENCIA - PRESIDÊNCIA')
-                +btn('fa-comment-o', 'btn-warning', '2')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'CRA - (1 Parte): Apreciação do relatório de avaliação pública de defesa agropecuaria')
-                +btn('fa-bullhorn', 'btn-warning','1')
-              +linhas('08h00', 'Senado','paginaInicial--itemPautaGeral.html', 'ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA')
-                +btn('fa-bullseye', 'btn-warning', '2')
-
+                td
+                  | #{hora}
+                td
+                  | #{editoria}
+                td
+                  a(href='#') #{assunto}
+                td
+                  block
+                td
+                  block
+                td
+                  block
+                td
+                  block
+            +tr('10h00','Senado','Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+              +btn('fa-users', 'btn-default')
+            +tr('10h00','Senado','Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+              +btn('fa-users', 'btn-default')
+            +tr('10h00','Senado','Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+              +btn('fa-users', 'btn-default')
       #pautafutura.tab-pane(role='tabpanel') ...
