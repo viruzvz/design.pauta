@@ -6,5 +6,12 @@
     "font-awesome": "^4.7.0",
     "jquery": "^2.1.4",
     "senado.css": "https://github.com/agenciasenado/senado.css.git#2.5.5"
+  },
+  "scripts": {
+    "dev": "mosaaaico2 dev",
+    "build": "mosaaaico2 build"
+  },
+  "devDependencies": {
+    "mosaaaico2": "fabianonunes/mosaaaico2"
   }
 }
