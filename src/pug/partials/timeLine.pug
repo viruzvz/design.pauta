@@ -11,27 +11,27 @@
       .timeslot
         .task
           span
-            span.type 
+            span.type
               .Flag
                 .Flag-figure.Flag-Figure--maxwidth-xs
                   img.img-responsive.img-circle(src='../../img/avatar.jpg')
                 .Flag-body
                   a(href='editarPerfil.html')
-                    small #{nome} 
+                    small #{nome}
             span.details
-              | #{detalhes} 
+              | #{detalhes}
               br
               if button
-                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target='#{modal}')  #{button}
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target=modal)  #{button}
               else
-          .arrow 
+          .arrow
         .timeslot-icon
-          i.fa(class='#{icon}' data-toggle='tooltip', title='#{title}')
+          i.fa(class=icon data-toggle='tooltip', title=title)
         .time
-          .date-a #{date} 
-          .time-b #{time} 
-    
-    mixin timeslotAlt(nome, detalhes, modal, button, icon, title, date, time) 
+          .date-a #{date}
+          .time-b #{time}
+
+    mixin timeslotAlt(nome, detalhes, modal, button, icon, title, date, time)
       .timeslot.alt
         .task
           span
@@ -41,18 +41,18 @@
                   img.img-responsive.img-circle(src='../../img/avatar.jpg')
                 .Flag-body
                   a(href='editarPerfil.html')
-                    small #{nome} 
+                    small #{nome}
             span.details
-              | #{detalhes} 
+              | #{detalhes}
               br
               if button
-                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target='#{modal}')  #{button}
+                  button.btn.btn-info.btn-xs(type='button', data-toggle='modal', data-target=modal)  #{button}
               else
-          .arrow      
+          .arrow
         .timeslot-icon
-          i.fa(class='#{icon}' data-toggle='tooltip', title='#{title}')
+          i.fa(class=icon data-toggle='tooltip', title=title)
         .time
-          .date-a #{date} 
+          .date-a #{date}
           .time-b #{time}
 
     +timeslot('Carlos Eduardo Gomes Neri','Editado ["Categoria do trabalho"]','', '','fa-clock-o', 'andamento', '27/09/2016','17:53')

@@ -6,7 +6,7 @@
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') ×
 
-        h4#adicionarLinkLabel.modal-title 
+        h4#adicionarLinkLabel.modal-title
           span.fa.fa-link
           |  Adicionar Link
       .modal-body
@@ -17,7 +17,7 @@
             label(for='mySelect') Selecione um tipo
             select.mySelect.select-nav.form-control
               mixin option(value, name)
-                option(value='#{value}') #{name}
+                option(value=value) #{name}
               +option('#padrao', 'Padrao')
               +option('#categorizacao', 'Categorização')
               +option('#datas', 'Datas')
@@ -32,13 +32,13 @@
           li(role='presentation')
             a(href='#datas', aria-controls='datas', role='tab', data-toggle='tab') Datas
           li(role='presentation')
-            a(href='#propriedades', aria-controls='propriedades', role='tab', data-toggle='tab') Propriedades   
+            a(href='#propriedades', aria-controls='propriedades', role='tab', data-toggle='tab') Propriedades
           li(role='presentation')
             a(href='#configuracoes', aria-controls='configuracoes', role='tab', data-toggle='tab') Configurações
 
         // Tab panes
         .tab-content.Box.Box--lg.Box--y
-          #padrao.tab-pane.active(role='tabpanel') 
+          #padrao.tab-pane.active(role='tabpanel')
             form(name='adicionarLinkModalForm')
               .form-group
                 label(for='titulo') Título
@@ -50,7 +50,7 @@
                 label(for='url') URL
                 input#url.form-control(type='text', name='url', placeholder='http://')
 
-          #categorizacao.tab-pane(role='tabpanel') 
+          #categorizacao.tab-pane(role='tabpanel')
             form(name='adicionarLink-categorizacao')
               .form-group
                 label(for='tags') Tags
@@ -72,7 +72,7 @@
                   .col-md-12
                     p.help-block A localização geográfica associada com o item, caso aplicável.
 
-          #datas.tab-pane(role='tabpanel') 
+          #datas.tab-pane(role='tabpanel')
             form(name='adicionarLink-data')
               .form-group
                 .row
@@ -94,7 +94,7 @@
                         span.fa.fa-calendar
                 p.help-block A data quando o item expira. Isso irá automaticamente tornar o item invisível para os outros na data informada. Se nenhuma data for escolhida, o item nunca irá expirar.
 
-          #propriedades.tab-pane(role='tabpanel') 
+          #propriedades.tab-pane(role='tabpanel')
             form(name='adicionarLink-propriedades')
               .form-group
                 label(for='autores') Autores
@@ -109,17 +109,17 @@
                 textarea#direitos.form-control(rows='2', name='direitos')
                 p.help-block Declaração dos direitos de cópia ou outras informações sobre os direitos desse item.
 
-          #configuracoes.tab-pane(role='tabpanel') 
+          #configuracoes.tab-pane(role='tabpanel')
             form(name='adicionarLink-configuracoes')
               .form-group
                 .checkbox
-                  label(for='permitirComentarios') 
+                  label(for='permitirComentarios')
                     input#permitirComentarios(type='checkbox', name='permitirComentarios')
                     | Permitir comentários
                 p.help-block Caso selecionado, os usuários podem adicionar comentários neste item.
               .form-group
                 .checkbox
-                  label(for='excluirNavegacao') 
+                  label(for='excluirNavegacao')
                     input#excluirNavegacao(type='checkbox', name='excluirNavegacao')
                     | Excluir da navegação
                 p.help-block Caso selecionado, esse item não irá aparecer na árvore de navegação
@@ -128,7 +128,7 @@
           .form-group
             label(for='comentario') Comentário da versão
             textarea#comentario.form-control(name='comentario', rows='1')
-            p.help-block Informe um comentário descrevendo as alterações que você fez. 
+            p.help-block Informe um comentário descrevendo as alterações que você fez.
 
       .modal-footer
         button.btn.btn-primary(type='button') Salvar

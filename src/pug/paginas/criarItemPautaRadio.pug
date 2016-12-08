@@ -12,14 +12,14 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         // Responsive Select, on only in xs
         .visible-xs
           .form-group
             label(for='mySelect') Selecione um tipo
             select.mySelect.select-nav.form-control
               mixin option(value, name)
-                option(value='#{value}') #{name}
+                option(value=value) #{name}
               +option('#pauta', 'Pauta')
               +option('#equipe', 'Equipe')
               +option('#materia', 'Matéria')
@@ -33,17 +33,17 @@
           li(role='presentation')
             a(href='#materia', aria-controls='materia', role='tab', data-toggle='tab') Matéria
           li(role='presentation')
-            a(href='#tecnica', aria-controls='tecnica', role='tab', data-toggle='tab') Técnica   
+            a(href='#tecnica', aria-controls='tecnica', role='tab', data-toggle='tab') Técnica
 
         form(name='criarItemPautaRadioForm')
           // Tab panes
           .tab-content.Box.Box--lg.Box--y
-            #pauta.tab-pane.active(role='tabpanel') 
+            #pauta.tab-pane.active(role='tabpanel')
               .form-group
                 .row
                   .col-md-3.col-xs-8
-                    label(for='dataProducao') 
-                      | Data de producao 
+                    label(for='dataProducao')
+                      | Data de producao
                       span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
 
                     .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
@@ -52,7 +52,7 @@
                         span.fa.fa-calendar
               .form-group
                 label(for='horarioaipAgencia')
-                  | Horário 
+                  | Horário
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
                   .col-md-2.col-xs-4.dot-timer
@@ -65,18 +65,18 @@
                       option(value='01') 01
               .form-group
                 label(for='localaipAgencia') Local
-                input#localaipAgencia.form-control(type='text', name='local')   
+                input#localaipAgencia.form-control(type='text', name='local')
               .form-group
                 .row
                   .col-md-3.col-xs-12
-                    label(for='produto') 
+                    label(for='produto')
                       | Produto
                       span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                     select#produto.form-control(name='produto', required)
                       option(value='') Selecionar
-                      option(value='Matéria') Matéria 
+                      option(value='Matéria') Matéria
               .form-group
-                label(for='assuntoaipAgencia') Assunto 
+                label(for='assuntoaipAgencia') Assunto
                 textarea#assuntoaipAgencia.form-control(rows='2')
               .form-group
                 label(for='descricaoTinyMce') Descrição - Veículo
@@ -84,24 +84,24 @@
               .form-group
                 .row
                   .col-md-3.col-xs-12
-                    label(for='edioria') 
+                    label(for='edioria')
                       | Editoria Rádio
                     select#edioria.form-control(name='edioria')
                       option(value='') Selecionar
                       option(value='Vazio') Vazio
               .form-group
-                label(for='ordenacao') 
+                label(for='ordenacao')
                   | Ordenação
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#ordenacao.form-control(type='text', name='ordenacao', required, placeholder='99.999') 
-            #equipe.tab-pane(role='tabpanel') 
+                input#ordenacao.form-control(type='text', name='ordenacao', required, placeholder='99.999')
+            #equipe.tab-pane(role='tabpanel')
               .form-group
-                label(for='reporters') Repórter(es) 
+                label(for='reporters') Repórter(es)
               .form-group
-                label(for='produtores') Produtores               
+                label(for='produtores') Produtores
               .form-group
-                label(for='tecnico') Técnico 
-            #materia.tab-pane(role='tabpanel') 
+                label(for='tecnico') Técnico
+            #materia.tab-pane(role='tabpanel')
               .form-group
                 label(for='descricaoTinyMce2') Script - Locução
                 textarea#descricaoTinyMce2.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
@@ -109,11 +109,11 @@
                 label(for='descricaoTinyMce3') Script - Matéria
                 textarea#descricaoTinyMce3.descricaoTinyMce.tinyMce.form-control(name='html', cols='100', rows='10')
               .form-group
-                label(for='utilizacao-programas') Utilização em programas 
+                label(for='utilizacao-programas') Utilização em programas
             #tecnica.tab-pane(role='tabpanel')
               .form-group
                 label(for='codigo') Código
-                input#codigo.form-control(type='text', name='codigo')   
+                input#codigo.form-control(type='text', name='codigo')
               .form-group
                 label(for='tempo')
                   | Tempo
@@ -133,13 +133,13 @@
                       option(value='01') 01
               .form-group
                 label(for='reporter') Repórter
-                input#reporter.form-control(type='text', name='reporter') 
+                input#reporter.form-control(type='text', name='reporter')
               .form-group
                 label(for='entrevistado') Entrevistado
-                input#entrevistado.form-control(type='text', name='entrevistado') 
+                input#entrevistado.form-control(type='text', name='entrevistado')
               .form-group
                 label(for='operador') Operador
-                input#operador.form-control(type='text', name='operador') 
+                input#operador.form-control(type='text', name='operador')
 
 
           .form-group.pull-right

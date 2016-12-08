@@ -12,7 +12,7 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         h3.hide: strong ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
         mixin data-list (titulo, descricao)
           dt #{titulo}:
@@ -30,16 +30,16 @@
 
         #accordion.panel-group(role='tablist', aria-multiselectable='true')
           mixin panel-heading (id, icon, title, href, expanded, aria)
-            .s-bar.s-bar--background(id='#{id}')
+            .s-bar.s-bar--background(id=id)
               .ArrangeFlex
                 .ArrangeFlex-sizeFit.Box.Box--lg
-                  i.fa(class='#{icon}')
+                  i.fa(class=icon)
                 .ArrangeFlex-sizeFill.Box--y.Box--lg
                   h2.milli.s-bar--text
                     strong #{title}
                 .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
                   .panel-actions
-                    a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='#{expanded}', aria-controls='#{aria}')
+                    a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href=href, aria-expanded=expanded, aria-controls=aria)
                       i.fa.fa-chevron-up
                       i.fa.fa-chevron-down
           mixin loren
@@ -60,54 +60,54 @@
                 +loren
 
           .panel.panel-default
-            +panel-heading('headingThree', 'fa-pencil', 'Obervações de fotografia', '#collapseThree','false', 'collapseThree')  
+            +panel-heading('headingThree', 'fa-pencil', 'Obervações de fotografia', '#collapseThree','false', 'collapseThree')
             #collapseThree.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingThree')
               .panel-body
-             
+
           .panel.panel-default
-            +panel-heading('headingFour', 'fa-pencil', 'Descrição do item geral', '#collapseFour','false', 'collapseFour')  
+            +panel-heading('headingFour', 'fa-pencil', 'Descrição do item geral', '#collapseFour','false', 'collapseFour')
             #collapseFour.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFour')
               .panel-body
                 +loren
 
           .panel.panel-default
-            +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive','false', 'collapseFive')  
+            +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive','false', 'collapseFive')
             #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')
               .panel-body
                 .row
                   .col-sm-12
                     button.btn.btn-info.btn-xs.pull-right(type='button', data-toggle='modal', data-target='#saibaMais')
-                      i.fa.fa-chevron-right 
+                      i.fa.fa-chevron-right
                       | Leia mais
                   .col-sm-12
                     +loren
 
           .panel.panel-default
-            +panel-heading('headingSix', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseSix','false', 'collapseSix')  
+            +panel-heading('headingSix', 'fa-pencil', 'Pessoas acompanhando o item', '#collapseSix','false', 'collapseSix')
             #collapseSix.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSix')
               .panel-body
 
 
           .panel.panel-default
-            +panel-heading('headingSeven', 'fa-pencil', 'Título da Notícia', '#collapseSeven','false', 'collapseSeven')  
+            +panel-heading('headingSeven', 'fa-pencil', 'Título da Notícia', '#collapseSeven','false', 'collapseSeven')
             #collapseSeven.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingSeven')
               .panel-body
                +loren
 
           .panel.panel-default
-            +panel-heading('headingEight', 'fa-pencil', 'Sutiã da Notícia', '#collapseEight','false', 'collapseEight')  
+            +panel-heading('headingEight', 'fa-pencil', 'Sutiã da Notícia', '#collapseEight','false', 'collapseEight')
             #collapseEight.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingEight')
               .panel-body
-      
+
 
           .panel.panel-default
-            +panel-heading('headingNine', 'fa-pencil', 'Texto da Notícia', '#collapseNine','false', 'collapseNine')  
+            +panel-heading('headingNine', 'fa-pencil', 'Texto da Notícia', '#collapseNine','false', 'collapseNine')
             #collapseNine.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingNine')
               .panel-body
-  
+
 
           .panel.panel-default
-            +panel-heading('headingTen', 'fa-pencil', 'Views 7 dias após a publicação', '#collapseTen','false', 'collapseTen')  
+            +panel-heading('headingTen', 'fa-pencil', 'Views 7 dias após a publicação', '#collapseTen','false', 'collapseTen')
             #collapseTen.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingTen')
               .panel-body
 
@@ -119,7 +119,7 @@
                 h4.Apex.Apex--cut #{caption}
                   .pull-right
                     ul.list-inline.list-unstyled
-                      li: a.btn.btn-xs.btn-success(href='#{href}') 
+                      li: a.btn.btn-xs.btn-success(href=href)
                         i.fa.fa-plus
                         |  Matéria
 
@@ -133,7 +133,7 @@
                   tr
                     td #{t3}
                     td #{t4}
-                    td(class='#{tclass}') #{t5}
+                    td(class=tclass) #{t5}
 
                 +tr('Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
                 +tr('Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')

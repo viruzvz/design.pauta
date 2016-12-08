@@ -10,7 +10,7 @@
         a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
           i.fa.fa-chevron-up
           i.fa.fa-chevron-down
-  .panel-body#collapse-box.in 
+  .panel-body#collapse-box.in
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
       li.active(role='presentation')
@@ -23,7 +23,7 @@
         .row
           .col-md-4
             .Box.Box--lg.Box--y
-              form.form-group               
+              form.form-group
                 .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                   input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
                   .input-group-addon
@@ -31,14 +31,14 @@
 
           .col-md-8.text-right
             mixin btn-impress(title, icon, name)
-              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
-                i.fa(class='#{icon}')
-                |  #{name} 
+              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                i.fa(class=icon)
+                |  #{name}
             .Box.Box--lg.Box--y
               form.form-group
                 .btn-block
                   +btn-impress('Imprimir', 'fa-print', 'Imprimir')
-        
+
         table.table.table-striped.table-hover.milli
           thead
             tr
@@ -52,9 +52,9 @@
           tbody
             mixin btn(icon, btn)
               .btn-group.dropup
-                button.btn.btn-xs(type='button' class='#{btn}')
-                  i.fa(class='#{icon}')
-                button.btn.btn-xs.dropdown-toggle(class='#{btn}' type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+                button.btn.btn-xs(type='button' class=btn)
+                  i.fa(class=icon)
+                button.btn.btn-xs.dropdown-toggle(class=btn type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
                   span.caret
                   span.sr-only Toggle Dropdown
                 ul.dropdown-menu

@@ -10,7 +10,7 @@
         a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
           i.fa.fa-chevron-up
           i.fa.fa-chevron-down
-  .panel-body#collapse-box.in 
+  .panel-body#collapse-box.in
     include ../partials/navbar-nav--secundaria
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
@@ -24,7 +24,7 @@
         .row
           .col-md-4
             .Box.Box--lg.Box--y
-              form.form-group               
+              form.form-group
                 .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                   input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
                   .input-group-addon
@@ -32,9 +32,9 @@
 
           .col-md-8.text-right
             mixin btn-impress(title, icon, name)
-              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
-                i.fa(class='#{icon}')
-                |  #{name} 
+              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                i.fa(class=icon)
+                |  #{name}
             .Box.Box--lg.Box--y
               form.form-group
                 .btn-block
@@ -43,11 +43,11 @@
                   +btn-impress('Imprimir tarde', 'fa-print', 'Tarde')
 
         .table-responsive
-          mixin thead-weather(alert, iclass, turno, text) 
+          mixin thead-weather(alert, iclass, turno, text)
             thead
-              tr(class='#{alert}')
+              tr(class=alert)
                 th(colspan='5')
-                  i.label.fa.pull-left(class='#{iclass}')  #{turno}
+                  i.label.fa.pull-left(class=iclass)  #{turno}
                   .text-center #{text}
           mixin thead(head1, head2, head3, head4, head5)
             thead
@@ -63,15 +63,15 @@
                 td
                   i.fa.fa-clock-o
                   |  #{cond1}
-                td 
+                td
                   a(href='itemAgencia.html') #{cond2}
                 td
                   .Box.Box--y
-                    i.fa(class='#{cond3}', data-toggle='tooltip', title='#{cond33}')
+                    i.fa(class=cond3, data-toggle='tooltip', title=cond33)
                       |  #{cond333}
                 td #{cond4}
-                td.eta 
-                  i.fa(class='#{cond5}' data-toggle='tooltip' title='#{cond6}')
+                td.eta
+                  i.fa(class=cond5 data-toggle='tooltip' title=cond6)
 
           // Manhã
           table.table.table-striped.table-hover.milli
@@ -99,11 +99,11 @@
 
 
 
-      #pautafutura.tab-pane(role='tabpanel') 
+      #pautafutura.tab-pane(role='tabpanel')
         .row
           .col-md-4
             .Box.Box--lg.Box--y
-              form.form-group               
+              form.form-group
                 .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                   input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
                   .input-group-addon
@@ -111,9 +111,9 @@
 
           .col-md-8.text-right
             mixin btn-impress(title, icon, name)
-              button.btn.btn-xs.btn-default(type='button', title='#{title}', data-toggle='tooltip') 
-                i.fa(class='#{icon}')
-                |  #{name} 
+              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                i.fa(class=icon)
+                |  #{name}
             .Box.Box--lg.Box--y
               form.form-group
                 .btn-block

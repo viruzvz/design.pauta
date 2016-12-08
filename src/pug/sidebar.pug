@@ -12,21 +12,21 @@ ul.list-unstyled.Sidebar.u-posRelative
           span.fa.fa-ellipsis-v
   mixin item-link(href, icon, title)
     li.Box.u-posStatic_.u-textNoWrap
-      a(href="#{href}")
+      a(href=href)
         .Sidebar-menu--Link.Sidebar--text
           button.btn.Sidebar-btn.btn-square(role='button' title='Alooo2')
-            span.fa.milli(class="#{icon}")
+            span.fa.milli(class=icon)
           span.Box.Sidebar-menu--Label  #{title}
   +item-link('paginaInicial.html', 'fa-home', 'Página Inicial')
   mixin item-drop(icon, title, name)
     li.Box.dropdown.u-posStatic_.u-textNoWrap
       - var id = rand()
-      .Sidebar-menu--Link.Sidebar--text.toggle(href='#' data-toggle='collapse' data-target='##{id}' aria-expanded='false')
+      .Sidebar-menu--Link.Sidebar--text.toggle(href='#' data-toggle='collapse' data-target='#' + id aria-expanded='false')
         .pull-right.Box.Box--sm.Sidebar--hidden
           i.fa.fa-plus
           i.fa.fa-minus
         button.btn.Sidebar-btn.btn-square(role='button' title='Alooo')
-          span.fa.milli(class="#{icon}") 
+          span.fa.milli(class=icon)
         span.Box.Sidebar-menu--Label  #{title}
       .Sidebar-menu.collapse(id=id)
         .Sidebar-menu--Label
@@ -35,10 +35,10 @@ ul.list-unstyled.Sidebar.u-posRelative
           mixin item-drop-li(href, icon, name)
             li
               .row
-                a.sidebar-link(href='#{href}') 
+                a.sidebar-link(href=href)
                   .col-xs-2
-                    | &nbsp; 
-                    i.fa(class='#{icon}')
+                    | &nbsp;
+                    i.fa(class=icon)
                   .col-xs-10
                     | #{name}
           +item-drop-li('agencia.html', 'fa-users', 'Agência')

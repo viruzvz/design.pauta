@@ -11,7 +11,7 @@
           i.fa.fa-chevron-up
           i.fa.fa-chevron-down
 
-  .panel-body#collapse-box.in 
+  .panel-body#collapse-box.in
     include ../partials/navbar-nav--secundaria
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
@@ -25,7 +25,7 @@
         .row
           .col-md-4
             .Box.Box--lg.Box--y
-              form.form-group               
+              form.form-group
                 .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
                   input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
                   .input-group-addon
@@ -34,9 +34,9 @@
           .col-md-8.text-right
             .form-group
               mixin btn-impress(title, classe, icon, name)
-                button.btn.btn-xs(type='button', title='#{title}', data-toggle='tooltip', class='#{classe}') 
-                  i.fa(class='#{icon}')
-                  |  #{name} 
+                button.btn.btn-xs(type='button', title=title, data-toggle='tooltip', class=classe)
+                  i.fa(class=icon)
+                  |  #{name}
               .Box.Box--lg.Box--y
                 .btn-block
                   +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
@@ -52,18 +52,18 @@
                 th #{head5}
                 th #{head6}
           mixin tr(cond1, cond2, cond3, cond4, cond5, cond6)
-            tr(class='#{alert}')
+            tr(class=alert)
               td
-                a.btn.btn-xs.btn-default(data-toggle='modal' data-target="#editarDataPauta" title='Editar') 
-                  i.fa.fa-pencil 
+                a.btn.btn-xs.btn-default(data-toggle='modal' data-target="#editarDataPauta" title='Editar')
+                  i.fa.fa-pencil
                   span  #{cond1}
               td #{cond2}
               td #{cond3}
-              td 
+              td
                 a(href='itemComunicacaoInterna.html') #{cond4}
               td #{cond5}
               td #{cond6}
-                
+
           table.table.table-striped.table-hover.milli
                   +thead('Data', 'Turno', 'Editoria', 'Assunto', 'Equipe', 'Views 7')
                   tbody
@@ -87,7 +87,7 @@
                                   span(aria-hidden='true') «
                               li.active
                                 a(href='#')
-                                  | 1 
+                                  | 1
                                   span.sr-only (current)
                               li
                                 a(href='#') 2
@@ -102,7 +102,7 @@
                                   span(aria-hidden='true') »
                   +tfoot
 
-      #colaboradores.tab-pane(role='tabpanel') 
+      #colaboradores.tab-pane(role='tabpanel')
         .row
           .col-md-12
             .Box.Box--lg.Box--y

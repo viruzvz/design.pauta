@@ -12,7 +12,7 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         h3: strong ORIENTAÇÕES PARA COBERTURA DO DIA 10/12 - QUINTA-FEIRA
         dl.dl-horizontal
           mixin data-list (titulo, descricao)
@@ -27,16 +27,16 @@
 
         #accordion.panel-group(role='tablist', aria-multiselectable='true')
           mixin panel-heading (id, icon, title, href, expanded, aria)
-            .s-bar.s-bar--background(id='#{id}')
+            .s-bar.s-bar--background(id=id)
               .ArrangeFlex
                 .ArrangeFlex-sizeFit.Box.Box--lg
-                  i.fa(class='#{icon}')
+                  i.fa(class=icon)
                 .ArrangeFlex-sizeFill.Box--y.Box--lg
                   h2.milli.s-bar--text
                     strong #{title}
                 .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
                   .panel-actions
-                    a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='#{expanded}', aria-controls='#{aria}')
+                    a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href=href, aria-expanded=expanded, aria-controls=aria)
                       i.fa.fa-chevron-up
                       i.fa.fa-chevron-down
           mixin loren
@@ -63,7 +63,7 @@
               caption.Segments
                 h4.Apex.Apex--cut #{caption}
                   .pull-right
-                    a.btn.btn-xs.btn-success(href='#{href}')
+                    a.btn.btn-xs.btn-success(href=href)
                       i.fa.fa-plus
                       |  Criar item
               thead
@@ -88,7 +88,7 @@
     include ../partials/menu-item
 
 
-            
+
 include ../modais/adicionarLink
 include ../modais/historico
 include ../modais/novoArquivo

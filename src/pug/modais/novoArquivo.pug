@@ -5,11 +5,11 @@
       .modal-header
         button.close(type='button', data-dismiss='modal', aria-label='Close')
           span(aria-hidden='true') ×
-        h4#novoArquivokLabel.modal-title 
+        h4#novoArquivokLabel.modal-title
           span.fa.fa-plus
           |  Novo arquivo
       .modal-body
-        
+
         // Nav tabs
         ul.nav.nav-tabs.hidden-xs(role='tablist')
           li.active(role='presentation')
@@ -19,7 +19,7 @@
           li(role='presentation')
             a(href='#datas2', aria-controls='datas2', role='tab', data-toggle='tab') Datas
           li(role='presentation')
-            a(href='#propriedades2', aria-controls='propriedades2', role='tab', data-toggle='tab') Propriedades    
+            a(href='#propriedades2', aria-controls='propriedades2', role='tab', data-toggle='tab') Propriedades
           li(role='presentation')
             a(href='#configuracoes2', aria-controls='configuracoes2', role='tab', data-toggle='tab') Configurações
         // Responsive Select, on only in xs
@@ -28,7 +28,7 @@
             label(for='mySelect1') Selecione um tipo
             select.mySelect.mySelectResponsive.form-control
               mixin option(value, name)
-                option(value='#{value}') #{name}
+                option(value=value) #{name}
               +option('#padrao2', 'Padrao')
               +option('#categorizacao2', 'Categorização')
               +option('#datas2', 'Datas')
@@ -36,7 +36,7 @@
               +option('#configuracoes2', 'Configurações')
         // Tab panes
         .tab-content.Box.Box--lg.Box--y
-          #padrao2.tab-pane.active(role='tabpanel') 
+          #padrao2.tab-pane.active(role='tabpanel')
             form(name='novoArquivoModalForm')
               .form-group
                 label(for='titulo2') Título
@@ -48,7 +48,7 @@
                 label(for='url2') URL
                 input#url2.form-control(type='text', name='url', placeholder='http://')
 
-          #categorizacao2.tab-pane(role='tabpanel') 
+          #categorizacao2.tab-pane(role='tabpanel')
             form(name='novoArquivo-categorizacao2')
               .form-group
                 label(for='tags2') Tags
@@ -70,7 +70,7 @@
                   .col-md-12
                     p.help-block A localização geográfica associada com o item, caso aplicável.
 
-          #datas2.tab-pane(role='tabpanel') 
+          #datas2.tab-pane(role='tabpanel')
             form(name='adicionarLink-data')
               .form-group
                 .row
@@ -92,7 +92,7 @@
                         span.fa.fa-calendar
                 p.help-block A data quando o item expira. Isso irá automaticamente tornar o item invisível para os outros na data informada. Se nenhuma data for escolhida, o item nunca irá expirar.
 
-          #propriedades2.tab-pane(role='tabpanel') 
+          #propriedades2.tab-pane(role='tabpanel')
             form(name='novoArquivo-propriedades2')
               .form-group
                 label(for='autores2') Autores
@@ -107,17 +107,17 @@
                 textarea#direitos2.form-control(rows='2', name='direitos')
                 p.help-block Declaração dos direitos de cópia ou outras informações sobre os direitos desse item.
 
-          #configuracoes2.tab-pane(role='tabpanel') 
+          #configuracoes2.tab-pane(role='tabpanel')
             form(name='novoArquivo-configuracoes2')
               .form-group
                 .checkbox
-                  label(for='permitirComentarios2') 
+                  label(for='permitirComentarios2')
                     input#permitirComentarios2(type='checkbox', name='permitirComentarios')
                     | Permitir comentários
                 p.help-block Caso selecionado, os usuários podem adicionar comentários neste item.
               .form-group
                 .checkbox
-                  label(for='excluirNavegacao2') 
+                  label(for='excluirNavegacao2')
                     input#excluirNavegacao2(type='checkbox', name='excluirNavegacao')
                     | Excluir da navegação
                 p.help-block Caso selecionado, esse item não irá aparecer na árvore de navegação
@@ -126,7 +126,7 @@
           .form-group
             label(for='comentario2') Comentário da versão
             textarea#comentario2.form-control(name='comentario', rows='1')
-            p.help-block Informe um comentário descrevendo as alterações que você fez. 
+            p.help-block Informe um comentário descrevendo as alterações que você fez.
 
       .modal-footer
         button.btn.btn-primary(type='button') Salvar

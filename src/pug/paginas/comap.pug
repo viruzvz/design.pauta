@@ -10,7 +10,7 @@
         a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
           i.fa.fa-chevron-up
           i.fa.fa-chevron-down
-  .panel-body#collapse-box.in 
+  .panel-body#collapse-box.in
     include ../partials/navbar-nav--secundaria
     // Nav tabs
     ul.nav.nav-tabs(role='tablist')
@@ -48,9 +48,9 @@
           .col-md-4.text-right
             .form-group
               mixin btn-impress(title, classe, icon, name)
-                button.btn.btn-xs(type='button', title='#{title}', data-toggle='tooltip', class='#{classe}') 
-                  i.fa(class='#{icon}')
-                  |  #{name} 
+                button.btn.btn-xs(type='button', title=title, data-toggle='tooltip', class=classe)
+                  i.fa(class=icon)
+                  |  #{name}
               .Box.Box--lg.Box--y
                 .btn-block
                   +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
@@ -72,7 +72,7 @@
                 th #{head8}
                 th #{head9}
           mixin tr(alert, cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8, cond9)
-            tr(class='#{alert}')
+            tr(class=alert)
               td: a(href='itemComap.html') #{cond1}
               td #{cond2}
               td #{cond3}
@@ -81,7 +81,7 @@
               td #{cond6}
               td #{cond7}
               td #{cond8}
-              td #{cond9}         
+              td #{cond9}
           // Manhã
           table.table.table-striped.table-hover.milli
             +thead('Trabalho', 'Cliente', 'Atendimento', 'Marketing', 'Criação', 'Produção', 'Status', 'Entrada', 'Checkpoint')
@@ -101,7 +101,7 @@
                           span(aria-hidden='true') «
                       li.active
                         a(href='#')
-                          | 1 
+                          | 1
                           span.sr-only (current)
                       li
                         a(href='#') 2
@@ -115,4 +115,4 @@
                         a(href='#', aria-label='Next')
                           span(aria-hidden='true') »
 
-      #encerrados.tab-pane(role='tabpanel') 
+      #encerrados.tab-pane(role='tabpanel')

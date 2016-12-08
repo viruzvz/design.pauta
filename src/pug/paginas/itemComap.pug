@@ -12,7 +12,7 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         include ../partials/navbar-nav--secundaria
         // Responsive Select, on only in xs
         .visible-xs
@@ -20,7 +20,7 @@
             label(for='mySelect') Selecione
             select.mySelect.select-nav.form-control
               mixin option(value, name)
-                option(value='#{value}') #{name}
+                option(value=value) #{name}
               +option('#andamento', 'Andamento')
               +option('#briefing', 'Briefing')
               +option('#resultados', 'Resultados')
@@ -38,7 +38,7 @@
           h3 16 dias de ativismo
           #andamento.tab-pane.active(role='tabpanel')
             include ../partials/timeLine
-          #briefing.tab-pane(role='tabpanel') 
+          #briefing.tab-pane(role='tabpanel')
             mixin data-list (titulo, descricao)
               dt #{titulo}:
               dd #{descricao}
@@ -62,23 +62,23 @@
 
             #accordion.panel-group(role='tablist', aria-multiselectable='true')
               mixin panel-heading (id, icon, title, href, expanded, aria)
-                .s-bar.s-bar--background(id='#{id}')
+                .s-bar.s-bar--background(id=id)
                   .ArrangeFlex
                     .ArrangeFlex-sizeFit.Box.Box--lg
-                      i.fa(class='#{icon}')
+                      i.fa(class=icon)
                     .ArrangeFlex-sizeFill.Box--y.Box--lg
                       h2.milli.s-bar--text
                         strong #{title}
                     .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
                       .panel-actions
-                        a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href='#{href}', aria-expanded='#{expanded}', aria-controls='#{aria}')
+                        a.toggle.eta.btn-sBar(role='button', data-toggle='collapse', data-parent='#accordion', href=href, aria-expanded=expanded, aria-controls=aria)
                           i.fa.fa-chevron-up
                           i.fa.fa-chevron-down
               mixin loren
                 | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 
               .panel.panel-default
-                +panel-heading('headingFour', 'fa-pencil', 'Descritivo', '#collapseFour','true', 'collapseFour')  
+                +panel-heading('headingFour', 'fa-pencil', 'Descritivo', '#collapseFour','true', 'collapseFour')
                 #collapseFour.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingFour')
                   .panel-body
                     +loren
@@ -127,7 +127,7 @@
               dl
                 +data-list('Recomendações e lições aprendidas', 'Anim pariatur cliche reprehenderit,')
               .panel.panel-default
-                +panel-heading('headingSix', 'fa-pencil', 'Produtos Desenvolvidos', '#collapseSix', 'false', 'collapseSix')  
+                +panel-heading('headingSix', 'fa-pencil', 'Produtos Desenvolvidos', '#collapseSix', 'false', 'collapseSix')
                 #collapseSix.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingSix')
                   .panel-body
                     +loren

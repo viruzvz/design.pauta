@@ -12,14 +12,14 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         // Responsive Select, on only in xs
         .visible-xs
           .form-group
             label(for='mySelect') Selecione um tipo
             select.mySelect.select-nav.form-control
               mixin option(value, name)
-                option(value='#{value}') #{name}
+                option(value=value) #{name}
               +option('#conteudo', 'Conteúdo')
               +option('#briefing', 'Briefing')
               +option('#resultados', 'Resultados')
@@ -35,29 +35,29 @@
 
         // Tab panes
         .tab-content.Box.Box--lg.Box--y
-          #conteudo.tab-pane.active(role='tabpanel') 
+          #conteudo.tab-pane.active(role='tabpanel')
             form(name='adicionarLink-padrao')
               .form-group
-                label(for='trabalho') 
+                label(for='trabalho')
                   | Trabalho
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#trabalho.form-control(name='trabalho', required) 
+                input#trabalho.form-control(name='trabalho', required)
               .form-group
-                label(for='cliente') 
+                label(for='cliente')
                   | Cliente
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
                   .col-md-4
                     select#cliente.form-control(name='cliente', required)
                       option(value='') Selecionar
-                      option(value='Advocacia') Advocacia 
+                      option(value='Advocacia') Advocacia
               .form-group
-                label(for='contato') 
+                label(for='contato')
                   | Contato
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-                input#contato.form-control(name='contato', required) 
+                input#contato.form-control(name='contato', required)
               .form-group
-                label(for='telefones') 
+                label(for='telefones')
                   | Telefones
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
@@ -66,14 +66,14 @@
                   .col-md-4.col-sm-4
                     select#tipo-fone.form-control(name='tipo-fone', required)
                       option(value='') Selecionar
-                      option(value='Ramal') Ramal 
+                      option(value='Ramal') Ramal
                   .col-md-2.col-sm-2
                     button.btn.btn-success(type='button', name='adicionar', data-toggle='tooltip', title='Adicionar Item')
                       i.fa.fa-plus
                     button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                       i.fa.fa-times
               .form-group
-                label(for='e-mails') 
+                label(for='e-mails')
                   | E-mails
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
@@ -89,29 +89,29 @@
                     button.btn.btn-danger(type='button', name='remover', data-toggle='tooltip', title='Excluir Item')
                       i.fa.fa-times
               .form-group
-                label(for='atendimento') 
+                label(for='atendimento')
                   | Atendimento
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
                   .col-md-4
                     select#atendimento.form-control(name='atendimento', required)
                       option(value='') Selecionar
-                      option(value='Andrea') Andrea 
+                      option(value='Andrea') Andrea
               .form-group
-                label(for='criacao') Criação 
+                label(for='criacao') Criação
               .form-group
-                label(for='marketing') Marketing 
+                label(for='marketing') Marketing
               .form-group
                 label(for='producao') Produção
               .form-group
-                label(for='cat-trabalho') 
+                label(for='cat-trabalho')
                   | Categoria do trabalho
                   span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
                 .row
                   .col-md-4
                     select#cat-trabalho.form-control(name='cat-trabalho', required)
                       option(value='') Selecionar
-                      option(value='Utilidade Publica') Utilidade Pública 
+                      option(value='Utilidade Publica') Utilidade Pública
               .form-group
                 .checkbox
                   label
@@ -119,7 +119,7 @@
                     | Prioridade
               .form-group
                 label(for='end-rede') Endereço na rede
-                input#end-rede.form-control(type='text', name='end-rede') 
+                input#end-rede.form-control(type='text', name='end-rede')
               .form-group
                 .row
                   .col-md-3.col-xs-8
@@ -136,7 +136,7 @@
                       input#prev-saida.form-control(type='text', placeholder='dd/mm/aaaa')
                       .input-group-addon
                         span.fa.fa-calendar
-          #briefing.tab-pane(role='tabpanel') 
+          #briefing.tab-pane(role='tabpanel')
             .form-group
               label(for='descritivo') Descritivo
               p.help-block Histórico, problemas de comunicação
@@ -183,7 +183,7 @@
 
 
             .form-group
-              label 
+              label
                 | Produtos Demandados
               p.help-block Escolha o tipo de produto na caixa de seleção e escreva a quantidade na caixa de texto
               .row.Box.Box--y
@@ -251,7 +251,7 @@
                     i.fa.fa-times
 
 
-          #resultados.tab-pane(role='tabpanel') 
+          #resultados.tab-pane(role='tabpanel')
             .form-group
               .row
                 .col-md-3.col-xs-8
@@ -264,7 +264,7 @@
               label(for='dem-producao') Demandas de produção
               textarea#dem-producao.form-control(row='2', name='dem-producao')
                 | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      
+
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Editar
             | &nbsp;

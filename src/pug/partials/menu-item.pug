@@ -44,8 +44,8 @@
                 option(value='privado') Privado
         mixin links (href, toggle, modal, icon, name)
           li.Box.Box--normal
-            a(href="#{href}" data-toggle='#{toggle}', data-target='#{modal}')
-              i.fa(class='#{icon}') 
+            a(href=href data-toggle=toggle, data-target=modal)
+              i.fa(class=icon)
               |  #{name}
         +links('#', 'modal', '#historico', 'fa-chevron-right', 'Histórico')
 
@@ -81,12 +81,12 @@
         mixin btn-turn(name, id, label)
           li.Box.Box--normal.row
             .col-md-9.col-xs-9
-              i.fa.fa-chevron-right 
+              i.fa.fa-chevron-right
               |  #{name}&nbsp;
             .col-md-3.col-xs-3
               .onoffswitch(style='margin-left:-10px;')
-                input.onoffswitch-checkbox(id='#{id}' type='checkbox', name='onoffswitch', checked='')
-                label.onoffswitch-label(for='#{label}')
+                input.onoffswitch-checkbox(id=id type='checkbox', name='onoffswitch', checked='')
+                label.onoffswitch-label(for=label)
                   span.onoffswitch-inner
                   span.onoffswitch-switch
         +btn-turn('Notificar alterações', 'btn1', 'btn1')

@@ -12,39 +12,39 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         form(name='gerenciarAvisosGeraisForm')
           .form-group
             label(for='listaAvisos') Lista de avisos
-            a.btn.btn-success.btn-xs.pull-right(href='#') 
+            a.btn.btn-success.btn-xs.pull-right(href='#')
               i.fa.fa-plus-circle
               |  Adicionar
             textarea#listaAvisos.form-control(rows='3')
-            
+
           .table-responsive
             table.table.table-striped.table-bordered
               caption
                 p Formulário para reordenar, criar, ou editar os itens de aviso. Arraste para alterar a ordenção
                 ul.list-inline.list-unstyled
                   li
-                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled)
                       i.fa.fa-check-circle
                       |  Habilitar
-                  li 
-                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
+                  li
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled)
                       i.fa.fa-minus-circle
                       |  Desabilitar
 
                   li
                     a.btn.btn-default.btn-sm.disable-btn(href='#', disabled)
-                      i.fa.fa-eye 
+                      i.fa.fa-eye
                       |  Destacar
                   li
-                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-default.btn-sm.disable-btn(href='#', disabled)
                       i.fa.fa-eye-slash
                       |  Tirar Destaque
                   li
-                    a.btn.btn-danger.btn-sm.disable-btn(href='#', disabled) 
+                    a.btn.btn-danger.btn-sm.disable-btn(href='#', disabled)
                       i.fa.fa-trash
                       |  Excluir
 
@@ -62,30 +62,30 @@
                   tr
                     td.text-center
                       input.toggle-btn-on(type='checkbox', name='acao')
-                    td 
+                    td
                       a(href='#' data-toggle="modal" data-target="#editarAviso") #{texto}
                     td
                       | #{criado}
-                    td.text-center 
-                      i.fa(class='#{habilitado}')
+                    td.text-center
+                      i.fa(class=habilitado)
                     td
                       a(href='#') #{destaque}
                     td.text-center
                       ul.list-inline.list-unstyled
                         li
-                          a(href='' data-toggle="tooltip" data-placement="top" title="Habilitar") 
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Habilitar")
                             i.fa.fa-check-circle
                         li
-                          a(href='' data-toggle="tooltip" data-placement="top" title="Desabilitar") 
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Desabilitar")
                             i.fa.fa-minus-circle
                         li
-                          a(href='' data-toggle="tooltip" data-placement="top" title="Destacar") 
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Destacar")
                             i.fa.fa-eye
                         li
-                          a(href='' data-toggle="tooltip" data-placement="top" title="Tirar Destaque") 
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Tirar Destaque")
                             i.fa.fa-eye-slash
                         li
-                          a(href='' data-toggle="tooltip" data-placement="top" title="Excluir") 
+                          a(href='' data-toggle="tooltip" data-placement="top" title="Excluir")
                             i.fa.fa-trash
 
                 +tr('CRE Liberada', 'Renina Sangermano Valejo 12/09/2016 20:40', 'fa-check-circle alert-success', '')
