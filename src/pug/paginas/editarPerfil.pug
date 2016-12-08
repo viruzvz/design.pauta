@@ -12,21 +12,21 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         form(name='editarPerfilForm')
           .form-group
             label(for='nome') Nome completo
             p.help-block Informe seu nome completo, por exemplo, João da Silva.
-            input#nome.form-control(type='text', name='nome') 
+            input#nome.form-control(type='text', name='nome')
           .form-group
-            label(for='email') 
+            label(for='email')
               | E-mail
               span(class='+red--color', data-toggle="tooltip", data-placement="top", title="Item Obrigatório") *
-            input#email.form-control(type='email', name='email', required, placeholder='meuemail@meudominio.com.br') 
+            input#email.form-control(type='email', name='email', required, placeholder='meuemail@meudominio.com.br')
           .form-group
             label(for='paginaPessoal') Página pessoal
             p.help-block A URL para a sua página pessoal externa, caso você possua uma.
-            input#paginaPessoal.form-control(type='text', name='paginaPessoal')           
+            input#paginaPessoal.form-control(type='text', name='paginaPessoal')
           .form-group
             label(for='biografia') Biografia
             p.help-block Uma breve descrição sobre quem você é e o que você faz. Será mostrada em sua página de autor, que é linkada nos itens que você criar.
@@ -34,15 +34,15 @@
           .form-group
             label(for='local') Local
             p.help-block Sua localização, como cidade e país, ou no caso de uma empresa, onde o seu escritório está localizado.
-            input#local.form-control(type='text', name='local') 
+            input#local.form-control(type='text', name='local')
           .form-group
             label(for='retrato') Retrato
-              .retrato-crop   
-                img.img-responsive(src='../../img/avatar.jpg')
+              .retrato-crop
+                img.img-responsive(src='assets/img/avatar.jpg')
             p.Para adicionar ou alterar o retrato, clique no botão <strong>Procurar</strong> e selecione a sua foto. O tamanho recomendado é de 75 pixels de largura por 75 pixels de altura.
             .row
               .col-md-6
-                input#retrato.form-control(type='file' name='retrato') 
+                input#retrato.form-control(type='file' name='retrato')
           .form-group
             .checkbox
               label
@@ -50,10 +50,10 @@
                 |  Excluir Retrato
           .form-group
             label(for='nickname') Nome de guerra
-            input#nickname.form-control(type='text', name='nickname') 
+            input#nickname.form-control(type='text', name='nickname')
           .form-group
             label(for='emailparticular') E-mail particular
-            input#emailparticular.form-control(type='text', name='emailparticular') 
+            input#emailparticular.form-control(type='text', name='emailparticular')
           .form-group.pull-right
             button.btn.btn-primary(type='submit') Editar
             | &nbsp;

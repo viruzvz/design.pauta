@@ -12,19 +12,19 @@
             a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
               i.fa.fa-chevron-up
               i.fa.fa-chevron-down
-      .panel-body#collapse-box.in 
+      .panel-body#collapse-box.in
         form(name='visualizarPerfilForm')
           .form-group
             label(for='nome') Nome completo
-            input#nome.form-control(type='text', name='nome', placeholder='Carlos Eduardo Gomes Neri', disabled) 
+            input#nome.form-control(type='text', name='nome', placeholder='Carlos Eduardo Gomes Neri', disabled)
           .form-group
-            label(for='email') 
+            label(for='email')
               | E-mail
-            input#email.form-control(type='email', name='email', disabled, placeholder='cegn@senado.gov.br') 
+            input#email.form-control(type='email', name='email', disabled, placeholder='cegn@senado.gov.br')
 
           .form-group
             label(for='paginaPessoal') Página pessoal
-            input#paginaPessoal.form-control(type='text', name='paginaPessoal', disabled, placeholder='http://www.carlosvz.com')           
+            input#paginaPessoal.form-control(type='text', name='paginaPessoal', disabled, placeholder='http://www.carlosvz.com')
 
           .form-group
             label(for='biografia') Biografia
@@ -33,15 +33,15 @@
 
           .form-group
             label(for='local') Local
-            input#local.form-control(type='text', name='local', placeholder='SECON NTI', disabled) 
+            input#local.form-control(type='text', name='local', placeholder='SECON NTI', disabled)
 
           .form-group
             label Retrato
-              .retrato-crop   
-                img.img-responsive(src='../../img/avatar-cegn.png')
+              .retrato-crop
+                img.img-responsive(src='assets/img/avatar-cegn.png')
             .row.hide
               .col-md-6
-                input#retrato.form-control(type='file' name='retrato') 
+                input#retrato.form-control(type='file' name='retrato')
 
           .form-group.hide
             .checkbox
@@ -51,11 +51,11 @@
 
           .form-group
             label(for='nickname') Nome de guerra
-            input#nickname.form-control(type='text', name='nickname', disabled, placeholder='cegn') 
+            input#nickname.form-control(type='text', name='nickname', disabled, placeholder='cegn')
 
           .form-group
             label(for='emailparticular') E-mail particular
-            input#emailparticular.form-control(type='text', name='emailparticular', disabled, placeholder='viruzvz@gmail.com') 
+            input#emailparticular.form-control(type='text', name='emailparticular', disabled, placeholder='viruzvz@gmail.com')
 
           .form-group.pull-right
             a.btn.btn-default(href='#', data-dismiss='modal') Cancelar
