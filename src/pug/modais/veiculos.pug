@@ -1,0 +1,20 @@
+// Modal
+#veiculos.modal.fade(tabindex='-1', role='dialog', aria-labelledby='veiculosLabel')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#veiculosLabel.modal-title
+          i.fa.fa-users
+          |   Agência
+      .modal-body
+        ul.list-unstyled
+          li: a.text-warning(href='#') Em produção
+          li: a.text-danger(href='#') Privado
+          li: a.text-warning(href='#') Projeto visa incentivar venda de polpa de fruta produzida por agricultor familiar
+          li: a(href='#') PARA SEXTA - Estupro pode se tornar crime imprescritível
+          li: a(href='#') Dorothea Werneck, consultora econômica;
+
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') Fechar

@@ -10,7 +10,9 @@ body
           span(aria-hidden='true') ×
         strong Atenção!
         |  Falha no acesso. Tanto o nome de usuário como a senha são sensíveis a letras maiúsculas e minúsculas, verifique se a tecla Caps Lock não está ativa.
-        button(type='button' data-toggle='modal', data-target='#ajuda' class='btn btn-xs +help--content fa fa-question-circle')  Saiba mais
+        button(type='button' data-toggle='modal', data-target='#ajuda' class='btn btn-xs +help--content')
+          .fa.fa-question-circle
+          | Saiba mais
       form#loginform.form-horizontal.milli(role='form' action='paginaInicial.html')
         .input-group
           span.input-group-addon
@@ -63,7 +65,9 @@ body
           button.close(type='button', data-dismiss='modal', aria-label='Close')
             span(aria-hidden='true') ×
           h4.modal-title
-            span(class='+help--color').fa.fa-question-circle  Ajuda
+            span(class='+help--color')
+              .fa.fa-question-circle
+              |   Ajuda
         .modal-body
           p.alert.alert-dismissible(role='alert' class="+help--content") Caso o nome de usuário e a senha estejam certos, o problema pode ser que o seu navegador não está configurado para aceitar cookies, Cheque se existem softers de filtragem de conteúdo que desabilida cookies, desative eles ou configure para acessar atravez do endereço "https://www12.senado.leg.br/pauta". Cheque seu firewall ou sevirdor proxy que previne que os cookies sejam enviados para o seu navegador. Caso nada disso tenha funcionado, fale com o administrador do sistema. (COLOCAR RAMAL ou EMAIL)
         .modal-footer

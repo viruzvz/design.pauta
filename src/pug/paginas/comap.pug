@@ -58,61 +58,60 @@
                   a.btn.btn-xs.btn-success(href='criarItemComap.html', title='Criar Item')
                     i.fa.fa-plus
                     |  Criar Item
-        .table-responsive
-          mixin thead(head1, head2, head3, head4, head5, head6, head7, head8, head9)
-            thead
-              tr
-                th #{head1}
-                th #{head2}
-                th #{head3}
-                th #{head4}
-                th #{head5}
-                th #{head6}
-                th #{head7}
-                th #{head8}
-                th #{head9}
-          mixin tr(alert, cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8, cond9)
-            tr(class=alert)
-              td: a(href='itemComap.html') #{cond1}
-              td #{cond2}
-              td #{cond3}
-              td #{cond4}
-              td #{cond5}
-              td #{cond6}
-              td #{cond7}
-              td #{cond8}
-              td #{cond9}
-          // Manhã
-          table.table.table-striped.table-hover.milli
-            +thead('Trabalho', 'Cliente', 'Atendimento', 'Marketing', 'Criação', 'Produção', 'Status', 'Entrada', 'Checkpoint')
-            tbody
-              +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-              +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-              +tr('danger', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-              +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-              +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '', 'Marcelo', '', 'Criação', '09/09/2016', '10/10/2017')
-            tfoot
-              tr
-                td.text-center(colspan='9')
-                  nav(aria-label='...')
-                    ul.pagination.Panel-pagination.pagination-sm
-                      li.disabled
-                        a(href='#', aria-label='Previous')
-                          span(aria-hidden='true') «
-                      li.active
-                        a(href='#')
-                          | 1
-                          span.sr-only (current)
-                      li
-                        a(href='#') 2
-                      li
-                        a(href='#') 3
-                      li
-                        a(href='#') 4
-                      li
-                        a(href='#') 5
-                      li
-                        a(href='#', aria-label='Next')
-                          span(aria-hidden='true') »
+        mixin thead(head1, head2, head3, head4, head5, head6, head7, head8, head9)
+          thead
+            tr
+              th #{head1}
+              th #{head2}
+              th #{head3}
+              th #{head4}
+              th #{head5}
+              th #{head6}
+              th #{head7}
+              th #{head8}
+              th #{head9}
+        mixin tr(alert, cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8, cond9)
+          tr(class=alert)
+            td(data-th='Trabalho'): a(href='itemComap.html') #{cond1}
+            td(data-th='Cliente') #{cond2}
+            td(data-th='Atendimento') #{cond3}
+            td(data-th='Marketing') #{cond4}
+            td(data-th='Criação') #{cond5}
+            td(data-th='Produção') #{cond6}
+            td(data-th='Status') #{cond7}
+            td(data-th='Entrada') #{cond8}
+            td(data-th='Checkpoint') #{cond9}
+        // Manhã
+        table.table.table-hover.table-rp.milli
+          +thead('Trabalho', 'Cliente', 'Atendimento', 'Marketing', 'Criação', 'Produção', 'Status', 'Entrada', 'Checkpoint')
+          tbody
+            +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '...', 'Marcelo', '...', 'Criação', '09/09/2016', '10/10/2017')
+            +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '...', 'Marcelo', '...', 'Criação', '09/09/2016', '10/10/2017')
+            +tr('danger', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '...', 'Marcelo', '...', 'Criação', '09/09/2016', '10/10/2017')
+            +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '...', 'Marcelo', '...', 'Criação', '09/09/2016', '10/10/2017')
+            +tr('', '16 dias de ativismo', 'Procuradoria da Mulher', 'Roberta', '...', 'Marcelo', '...', 'Criação', '09/09/2016', '10/10/2017')
+          tfoot
+            tr
+              td.text-center(colspan='9')
+                nav(aria-label='...')
+                  ul.pagination.Panel-pagination.pagination-sm
+                    li.disabled
+                      a(href='#', aria-label='Previous')
+                        span(aria-hidden='true') «
+                    li.active
+                      a(href='#')
+                        | 1
+                        span.sr-only (current)
+                    li
+                      a(href='#') 2
+                    li
+                      a(href='#') 3
+                    li
+                      a(href='#') 4
+                    li
+                      a(href='#') 5
+                    li
+                      a(href='#', aria-label='Next')
+                        span(aria-hidden='true') »
 
       #encerrados.tab-pane(role='tabpanel')

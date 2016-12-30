@@ -90,49 +90,49 @@
                +loren
 
         mixin table (caption, href)
-          .table-responsive
-            table.table.table-striped.table-hover.milli
-              caption.Segments
-                h4.Apex.Apex--cut #{caption}
-                  .pull-right
-                    ul.list-inline.list-unstyled
-                      li: a.btn.btn-xs.btn-success(href=href)
-                        i.fa.fa-plus
-                        |  Áudio
-                      li: a.btn.btn-xs.btn-success(href=href)
-                        i.fa.fa-plus
-                        |  Infográfico
-                      li: a.btn.btn-xs.btn-success(href=href)
-                        i.fa.fa-plus
-                        |  Matéria
-                      li: a.btn.btn-xs.btn-success(href=href)
-                        i.fa.fa-plus
-                        |  Senado Agora
-                      li: a.btn.btn-xs.btn-success(href=href)
-                        i.fa.fa-plus
-                        |  Matéria
+          table.table.table-striped.table-hover.table-rp.milli
+            caption
+              h4.Apex.Apex--cut #{caption}
+              ul.list-unstyled.list-inline.pull-right
+                li: a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Áudio
+                li: a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Infográfico
+                li: a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Matéria
+                li: a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Senado Agora
+                li: a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Matéria
 
-              thead
+            thead
+              tr
+                th Data
+                th Retranca
+                th Título
+                th Repórter
+                th Status
+            tbody
+              mixin tr(t1,t2,t3,t4,tclass,t5)
                 tr
-                  th Data
-                  th Retranca
-                  th Título
-                  th Repórter
-                  th Status
-              tbody
-                mixin tr(t1,t2,t3,t4,tclass,t5)
-                  tr
-                    td
-                      .fa.fa-clock-o
-                      |  #{t1}
-                    td #{t2}
-                    td #{t3}
-                    td #{t4}
-                    td(class=tclass) #{t5}
+                  td(data-th='Data')
+                    .fa.fa-clock-o
+                    |  #{t1}
+                  td(data-th='Retranca') #{t2}
+                  td(data-th='Título') #{t3}
+                  td(data-th='Reporter') #{t4}
+                  td(data-th='Status')
+                    span(class=tclass)
+                      =t5
 
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')
-                +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-warning', 'Revisão')
+              +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-danger', 'Parado')
+              +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-success', 'Publicado')
+              +tr('29/09/2016 - 14:40', 'Comissões', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit,', 'Sergio Vieira', 'text-warning', 'Revisão')
         +table('Notícias Produzidas', '#')
 
 

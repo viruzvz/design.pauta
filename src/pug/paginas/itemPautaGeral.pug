@@ -58,26 +58,27 @@
 
 
         mixin table (caption, href)
-          .table-responsive
-            table.table.table-striped.table-hover.milli
-              caption.Segments
-                h4.Apex.Apex--cut #{caption}
-                  .pull-right
-                    a.btn.btn-xs.btn-success(href=href)
-                      i.fa.fa-plus
-                      |  Criar item
-              thead
+          table.table.table-striped.table-hover.table-rp.milli
+            caption.Segments
+              h4.Apex.Apex--cut #{caption}
+              .pull-right
+                a.btn.btn-xs.btn-success(href=href)
+                  i.fa.fa-plus
+                  |  Criar item
+            thead
+              tr
+                th Assunto
+                th Repórter
+                th Status
+            tbody
+              mixin linhas(Assunto, Reporter, Status)
                 tr
-                  th Assunto
-                  th Repórter
-                  th Status
-              tbody
-                mixin linhas(Assunto, Reporter, Status)
-                  tr
-                    td #{Assunto}
-                    td #{Reporter}
-                    td.text-success #{Status}
-                +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
+                  td(data-th='Assunto') #{Assunto}
+                  td(data-th='repórter') #{Reporter}
+                  td(data-th='Status')
+                    .text-success
+                      =Status
+              +linhas('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua.', 'Carlos Eduardo','Em Produção')
         +table('Agência Senado', 'paginaInicial--criarItemPautaGeralAgencia.html')
         +table('Comunicação Interna', 'paginaInicial--criarItemPautaComunicacaoInterna.html')
         +table('Rádio Sendo', 'paginaInicial--criarItemPautaRadio.html')

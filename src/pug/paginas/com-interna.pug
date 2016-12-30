@@ -41,66 +41,66 @@
                 .btn-block
                   +btn-impress('Imprimir', 'btn-default', 'fa-print', 'Imprimir')
 
-        .table-responsive
-          mixin thead(head1, head2, head3, head4, head5, head6)
-            thead
-              tr
-                th #{head1}
-                th #{head2}
-                th #{head3}
-                th #{head4}
-                th #{head5}
-                th #{head6}
-          mixin tr(cond1, cond2, cond3, cond4, cond5, cond6)
-            tr(class=alert)
-              td
-                a.btn.btn-xs.btn-default(data-toggle='modal' data-target="#editarDataPauta" title='Editar')
-                  i.fa.fa-pencil
-                  span  #{cond1}
-              td #{cond2}
-              td #{cond3}
-              td
-                a(href='itemComunicacaoInterna.html') #{cond4}
-              td #{cond5}
-              td #{cond6}
 
-          table.table.table-striped.table-hover.milli
-                  +thead('Data', 'Turno', 'Editoria', 'Assunto', 'Equipe', 'Views 7')
-                  tbody
-                    mixin group-tr(data)
-                      tr
-                        td.text-center(colspan='6')
-                          span.badge #{data}
-                      +tr('17/10', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
-                      +tr('17/11', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
-                      +tr('17/12', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
-                    +group-tr('17/10')
-                    +group-tr('18/10')
-                  mixin tfoot
-                    tfoot
-                      tr
-                        td.text-center(colspan='9')
-                          nav(aria-label='...')
-                            ul.pagination.Panel-pagination.pagination-sm
-                              li.disabled
-                                a(href='#', aria-label='Previous')
-                                  span(aria-hidden='true') «
-                              li.active
-                                a(href='#')
-                                  | 1
-                                  span.sr-only (current)
-                              li
-                                a(href='#') 2
-                              li
-                                a(href='#') 3
-                              li
-                                a(href='#') 4
-                              li
-                                a(href='#') 5
-                              li
-                                a(href='#', aria-label='Next')
-                                  span(aria-hidden='true') »
-                  +tfoot
+        mixin thead(head1, head2, head3, head4, head5, head6)
+          thead
+            tr
+              th #{head1}
+              th #{head2}
+              th #{head3}
+              th #{head4}
+              th #{head5}
+              th #{head6}
+        mixin tr(cond1, cond2, cond3, cond4, cond5, cond6)
+          tr(class=alert)
+            td(data-th='Data')
+              a.btn.btn-xs.btn-info(data-toggle='modal' data-target="#editarDataPauta" title='Editar')
+                i.fa.fa-pencil
+                span  #{cond1}
+            td(data-th='Turno') #{cond2}
+            td(data-th='Editoria') #{cond3}
+            td(data-th='Assunto')
+              a(href='itemComunicacaoInterna.html') #{cond4}
+            td(data-th='Equipe') #{cond5}
+            td(data-th='Views 7') #{cond6}
+
+        table.table.table-striped.table-hover.milli.table-rp
+                +thead('Data', 'Turno', 'Editoria', 'Assunto', 'Equipe', 'Views 7')
+                tbody
+                  mixin group-tr(data)
+                    tr
+                      td.text-center(colspan='6')
+                        span.badge #{data}
+                    +tr('17/10', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                    +tr('17/11', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                    +tr('17/12', 'Manhã', 'Institucional', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod', 'Patrícia Daniella, Fernandes dos Santos', '0')
+                  +group-tr('17/10')
+                  +group-tr('18/10')
+                mixin tfoot
+                  tfoot
+                    tr
+                      td.text-center(colspan='9')
+                        nav(aria-label='...')
+                          ul.pagination.Panel-pagination.pagination-sm
+                            li.disabled
+                              a(href='#', aria-label='Previous')
+                                span(aria-hidden='true') «
+                            li.active
+                              a(href='#')
+                                | 1
+                                span.sr-only (current)
+                            li
+                              a(href='#') 2
+                            li
+                              a(href='#') 3
+                            li
+                              a(href='#') 4
+                            li
+                              a(href='#') 5
+                            li
+                              a(href='#', aria-label='Next')
+                                span(aria-hidden='true') »
+                +tfoot
 
       #colaboradores.tab-pane(role='tabpanel')
         .row

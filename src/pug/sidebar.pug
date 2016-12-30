@@ -1,41 +1,40 @@
-ul.list-unstyled.Sidebar.u-posRelative
-  li.Sidebar--header.Box.Box--lg.u-spacer--xl
-    .Flag.Sidebar--Controlflag
-      .Flag-figure.Sidebar--Flagfigure.Sidebar--FlagfigureCompact
-        a.Sidebar-compact--btn.hidden-xs(href='#')
-          img(src='assets/img/icon-pautas2.svg' alt='Logo sistema'  width="29px" height="29px")
-        img.visible-xs(src='assets/img/icon-pautas.svg' alt='Logo sistema'  width="29px" height="29px")
-      .Flag-body.Sidebar--Flagbody(class="+white--color")
+ul.list-unstyled.sb.u-posRelative
+  li.sb--header.Box--sm.u-spacer--xl
+    .Flag.sb--Controlflag
+      .Flag-figure.sb--Flagfigure.sb--FlagfigureCompact
+        a.btn-jquery(href='#')
+          img(src='assets/img/icon-pautas2.svg' alt='Logo sistema'  width="40px" height="40px")
+      .Flag-body.sb--Flagbody.milli(class="+white--color")
         | Central de Pautas e Produção Jornalistica
-      .Flag-figure.pull-right.Sidebar-compact--icon.hidden-xs
-        a.gamma.Sidebar-compact--btn(href="#" class="+white--color")
+      .Flag-figure.pull-right.sb-compact--icon.hidden-xs
+        a.gamma.btn-jquery(href="#" class="+white--color")
           span.fa.fa-ellipsis-v
   mixin item-link(href, icon, title)
     li.Box.u-posStatic_.u-textNoWrap
       a(href=href)
-        .Sidebar-menu--Link.Sidebar--text
-          button.btn.Sidebar-btn.btn-square(role='button' title='Alooo2')
+        .sb-menu--Link.sb--text
+          button.btn.sb-btn.btn-square(role='button' title='Alooo2')
             span.fa.milli(class=icon)
-          span.Box.Sidebar-menu--Label  #{title}
+          span.Box.sb-menu--Label  #{title}
   +item-link('paginaInicial.html', 'fa-home', 'Página Inicial')
   mixin item-drop(icon, title, name)
     li.Box.dropdown.u-posStatic_.u-textNoWrap
       - var id = rand()
-      .Sidebar-menu--Link.Sidebar--text.toggle(href='#' data-toggle='collapse' data-target='#' + id aria-expanded='false')
-        .pull-right.Box.Box--sm.Sidebar--hidden
+      .sb-menu--Link.sb--text.toggle(href='#' data-toggle='collapse' data-target='#' + id aria-expanded='false')
+        .pull-right.Box.Box--sm.sb--hidden
           i.fa.fa-plus
           i.fa.fa-minus
-        button.btn.Sidebar-btn.btn-square(role='button' title='Alooo')
+        button.btn.sb-btn.btn-square(role='button' title='Alooo')
           span.fa.milli(class=icon)
-        span.Box.Sidebar-menu--Label  #{title}
-      .Sidebar-menu.collapse(id=id)
-        .Sidebar-menu--Label
-          .Sidebar--text.Box #{title}
+        span.Box.sb-menu--Label  #{title}
+      .sb-menu.collapse(id=id)
+        .sb-menu--Label
+          .sb--text.Box #{title}
         ul.list-unstyled.Box(class='+bgdropdown')
           mixin item-drop-li(href, icon, name)
             li
               .row
-                a.sidebar-link(href=href)
+                a.sb-link(href=href)
                   .col-xs-2
                     | &nbsp;
                     i.fa(class=icon)
@@ -45,7 +44,7 @@ ul.list-unstyled.Sidebar.u-posRelative
           +item-drop-li('comap.html', 'fa-lightbulb-o', 'COMAP')
           +item-drop-li('com-interna.html', 'fa-commenting-o', 'Comunicação Interna')
           +item-drop-li('divulgacaoExterna.html', 'fa-rss', 'Divulgação Externa')
-          +item-drop-li('#', 'fa-camera', 'Fotografia')
+          +item-drop-li('fotografia.html', 'fa-camera', 'Fotografia')
           +item-drop-li('#', 'fa-microphone', 'Rádio')
           +item-drop-li('#', 'fa-television', 'TV')
   +item-drop('fa-pencil', 'Pautas')

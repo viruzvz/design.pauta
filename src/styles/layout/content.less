@@ -62,7 +62,7 @@ article {
     top: 7px;
   }
 }
-//////////////// Classes axuliares. 
+//////////////// Classes axuliares.
 .s-breadcrumb {
   position: relative;
   border: 1px solid @c2;
@@ -103,4 +103,31 @@ article {
   display: flex;
   justify-content:center;
   flex-flow: column wrap;
+}
+//////////////////////////// transforma table responsiva
+@media screen and (max-width: 760px) {
+  .table-rp {
+    width: 100%;
+      tr:nth-of-type(2n) {background-color: inherit;}
+      tr td:first-child {
+        background: #f0f0f0;
+        font-weight: bold;
+      }
+      thead {display: none;}
+      tbody td {display: block;}
+      tbody td:before {
+        float: left;
+        min-width: 100px;
+        content: attr(data-th);
+        display: block;
+        font-weight: bold;
+      }
+  }
+  .thead-visible {
+    display: block !important;
+    th,tr {
+      display: block !important;
+      border-bottom: none !important;
+    }
+  }
 }

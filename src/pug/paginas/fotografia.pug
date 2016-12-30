@@ -2,10 +2,10 @@
   .s-bar.s-bar--background
     .ArrangeFlex
       .ArrangeFlex-sizeFit.Box.Box--lg
-        i.fa.fa-users
+        i.fa.fa-camera
       .ArrangeFlex-sizeFill.Box--y.Box--lg
         h2.milli.s-bar--text
-          strong Agência
+          strong Fotografia
       .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
         a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
           i.fa.fa-chevron-up
@@ -18,6 +18,8 @@
         a(href='#pautadia', aria-controls='pautadia', role='tab', data-toggle='tab') Pautas do dia
       li(role='presentation')
         a(href='#pautafutura', aria-controls='pautafutura', role='tab', data-toggle='tab') Pautas futuras
+      li(role='presentation')
+        a(href='#pautaPendente', aria-controls='pautaPendente', role='tab', data-toggle='tab') Pautas Pendentes
     // Tab panes
     .tab-content
       #pautadia.tab-pane.active(role='tabpanel')
@@ -37,20 +39,19 @@
                 |  #{name}
             .Box.Box--lg.Box--y
               form.form-group
-                .btn-block
-                  +btn-impress('Imprimir tudo', 'fa-print', 'Tudo')
-                  +btn-impress('Imprimir manhã', 'fa-print', 'Manhã')
-                  +btn-impress('Imprimir tarde', 'fa-print', 'Tarde')
+                ul.list-unstyled.list-inline
+                  li: +btn-impress('Imprimir tudo', 'fa-print', 'Tudo')
+                  li: +btn-impress('Imprimir manhã', 'fa-print', 'Manhã')
+                  li: +btn-impress('Imprimir tarde', 'fa-print', 'Tarde')
 
-        mixin thead-weather(alert, label, iclass, turno, text)
+        mixin thead-weather(alert, label, iclass, turno)
           thead.thead-visible
             tr(class=alert)
-              th(colspan='5')
-                .label.pull-left.normalis(class=label)
+              th(colspan='6')
+                .label.normalis(class=label)
                   i.fa(class=iclass)
                   =turno
-                .text-center #{text}
-        mixin thead(head1, head2, head3, head4, head5)
+        mixin thead(head1, head2, head3, head4, head5, head6)
           thead
             tr
               th #{head1}
@@ -58,7 +59,8 @@
               th #{head3}
               th #{head4}
               th #{head5}
-        mixin tbody(cond1, cond2, cond3, cond33, cond333, cond4, cond5, cond6)
+              th #{head6}
+        mixin tbody(cond1, cond2, cond3, cond33, cond333, cond4, cond44, cond5, cond6)
           tbody
             tr
               td(data-th='Hora')
@@ -67,39 +69,42 @@
               td(data-th='Assunto')
                 a(href='itemAgencia.html')
                   =cond2
-              td(data-th='Equipe')
+              td(data-th='Fotografo')
                 .Box.Box--y
                   i.fa(class=cond3, data-toggle='tooltip', title=cond33)
                   |  #{cond333}
-              td(data-th='Situalção/Observação')
+              td(data-th='Cliente')
                 =cond4
+              td(data-th='Observações')
+                =cond44
               td(data-th='Status')
                 .eta
-                  i.fa(class=cond5 data-toggle='tooltip' title=cond6)
+                  i.fa(class=cond5, data-toggle='tooltip', title=cond6)
+
 
         // Manhã
         table.table.table-striped.table-hover.table-rp.milli
 
-          +thead-weather('alert-info', 'label-info', 'fa-sun-o', 'Manhã', 'Presidência')
-          +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
-          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Jane Maria de Araújo Neves', '...', 'fa-cog text-warning', 'Em Produção')
+          +thead-weather('alert-info', 'label-info', 'fa-sun-o', 'Manhã')
+          +thead('Hora', 'Assunto', 'Fotográfo', 'Cliente', 'Observações', 'Status')
+          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Jane Maria de Araújo Neves', 'Agência','....', 'fa-cog text-warning', 'Em Produção')
 
         table.table.table-striped.table-hover.table-rp.milli
-          +thead-weather('alert-info', 'label-info', 'fa-sun-o', 'Manhã', 'Demais Pautas')
-          +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
-          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Iara Guimarães Altafin', '...', 'fa-exclamation-triangle text-danger', 'Privado')
+          +thead-weather('alert-info', 'label-info', 'fa-sun-o', 'Manhã')
+          +thead('Hora', 'Assunto', 'Fotográfo', 'Cliente', 'Observações', 'Status')
+          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Iara Guimarães Altafin', 'Agência','....', 'fa-exclamation-triangle text-danger', 'Privado')
 
         // Manhã
         table.table.table-striped.table-hover.table-rp.milli
 
-          +thead-weather('alert-warning', 'label-warning', 'fa-sun-o', 'Tarde', 'Presidência')
-          +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
-          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Carlos Eduardo Gomes Neri', '...', 'fa-archive text-muted', 'Gaveta')
+          +thead-weather('alert-warning', 'label-warning', 'fa-sun-o', 'Tarde')
+          +thead('Hora', 'Assunto', 'Fotográfo', 'Cliente', 'Observações', 'Status')
+          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-camera', 'Fotografo', 'Carlos Eduardo Gomes Neri', 'Agência','....', 'fa-archive text-muted', 'Gaveta')
 
         table.table.table-striped.table-hover.table-rp.milli
-          +thead-weather('alert-warning', 'label-warning', 'fa-sun-o', 'Tarde', 'Demais Pautas')
-          +thead('Hora', 'Assunto', 'Equipe', 'Situação/Observações', 'Status')
-          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Carlos Eduardo Gomes Neri', '...', 'fa-thumbs-o-up text-success', 'Publicado')
+          +thead-weather('alert-warning', 'label-warning', 'fa-sun-o', 'Tarde')
+          +thead('Hora', 'Assunto', 'Fotográfo', 'Cliente', 'Observações', 'Status')
+          +tbody('08:00', 'Lorem ipsum dolor sit amet, consectetur', 'fa-microphone', 'Reporter', 'Carlos Eduardo Gomes Neri', 'Agência','....', 'fa-thumbs-o-up text-success', 'Publicado')
 
 
 

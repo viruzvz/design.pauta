@@ -1,3 +1,5 @@
+////////////////////////// sb = sidebar
+
 //////////////////////////////// SIDEBAR Functions
 .focused {
   &:focus, &:active, &:hover {
@@ -6,7 +8,7 @@
   }
 }
 //////////////////////////////// SIDEBAR
-.Sidebar--text {
+.sb--text {
   color: @c5;
   cursor: pointer;
   background-color:@c1;
@@ -14,14 +16,14 @@
     background-color: @c3;
   }
 }
-.Sidebar {
+.sb {
   width: 240px;
 }
-.Sidebar--header {
+.sb--header {
   box-shadow: 0 3px 1px -1px rgba(3, 6, 9, 0.05);
   border-bottom: 1px solid @c3;
 }
-.Sidebar-menu {
+.sb-menu {
   height: 0;
   display: block!important;
   overflow: hidden;
@@ -29,50 +31,50 @@
     height: auto;
     background-color: @c3;
   }
-  .Sidebar-menu--Label {
+  .sb-menu--Label {
     display: none;
   }
 }
-.Sidebar-menu--Link, {
+.sb-menu--Link, {
   .focused;
 }
-.Sidebar-btn {
+.sb-btn {
   background-color: transparent;
   .focused;
 }
 //////////////////////////////// SIDEBAR COMPACT
-.Sidebar-compact {
-  .Sidebar-compact--icon {
+.sb-compact {
+  .sb-compact--icon {
     display: none;
   }
-  .Sidebar--hidden {
+  .sb--hidden {
     display: none;
   }
-  .Sidebar--text[aria-expanded="true"]  {
+  .sb--text[aria-expanded="true"]  {
     background-color: transparent;
   }
   .Icon--Header {
       font-size: 29px;
   }
-  .Sidebar--header {
-    padding: 15.5px 15px;
+  .sb--header {
+ //   padding: 15.5px 15px;
   }
-  .Sidebar--Controlflag {
-    .Sidebar--FlagfigureCompact {
+  .sb--Controlflag {
+    .sb--FlagfigureCompact {
       padding-right: 0;
     }
-    .Sidebar--Flagbody {
+    .sb--Flagbody {
       display: none;
     }
   }
   width: auto;
-  .Sidebar-menu--Link .Sidebar-menu--Label {
+  .sb-menu--Link .sb-menu--Label {
     display: none;
   }
-  .Sidebar-menu .Sidebar-menu--Label {
+  .sb-menu .sb-menu--Label {
     display: block;
   }
-  .Sidebar-menu {
+  .sb-menu {
     position: absolute;
     left: 100%;
     top: 12%;
@@ -87,7 +89,7 @@
   }
 }
 ///////////////////// classes de ajuda
-.sidebar-link {
+.sb-link {
   color: @c5;
   &:hover {
     color: #ccc;
