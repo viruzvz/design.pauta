@@ -11,9 +11,9 @@ ul.list-unstyled.sb.u-posRelative
           span.fa.fa-ellipsis-v
   mixin item-link(href, icon, title)
     li.Box.u-posStatic_.u-textNoWrap
-      a(href=href)
+      a.sb-hover(href=href)
         .sb-menu--Link.sb--text
-          button.btn.sb-btn.btn-square(role='button' title='Alooo2')
+          button.btn.sb-btn.btn-square(role='button' title='Title')
             span.fa.milli(class=icon)
           span.Box.sb-menu--Label  #{title}
   +item-link('paginaInicial.html', 'fa-home', 'Página Inicial')
@@ -24,7 +24,7 @@ ul.list-unstyled.sb.u-posRelative
         .pull-right.Box.Box--sm.sb--hidden
           i.fa.fa-plus
           i.fa.fa-minus
-        button.btn.sb-btn.btn-square(role='button' title='Alooo')
+        button.btn.sb-btn.btn-square(role='button' title='Title')
           span.fa.milli(class=icon)
         span.Box.sb-menu--Label  #{title}
       .sb-menu.collapse(id=id)
@@ -45,11 +45,11 @@ ul.list-unstyled.sb.u-posRelative
           +item-drop-li('com-interna.html', 'fa-commenting-o', 'Comunicação Interna')
           +item-drop-li('divulgacaoExterna.html', 'fa-rss', 'Divulgação Externa')
           +item-drop-li('fotografia.html', 'fa-camera', 'Fotografia')
-          +item-drop-li('#', 'fa-microphone', 'Rádio')
-          +item-drop-li('#', 'fa-television', 'TV')
+          +item-drop-li('radio.html', 'fa-microphone', 'Rádio')
+          +item-drop-li('tv.html', 'fa-television', 'TV')
   +item-drop('fa-pencil', 'Pautas')
-  +item-link('#', 'fa-cog', 'Produção')
-  +item-link('#', 'fa-font', 'Fontes')
-  +item-link('#', 'fa-user', 'Gerência')
+  +item-link('producao.html', 'fa-cog', 'Produção')
+  +item-link('fontes.html', 'fa-font', 'Fontes')
+  +item-link('gerencia.html', 'fa-user', 'Gerência')
     nav.navbar.u-spacer--xl
 

@@ -40,6 +40,17 @@
                   +btn-impress('Imprimir', 'fa-print', 'Imprimir')
 
         table.table.table-striped.table-hover.milli.table-rp
+          caption
+            ul.list-unstyled.list-inline.text-right
+              mixin legenda(icon, text)
+                li
+                  .fa(class= icon)
+                  = text
+              +legenda('fa-users', 'Agência')
+              +legenda('fa-commenting-o', 'Comunicação Interna')
+              +legenda('fa-camera', 'Fotografia')
+              +legenda('fa-microphone', 'Rádio')
+              +legenda('fa-television', 'TV')
           thead
             tr
               th Hora
@@ -63,12 +74,9 @@
               td(data-th='Assunto')
                 a(href='paginaInicial--itemPautaGeral.html') Lorem ipsum dolor sit amet, consectetur adipisicing elit
               td(data-th='Veículos')
-                +btn('#', 'Agência', 'btn-danger', 'fa-users', '5')
-                +btn('#', 'COMAP', 'btn-warning', 'fa-lightbulb-o', '4')
+                +btn('#', 'Agência', 'btn-warning', 'fa-users', '5')
+                +btn('#', 'Rádio', 'btn-warning', 'fa-microphone', '1')
                 +btn('#', 'Comunicação Interna', 'btn-danger', 'fa-commenting-o', '2')
-                +btn('#', 'Divulgação Interna', 'btn-warning', 'fa-rss', '1')
-                +btn('#', 'Fotografia', 'btn-warning', 'fa-camera', '3')
-                +btn('#', 'Rádio', 'btn-danger', 'fa-microphone', '1')
                 +btn('#', 'TV', 'btn-default', 'fa-television', '6')
             tr.text-left
               td(data-th='Hora')
@@ -78,7 +86,17 @@
               td(data-th='Assunto')
                 a(href='#') Lorem ipsum dolor sit amet, consectetur adipisicing elit
               td(data-th='Veículos')
-                +btn('#', 'Fotografia', 'btn-warning', 'fa-camera', '3')
+                +btn('#', 'Comunicação Interna', 'btn-danger', 'fa-commenting-o', '2')
+                +btn('#', 'Rádio', 'btn-danger', 'fa-microphone', '1')
+            tr.text-left
+              td(data-th='Hora')
+                | 11h00
+              td(data-th='Editoria')
+                | Senado
+              td(data-th='Assunto')
+                a(href='#') Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              td(data-th='Veículos')
+                +btn('#', 'TV', 'btn-warning', 'fa-television', '6')
                 +btn('#', 'Rádio', 'btn-danger', 'fa-microphone', '1')
 
       #pautafutura.tab-pane(role='tabpanel') ...

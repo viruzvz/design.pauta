@@ -1,0 +1,27 @@
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
+        i.fa.fa-user
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Gerência
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
+  .panel-body#collapse-box.in
+    include ../partials/navbar-nav--secundaria
+    .row
+      .col-md-12
+        ul.list-unstyled
+          mixin li(texto)
+            li.Box--sm.Box--y
+              a.btn.btn-default.btn-block(href="#" class='+senado')
+                .fa.fa-user
+                = texto
+          +li('Gerenciar Avisos da Gerência')
+          +li('Gerenciar Editorias Gerais')
+          +li('Gerenciar Áreas das Fontes')
+          +li('Gerenciar Grupos de Chefia')
+

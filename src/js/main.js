@@ -18,8 +18,10 @@
     $('[data-toggle="popover"]').popover()
   })
   /////////////////// DATEPICKER
-$('.datepicker').datepicker({
-    language: 'pt-BR'
+$(document).ready(function(){
+  $('.datepicker').datepicker({
+      language: 'pt-BR'
+  });
 });
   /////////////////////  TINY MCE
 $(document).ready(function () {

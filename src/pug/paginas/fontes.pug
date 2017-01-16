@@ -1,0 +1,115 @@
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
+        i.fa.fa-font
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Fontes
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
+  .panel-body#collapse-box.in
+    .row
+      .col-md-8
+        .Box.Box--lg.Box--y
+          .row
+            .col-md-12
+              .Box.Box--lg.Box--y
+                form.form-inline
+                  .row
+                    .col-sm-4.col-xs-4
+                      .form-group
+                        label.control-label.milli(for='quantidade') Quant. de linhas:
+                        select.form-control
+                          option 1
+                          option 2
+                          option 3
+                          option 4
+                          option 555
+                    .col-sm-8.col-xs-12
+                      .form-group
+                        .input-group
+                          input.form-control(type='text', placeholder='Buscar')
+                          span.input-group-btn
+                            button.btn.btn-default(type='button')
+                              i.fa.fa-search
+      .col-md-4.text-right
+        .form-group
+          mixin btn-impress(title, classe, icon, name)
+            button.btn.btn-xs(type='button', title=title, data-toggle='tooltip', class=classe)
+              i.fa(class=icon)
+              |  #{name}
+          .Box.Box--lg.Box--y
+            .btn-block
+              a.btn.btn-xs.btn-success(href='criarItemComap.html', title='Criar Item')
+                i.fa.fa-plus
+                |  Criar Fonte
+    mixin thead(head1, head2, head3, head4, head5, head6, head7, head8)
+      thead
+        tr
+          th
+            = head1
+          th
+            = head2
+          th
+            = head3
+          th
+            = head4
+          th
+            = head5
+          th
+            = head6
+    mixin tbody(cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8)
+      tbody
+        tr
+          td(data-th='Nome')
+            = cond1
+          td(data-th='Tipo')
+            = cond2
+          td(data-th='Senador/Instituição')
+            = cond3
+          td(data-th='Função')
+            = cond4
+          td(data-th='Telefones')
+            = cond5
+          td(data-th='Editar')
+            a.btn.btn-xs.btn-default(href="#")
+              .fa(class=cond6)
+
+    table.table.table-striped.table-hover.table-rp.milli
+      +thead('Nome', 'Tipo', 'Senador/Instituição', 'Função', 'Telefones', 'Editar')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+      +tbody('Acir Gurgacz', 'Gabinete', 'Acir Gurgacz', 'Senador', '(61) 9212-1233', 'fa-pencil')
+    tfoot
+      tr
+        td(colspan='9')
+          nav.text-center(aria-label='...')
+            ul.pagination.Panel-pagination.pagination-sm
+              li.disabled
+                a(href='#', aria-label='Previous')
+                  span(aria-hidden='true') «
+              li.active
+                a(href='#')
+                  | 1
+                  span.sr-only (current)
+              li
+                a(href='#') 2
+              li
+                a(href='#') 3
+              li
+                a(href='#') 4
+              li
+                a(href='#') 5
+              li
+                a(href='#', aria-label='Next')
+                  span(aria-hidden='true') »

@@ -1,0 +1,24 @@
+doctype html
+html(lang='pt')
+  - var rand = function () { return Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5) }
+  include pug/head
+
+  body#sfcss
+    aside
+      include pug/sidebar
+    main
+      header
+        include pug/navbar
+        .col-md-12
+          ol.breadcrumb.s-breadcrumb.s-bar.milli.u-spacer--xl.Box.Box--lg
+            li
+              a(href='paginaInicial.html') Página inicial
+            li.active Gerência
+      article.col-md-12
+        include pug/paginas/gerencia
+
+  include pug/footer
+
+
+
+

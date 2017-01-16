@@ -1,0 +1,130 @@
+.panel.panel-default
+  .s-bar.s-bar--background
+    .ArrangeFlex
+      .ArrangeFlex-sizeFit.Box.Box--lg
+        i.fa.fa-microphone
+      .ArrangeFlex-sizeFill.Box--y.Box--lg
+        h2.milli.s-bar--text
+          strong Rádio
+      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
+        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+          i.fa.fa-chevron-up
+          i.fa.fa-chevron-down
+  .panel-body#collapse-box.in
+    include ../partials/navbar-nav--secundaria
+    // Nav tabs
+    ul.nav.nav-tabs(role='tablist')
+      li.active(role='presentation')
+        a(href='#pautadia', aria-controls='pautadia', role='tab', data-toggle='tab') Pautas do dia
+      li(role='presentation')
+        a(href='#pautafutura', aria-controls='pautafutura', role='tab', data-toggle='tab') Pautas futuras
+
+    // Tab panes
+    .tab-content
+      #pautadia.tab-pane.active(role='tabpanel')
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              form.form-group
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
+
+          .col-md-8.text-right
+            mixin btn-impress(title, icon, name)
+              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                i.fa(class=icon)
+                |  #{name}
+            .Box.Box--lg.Box--y
+              form.form-group
+                ul.list-unstyled.list-inline
+                  li: +btn-impress('Imprimir tudo', 'fa-print', 'Tudo')
+                  li: +btn-impress('Imprimir manhã', 'fa-print', 'Manhã')
+                  li: +btn-impress('Imprimir tarde', 'fa-print', 'Tarde')
+
+        mixin thead(head1, head2, head3, head4, head5, head6, head7, head8)
+          thead
+            tr
+              th
+                = head1
+              th
+                = head2
+              th
+                = head3
+              th
+                = head4
+              th
+                = head5
+              th
+                = head6
+              th
+                = head7
+              th
+                = head8
+        mixin tbody(cond1, cond2, cond3, cond4, cond5, cond6, cond7, cond8)
+          tbody
+            tr
+              td(data-th='Hora')
+                i.fa.fa-clock-o
+                |  #{cond1}
+              td(data-th='Produto')
+                = cond2
+              td(data-th='Código')
+                = cond3
+              td(data-th='Tempo')
+                = cond4
+              td(data-th='Repórter')
+                = cond5
+              td(data-th='Entrevistado')
+                = cond6
+              td(data-th='Assunto')
+                a(href='itemAgencia.html')
+                  =cond7
+              td(data-th='Status')
+                =cond8
+
+
+
+        // Manhã
+        table.table.table-striped.table-hover.table-rp.milli
+          +thead('Hora', 'Produto', 'Código', 'Tempo', 'Repórter', 'Entrevistado', 'Assunto', 'Status')
+          +tbody('08:00', 'Matéria', '000-3', '00:00:00', 'George Rodrigues Cardim', 'teste', 'ORIENTAÇÕES PARA COBERTURA DO DIA 9/11 - QUARTA-FEIRA ', 'Privado')
+
+
+        table.table.table-striped.table-hover.table-rp.milli
+          +thead('Hora', 'Produto', 'Código', 'Tempo', 'Repórter', 'Entrevistado', 'Assunto', 'Status')
+          +tbody('08:00', 'Matéria', '000-3', '00:00:00', 'George Rodrigues Cardim', 'teste', 'ORIENTAÇÕES PARA COBERTURA DO DIA 9/11 - QUARTA-FEIRA ', 'Privado')
+
+        // Manhã
+        table.table.table-striped.table-hover.table-rp.milli
+          +thead('Hora', 'Produto', 'Código', 'Tempo', 'Repórter', 'Entrevistado', 'Assunto', 'Status')
+          +tbody('08:00', 'Matéria', '000-3', '00:00:00', 'George Rodrigues Cardim', 'teste', 'ORIENTAÇÕES PARA COBERTURA DO DIA 9/11 - QUARTA-FEIRA ', 'Privado')
+
+        table.table.table-striped.table-hover.table-rp.milli
+          +thead('Hora', 'Produto', 'Código', 'Tempo', 'Repórter', 'Entrevistado', 'Assunto', 'Status')
+          +tbody('08:00', 'Matéria', '000-3', '00:00:00', 'George Rodrigues Cardim', 'teste', 'ORIENTAÇÕES PARA COBERTURA DO DIA 9/11 - QUARTA-FEIRA ', 'Privado')
+
+      #pautafutura.tab-pane(role='tabpanel')
+        .row
+          .col-md-4
+            .Box.Box--lg.Box--y
+              form.form-group
+                .input-group.date(data-provide='datepicker', data-date-format="dd/mm/yyyy")
+                  input#dataPublicacao.form-control(type='text', placeholder='dd/mm/aaaa')
+                  .input-group-addon
+                    span.fa.fa-calendar
+
+          .col-md-8.text-right
+            mixin btn-impress(title, icon, name)
+              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                i.fa(class=icon)
+                |  #{name}
+            .Box.Box--lg.Box--y
+              form.form-group
+                .btn-block
+                  +btn-impress('Imprimir', 'fa-print', 'Imprimir')
+        .table-responsive
+          table.table.table-striped.table-hover.milli
+            +thead('Hora', 'Produto', 'Código', 'Tempo', 'Repórter', 'Entrevistado', 'Assunto', 'Status')
+            +tbody('08:00', 'Matéria', '000-3', '00:00:00', 'George Rodrigues Cardim', 'teste', 'ORIENTAÇÕES PARA COBERTURA DO DIA 9/11 - QUARTA-FEIRA ', 'Privado')
