@@ -1,7 +1,7 @@
 # Descrição
 
-Sistema desenvolvido pelo `Núcleo de Tecnologia da Informação NTI - SECOM`.
-O novo layout tem como destaque sua nova identidade visual, com uma área de trabalho mais ampla, limpa e organizada. O sistema é responsivo e acessível, podendo ser acessado por todas as plataformas.
+* Sistema desenvolvido pelo `Núcleo de Tecnologia da Informação NTI - SECOM`.
+* O novo layout tem como destaque sua nova identidade visual, com uma área de trabalho mais ampla, limpa e organizada. O sistema é responsivo e acessível, podendo ser acessado por todas as plataformas.
 
 # Desenvolvedores
 
@@ -19,9 +19,9 @@ O novo layout tem como destaque sua nova identidade visual, com uma área de tra
 
 # Instalação do Front-End
 
-• git clone git@mp1522:design/design.pauta.git
-• `npm install –g yarn` (packager manager)
-• `yarn install` (na pasta do projeto, instala as dependências do package.json) 
-• `env PORT=9090 yarn dev` (executa o servidor na porta http://localhost:9090/)
-• Edite o projeto a através da pasta `src` os arquivos estão no formato `*.pug` e `*.less`
-• Acesse a documentação de instrodução ao sistema. `design-pautas/docs/documentos/introducao_ao_pautas.doc` 
+* git clone git@mp1522:design/design.pauta.git
+* `npm install –g yarn` (packager manager)
+* `yarn install` (na pasta do projeto, instala as dependências do package.json) 
+* `env PORT=9090 yarn dev` (executa o servidor na porta http://localhost:9090/)
+* Edite o projeto a através da pasta `src` os arquivos estão no formato `*.pug` e `*.less`
+* Acesse a documentação de instrodução ao sistema. `design-pautas/docs/documentos/introducao_ao_pautas.doc` 
