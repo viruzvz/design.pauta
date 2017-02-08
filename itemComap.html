@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <style role="Apenas para navegacao do prototipo, corresponde ao menu-item">
+    #btn-navbar--calendar{
+      display:none;
+    }
+    #menu-item--status li li:nth-child(1), #menu-item--status li li:nth-child(3) {
+      display:none;
+    }
+    #menu-item--apoio li li:nth-child(1), #menu-item--apoio li li:nth-child(2), #menu-item--apoio li li:nth-child(3) {
+      display:none;
+    }
+    #menu-item--controle li li:nth-child(1), #menu-item--controle li:nth-child(3), #menu-item--controle li:nth-child(4), #menu-item--controle li:nth-child(5), #menu-item--controle li:nth-child(7), #menu-item--controle li:nth-child(8) {
+      display:none;
+    }
+  </style>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Central de Pautas e Produção Jornalística</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href="styles/vendors.css" rel="stylesheet" type="text/css">
+  <link href="styles/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet" type="text/css">
+</head>
+  <body id="sfcss">
+    <aside>
+      <ul class="list-unstyled sb u-posRelative">
+        <li class="sb--header Box--sm u-spacer--xl">
+          <div class="Flag sb--Controlflag">
+            <div class="Flag-figure sb--Flagfigure sb--FlagfigureCompact"><a class="btn-jquery" href="#"><img src="assets/img/icon-pautas2.svg" alt="Logo sistema" width="40px" height="40px"></a></div>
+            <div class="Flag-body sb--Flagbody milli +white--color">Central de Pautas e Produção Jornalistica</div>
+            <div class="Flag-figure pull-right sb-compact--icon hidden-xs"><a class="gamma btn-jquery +white--color" href="#"><span class="fa fa-ellipsis-v"></span></a></div>
+          </div>
+        </li>
+                <li class="Box u-posStatic_ u-textNoWrap"><a class="sb-hover" href="paginaInicial.html">
+                    <div class="sb-menu--Link sb--text">
+                      <button class="btn sb-btn btn-square" role="button" title="Title"><span class="fa milli fa-home"></span></button><span class="Box sb-menu--Label"> Página Inicial</span>
+                    </div></a></li>
+                <li class="Box dropdown u-posStatic_ u-textNoWrap">
+                  <div class="sb-menu--Link sb--text toggle" href="#" data-toggle="collapse" data-target="#vpqkh" aria-expanded="false">
+                    <div class="pull-right Box Box--sm sb--hidden"><i class="fa fa-plus"></i><i class="fa fa-minus"></i></div>
+                    <button class="btn sb-btn btn-square" role="button" title="Title"><span class="fa milli fa-pencil"></span></button><span class="Box sb-menu--Label"> Pautas</span>
+                  </div>
+                  <div class="sb-menu collapse" id="vpqkh">
+                    <div class="sb-menu--Label">
+                      <div class="sb--text Box">Pautas</div>
+                    </div>
+                    <ul class="list-unstyled Box +bgdropdown">
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="agencia.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-users"></i></div>
+                                          <div class="col-xs-10">Agência</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="comap.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-lightbulb-o"></i></div>
+                                          <div class="col-xs-10">COMAP</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="com-interna.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-commenting-o"></i></div>
+                                          <div class="col-xs-10">Comunicação Interna</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="divulgacaoExterna.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-rss"></i></div>
+                                          <div class="col-xs-10">Divulgação Externa</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="fotografia.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-camera"></i></div>
+                                          <div class="col-xs-10">Fotografia</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="radio.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-microphone"></i></div>
+                                          <div class="col-xs-10">Rádio</div></a></div>
+                                    </li>
+                                    <li>
+                                      <div class="row"><a class="sb-link" href="tv.html">
+                                          <div class="col-xs-2">&nbsp;<i class="fa fa-television"></i></div>
+                                          <div class="col-xs-10">TV</div></a></div>
+                                    </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="Box u-posStatic_ u-textNoWrap"><a class="sb-hover" href="producao.html">
+                    <div class="sb-menu--Link sb--text">
+                      <button class="btn sb-btn btn-square" role="button" title="Title"><span class="fa milli fa-cog"></span></button><span class="Box sb-menu--Label"> Produção</span>
+                    </div></a></li>
+                <li class="Box u-posStatic_ u-textNoWrap"><a class="sb-hover" href="fontes.html">
+                    <div class="sb-menu--Link sb--text">
+                      <button class="btn sb-btn btn-square" role="button" title="Title"><span class="fa milli fa-font"></span></button><span class="Box sb-menu--Label"> Fontes</span>
+                    </div></a></li>
+                <li class="Box u-posStatic_ u-textNoWrap"><a class="sb-hover" href="gerencia.html">
+                    <div class="sb-menu--Link sb--text">
+                      <button class="btn sb-btn btn-square" role="button" title="Title"><span class="fa milli fa-user"></span></button><span class="Box sb-menu--Label"> Gerência</span>
+                    </div></a></li>
+      </ul>
+    </aside>
+    <main>
+      <header>
+        <div class="ArrangeFlex ArrangeFlex--middle s-bar s-bar--gradient s-bar--borderBottom u-spacer--xl">
+          <div class="ArrangeFlex-sizeFit">
+            <ul class="nav navbar-nav navbar-left">
+              <li><a class="navbar-action zeta s-bar--columnRight" id="main-menu-toggle" href="#"><i class="+senado fa fa-bars"></i></a></li>
+            </ul>
+          </div>
+          <div class="ArrangeFlex-sizeFill">
+            <ul class="nav navbar-nav navbar-left hidden-xs">
+              <li>
+                <div class="navbar-form navbar-left navbar-form--md">
+                              <form>
+                                <div class="form-group form-group--search">
+                                  <div class="input-group">
+                                    <div class="input-group-addon input-group-addon--search">
+                                      <label class="label-fix" for="busca"><span class="fa fa-search"></span></label>
+                                    </div>
+                                    <input class="form-control form-control--search" id="busca" type="text" placeholder="Busca">
+                                  </div>
+                                </div>
+                              </form>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="ArrangeFlex-sizeFit dropdown">
+            <ul class="nav navbar-nav pull-right">
+              <li class="dropdown"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-calendar-o"></i><span class="badge badge--unread micro">16</span></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="Box Box--lg zeta +white +senado"><i class="fa fa-calendar-o"></i><strong> Efeméride</strong></li>
+                  <li class="Box Box--md CutHere scroll">
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                                  <div>
+                                    <p><small>09/11/2016</small></p>
+                                    <p><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</a></p>
+                                  </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-th"></i><span class="badge badge--unread micro">2</span></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="Box Box--lg zeta +white +senado"><i class="fa fa-th"></i><strong> Tarefas</strong></li>
+                  <li class="Box Box--lg CutHere scroll">
+                                  <div>
+                                    <p><small>01/12/2016</small>
+                                    </p>
+                                    <p><a href="google.com">Relação de senadores está no item &quot;COP 21 2015&quot; na área de grandes Temas.</a>
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Renina Sangermano Valejo</small></a></div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <p><small>26/11/2016</small>
+                                    </p>
+                                    <p>Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Sabrina Mancio</small></a></div>
+                                    </div>
+                                  </div>
+                  </li>
+                                <li class="+white"><a class="normalis +senado" href="criarItemPauta.html">
+                                    <div class="Box Box--y"><i class="fa-plus fa"></i><strong> Criar item de pauta</strong></div></a></li>
+                                <li class="+white"><a class="normalis +senado" href="criarItemProducao.html">
+                                    <div class="Box Box--y"><i class="fa-plus fa"></i><strong> Criar item de produção</strong></div></a></li>
+                  <!-- +botoes('/endereço', 'fa-cog', 'Configurações')-->
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-calendar"></i></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="+white">
+                    <div class="Box Box--lg">
+                      <div class="datepicker" data-date="12/03/2012"></div>
+                      <input type="hidden">
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-bell"></i><span class="badge badge--unread micro">4</span></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="Box Box--lg zeta +white +senado"><i class="fa fa-bell"></i><strong> Avisos gerais</strong></li>
+                  <li class="Box Box--lg CutHere scroll">
+                                  <div>
+                                    <p><small>01/12/2016</small><span class="label pull-right label-primary">Em produção</span>
+                                    </p>
+                                    <p><a href="google.com">Relação de senadores está no item &quot;COP 21 2015&quot; na área de grandes Temas.</a>
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Renina Sangermano Valejo</small></a></div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <p><small>26/11/2016</small><span class="label pull-right label-danger">Parado</span>
+                                    </p>
+                                    <p>Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Sabrina Mancio</small></a></div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <p><small>01/12/2016</small><span class="label pull-right label-info">Ativo</span>
+                                    </p>
+                                    <p><a href="google.com">Relação de senadores está no item &quot;COP 21 2015&quot; na área de grandes Temas.</a>
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Renina Sangermano Valejo</small></a></div>
+                                    </div>
+                                  </div>
+                                  <div>
+                                    <p><small>26/11/2016</small><span class="label pull-right label-success">Finalizado</span>
+                                    </p>
+                                    <p>Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.
+                                    </p>
+                                    <div class="Flag">
+                                      <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                      <div class="Flag-body"><a href="editarPerfil.html"><small>Sabrina Mancio</small></a></div>
+                                    </div>
+                                  </div>
+                  </li>
+                  <li class="+white"><a class="normalis +senado" href="#" data-toggle="modal" data-target="#novo-aviso">
+                      <div class="Box Box--y"><i class="fa fa-plus"></i><strong> Adicionar Aviso</strong></div></a></li>
+                                <li class="+white"><a class="normalis +senado" href="gerenciarAvisosGerais.html">
+                                    <div class="Box Box--y"><i class="fa-cog fa"></i><strong> Gerenciar avisos</strong></div></a></li>
+                </ul>
+              </li>
+              <li class="dropdown visible-xs"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu"></span><i class="fa fa-search"></i></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="Box Box--lg zeta +white +senado"><i class="fa fa-search"></i><strong> Buscar</strong></li>
+                  <li class="Box Box--lg CutHere">
+                                <form>
+                                  <div class="form-group form-group--search">
+                                    <div class="input-group">
+                                      <div class="input-group-addon input-group-addon--search">
+                                        <label class="label-fix" for="busca"><span class="fa fa-search"></span></label>
+                                      </div>
+                                      <input class="form-control form-control--search" id="busca" type="text" placeholder="Busca">
+                                    </div>
+                                  </div>
+                                </form>
+                  </li>
+                </ul>
+              </li>
+              <li class="dropdown"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu"></span><i class="fa fa-user"></i></a>
+                <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                  <li class="Box Box--lg epsilon +white +senado"><i class="fa fa-user"></i><strong> Usuário</strong></li>
+                  <li class="Box Box--lg CutHere">
+                    <div class="Flag">
+                      <div class="Flag-figure"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                      <div class="Flag-body">
+                        <p>Carlos Eduardo Gomes Neri</p>
+                      </div>
+                    </div>
+                                  <li class="+white"><a class="normalis +senado" href="/endereço">
+                                      <div class="Box Box--y"><i class="fa-cog fa"></i><strong> Configurações do Sistema</strong></div></a></li>
+                                  <li class="+white"><a class="normalis +senado" href="editarPerfil.html">
+                                      <div class="Box Box--y"><i class="fa-pencil fa"></i><strong> Editar Perfil</strong></div></a></li>
+                                  <li class="+white"><a class="normalis +senado" href="index.html">
+                                      <div class="Box Box--y"><i class="fa-sign-out fa"></i><strong> Sair</strong></div></a></li>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+<!-- Modal adicionarAviso (Carregado em; navbar Avisos Gerais, )-->
+<div class="modal fade" id="novo-aviso" tabindex="-1" role="dialog" aria-labelledby="novo-avisoLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="novo-avisoLabel"> <span class="fa fa-plus"></span> Adicionar aviso</h4>
+      </div>
+      <div class="modal-body">
+        <form name="adicionarAvisoModalForm">
+          <div class="form-group">
+            <label for="texto">
+               Texto <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <textarea class="form-control" id="texto" rows="2" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="ordenacao">
+               Ordenação <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <input class="form-control" id="ordenacao" type="text" name="ordenacao" required placeholder="-1">
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Destaque
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Habilitado
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Adicionar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <div class="col-md-12">
+          <ol class="breadcrumb s-breadcrumb s-bar milli u-spacer--xl Box Box--lg">
+            <li><a href="paginaInicial.html">Página inicial            </a></li>
+            <li><a href="comap.html">Comap</a></li>
+            <li class="active">16 dias de ativismo</li>
+          </ol>
+          <div class="alert alert-info">
+            <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><i class="fa fa-lock"></i> por <a href="#"><strong>Carlos Eduardo Gomes Neri</strong></a>— última modificação 25/08/2016 18:48
+          </div>
+        </div>
+      </header>
+      <article class="col-md-12">
+        <div class="row">
+          <div class="col-md-9 col-sm-9">
+            <div class="panel panel-default">
+              <div class="s-bar s-bar--background">
+                <div class="ArrangeFlex">
+                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-lightbulb-o"></i></div>
+                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                    <h2 class="milli s-bar--text"><strong>Item Comap</strong></h2>
+                  </div>
+                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft"><a class="toggle eta btn-sBar" href="#collapse-box" data-toggle="collapse" aria-expanded="true"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                </div>
+              </div>
+              <div class="panel-body in" id="collapse-box">
+                <div class="navbar-nav--secundaria">
+                  <div class="panel panel-default">
+                    <div class="s-bar s-bar--gradient">
+                      <div class="Arrange">
+                        <div class="Arrange-sizeFit">
+                          <div class="Box Box--lg"><i class="fa fa-sliders" data-toggle="tooltip" title="Barra de Informações">         </i></div>
+                        </div>
+                        <div class="Arrange-sizeFill">
+                          <ul class="nav navbar-nav pull-right">
+                            <li class="dropdown text-center" id="btn-navbar--link"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"> </span><i class="fa fa-link"></i></a>
+                              <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                                <li class="Box Box--lg eta +white +senado"><i class="fa fa-link"></i><strong> Links</strong></li>
+                                <li class="Box Box--lg scroll">
+                                  <ul class="list-unstyled CutHere">
+                                                                        <li><a href="#"> <i class="fa fa-chevron-right"></i> Lorem ipsum dolor sit amet, consectetur</a></li>
+                                                                        <li><a href="#"> <i class="fa fa-chevron-right"></i> Lorem ipsum dolor sit amet, consectetur</a></li>
+                                                                        <li><a href="#"> <i class="fa fa-chevron-right"></i> Lorem ipsum dolor sit amet, consectetur</a></li>
+                                                                        <li><a href="#"> <i class="fa fa-chevron-right"></i> Lorem ipsum dolor sit amet, consectetur</a></li>
+                                  </ul>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="dropdown text-center" id="btn-navbar--calendar"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-calendar"></i></a>
+                              <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                                <li class="+white">
+                                  <div class="Box Box--lg">
+                                    <div class="datepicker" data-date="12/03/2012"></div>
+                                    <input type="hidden">
+                                  </div>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="dropdown text-center" id="btn-navbar--bell"><a class="navbar-action zeta dropdown-toggle" href="#" data-toggle="dropdown"><span class="seta-dropdown-menu hidden-xs"></span><i class="fa fa-bell"></i><span class="badge badge--unread micro">6</span></a>
+                              <ul class="dropdown-menu dropdown-menu--bar dropdown-menu--lg pull-right">
+                                <li class="Box Box--lg eta +white +senado"><i class="fa fa-bell"></i><strong> Avisos</strong></li>
+                                <li class="Box Box--lg CutHere scroll">
+                                                <div>
+                                                  <p><small>01/12/2016</small><span class="label pull-right label-primary">Em produção</span>
+                                                  </p>
+                                                  <p><a href="google.com">Relação de senadores está no item &quot;COP 21 2015&quot; na área de grandes Temas.</a>
+                                                  </p>
+                                                  <div class="Flag">
+                                                    <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                    <div class="Flag-body"><a href="editarPerfil.html"><small>Renina Sangermano Valejo</small></a></div>
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <p><small>26/11/2016</small><span class="label pull-right label-danger">Parado</span>
+                                                  </p>
+                                                  <p>Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.
+                                                  </p>
+                                                  <div class="Flag">
+                                                    <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                    <div class="Flag-body"><a href="editarPerfil.html"><small>Sabrina Mancio</small></a></div>
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <p><small>01/12/2016</small><span class="label pull-right label-info">Ativo</span>
+                                                  </p>
+                                                  <p><a href="google.com">Relação de senadores está no item &quot;COP 21 2015&quot; na área de grandes Temas.</a>
+                                                  </p>
+                                                  <div class="Flag">
+                                                    <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                    <div class="Flag-body"><a href="editarPerfil.html"><small>Renina Sangermano Valejo</small></a></div>
+                                                  </div>
+                                                </div>
+                                                <div>
+                                                  <p><small>26/11/2016</small><span class="label pull-right label-success">Finalizado</span>
+                                                  </p>
+                                                  <p>Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.
+                                                  </p>
+                                                  <div class="Flag">
+                                                    <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                    <div class="Flag-body"><a href="editarPerfil.html"><small>Sabrina Mancio</small></a></div>
+                                                  </div>
+                                                </div>
+                                </li>
+                                <li class="+white"><a class="normalis +senado" href="#" data-toggle="modal" data-target="#novo-aviso">
+                                    <div class="Box Box--y"><i class="fa fa-plus"> </i><strong> Adicionar Aviso</strong></div></a></li>
+                                              <li class="+white"><a class="normalis +senado" href="gerenciarAvisosGerais.html">
+                                                  <div class="Box Box--y"><i class="fa-cog fa"></i><strong> Gerenciar avisos</strong></div></a></li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Responsive Select, on only in xs-->
+                <div class="visible-xs">
+                  <div class="form-group">
+                    <label for="mySelect">Selecione</label>
+                    <select class="mySelect select-nav form-control">
+                                            <option value="#andamento">Andamento</option>
+                                            <option value="#briefing">Briefing</option>
+                                            <option value="#resultados">Resultados</option>
+                    </select>
+                  </div>
+                </div>
+                <!-- Nav tabs-->
+                <ul class="nav nav-tabs hidden-xs" role="tablist">
+                  <li class="active" role="presentation"><a href="#andamento" aria-controls="andamento" role="tab" data-toggle="tab">Andamento</a></li>
+                  <li role="presentation"><a href="#briefing" aria-controls="briefing" role="tab" data-toggle="tab">Briefing</a></li>
+                  <li role="presentation"><a href="#resultados" aria-controls="resultados" role="tab" data-toggle="tab">Resultados</a></li>
+                </ul>
+                <!-- Tab panes-->
+                <div class="tab-content">
+                  <h3>16 dias de ativismo</h3>
+                  <div class="tab-pane active" id="andamento" role="tabpanel">
+                    <div class="graph">
+                      <div class="legenda text-right">
+                        <div class="timeslot-icon"><i class="fa fa-clock-o"></i></div>andamento
+                        <div class="timeslot-icon"><i class="fa fa-map-marker"></i></div>checkpoint
+                      </div>
+                      <div class="timeline">
+                                                <div class="timeslot">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Carlos Eduardo Gomes Neri</small></a></div>
+                                                        </div></span><span class="details">Editado [&quot;Categoria do trabalho&quot;]<br></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-clock-o" data-toggle="tooltip" title="andamento"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">27/09/2016</div>
+                                                    <div class="time-b">17:53</div>
+                                                  </div>
+                                                </div>
+                                                <div class="timeslot alt">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Roberta Almeira Silva Soares</small></a></div>
+                                                        </div></span><span class="details">criação da identidade visual<br>
+                                                        <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#editarCheckpoint"> Editar</button></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-map-marker" data-toggle="tooltip" title="checkpoint"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">26/09/2016</div>
+                                                    <div class="time-b">15:46</div>
+                                                  </div>
+                                                </div>
+                                                <div class="timeslot">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Carlos Eduardo Gomes Neri</small></a></div>
+                                                        </div></span><span class="details">Editado [&quot;Categoria do trabalho&quot;]<br></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-clock-o" data-toggle="tooltip" title="andamento"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">27/09/2016</div>
+                                                    <div class="time-b">17:53</div>
+                                                  </div>
+                                                </div>
+                                                <div class="timeslot alt">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Márcio felipe Campos</small></a></div>
+                                                        </div></span><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br>
+                                                        <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#editarAndamentoModal"> Editar</button></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-clock-o" data-toggle="tooltip" title="andamento"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">26/09/2016</div>
+                                                    <div class="time-b">15:46</div>
+                                                  </div>
+                                                </div>
+                                                <div class="timeslot">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Carlos Eduardo Gomes Neri</small></a></div>
+                                                        </div></span><span class="details">Editado [&quot;Categoria do trabalho&quot;]<br></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-clock-o" data-toggle="tooltip" title="andamento"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">27/09/2016</div>
+                                                    <div class="time-b">17:53</div>
+                                                  </div>
+                                                </div>
+                                                <div class="timeslot alt">
+                                                  <div class="task"><span><span class="type">
+                                                        <div class="Flag">
+                                                          <div class="Flag-figure Flag-Figure--maxwidth-xs"><img class="img-responsive img-circle" src="assets/img/avatar.jpg"></div>
+                                                          <div class="Flag-body"><a href="editarPerfil.html"><small>Roberta Almeira Silva Soares</small></a></div>
+                                                        </div></span><span class="details">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>
+                                                        <button class="btn btn-info btn-xs" type="button" data-toggle="modal" data-target="#editarCheckpoint"> Editar</button></span></span>
+                                                    <div class="arrow"></div>
+                                                  </div>
+                                                  <div class="timeslot-icon"><i class="fa fa-map-marker" data-toggle="tooltip" title="checkpoint"></i></div>
+                                                  <div class="time">
+                                                    <div class="date-a">26/09/2016</div>
+                                                    <div class="time-b">15:46</div>
+                                                  </div>
+                                                </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="briefing" role="tabpanel">
+                    <dl>
+                                          <dt>Cliente:</dt>
+                                          <dd>Procuradoria da Mulher</dd>
+                    </dl>
+                    <dl class="dl-horizontal">
+                                            <dt>Categoria do trabalho:</dt>
+                                            <dd>Utilidade Pública</dd>
+                                            <dt>Prioridade:</dt>
+                                            <dd>Não</dd>
+                                            <dt>Endereço na rede:</dt>
+                                            <dd>............................</dd>
+                                            <dt>Previsão de saída:</dt>
+                                            <dd>10/10/2016</dd>
+                                            <dt>Resumo:</dt>
+                                            <dd>16 dias de ativismo </dd>
+                                            <dt>Público-alvo:</dt>
+                                            <dd>todo e qualquer cidadão</dd>
+                    </dl>
+                    <dl>
+                                            <dt>Data de entrada na COMAP:</dt>
+                                            <dd>09/09/2016</dd>
+                                            <dt>Conceito e linha criativa sugerida:</dt>
+                                            <dd>livre</dd>
+                                            <dt>Demandas de produção:</dt>
+                                            <dd>fotografia, seleção de imagens.</dd>
+                                            <dt>Objetivos de comunicação:</dt>
+                                            <dd>conscientizar o cidadão quanto a discriminação que a mulher sofre diariamente. </dd>
+                    </dl>
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingFour">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Descritivo</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse in" id="collapseFour" role="tabpanel" aria-labelledby="headingFour">
+                          <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingOne">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Contato</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse" id="collapseOne" role="tabpanel" aria-labelledby="headingOne">
+                          <div class="panel-body">
+                            <dl class="dl-horizontal">
+                                                    <dt>Nome:</dt>
+                                                    <dd>Sergio Salexandre Vieira</dd>
+                                                    <dt>Telefones:</dt>
+                                                    <dd>1714</dd>
+                                                    <dt>E-mails:</dt>
+                                                    <dd>my@domain.com, my2@domain.com</dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingTwo">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Equipe</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse" id="collapseTwo" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            <dl class="dl-horizontal">
+                                                    <dt>Marketing:</dt>
+                                                    <dd>Márcio, Mariana </dd>
+                                                    <dt>Criação:</dt>
+                                                    <dd>Mayra, Dalton, Gustavo</dd>
+                                                    <dt>Atendimento:</dt>
+                                                    <dd>Roberta</dd>
+                                                    <dt>Produção:</dt>
+                                                    <dd></dd>
+                            </dl>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingFive">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Produtos Demandados</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse" id="collapseFive" role="tabpanel" aria-labelledby="headingFive">
+                          <div class="panel-body">
+                            <ul>
+                              <li><strong>Outros (mídias sociais (capa e foto de perfil, twitter e facebook))</strong></li>
+                              <li><strong>Banner (870cm x 480cm)</strong></li>
+                              <li><strong>Outros (template )</strong></li>
+                              <li><strong>Outros (ilustrações intranet 842px x 505px)</strong></li>
+                              <li><strong>Faixa de mesa (tamanho interlegis 84cm altura X 4,8m largura)</strong></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingThree">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Produtos Demandados</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse" id="collapseThree" role="tabpanel" aria-labelledby="headingThree">
+                          <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="tab-pane" id="resultados" role="tabpanel">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                      <dl class="dl-horizontal">
+                                              <dt>Previsão de saída:</dt>
+                                              <dd>10/10/2016</dd>
+                                              <dt>Data de saída:</dt>
+                                              <dd>10/10/2016</dd>
+                      </dl>
+                      <dl>
+                                              <dt>Recomendações e lições aprendidas:</dt>
+                                              <dd>Anim pariatur cliche reprehenderit,</dd>
+                      </dl>
+                      <div class="panel panel-default">
+                                              <div class="s-bar s-bar--background" id="headingSix">
+                                                <div class="ArrangeFlex">
+                                                  <div class="ArrangeFlex-sizeFit Box Box--lg"><i class="fa fa-pencil"></i></div>
+                                                  <div class="ArrangeFlex-sizeFill Box--y Box--lg">
+                                                    <h2 class="milli s-bar--text"><strong>Produtos Desenvolvidos</strong></h2>
+                                                  </div>
+                                                  <div class="ArrangeFlex-sizeFit Box--y Box--lg s-bar--columnLeft">
+                                                    <div class="panel-actions"><a class="toggle eta btn-sBar" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix"><i class="fa fa-chevron-up"></i><i class="fa fa-chevron-down"></i></a></div>
+                                                  </div>
+                                                </div>
+                                              </div>
+                        <div class="panel-collapse collapse in" id="collapseSix" role="tabpanel" aria-labelledby="headingSix">
+                          <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3">
+            <div class="Painel Painel--lg Painel--border u-spacer--sm" id="menu-item--status">
+              <ul class="Segments">
+                <li class="Apex Apex--cut zeta +white +senado">
+                  <div class="Box Box--sm"><i class="fa fa-sliders"></i><strong> Status</strong></div>
+                </li>
+                <li class="Painel Painel--vert">
+                  <ul class="list-unstyled CutHere CutHere--lg">
+                    <li class="Box Box--normal" role="item Geral">
+                      <div class="Arrange type-status">
+                        <div class="Arrange-sizeFit eta fa-fix"><i class="interruptor on text-success fa fa-check-circle">&nbsp;</i><i class="interruptor off text-danger fa fa-minus-circle">&nbsp;</i></div>
+                        <div class="Arrange-sizeFill">
+                          <select class="status form-control" name="" value="">
+                            <option class="text-success" value="on">Disponível</option>
+                            <option class="text-danger" value="off">Derrubar</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="Box Box--normal" role="Comap">
+                      <select class="form-control" name="" value="">
+                        <option>Criação</option>
+                        <option>Cancelar</option>
+                        <option>Colocar em stand by</option>
+                        <option>Concluir</option>
+                        <option>Enviar para aprovação</option>
+                        <option>Enviar para marketing</option>
+                        <option>Enviar para produção</option>
+                        <option>Resetar</option>
+                      </select>
+                    </li>
+                    <li class="Box Box--normal" role="Agencia">
+                      <div class="Arrange type-status2">
+                        <div class="Arrange-sizeFit eta fa-fix"><i class="interruptor2 producao text-warning fa fa-cog">&nbsp;</i><i class="interruptor2 engavetar text-muted fa fa-archive">&nbsp;</i><i class="interruptor2 publicar text-success fa fa-thumbs-o-up">&nbsp;</i><i class="interruptor2 fotografo fa fa-camera">&nbsp;</i><i class="interruptor2 privado text-danger fa fa-exclamation-triangle">&nbsp;</i></div>
+                        <div class="Arrange-sizeFill">
+                          <select class="status2 form-control" name="" value="">
+                            <option value="producao">Em Produção</option>
+                            <option value="engavetar">Engavetar</option>
+                            <option value="publicar">Publicar</option>
+                            <option value="fotografo">Solicitar Fotógrafo</option>
+                            <option value="privado">Privado</option>
+                          </select>
+                        </div>
+                      </div>
+                    </li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#historico"><i class="fa fa-chevron-right"></i> Histórico</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="Painel Painel--lg Painel--border u-spacer--sm" id="menu-item--apoio">
+              <ul class="Segments">
+                <li class="Apex Apex--cut zeta +white +senado">
+                  <div class="Box Box--sm"><i class="fa fa-plus"></i><strong> Apoio</strong></div>
+                </li>
+                <li class="Painel Painel--vert">
+                  <ul class="list-unstyled CutHere CutHere--lg">
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#adicionarLink"><i class="fa fa-chevron-right"></i> Adicionar link</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#novoArquivo"><i class="fa fa-chevron-right"></i> Novo arquivo</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#itensProducaoRelacionados"><i class="fa fa-chevron-right"></i> Itens de produção relacionados</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#checkpoint"><i class="fa fa-chevron-right"></i> Criar Checkpoint</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#andamentoModal"><i class="fa fa-chevron-right"></i> Criar Andamento</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="Painel Painel--lg Painel--border u-spacer--sm" id="menu-item--controle">
+              <ul class="Segments">
+                <li class="Apex Apex--cut zeta +white +senado">
+                  <div class="Box Box--sm"><i class="fa fa-cog"></i><strong> Controle</strong></div>
+                </li>
+                <li class="Painel Painel--vert">
+                  <ul class="list-unstyled CutHere CutHere--lg">
+                                        <li class="Box Box--normal"><a href="paginaInicial--editarItemPautaGeral.html" data-toggle="" data-target=""><i class="fa fa-chevron-right"></i> Editar item</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#excluirItem"><i class="fa fa-chevron-right"></i> Excluir item</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#replicarItem"><i class="fa fa-chevron-right"></i> Replicar item</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#reordenacaoItens"><i class="fa fa-chevron-right"></i> Reordenar Itens dos veículos</a></li>
+                                        <li class="Box Box--normal"><a href="#" data-toggle="modal" data-target="#visualizarItemGeral"><i class="fa fa-chevron-right"></i> Visualizar item geral</a></li>
+                                        <li class="Box Box--normal"><a href="editarItemComap.html" data-toggle="" data-target=""><i class="fa fa-chevron-right"></i> Editar item</a></li>
+                                        <li class="Box Box--normal"><a href="editarItemAgencia.html" data-toggle="" data-target=""><i class="fa fa-chevron-right"></i> Editar item</a></li>
+                                        <li class="Box Box--normal"><a href="editarItemComInterna.html" data-toggle="" data-target=""><i class="fa fa-chevron-right"></i> Editar item</a></li>
+                                        <li class="Box Box--normal row">
+                                          <div class="col-md-9 col-xs-9"><i class="fa fa-chevron-right"></i> Notificar alterações&nbsp;</div>
+                                          <div class="col-md-3 col-xs-3">
+                                            <div class="onoffswitch" style="margin-left:-10px">
+                                              <input class="onoffswitch-checkbox" id="btn1" type="checkbox" name="onoffswitch" checked="">
+                                              <label class="onoffswitch-label" for="btn1"><span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span></label>
+                                            </div>
+                                          </div>
+                                        </li>
+                                        <li class="Box Box--normal row">
+                                          <div class="col-md-9 col-xs-9"><i class="fa fa-chevron-right"></i> Acompanhar item&nbsp;</div>
+                                          <div class="col-md-3 col-xs-3">
+                                            <div class="onoffswitch" style="margin-left:-10px">
+                                              <input class="onoffswitch-checkbox" id="btn2" type="checkbox" name="onoffswitch" checked="">
+                                              <label class="onoffswitch-label" for="btn2"><span class="onoffswitch-inner"></span><span class="onoffswitch-switch"></span></label>
+                                            </div>
+                                          </div>
+                                        </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+<!-- Modal editarAndamentoModal (Carregado em; Item COMAP, )-->
+<div class="modal fade" id="editarAndamentoModal" tabindex="-1" role="dialog" aria-labelledby="editarAndamentoModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="editarAndamentoModalLabel"> <span class="fa fa-pencil"></span> Editar item COMAP Andamento</h4>
+      </div>
+      <div class="modal-body">
+        <form name="editarAndamentoModalForm">
+          <div class="form-group">
+            <label for="descricao">
+               Descrição<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <textarea class="form-control" id="descricao" rows="3" name="descricao" required>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked> Habilitado
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Salvar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal editarCheckpoint (Carregado em; Item COMAP, )-->
+<div class="modal fade" id="editarCheckpoint" tabindex="-1" role="dialog" aria-labelledby="editarCheckpointLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="editarCheckpointLabel"> <span class="fa fa-pencil"></span> Editar item COMAP Checkpoint</h4>
+      </div>
+      <div class="modal-body">
+        <form name="editarCheckpointModalForm">
+          <div class="form-group">
+            <label for="descricao">
+               Descrição<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <textarea class="form-control" id="descricao" rows="3" name="descricao" required>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked> Habilitado
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-xs-8">
+                <label for="data">
+                   Data<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                  <input class="form-control" id="data" type="text" placeholder="dd/mm/aaaa" required>
+                  <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Salvar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal andamentoModal (Carregado em; Item COMAP, )-->
+<div class="modal fade" id="andamentoModal" tabindex="-1" role="dialog" aria-labelledby="andamentoModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="andamentoModalLabel"> <span class="fa fa-plus"></span> Criar item COMAP Andamento</h4>
+      </div>
+      <div class="modal-body">
+        <form name="andamentoModalForm">
+          <div class="form-group">
+            <label for="descricao">
+               Descrição<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <textarea class="form-control" id="descricao" rows="3" name="descricao" required></textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked> Habilitado
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Salvar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal checkpoint (Carregado em; Item COMAP, )-->
+<div class="modal fade" id="checkpoint" tabindex="-1" role="dialog" aria-labelledby="checkpointLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="checkpointLabel"> <span class="fa fa-plus"></span> Criar item COMAP Checkpoint</h4>
+      </div>
+      <div class="modal-body">
+        <form name="checkpointModalForm">
+          <div class="form-group">
+            <label for="descricao">
+               Descrição<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <textarea class="form-control" id="descricao" rows="3" name="descricao" required></textarea>
+          </div>
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" checked> Habilitado
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-3 col-xs-8">
+                <label for="data">
+                   Data<span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                  <input class="form-control" id="data" type="text" placeholder="dd/mm/aaaa" required>
+                  <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Salvar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal Histórico (Carregado em; Item de Pauta Geral, )-->
+<div class="modal fade" id="historico" tabindex="-1" role="dialog" aria-labelledby="historicoLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="historicoLabel"> <span class="fa fa-history"></span> Histórico</h4>
+      </div>
+      <div class="modal-body">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover milli">
+            <caption>
+              <button class="btn btn-info btn-xs pull-right" type="button">Reverter para esta revisão</button>
+            </caption>
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Editado</td>
+                <td><a href="#">Carlos Eduardo Gomes Neri</a></td>
+                <td>29/08/2016 17:16</td>
+                <td><a href="#" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye">&nbsp;</i></a><a href="#" data-toggle="tooltip" data-placement="top" title="Comparar com a atual"><i class="fa fa-compress"> &nbsp;</i></a></td>
+              </tr>
+            </tbody>
+            <tfooter>
+              <tr>
+                <td>Revertido para a revisão 0</td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tfooter>
+          </table>
+          <table class="table table-striped table-hover milli">
+            <thead>
+              <tr>
+                <th>Status</th>
+                <th>Nome</th>
+                <th>Data</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Criar</td>
+                <td><a href="#">Carlos Eduardo Gomes Neri</a></td>
+                <td>29/08/2016 17:22</td>
+                <td><a href="#" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye">&nbsp;</i></a><a href="#" data-toggle="tooltip" data-placement="top" title="Comparar com a atual"><i class="fa fa-compress"> &nbsp;</i></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Salvar</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal excluirItem (Carregado em; Item de Pauta Geral, )-->
+<div class="modal fade" id="excluirItem" tabindex="-1" role="dialog" aria-labelledby="excluirItemLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="excluirItemLabel"> <span class="fa fa-trash"></span> Excluir</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger">Você realmente quer apagar esta pasta e todo o seu conteúdo? (Isto irá remover um total de 2 itens.)
+          <ul>
+            <li>teste-do-desenvolvimento</li>
+            <li>teste-de-design</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-danger" type="button">Excluir</button>
+        <button class="btn btn-default" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal editarItem (Carregado em; Item de Pauta Geral, )-->
+<div class="modal fade" id="editarItem" tabindex="-1" role="dialog" aria-labelledby="editarItemLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+        <h4 class="modal-title" id="editarItemLabel"> <span class="fa fa-pen"></span> Editar Item de Pauta Geral</h4>
+      </div>
+      <div class="modal-body">
+        <form name="editarItemModalForm">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4 col-xs-8">
+                <label for="dataPublicacao">
+                   Data da pauta <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+                <div class="input-group date" data-provide="datepicker" data-date-format="dd/mm/yyyy">
+                  <input class="form-control" id="dataPublicacao" type="text" placeholder="dd/mm/aaaa" required>
+                  <div class="input-group-addon"><span class="fa fa-calendar"></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="horário">Horário <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <div class="row">
+              <div class="col-md-2 col-xs-4 dot-timer">
+                <select class="form-control" id="horario" name="hh" required>
+                  <option value="">00</option>
+                  <option value="08">08</option>
+                </select>
+              </div>
+              <div class="col-md-2 col-xs-4">
+                <select class="form-control" name="mm" required>
+                  <option value="">00</option>
+                  <option value="01">01</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="local">Local</label>
+            <input class="form-control" id="local" type="text" name="local">
+          </div>
+          <div class="form-group">
+            <label for="editoria">Editoria <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <select class="form-control" id="editoria" name="editoria" required>
+              <option value="">Selecionar</option>
+              <option value="Artigo">Artigo</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="assunto">Assunto <span class="+red--color" data-toggle="tooltip" data-placement="top" title="Item Obrigatório">*</span></label>
+            <input class="form-control" id="assunto" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="descricaoTinyMce">Descrição</label>
+            <textarea class="descricaoTinyMce tinyMce form-control" id="descricaoTinyMce" name="html" cols="100" rows="10"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="projetodelei">Projeto de lei</label>
+            <input class="form-control" id="projetodelei" type="text" name="projetodelei">
+          </div>
+          <div class="form-group">
+            <label for="itensproducaorelacionados">Itens de produção relacionados</label>
+            <input class="form-control" id="itensproducaorelacionados" type="text" name="itensproducaorelacionados">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button">Replicar</button>
+        <button class="btn btn-warning" type="button" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </article>
+    </main>
+  </body>
+<script src="js/vendors.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.4/tinymce.min.js"></script>
+</html>

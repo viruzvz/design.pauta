@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Central de Pautas e Produção Jornalística</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
+  <link href="styles/vendors.css" rel="stylesheet" type="text/css">
+  <link href="styles/main.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="login">
+    <h1 class="zeta text-center u-spacer--xl +white--color"><img src="assets/img/icon-pautas2.svg" alt="Logo sistema" width="80px" height="80px">
+      <p></p>Central de Pautas e Produção Jornalística
+    </h1>
+    <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" id="loginbox">
+      <div class="alert alert-danger alert-dismissible" id="login-alert" role="alert">
+        <button class="close" type="button" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><strong>Atenção!</strong> Falha no acesso. Tanto o nome de usuário como a senha são sensíveis a letras maiúsculas e minúsculas, verifique se a tecla Caps Lock não está ativa.
+        <button class="btn btn-xs +help--content" type="button" data-toggle="modal" data-target="#ajuda">
+          <div class="fa fa-question-circle"></div>Saiba mais
+        </button>
+      </div>
+      <form class="form-horizontal milli" id="loginform" role="form" action="paginaInicial.html">
+        <div class="input-group"><span class="input-group-addon"><i class="fa fa-user"></i></span>
+          <input class="form-control" id="login-username" type="text" name="username" value="" placeholder="usuário" required>
+        </div>
+        <div class="input-group"><span class="input-group-addon"><i class="fa fa-lock"></i></span>
+          <input class="form-control" id="login-password" type="password" name="password" placeholder="senha" required>
+        </div>
+        <div class="input-group u-spacer--sm">
+          <div class="checkbox">
+            <label class="+white--color">
+              <input id="login-remember" type="checkbox" name="remember" value="1"> Lembre me
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <!-- Button-->
+          <div class="col-sm-12">
+            <button class="btn btn-info btn-block" id="btn-login" type="submit">Autenticar</button>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+            <div class="divisor +white--color">Esqueceu a senha?<a href="#perdeuasenha" data-toggle="modal" data-target="#perdeuasenha"> Clique aqui</a></div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- modal esqueceu a senha-->
+  <div class="modal fade" id="perdeuasenha" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title">Senha Perdida</h4>
+        </div>
+        <div class="modal-body">
+          <p class="alert alert-info alert-dismissible" role="alert">Por razões de segurança, armazenamos sua senha criptografada e não podemos enviá-la por e-mail. Caso queira redefinir sua senha, preencha o formulário abaixo e enviaremos para o endereço que você forneceu ao se registrar uma mensagem que permitirá efetuar a mudança.</p>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Informe o nome do usuário:</label>
+            <input class="form-control" id="exampleInputEmail1" type="text" required placeholder="Nome do usuário">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" type="button">Enviar</button>
+          <button class="btn btn-default" type="button" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- modal esqueceu a senha-->
+  <div class="modal fade" id="ajuda" tabindex="-1" role="dialog" aria-labelledby="ajudaLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title"><span class="+help--color">
+              <div class="fa fa-question-circle"></div>  Ajuda</span></h4>
+        </div>
+        <div class="modal-body">
+          <p class="alert alert-dismissible +help--content" role="alert">Caso o nome de usuário e a senha estejam certos, o problema pode ser que o seu navegador não está configurado para aceitar cookies, Cheque se existem softers de filtragem de conteúdo que desabilida cookies, desative eles ou configure para acessar atravez do endereço "https://www12.senado.leg.br/pauta". Cheque seu firewall ou sevirdor proxy que previne que os cookies sejam enviados para o seu navegador. Caso nada disso tenha funcionado, fale com o administrador do sistema. (COLOCAR RAMAL ou EMAIL)</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="js/vendors.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tinymce/4.3.4/tinymce.min.js"></script>
+</html>
