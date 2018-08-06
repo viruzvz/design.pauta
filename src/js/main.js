@@ -17,6 +17,14 @@
   $(function () {
     $('[data-toggle="popover"]').popover()
   })
+  $(document).ready(function() {
+    $('[data-toggle="popover-content"]').popover({
+      html: true,
+      content: function() {
+        return $('#popover-content').html();
+      }
+    });
+  });
   /////////////////// DATEPICKER
 $(document).ready(function(){
   $('.datepicker').datepicker({

@@ -40,17 +40,20 @@
                   +btn-impress('Imprimir', 'fa-print', 'Imprimir')
 
         table.table.table-striped.table-hover.milli.table-rp
-          caption
-            ul.list-unstyled.list-inline.text-right
-              mixin legenda(icon, text)
-                li
-                  .fa(class= icon)
-                  = text
-              +legenda('fa-users', 'Agência')
-              +legenda('fa-commenting-o', 'Comunicação Interna')
-              +legenda('fa-camera', 'Fotografia')
-              +legenda('fa-microphone', 'Rádio')
-              +legenda('fa-television', 'TV')
+          caption.text-right
+            button(type='button' class='btn btn-xs +help--content' data-container='body' data-toggle='popover-content' data-placement='top' )
+              <span class='fa fa-question-circle'></span> Legenda Veículos
+            #popover-content.hide
+              ul.list-unstyled
+                mixin legenda(icon, text)
+                  li
+                    p.fa(class= icon)
+                    = text
+                +legenda('fa-users', 'Agência')
+                +legenda('fa-commenting-o', 'Comunicação Interna')
+                +legenda('fa-camera', 'Fotografia')
+                +legenda('fa-microphone', 'Rádio')
+                +legenda('fa-television', 'TV')  
           thead
             tr
               th Hora
