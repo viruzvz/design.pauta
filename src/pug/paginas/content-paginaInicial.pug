@@ -31,9 +31,10 @@
 
           .col-md-8.text-right
             mixin btn-impress(title, icon, name)
-              button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
-                i.fa(class=icon)
-                |  #{name}
+              .dt-buttons
+                button.btn.btn-xs.btn-default(type='button', title=title, data-toggle='tooltip')
+                  i.fa(class=icon)
+                  |  #{name}
             .Box.Box--lg.Box--y
               form.form-group
                 .btn-block
