@@ -12,6 +12,7 @@ body {
 .login {
   background-color: @c1;
   display: block;
+  width: 100%;
   a {
     color: #999;
     &:hover {
@@ -106,6 +107,14 @@ article {
 }
 //////////////////////////// transforma table responsiva
 @media screen and (max-width: 760px) {
+  .panel-body {
+    padding-left:2px;
+    padding-right:2px;
+  }
+  article {
+    padding-left: 2px !important;
+    padding-right: 2px !important;
+  }
   .table-rp {
     width: 100%;
       tr {border-bottom: transparent 15px; border-bottom: solid white 15px;}
@@ -115,7 +124,7 @@ article {
         font-weight: bold;
       }
       thead {display: none;}
-      tbody td {display: block;}
+      tbody td {display: flex;}
       tbody td:before {
         float: left;
         min-width: 100px;
