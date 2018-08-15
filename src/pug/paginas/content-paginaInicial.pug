@@ -64,7 +64,7 @@
           tbody
             mixin btn(href, title, btn, fa, badge)
               .Box--sm.pull-left
-                a.btn.btn-xs.btn-tooltip(href=href, title=title, class= btn, data-toggle='modal', data-target="#veiculos")
+                a.btn.btn-xs(href=href, title=title, class= btn, data-toggle='modal', data-target="#veiculos")
                   .fa(class=fa)
                   if badge
                     .Box--sm.Box--x.pull-right
@@ -78,10 +78,11 @@
               td(data-th='Assunto')
                 a(href='paginaInicial--itemPautaGeral.html') Lorem ipsum dolor sit amet, consectetur adipisicing elit
               td(data-th='Veículos')
-                +btn('#', 'Agência', 'btn-warning', 'fa-users', '5')
-                +btn('#', 'Rádio', 'btn-warning', 'fa-microphone', '1')
-                +btn('#', 'Comunicação Interna', 'btn-danger', 'fa-commenting-o', '2')
-                +btn('#', 'TV', 'btn-default', 'fa-television', '6')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+                  +btn('#', 'Rádio', 'btn-default', 'fa-list-alt', '1')
+                  +btn('#', 'Comunicação Interna', 'btn-default', 'fa-list-alt', '2')
+                  +btn('#', 'TV', 'btn-default', 'fa-list-alt', '6')
             tr.text-left
               td(data-th='Hora')
                 | 11h00

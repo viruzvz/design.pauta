@@ -9,12 +9,19 @@
           i.fa.fa-users
           |   Agência
       .modal-body
-        ul.list-unstyled
-          li: a.text-warning(href='#') Em produção
-          li: a.text-danger(href='#') Privado
-          li: a.text-warning(href='#') Projeto visa incentivar venda de polpa de fruta produzida por agricultor familiar
-          li: a(href='#') PARA SEXTA - Estupro pode se tornar crime imprescritível
-          li: a(href='#') Dorothea Werneck, consultora econômica;
+        ul.list-unstyled.CutHere
+          li
+            span(class='Box--sm text-white bg-green milli') Publicado 
+            a.lineForLabel(href='#')               
+              |&nbsp; Rendering problems can arise Rendering problems can arise Rendering problems can arise
+          li
+            span(class='Box--sm text-white bg-warning milli') Em revisão
+            a.lineForLabel(href='#')
+              |&nbsp; Rendering problems can arise
+          li
+            span(class='Box--sm text-white bg-error milli') Privado  
+            a.lineForLabel(href='#')
+              |&nbsp; Rendering problems can arise
 
       .modal-footer
         button.btn.btn-default(type='button', data-dismiss='modal') Fechar

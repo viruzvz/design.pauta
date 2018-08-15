@@ -3,6 +3,7 @@
   "version": "0.0.2-alpha.1",
   "dependencies": {
     "bootstrap": "^3.3.5",
+    "bootstrap-datepicker": "^1.8.0",
     "font-awesome": "^4.7.0",
     "jquery": "^2.1.4",
     "senado.css": "agenciasenado/senado.css.git#2.6.3"
