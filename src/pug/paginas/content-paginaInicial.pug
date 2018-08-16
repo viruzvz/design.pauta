@@ -60,14 +60,19 @@
               th Hora
               th Editoria
               th Assunto
-              th Veículos
+              th Agência
+              th Comunicação Interna
+              th Fotografia
+              th Rádio
+              th TV
+
           tbody
             mixin btn(href, title, btn, fa, badge)
-              .Box--sm.pull-left
+              .Box--sm
                 a.btn.btn-xs(href=href, title=title, class= btn, data-toggle='modal', data-target="#veiculos")
-                  .fa(class=fa)
+                  span.fa(class=fa)
                   if badge
-                    .Box--sm.Box--x.pull-right
+                    span.Box--sm.Box--x
                       .badge.badge-fix
                         =badge
             tr.text-left
@@ -77,32 +82,45 @@
                 | Senado
               td(data-th='Assunto')
                 a(href='paginaInicial--itemPautaGeral.html') Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              td(data-th='Veículos')
+              td(data-th='Agência')
                 .responsive
                   +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
-                  +btn('#', 'Rádio', 'btn-default', 'fa-list-alt', '1')
-                  +btn('#', 'Comunicação Interna', 'btn-default', 'fa-list-alt', '2')
-                  +btn('#', 'TV', 'btn-default', 'fa-list-alt', '6')
+              td(data-th='Comunicação Interna')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='Fotografia')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='Radio')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='TV')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
             tr.text-left
               td(data-th='Hora')
-                | 11h00
+                | 10h00
               td(data-th='Editoria')
                 | Senado
               td(data-th='Assunto')
-                a(href='#') Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              td(data-th='Veículos')
-                +btn('#', 'Comunicação Interna', 'btn-danger', 'fa-commenting-o', '2')
-                +btn('#', 'Rádio', 'btn-danger', 'fa-microphone', '1')
-            tr.text-left
-              td(data-th='Hora')
-                | 11h00
-              td(data-th='Editoria')
-                | Senado
-              td(data-th='Assunto')
-                a(href='#') Lorem ipsum dolor sit amet, consectetur adipisicing elit
-              td(data-th='Veículos')
-                +btn('#', 'TV', 'btn-warning', 'fa-television', '6')
-                +btn('#', 'Rádio', 'btn-danger', 'fa-microphone', '1')
+                a(href='paginaInicial--itemPautaGeral.html') Lorem ipsum dolor sit amet, consectetur adipisicing elit
+              td(data-th='Agência')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='Comunicação Interna')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='Fotografia')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='Radio')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+              td(data-th='TV')
+                .responsive
+                  +btn('#', 'Agência', 'btn-default', 'fa-list-alt', '5')
+
+
 
       #pautafutura.tab-pane(role='tabpanel') ...
 include ../modais/veiculos
