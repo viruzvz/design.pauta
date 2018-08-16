@@ -78,7 +78,7 @@
 .dt-buttons {
     margin-top: 10px;
     margin-bottom: 10px;
-    text-align: right;
+    float: right;
 }
 .delete {
     background-color: #449d44;
@@ -93,7 +93,7 @@
 .foto-120{border: 2px solid #233F5F;max-height: 120px;max-width: 120px;padding: 2px}
 .onoffswitch{margin-left:-10px} //margin-left estava direto na template
 
-.formPanel,.formControls {
+.formPanel, .formControls, #divformulario {
     input[type=button], input[type=submit], button  {
         color: #333;
         background-color: #fff;
@@ -118,7 +118,7 @@
             border-color: #adadad;
         }
     }
-    input[value=Salvar] {
+    input[value=Salvar], input[value=Adicionar]{
         color: #fff;
         background-color: #204d74;
         border-color: #122b40;
@@ -147,11 +147,14 @@
 }
 
 //calendário 
+#calroot {
+    width: 230px;
+}
 #caltitle {
     width: auto !important;
 }
 #caldays span {
-    width: 26px !important;
+    width: 31px !important;
 }
 .calweek {
     clear: inherit !important;
@@ -159,3 +162,5 @@
         width: 30px !important;
     }
 }
+.fa-error:before{content:"\f057"}
+.fa-warn:before{content:"\f071"}
