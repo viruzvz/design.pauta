@@ -92,14 +92,23 @@
 #edit-bar{display:none}
 .foto-120{border: 2px solid #233F5F;max-height: 120px;max-width: 120px;padding: 2px}
 .onoffswitch{margin-left:-10px} //margin-left estava direto na template
-
-.formPanel, .formControls, #divformulario {
+.tab-content {
+    padding-top: 15px;
+}
+.dataTables_wrapper {
+    .dataTables_length {float:inherit !important; text-align:left !important;}
+    .dataTables_filter {float:inherit !important; text-align:left !important;}
+}
+.dataTables_wrapper .dataTables_filter input {
+    margin-left:0 !important;
+}
+.field {
     input[type=button], input[type=submit], button  {
         color: #333;
         background-color: #fff;
         display: inline-block;
         padding: 6px 12px;
-        margin-bottom: 15px;
+        //margin-bottom: 15px;
         font-size: 14px;
         font-weight: 400;
         line-height: 1.42857143;
@@ -123,8 +132,8 @@
         background-color: #204d74;
         border-color: #122b40;
     }
-    input[type=input], .list-field {
-        display: block;
+    input[type=input], input[type=text], select, textarea, .list-field {
+        // display: block;
         margin-bottom: 15px;
         width: auto;
         height: auto;
@@ -148,10 +157,13 @@
 
 //calendário 
 #calroot {
-    width: 230px;
+    width: 230px !important;
 }
 #caltitle {
     width: auto !important;
+}
+#caldays {
+    clear:both;
 }
 #caldays span {
     width: 31px !important;
@@ -164,3 +176,11 @@
 }
 .fa-error:before{content:"\f057"}
 .fa-warn:before{content:"\f071"}
+.fieldset-pautas {
+    width: 100%;
+}
+.navbar-action, .btn-jquery {cursor: pointer;}
+.actionButtons {margin:10px 0;}
+.suppressVisualEditor {
+    display: none;
+}
