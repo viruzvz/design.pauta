@@ -49,14 +49,28 @@
           p
             a(href=href)
               | #{text}
+
+
+      li.dropdown.hidden-xs
+        form(action="http://www12hml:10003/pauta/criaritempauta")
+          button.navbar-action.text-green.zeta.btn-link.btn-navbar(value="Criar item de pauta")
+            span.seta-dropdown-menu.hidden-xs
+            img(src='assets/pauta.svg')
+
+      li.dropdown.hidden-xs
+        form(action="http://www12hml:10003/pauta/criaritempauta")
+          button.navbar-action.text-green.zeta.btn-link.btn-navbar(value="Criar item de produção")
+            span.seta-dropdown-menu.hidden-xs
+            img(src='assets/producao.svg')
+
       li.dropdown
         a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
           span.seta-dropdown-menu.hidden-xs
-          i.fa.fa-calendar-o
+          i.fa.fa-newspaper-o
           span.badge.badge--info.micro 16
         ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
           li.Box.Box--lg.zeta(class="+white +senado")
-            i.fa.fa-calendar-o
+            i.fa.fa-newspaper-o
             strong  Efeméride
           li.Box.Box--md.CutHere.scroll
             +efemeride('09/11/2016', '#', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore')

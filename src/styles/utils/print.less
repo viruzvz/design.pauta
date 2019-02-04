@@ -1,63 +1,41 @@
-media print {
+@media print {
     * {
-        background:transparent !important;
-        color:#000 !important;
-        text-shadow:none !important;
-        filter:none !important;
+        text-shadow:none;
+        filter:none;
+        border: none !important;
     }
-    #content .panel-default {
-        display: grid !important;
-    }
-    div.s-bar.s-bar--background ,
-    div#collapse-box {
-        width: 100% !important;
-        display: block;
-    }
-    div {
-        display: block;
-        width: 100%;
-        page-break-after: always;
-        page-break-before: always;
-    }
-    table {
-        page-break-after: always;
-        page-break-before: always;
-    }
-    body, page{
-        page-break-after: always;
-        page-break-before: always;
-        margin:0;
-        padding:0;
+    body{
         line-height: 1.4em;
-        color: #000;
-        columns: 0;
+        display: block !important;
     }
-    .btn {background-color: transparent; color: #000; padding:0; border:none;}
+    @page {
+        margin: 0.5cm;
+    }
+    .page-break { 
+        display: block; 
+        page-break-before: always;
+    }
+    .col-md-*{
+        padding: 0 !important;
+    }
+    .btn {background-color: transparent; padding:0; border:none;}
     h1 {
         font-size: 24pt;
-        page-break-after: always;
-        page-break-before: always;
     }
     h2 {
         font-size: 18pt;
-        width: 100% !important;
     }
-    
     h3 {
         font-size: 14pt;
-        width: 100% !important;
     }
     q:after {
         content: " (" attr(cite) ")";
     }
     a, a:visited {
-        text-decoration: underline;
+        text-decoration: none;
     }
-    a:link:after, a:visited:after {
-        content: " (" attr(href) ") ";
-    }
-    a:after, a[href^="javascript:"]:after, a[href^="#"]:after { 
-        content: ""; 
+    a[href]:after {
+        content: none !important;
     }
     p {
         width: 100%;
@@ -65,30 +43,37 @@ media print {
     p a {
         word-wrap: break-word;
     }
-    nav, footer, video, audio, object, embed { 
+    nav, footer, video, audio, object, embed, aside, header, .navbar-nav--secundaria, .s-bar{ 
         display:none; 
     }
-    @page {
-        margin: 0.5cm;
+    .panel-body {
+        padding: 0;
     }
     .print {
         display:block;
     }
-        
     .no-print { 
         display:none; 
     }
     img {
         max-width: 100%;
     }
-    aside {
-        display:block;
-        width:100%;
-        page-break-before: always;
-    }
     .wrap { 
         width: 100%; 
         margin: 0; 
-        float: none !important; 
+        float: none; 
     }
+    .tag-tarefatv{
+        background:#427597!important;
+        color:white!important;
+        font-size:12px;
+        padding:2px 5px 2px 5px;
+        color-adjust:exact;
+    }
+        main{
+            display:block!important
+        }
+        .ArrangeFlex{
+            display:block!important;
+        }
 }

@@ -47,7 +47,7 @@
 
           .panel.panel-default
             +panel-heading('headingOne', 'fa-pencil', 'Equipe', '#collapseOne','true', 'collapseOne')
-            #collapseOne.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingOne')
+            #collapseOne.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingOne')
               .panel-body
                 dl.dl-horizontal
                   +data-list('Reporter', 'Sergio Salexandre Vieira')
@@ -71,71 +71,6 @@
               .panel-body
                 +loren
 
-          .panel.panel-default
-            +panel-heading('headingFour1', 'fa-pencil', 'Matéria', '#collapseFour1', 'false','collapseFour1')
-            #collapseFour1.panel-collapse.collapse.in(role='tabpanel', aria-labelledby='headingFour1')
-              .panel-body
-                .delta.u-spacer--lg 
-                  strong Sambas de 2019 - Carnaval do Rio de Janeiro
-                .s-bar.s-bar-borderLight.u-spacer--lg
-                  .ArrangeFlex
-                    .ArrangeFlex-sizeFit.Box.Box--xl
-                      strong TEC
-                    .ArrangeFlex-sizeFill.Box--y.Box--xl
-                      strong.text-error TEXTO TEC TEXTO TEC TEXTO TEC TEXTO TEC TEXTO
-                .s-bar.s-bar-borderLight.u-spacer--lg
-                  .ArrangeFlex
-                    .ArrangeFlex-sizeFit.Box.Box--xl
-                      strong LOC
-                    .ArrangeFlex-sizeFill.Box--y.Box--xl
-                      strong.text-error TEXTO LOC TEXTO LOC TEXTO LOC TEXTO LOC TEXTO
-                .s-bar.s-bar-borderLight.u-spacer--lg
-                    .Box.Box--xl
-                      | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupida
-                .row.s-bar-relative
-                  .col-md-1
-                    .Box.Box--xl.zeta
-                      .s-bar-circle
-                        i.fa.fa-volume-off
-                  .col-md-11
-                    .s-bar.s-bar-borderLight.u-spacer--lg
-                      .Box.Box--xl
-                        .row.u-spacer--xl
-                          .col-md-6.eta
-                            strong Sonora: 
-                            a(href='#') 
-                              i.fa.fa-user-circle-o
-                              | Eunício Oliveira
-                          .col-md-6.text-right
-                            audio(controls)
-                              <source src="../../assets/alanwalker.mp3" type="audio/mpeg">
-                              | Seu browser não suporta tag audio
-                        .row
-                          .col-md-12
-                            span.label.label-danger.normalis
-                              span.text-white
-                                i.fa.fa-clock-o
-                                | 4:20 
-                            | &nbsp; Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                .s-bar.s-bar-borderLight.u-spacer--lg
-                  .ArrangeFlex
-                    .ArrangeFlex-sizeFit.Box.Box--xl
-                      i.fa.fa-text-width
-                    .ArrangeFlex-sizeFill.Box--y.Box--xl
-                      strong Descrições
-                  dl.dl-horizontal
-                    dt Código:
-                    dd 4213
-                    dt Duração:
-                    dd 4:20
-                    dt Projetos de lei citados:
-                    dd 00:00:06
-                    dt Nota para o site:
-                    dd teste notas
-                    dt Script Locução:
-                    dd 14 palavras
-                    dt Script Matéria:
-                    dd 105 palavras
           .panel.panel-default
             +panel-heading('headingFive', 'fa-pencil', 'Descrição do Veículo', '#collapseFive', 'false','collapseFive')
             #collapseFive.panel-collapse.collapse(role='tabpanel', aria-labelledby='headingFive')

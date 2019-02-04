@@ -57,6 +57,21 @@
         strong  Apoio
     li.Painel.Painel--vert
       ul.list-unstyled.CutHere.CutHere--lg
+        li
+          .panel.panel-default
+            .s-bar.s-bar--background
+              .ArrangeFlex
+                .ArrangeFlex-sizeFit.Box.Box--lg
+                  i.fa.fa-globe
+                .ArrangeFlex-sizeFill.Box--y.Box--lg
+                  h2.milli.s-bar--text
+                    strong Todos
+
+            .panel-body#collapse-todos.in
+              .CutHere.CutHere--lg
+                p: a(href='#') Link 01
+                p: a(href='#') Link 02
+                p: a(href='#') Link 03
         +links('#', 'modal', '#adicionarLink', 'fa-chevron-right', 'Adicionar link')
         +links('#', 'modal', '#novoArquivo', 'fa-chevron-right', 'Novo arquivo')
         +links('#', 'modal', '#itensProducaoRelacionados', 'fa-chevron-right', 'Itens de produção relacionados')

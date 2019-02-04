@@ -9,6 +9,9 @@
 .text-warn {
     color: #8a6d3b !important;
 }
+.text-primary {
+    color: #337ab7 !important;
+}
 .text-black {
     color:black !important;
 }
@@ -59,6 +62,23 @@
     background-color: #f0ad4e;
     border-color: #eea236;
 }
+.btn-navbar {
+    position: relative;
+    display: block;
+    border-width: 0;
+    line-height: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 20px;
+    &:hover {
+        border-color: #d4d4d4;
+    }
+    &:focus {
+        outline: 0;
+    }
+}
 .bg-error {
     background-color: #f2dede;
 }
@@ -81,10 +101,30 @@
     float: right;
 }
 .delete {
-    background-color: #449d44;
+    background-color: #a94442;
+}
+.table--bg{
+    tbody tr:last-child{
+        background-color: black;
+        color: white;
+    }
+    tr td:last-child{
+        background-color: black;
+        color: white;
+    }
+}
+.todaynoevent {
+    background-color: #233f5f;
+    color: #fff;
+}
+.todayevent {
+    background-color: #233f5f;
+    a {
+        color: #eea236 !important;
+    }
 }
 .insert {
-    background-color: #a94442;
+    background-color: #449d44;
 }
 .deleted {
     text-decoration:line-through;
@@ -102,7 +142,7 @@
 .dataTables_wrapper .dataTables_filter input {
     margin-left:0 !important;
 }
-.field {
+#form, .edit-form {
     input[type=button], input[type=submit], button  {
         color: #333;
         background-color: #fff;
@@ -127,7 +167,7 @@
             border-color: #adadad;
         }
     }
-    input[value=Salvar], input[value=Adicionar]{
+    input[value=Salvar], input[value=Adicionar], input[value=Buscar], {
         color: #fff;
         background-color: #204d74;
         border-color: #122b40;
@@ -183,4 +223,11 @@
 .actionButtons {margin:10px 0;}
 .suppressVisualEditor {
     display: none;
+}
+.page-break { display: none; }
+.tag-tarefatv{
+    background:#427597;
+    color:white!important;
+    font-size:12px;
+    padding:2px 5px 2px 5px
 }

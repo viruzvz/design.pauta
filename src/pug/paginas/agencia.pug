@@ -1,15 +1,71 @@
 .panel.panel-default
   .s-bar.s-bar--background
-    .ArrangeFlex
+    .ArrangeFlex.ArrangeFlex--middle
       .ArrangeFlex-sizeFit.Box.Box--lg
         i.fa.fa-users
       .ArrangeFlex-sizeFill.Box--y.Box--lg
         h2.milli.s-bar--text
           strong Agência
-      .ArrangeFlex-sizeFit.Box--y.Box--lg.s-bar--columnLeft
-        a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
-          i.fa.fa-chevron-up
-          i.fa.fa-chevron-down
+      .ArrangeFlex-sizeFit
+        ul.nav.navbar-nav
+          li#btn-navbar--link.dropdown.text-center.hidden-xs
+            a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.seta-dropdown-menu.hidden-xs 
+              i.fa.fa-link
+            ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
+              li.Box.Box--lg.eta(class="+white +senado")
+                i.fa.fa-link
+                strong  Links
+              li.Box.Box--lg.scroll
+                ul.list-unstyled.CutHere
+                  mixin li
+                    li: a(href='#') 
+                      i.fa.fa-chevron-right
+                      |  Lorem ipsum dolor sit amet, consectetur
+                  +li
+                  +li
+                  +li
+                  +li
+          li#btn-navbar--calendar.dropdown.text-center.hidden-xs
+            a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.seta-dropdown-menu.hidden-xs
+              i.fa.fa-calendar
+            ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
+              li(class="+white")
+                .Box.Box--lg
+                  .datepicker(data-date='12/03/2012')
+                  input(type='hidden')
+          li#btn-navbar--bell.dropdown.text-center.hidden-xs
+            a.navbar-action.zeta.dropdown-toggle(href='#', data-toggle='dropdown')
+              span.seta-dropdown-menu.hidden-xs
+              i.fa.fa-bell
+              span.badge.badge--unread.micro 6
+            ul.dropdown-menu.dropdown-menu--bar.dropdown-menu--lg.pull-right
+              li.Box.Box--lg.eta(class="+white +senado")
+                i.fa.fa-bell
+                strong  Avisos
+              li.Box.Box--lg.CutHere.scroll
+                +item('01/12/2016', 'Relação de senadores está no item "COP 21 2015" na área de grandes Temas.', 'Renina Sangermano Valejo','google.com','Em produção', 'label-primary')
+                +item('26/11/2016', 'Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.', 'Sabrina Mancio','','Parado', 'label-danger')
+                +item('01/12/2016', 'Relação de senadores está no item "COP 21 2015" na área de grandes Temas.', 'Renina Sangermano Valejo','google.com','Ativo', 'label-info')
+                +item('26/11/2016', 'Acabei de falar com a Taís, da CRE, e a reunião está mesmo cancelada.', 'Sabrina Mancio','','Finalizado', 'label-success')
+              li(class="+white")
+                a.normalis(href='#' data-toggle="modal" data-target="#novo-aviso" class="+senado")
+                  .Box.Box--y
+                    i.fa.fa-plus 
+                    strong  Adicionar Aviso
+              +botoes('gerenciarAvisosGerais.html', 'fa-cog', 'Gerenciar avisos')
+          li#btn-navbar--link.dropdown.text-center.s-bar--columnLeft
+            a.toggle.eta.btn-sBar(href='#collapse-box' data-toggle="collapse" aria-expanded='true')
+              i.fa.fa-chevron-up
+              i.fa.fa-chevron-down
+
+
+
+
+
+
+
   .panel-body#collapse-box.in
     include ../partials/navbar-nav--secundaria
     // Nav tabs
