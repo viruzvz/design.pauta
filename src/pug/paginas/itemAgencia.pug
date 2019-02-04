@@ -100,16 +100,21 @@
                   .col-md-11
                     .s-bar.s-bar-borderLight.u-spacer--lg
                       .Box.Box--xl
-                        .row.u-spacer--xl
-                          .col-md-6.eta
+                        .ArrangeFlex.u-spacer--xl.s-bar-block--xs
+                          .ArrangeFlex-sizeFit.Box.Box--xl.Box--y.eta
                             strong Sonora: 
                             a(href='#') 
                               i.fa.fa-user-circle-o
                               | Eunício Oliveira
-                          .col-md-6.text-right
+                          .ArrangeFlex-sizeFill.Box--y.Box--xl.text-right.s-bar-text-fix
                             audio(controls)
                               <source src="../../assets/alanwalker.mp3" type="audio/mpeg">
                               | Seu browser não suporta tag audio
+                              | &nbsp;
+                          .ArrangeFlex-sizeFit.Box.Box--xl.eta.s-bar-nopadding--xs
+                            a.btn.btn-primary.btn-xs.s-bar-block--xs(href="../../assets/alanwalker.mp3" download title="download")
+                              i.fa.fa-download
+
                         .row
                           .col-md-12
                             span.label.label-danger.normalis
